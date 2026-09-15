@@ -42,7 +42,7 @@ function Home() {
   
   return (
     <>
-      <Helmet>
+      {/* <Helmet>
         <title>
           Xlent IT Services | IT Solutions, Staffing & Career Services
         </title>
@@ -78,7 +78,7 @@ function Home() {
           }
           `}
         </script>
-      </Helmet>
+      </Helmet> */}
 
       <Hero />
 
