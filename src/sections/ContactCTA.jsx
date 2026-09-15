@@ -1,0 +1,353 @@
+// import { useState } from "react";
+// import { motion } from "framer-motion";
+// import { sendContactEmail } from "../utils/email";
+// import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
+// import "react-phone-number-input/style.css";
+// import { useNavigate } from "react-router-dom";
+
+
+// import {
+//   Mail,
+//   Phone,
+//   MapPin,
+//   Clock,
+//   Linkedin,
+//   Facebook,
+//   Instagram
+// } from "lucide-react";
+
+
+// function ContactCTA() {
+
+//   const navigate = useNavigate();
+//   const [form, setForm] = useState({
+//     name: "",
+//     email: "",
+//     location: "",
+//     phone: "",
+//   });
+
+//   const [accepted, setAccepted] = useState(false);
+//   const [error, setError] = useState("");
+//   const [success, setSuccess] = useState("");
+//   const [loading, setLoading] = useState(false);
+
+//   const handleChange = (e) => {
+//     setForm({ ...form, [e.target.name]: e.target.value });
+//   };
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+
+//     const trimmedForm = {
+//       name: form.name.trim(),
+//       email: form.email.trim(),
+//       location: form.location.trim(),
+//       phone: form.phone || "",
+//     };
+
+//     if (!trimmedForm.name || !trimmedForm.email || !trimmedForm.phone || !trimmedForm.location) {
+//       setSuccess("");
+//       setError("Please fill in all fields before submitting.");
+//       return;
+//     }
+
+//     if (!isValidPhoneNumber(trimmedForm.phone)) {
+//       setSuccess("");
+//       setError("Please enter a valid phone number.");
+//       return;
+//     }
+
+//     if (!accepted) {
+//       setSuccess("");
+//       setError("Please accept the Privacy Policy and Terms & Conditions.");
+//       return;
+//     }
+
+//     setError("");
+// setSuccess("");
+// setLoading(true);
+
+// sendContactEmail(trimmedForm)
+//   .then(() => {
+//     setLoading(false);
+//     setSuccess("Thank you! Your message has been sent.");
+
+//     setForm({
+//       name: "",
+//       email: "",
+//       location: "",
+//       phone: "",
+//     });
+
+//     setAccepted(false);
+//   })
+//   .catch((error) => {
+//     console.error(error);
+
+//     setLoading(false);
+//     setError("Failed to send message. Please try again.");
+//   });
+//   };
+
+//   return (
+//     <section
+//       id="contact"
+//       className="bg-[#1a1a1a] py-20 px-4 sm:px-6 border-t-2 border-gray-800">
+
+//       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 items-stretch">
+
+//         {/* LEFT SIDE */}
+//         <motion.div
+//           initial={{ opacity: 0, x: -40 }}
+//           whileInView={{ opacity: 1, x: 0 }}
+//           viewport={{ once: true }}
+//           transition={{ duration: 0.5 }}
+//           className="h-full flex flex-col justify-between"
+//         >
+
+//           <div>
+//             <h2 className="text-2xl font-bold text-white mb-6">
+//               Contact Information
+//             </h2>
+
+//             <div className="space-y-5">
+
+//               <div className="flex gap-4">
+//                 <div className="bg-[#1f1f1f] p-3 rounded-lg text-yellow-400">
+//                   <Mail size={20} />
+//                 </div>
+//                 <div>
+//                   <p className="text-gray-400 text-sm">Email</p>
+//                   <p className="text-white">info@xlent-itservice.com</p>
+//                 </div>
+//               </div>
+
+//               <div className="flex gap-4">
+//                 <div className="bg-[#1f1f1f] p-3 rounded-lg text-yellow-400">
+//                   <Phone size={20} />
+//                 </div>
+//                 <div>
+//                   <p className="text-gray-400 text-sm">Phone</p>
+//                   <p className="text-white">+1 (484) 304-0329</p>
+//                 </div>
+//               </div>
+
+              
+
+//               <div className="flex gap-4">
+//                 <div className="bg-[#1f1f1f] p-3 rounded-lg text-yellow-400">
+//                   <MapPin size={20} />
+//                 </div>
+//                 <div>
+//                   <p className="text-gray-400 text-sm">Office</p>
+//                   <p className="text-white text-sm">
+//                     823 Congress Ave, Austin, Texas 78701, US
+//                   </p>
+//                 </div>
+//               </div>
+
+//               <div className="flex gap-4">
+//                 <div className="bg-[#1f1f1f] p-3 rounded-lg text-yellow-400">
+//                   <Clock size={20} />
+//                 </div>
+//                 <div>
+//                   <p className="text-gray-400 text-sm">Hours</p>
+//                   <p className="text-white text-sm">
+//                     Mon - Fri: 9:00 AM - 6:00 PM EST
+//                   </p>
+//                 </div>
+//               </div>
+
+//             </div>
+
+//             <div className="mt-8 bg-[#1a1408] border border-yellow-400/20 rounded-xl p-6">
+//               <h3 className="text-white font-semibold mb-2">
+//                 Have Questions?
+//               </h3>
+//               <p className="text-gray-400 text-sm">
+//                 We typically respond within 24 hours.
+//               </p>
+//               <p className="text-yellow-400 text-sm mt-4 font-medium">
+//                 Response Time: Within 24 hours
+//               </p>
+//             </div>
+//           </div>
+
+//           <div className="mt-8">
+//             <h3 className="text-white mb-3">Follow Us</h3>
+//             <div className="flex gap-4 pt-2">
+//             <a
+//               href="https://www.linkedin.com/company/xlent-itservice/"
+//               target="_blank"
+//               rel="noopener noreferrer"
+//               className="w-9 h-9 flex items-center justify-center border border-gray-700 rounded-md text-gray-300 hover:text-yellow-400 hover:border-yellow-400 transition"
+//             >
+//               <Linkedin size={18} />
+//             </a>
+
+//             <a
+//               // href="https://facebook.com/yourprofile"
+//               // target="_blank"
+//               // rel="noopener noreferrer"
+//               className="w-9 h-9 flex items-center justify-center border border-gray-700 rounded-md text-gray-300 hover:text-yellow-400 hover:border-yellow-400 transition"
+//             >
+//               <Facebook size={18} />
+//             </a>
+
+//             <a
+//               // href="https://instagram.com/yourprofile"
+//               // target="_blank"
+//               // rel="noopener noreferrer"
+//               className="w-9 h-9 flex items-center justify-center border border-gray-700 rounded-md text-gray-300 hover:text-yellow-400 hover:border-yellow-400 transition"
+//             >
+//               <Instagram size={18} />
+//             </a>
+//           </div>
+//           </div>
+
+//         </motion.div>
+
+//         {/* RIGHT SIDE */}
+//         <motion.div
+//           initial={{ opacity: 0, x: 40 }}
+//           whileInView={{ opacity: 1, x: 0 }}
+//           viewport={{ once: true }}
+//           transition={{ duration: 0.5 }}
+//           className="h-full flex flex-col"
+//         >
+
+//           <div className="bg-[#111]/90 border border-gray-800 rounded-xl p-6 sm:p-8 flex flex-col justify-between h-full">
+
+//             <div>
+//               <h2 className="text-2xl font-bold text-white mb-4">
+//                 Get in Touch
+//               </h2>
+
+//               <p className="text-gray-400 text-sm mb-6">
+//                 Fill the form and our team will contact you soon.
+//               </p>
+//             </div>
+
+//             <form onSubmit={handleSubmit} className="grid gap-4 flex-1">
+
+//               <input
+//                 type="text"
+//                 name="name"
+//                 value={form.name}
+//                 onChange={handleChange}
+//                 placeholder="Full Name"
+//                 autoComplete="name"
+//                 required
+//                 className="bg-[#1a1a1a] text-white px-3 py-2.5 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 placeholder-gray-500"
+//               />
+
+//               <input
+//                 type="email"
+//                 name="email"
+//                 value={form.email}
+//                 onChange={handleChange}
+//                 placeholder="Email Address"
+//                 autoComplete="email"
+//                 required
+//                 className="bg-[#1a1a1a] px-3 py-2.5 rounded-md text-white text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 placeholder-gray-500"
+//               />
+
+//               <div className="bg-[#1a1a1a] rounded-md px-3 py-2 focus-within:ring-2 focus-within:ring-yellow-400">
+//                 <PhoneInput
+//                   international
+//                   defaultCountry="US"
+//                   value={form.phone}
+//                   onChange={(value) => setForm({ ...form, phone: value })}
+//                   placeholder="Phone number"
+//                   required
+//                   className="text-sm bg-transparent text-white w-full"
+//                 />
+//               </div>
+
+//               <input
+//                 type="text"
+//                 name="location"
+//                 value={form.location}
+//                 onChange={handleChange}
+//                 placeholder="Location"
+//                 autoComplete="address-level2"
+//                 required
+//                 className="bg-[#1a1a1a] px-3 py-2.5 rounded-md text-white text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 placeholder-gray-500"
+//               />
+
+//               <div className="flex items-start gap-2 text-xs text-gray-400">
+//                 <input
+//                   type="checkbox"
+//                   checked={accepted}
+//                   onChange={() => setAccepted(!accepted)}
+//                   required
+//                   className="mt-1 accent-yellow-400"
+//                 />
+
+               
+//                 <p className="leading-5">
+//                   By opting in for text messages, you agree to receive appointment
+//                   reminders and important updates from brightitinc at the number
+//                   provided. Message frequency varies. Msg & data rates may apply.
+//                   Reply STOP to unsubscribe. Reply HELP for help. View our{" "}
+
+//                   <span
+//                     onClick={() => navigate("/privacy-policy")}
+//                     className="text-yellow-400 cursor-pointer hover:text-yellow-300"
+//                   >
+//                     Privacy Policy
+//                   </span>
+
+//                   {" "}and{" "}
+
+//                   <span
+//                     onClick={() => navigate("/terms-conditions")}
+//                     className="text-yellow-400 cursor-pointer hover:text-yellow-300"
+//                   >
+//                     Terms & Conditions
+//                   </span>
+
+//                   {" "}for more information.
+//                 </p>
+                
+
+
+
+//               </div>
+
+//               {error && <p className="text-red-400 text-xs">{error}</p>}
+//               {success && <p className="text-green-400 text-xs">{success}</p>}
+
+//               <motion.button
+//                 whileHover={{ scale: 1.04 }}
+//                 whileTap={{ scale: 0.97 }}
+//                 disabled={loading}
+//                 className="bg-yellow-400 text-black py-2.5 rounded-md font-medium text-sm hover:bg-yellow-300 disabled:cursor-not-allowed disabled:opacity-70 transition"
+//               >
+//                 {loading ? "Sending..." : "Submit"}
+//               </motion.button>
+
+//             </form>
+
+//           </div>
+
+//         </motion.div>
+
+//       </div>
+//     </section>
+//   );
+// }
+
+// export default ContactCTA;
+
+import React from 'react'
+
+function ContactCTA() {
+  return (
+    <div>ContactCTA</div>
+  )
+}
+
+export default ContactCTA
+

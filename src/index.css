@@ -1,0 +1,50 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/*  Fix phone input dark theme */
+.PhoneInput {
+  background: transparent !important;
+  color: white !important;
+}
+
+.PhoneInput input {
+  background: transparent !important;
+  color: white !important;
+  border: none !important;
+  outline: none !important;
+}
+
+.PhoneInputCountry {
+  background: transparent !important;
+}
+
+.PhoneInputCountrySelect {
+  background: #1a1a1a !important;
+  color: white !important;
+}
+
+/*  Fix Chrome Autofill Background */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #1a1a1a inset !important;
+  -webkit-text-fill-color: white !important;
+  caret-color: white !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Force consistent input styling */
+input, textarea {
+  background-color: #1a1a1a !important;
+  color: white !important;
+}
