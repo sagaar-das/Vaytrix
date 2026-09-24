@@ -50,8 +50,44 @@ function ScrollToTop() {
 // Minimal Fast Loader
 function PageLoader() {
   return (
-    <div className="h-screen bg-[#0d0d0f] flex items-center justify-center">
-      <div className="w-8 h-8 border-2 border-[#d4af37] border-t-transparent rounded-full animate-spin"></div>
+    <div className="relative flex h-screen items-center justify-center overflow-hidden bg-[#050508]">
+
+      {/* Background Glow */}
+      <div className="pointer-events-none absolute h-40 w-40 rounded-full bg-[#8B5CF6]/10 blur-[70px]" />
+
+      {/* Technical Grid */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          inset-0
+          opacity-[0.035]
+        "
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)
+          `,
+          backgroundSize: "48px 48px",
+        }}
+      />
+
+      {/* Loader */}
+      <div
+        className="
+          relative
+          h-10
+          w-10
+          animate-spin
+          rounded-full
+          border-2
+          border-white/[0.08]
+          border-t-[#8B5CF6]
+          border-r-[#3B82F6]
+          border-b-[#06B6D4]
+        "
+      />
+
     </div>
   );
 }
