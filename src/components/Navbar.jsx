@@ -2,7 +2,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, ArrowUpRight } from "lucide-react";
-import logo from "../assets/LOGO.png";
+import logo from "../assets/logo.png";
 
 function Navbar() {
   const [showDropdown, setShowDropdown] = useState(false);

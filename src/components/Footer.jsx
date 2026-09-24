@@ -10,7 +10,7 @@ import {
 
 import { useNavigate } from "react-router-dom";
 
-import logo from "../assets/LOGO.png";
+import logo from "../assets/logo.png";
 import ev from "../assets/E-Verify_logo.webp";
 
 function Footer() {
