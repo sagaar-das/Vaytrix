@@ -205,7 +205,7 @@ function Industries() {
               items-center
               gap-2
               font-mono
-              text-[10px]
+              text-[15px]
               font-semibold
               uppercase
               tracking-[0.22em]
@@ -562,7 +562,7 @@ function Industries() {
                   className="
                     mt-4
                     max-w-[150px]
-                    text-[11px]
+                    text-[13px]
                     font-medium
                     leading-5
                     text-[#94A3B8]
@@ -574,7 +574,7 @@ function Industries() {
                     group-hover:bg-clip-text
                     group-hover:text-transparent
                     sm:max-w-[180px]
-                    sm:text-[12px]
+                    sm:text-[14px]
                   "
                 >
                   {item.name}

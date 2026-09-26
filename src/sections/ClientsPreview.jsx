@@ -1,11 +1,38 @@
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+
+const logos = [
+  "bain-company-logo.svg",
+  "paypal-3.svg",
+  "mckinsey-company.svg",
+  "amazon-web-services-2.svg",
+  "intel.svg",
+  "startek.svg",
+  "cgi-logo.svg",
+  "teleperformance-group.svg",
+  "genpact-logo.svg",
+  "linkedin-icon-2.svg",
+  "meta-3.svg",
+  "ibm.svg",
+  "globant-1.svg",
+  "boston-consulting-group.svg",
+  "oracle-6.svg",
+  "hp-hewlett-packard.svg",
+  "fujitsu-logo.svg",
+  "tech-mahindra-new-logo.svg",
+  "wipro-1.svg",
+  "infosys-technologies-logo.svg",
+  "tata-consultancy-services-1.svg",
+  "deloitte-1.svg",
+  "capgemini-201x-logo-1.svg",
+  "cognizant-1.svg",
+  "accenture-6.svg",
+];
 
 function ClientsPreview() {
-  const navigate = useNavigate();
+  const logoPath = (logo) => `/public/clientLogo/${logo}`;
 
   return (
-    <section className="relative overflow-hidden bg-[#050508] px-4 py-20 text-center sm:px-6 sm:py-24 lg:py-28">
+    <section className="relative overflow-hidden bg-[#050508] px-4 py-20 sm:px-6 sm:py-24 lg:py-28">
 
       {/* =========================================================
           TECHNICAL GRID
@@ -27,7 +54,7 @@ function ClientsPreview() {
       />
 
       {/* =========================================================
-          BACKGROUND GRADIENT
+          BACKGROUND
       ========================================================== */}
       <div
         className="
@@ -44,19 +71,19 @@ function ClientsPreview() {
       {/* =========================================================
           AMBIENT GLOWS
       ========================================================== */}
-      <div className="pointer-events-none absolute -left-32 top-0 h-72 w-72 rounded-full bg-[#8B5CF6]/10 blur-[120px]" />
+      <div className="pointer-events-none absolute -left-40 top-0 h-80 w-80 rounded-full bg-[#8B5CF6]/10 blur-[130px]" />
 
-      <div className="pointer-events-none absolute -right-32 bottom-0 h-80 w-80 rounded-full bg-[#06B6D4]/10 blur-[130px]" />
+      <div className="pointer-events-none absolute -right-40 bottom-0 h-80 w-80 rounded-full bg-[#06B6D4]/10 blur-[130px]" />
 
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#3B82F6]/5 blur-[140px]" />
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#3B82F6]/5 blur-[140px]" />
 
-      <div className="relative z-10 mx-auto max-w-5xl">
+      <div className="relative z-10 mx-auto max-w-7xl">
 
         {/* =========================================================
-            SMALL HEADING
+            SECTION LABEL
         ========================================================== */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
@@ -75,7 +102,7 @@ function ClientsPreview() {
               sm:text-xs
             "
           >
-            Our Clients
+            Trusted Network
           </p>
 
           <span className="h-px w-8 bg-gradient-to-l from-transparent to-[#06B6D4]" />
@@ -85,11 +112,12 @@ function ClientsPreview() {
             HEADING
         ========================================================== */}
         <motion.h2
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.6 }}
           className="
+            text-center
             text-3xl
             font-semibold
             leading-tight
@@ -101,6 +129,7 @@ function ClientsPreview() {
           "
         >
           Trusted by{" "}
+
           <span className="relative inline-block">
 
             <span
@@ -116,7 +145,6 @@ function ClientsPreview() {
               Industry Leaders
             </span>
 
-            {/* Gradient underline */}
             <span
               className="
                 absolute
@@ -139,17 +167,18 @@ function ClientsPreview() {
             DESCRIPTION
         ========================================================== */}
         <motion.p
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{
-            delay: 0.2,
+            delay: 0.15,
             duration: 0.5,
           }}
           className="
             mx-auto
             mt-6
             max-w-2xl
+            text-center
             text-sm
             leading-7
             text-[#94A3B8]
@@ -157,100 +186,217 @@ function ClientsPreview() {
             md:text-lg
           "
         >
-          Our clients trust us to transform complex challenges into
-          actionable insights, delivering reliable analytics, modern
-          solutions, and consistent value that drives business success
-          and long-term partnerships.
+          We work with organizations across industries to solve complex
+          challenges, deliver modern technology solutions, and create
+          meaningful long-term business value.
         </motion.p>
 
         {/* =========================================================
-            CTA
+            TECHNICAL LABEL
+        ========================================================== */}
+        <div className="mt-10 flex items-center justify-center gap-3">
+
+          <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#8B5CF6]/40" />
+
+          <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#64748B]">
+            Global Client Network / 2026
+          </span>
+
+          <span className="h-px w-10 bg-gradient-to-l from-transparent to-[#06B6D4]/40" />
+
+        </div>
+
+        {/* =========================================================
+            LOGO MARQUEE
         ========================================================== */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{
-            delay: 0.4,
-            duration: 0.5,
+            delay: 0.25,
+            duration: 0.6,
           }}
-          className="mt-10"
+          className="relative mt-10"
         >
-          <button
-            onClick={() => navigate("/clients")}
+
+          {/* LEFT FADE */}
+          <div
             className="
-              group
-              relative
-              overflow-hidden
-              rounded-full
-              border
-              border-[#8B5CF6]/40
-              bg-[rgba(10,10,15,0.72)]
-              px-7
-              py-3
-              text-sm
-              font-semibold
-              text-[#F8FAFC]
-              backdrop-blur-xl
-              transition-all
-              duration-300
-              hover:border-[#8B5CF6]/70
-              hover:shadow-[0_0_30px_rgba(139,92,246,0.20)]
-              sm:px-8
+              pointer-events-none
+              absolute
+              left-0
+              top-0
+              z-20
+              h-full
+              w-20
+              bg-gradient-to-r
+              from-[#050508]
+              to-transparent
+              sm:w-32
             "
-          >
-            {/* Hover Gradient */}
-            <span
+          />
+
+          {/* RIGHT FADE */}
+          <div
+            className="
+              pointer-events-none
+              absolute
+              right-0
+              top-0
+              z-20
+              h-full
+              w-20
+              bg-gradient-to-l
+              from-[#050508]
+              to-transparent
+              sm:w-32
+            "
+          />
+
+          {/* MARQUEE VIEWPORT */}
+          <div className="overflow-hidden">
+
+            {/* TRACK */}
+            <motion.div
               className="
-                absolute
-                inset-0
-                bg-gradient-to-r
-                from-[#8B5CF6]/10
-                via-[#3B82F6]/10
-                to-[#06B6D4]/10
-                opacity-0
-                transition-opacity
-                duration-300
-                group-hover:opacity-100
+                flex
+                w-max
+                gap-4
+                hover:[animation-play-state:paused]
               "
-            />
+              animate={{
+                x: ["0%", "-50%"],
+              }}
+              transition={{
+                duration: 45,
+                ease: "linear",
+                repeat: Infinity,
+              }}
+            >
 
-            {/* Button Content */}
-            <span className="relative flex items-center justify-center gap-2">
-              View More
+              {/* FIRST SET */}
+              {logos.map((logo, index) => (
+                <div
+                  key={`first-${index}`}
+                  className="
+                    group
+                    flex
+                    h-24
+                    w-40
+                    shrink-0
+                    items-center
+                    justify-center
+                    rounded-2xl
+                    border
+                    border-white/[0.07]
+                    bg-[rgba(255,255,255,0.72)]
+                    px-6
+                    backdrop-blur-xl
+                    transition-all
+                    duration-300
+                    hover:border-[#8B5CF6]/40
+                    hover:bg-[rgba(13,13,22,0.9)]
+                    hover:shadow-[0_15px_40px_rgba(139,92,246,0.12)]
+                    sm:h-28
+                    sm:w-48
+                  "
+                >
+                  <img
+                    src={logoPath(logo)}
+                    alt={`Client logo ${index + 1}`}
+                    className="
+                      max-h-10
+                      max-w-[125px]
+                      object-contain
+                      
+                      transition-all
+                      duration-300
+                      
+                      sm:max-h-11
+                      sm:max-w-[145px]
+                    "
+                  />
+                </div>
+              ))}
 
-              <span
-                className="
-                  text-[#A78BFA]
-                  transition-transform
-                  duration-300
-                  group-hover:translate-x-1
-                  group-hover:text-[#06B6D4]
-                "
-              >
-                →
-              </span>
-            </span>
-          </button>
+              {/* DUPLICATE SET FOR INFINITE LOOP */}
+              {logos.map((logo, index) => (
+                <div
+                  key={`second-${index}`}
+                  className="
+                    group
+                    flex
+                    h-24
+                    w-40
+                    shrink-0
+                    items-center
+                    justify-center
+                    rounded-2xl
+                    border
+                    border-white/[0.07]
+                    bg-[rgba(255,255,255,0.72)]
+                    px-6
+                    backdrop-blur-xl
+                    transition-all
+                    duration-300
+                    hover:border-[#8B5CF6]/40
+                    hover:bg-[rgba(13,13,22,0.9)]
+                    hover:shadow-[0_15px_40px_rgba(139,92,246,0.12)]
+                    sm:h-28
+                    sm:w-48
+                  "
+                >
+                  <img
+                    src={logoPath(logo)}
+                    alt={`Client logo ${index + 1}`}
+                    className="
+                      max-h-10
+                      max-w-[125px]
+                      object-contain
+                      
+                      transition-all
+                      duration-300
+                      
+                      sm:max-h-11
+                      sm:max-w-[145px]
+                    "
+                  />
+                </div>
+              ))}
+
+            </motion.div>
+
+          </div>
+
         </motion.div>
 
         {/* =========================================================
-            TECHNICAL FOOTER
+            BOTTOM STATUS
         ========================================================== */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.6, duration: 0.5 }}
-          className="mt-12 flex items-center justify-center gap-3"
+          transition={{
+            delay: 0.5,
+            duration: 0.5,
+          }}
+          className="mt-10 flex flex-col items-center justify-center gap-3"
         >
-          <span className="h-px w-10 bg-gradient-to-r from-transparent to-white/10" />
 
-          <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#64748B]">
-            Trusted Partnerships / Long-Term Value
-          </span>
+          <div className="flex items-center gap-2">
 
-          <span className="h-px w-10 bg-gradient-to-l from-transparent to-white/10" />
+            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#06B6D4] shadow-[0_0_10px_rgba(6,182,212,0.8)]" />
+
+            <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#64748B]">
+              Building Long-Term Partnerships
+            </span>
+
+          </div>
+
+          <div className="h-px w-24 bg-gradient-to-r from-transparent via-[#8B5CF6]/40 to-transparent" />
+
         </motion.div>
 
       </div>
@@ -259,4 +405,3 @@ function ClientsPreview() {
 }
 
 export default ClientsPreview;
-

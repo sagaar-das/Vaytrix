@@ -5,14 +5,14 @@ function TechTrendsSection() {
   const navigate = useNavigate();
 
   const leftItems = [
-    "Data Centers Becoming Strategic Infrastructure",
-    "Robotic Shifts",
-    "AI and Cybersecurity",
+    "Data Centers Evolving Into Critical Infrastructure",
+    "The Rise of Robotic Automation",
+    "AI-Powered Cybersecurity",
   ];
 
   const rightItems = [
-    "Physical AI",
-    "Agentic AI in the Workforce",
+    "The Emergence of Physical AI",
+    "Agentic AI Transforming the Workplace",
   ];
 
   const allItems = [...leftItems, ...rightItems];
@@ -89,7 +89,7 @@ function TechTrendsSection() {
               <span className="h-px w-8 bg-gradient-to-r from-[#8B5CF6] to-[#06B6D4]" />
 
               <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-[#64748B]">
-                Technology Intelligence / 2026
+                Technology Outlook / 2026
               </span>
             </motion.div>
 
@@ -110,9 +110,9 @@ function TechTrendsSection() {
                 lg:text-4xl
               "
             >
-              What’s Shaping Technology{" "}
+              Technology Trends Defining{" "}
               <span className="bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] bg-clip-text text-transparent">
-                This Year
+                2026
               </span>
             </motion.h2>
 
@@ -123,8 +123,8 @@ function TechTrendsSection() {
               transition={{ delay: 0.1, duration: 0.4 }}
               className="mt-3 max-w-xl text-sm leading-6 text-[#94A3B8]"
             >
-              Explore the technology shifts influencing modern businesses,
-              digital transformation, and the future of work.
+              Discover the emerging technologies transforming businesses,
+              accelerating digital innovation, and reshaping the future of work.
             </motion.p>
           </div>
 
@@ -160,7 +160,7 @@ function TechTrendsSection() {
               hover:shadow-[0_0_25px_rgba(139,92,246,0.15)]
             "
           >
-            Explore 2026 Trends
+            Discover the Latest Trends
 
             <span className="text-[#8B5CF6] transition-transform duration-300 group-hover:translate-x-1">
               →
@@ -311,14 +311,14 @@ function TechTrendsSection() {
           "
         >
           <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#64748B]">
-            Emerging Technology Signals
+            Emerging Technology Landscape
           </span>
 
           <div className="flex items-center gap-2">
             <span className="h-1.5 w-1.5 rounded-full bg-[#06B6D4] shadow-[0_0_10px_rgba(6,182,212,0.8)]" />
 
             <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-[#64748B]">
-              Active / 2026
+              Tracking / 2026
             </span>
           </div>
         </motion.div>

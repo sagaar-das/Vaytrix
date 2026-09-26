@@ -17,38 +17,38 @@ function WhyUs() {
   const data = [
     {
       number: "01",
-      title: "Excellence In Every Project",
-      desc: "Delivering innovative technology solutions with quality, precision, and long-term business value and growth for every client with us.",
+      title: "Quality In Every Solution",
+      desc: "We deliver innovative technology solutions with a strong focus on quality, accuracy, lasting value, and meaningful business growth.",
       ui: <Award size={21} strokeWidth={1.8} />,
     },
     {
       number: "02",
-      title: "150+ Trusted Business Partners",
-      desc: "Building strong partnerships through reliable services, transparent communication, and consistent project delivery excellence.",
+      title: "Trusted by 150+ Businesses",
+      desc: "We build lasting client relationships through dependable services, clear communication, and consistent delivery across every engagement.",
       ui: <Handshake size={21} strokeWidth={1.8} />,
     },
     {
       number: "03",
-      title: "Proven Success Across Industries",
-      desc: "Empowering businesses with scalable, innovative, and future-ready technology solutions for sustainable digital transformation.",
+      title: "Experience Across Industries",
+      desc: "Our proven expertise helps organizations adopt scalable, innovative, and future-focused technologies for sustainable digital growth.",
       ui: <BriefcaseBusiness size={21} strokeWidth={1.8} />,
     },
     {
       number: "04",
-      title: "Industry Experts & Skilled Professionals",
-      desc: "Our experienced team combines technical expertise, creativity, and strategic thinking to drive measurable business success.",
+      title: "Experienced Technology Professionals",
+      desc: "Our skilled professionals bring technical knowledge, creative thinking, and strategic expertise to deliver measurable business outcomes.",
       ui: <Users size={21} strokeWidth={1.8} />,
     },
     {
       number: "05",
-      title: "Smart Solutions For Modern Businesses",
-      desc: "Providing advanced IT, AI, and consulting services designed to accelerate growth and operational efficiency.",
+      title: "Technology Built for Business",
+      desc: "We provide modern IT, AI, and consulting solutions that help organizations improve efficiency, scale operations, and accelerate growth.",
       ui: <Lightbulb size={21} strokeWidth={1.8} />,
     },
     {
       number: "06",
-      title: "Client-Centric Approach & Support",
-      desc: "Ensuring dedicated support, personalized strategies, and seamless collaboration throughout every stage of project execution.",
+      title: "Dedicated Client Support",
+      desc: "We provide personalized guidance, continuous support, and close collaboration throughout every phase of your project.",
       ui: <Headset size={21} strokeWidth={1.8} />,
     },
   ];
@@ -56,9 +56,9 @@ function WhyUs() {
   return (
     <section className="relative overflow-hidden bg-[#050508] py-20 sm:py-24 lg:py-28">
 
-  {/* BACKGROUND IMAGE */}
-  <div
-    className="
+      {/* BACKGROUND IMAGE */}
+      <div
+        className="
       pointer-events-none
       absolute
       inset-0
@@ -67,16 +67,16 @@ function WhyUs() {
       bg-fixed
       opacity-[0.38]
     "
-    style={{
-      backgroundImage: `url(${bgImage})`,
-    }}
-  />
+        style={{
+          backgroundImage: `url(${bgImage})`,
+        }}
+      />
 
-  
 
-  {/* GRADIENT OVERLAY */}
-  <div
-    className="
+
+      {/* GRADIENT OVERLAY */}
+      <div
+        className="
       pointer-events-none
       absolute
       inset-0
@@ -85,7 +85,7 @@ function WhyUs() {
       via-[#050508]/5
       to-[#050508]/25
     "
-  />
+      />
 
       {/* =========================================================
           CONTENT
@@ -195,10 +195,10 @@ function WhyUs() {
               md:text-[16px]
             "
           >
-            We combine innovation, industry expertise, and customer-focused
-            strategies to deliver reliable, scalable, and result-driven
-            technology solutions that help businesses grow faster, improve
-            efficiency, and stay ahead in a competitive digital world.
+            We bring together technology, industry knowledge, and a client-first
+            approach to create scalable solutions that improve performance,
+            support business growth, and help organizations stay ready for
+            a rapidly changing digital landscape.
           </p>
         </motion.div>
 
@@ -604,8 +604,9 @@ function WhyUs() {
               sm:text-sm
             "
           >
-            We bring technology, expertise, and innovation together to create
-            solutions that help businesses move forward with confidence.
+            By combining expertise, innovation, and modern technology, we help
+            businesses overcome challenges, unlock new opportunities, and move
+            toward their goals with greater confidence.
           </p>
         </motion.div>
       </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import heroImage from "../assets/hero-image.jpg";
+import heroRightImage from "../assets/hero right.png";
 
 const Hero = () => {
   return (
@@ -98,11 +98,11 @@ const Hero = () => {
           max-w-[1440px]
           items-center
           px-5
-          py-16
-          sm:px-8
-          sm:py-20
-          lg:px-10
-          lg:py-20
+py-6
+sm:px-8
+sm:py-8
+lg:px-10
+lg:py-8
         "
       >
 
@@ -113,8 +113,8 @@ const Hero = () => {
             grid-cols-1
             items-center
             gap-14
-            lg:grid-cols-[1.05fr_0.95fr]
-            lg:gap-10
+            lg:grid-cols-[0.82fr_1.18fr]
+            lg:gap-0
           "
         >
 
@@ -176,7 +176,7 @@ const Hero = () => {
                   text-[#94A3B8]
                 "
               >
-                DIGITAL SOLUTIONS FOR MODERN BUSINESS
+                A COMPLETE SOLUTION FOR YOU
               </span>
 
             </motion.div>
@@ -222,7 +222,7 @@ const Hero = () => {
                   text-transparent
                 "
               >
-                something
+                your Resume
               </span>
 
               <br />
@@ -249,7 +249,7 @@ const Hero = () => {
                 delay: 0.25,
               }}
               className="
-                mt-7
+                mt-5
                 max-w-[590px]
                 text-[15px]
                 leading-7
@@ -466,7 +466,7 @@ const Hero = () => {
                     sm:text-3xl
                   "
                 >
-                  5000+
+                  300+
                 </p>
 
                 <p className="mt-1 text-[11px] text-[#64748B] sm:text-xs">
@@ -508,326 +508,213 @@ const Hero = () => {
 
 
           {/* =================================================
-              RIGHT IMAGE VISUAL
-          ================================================== */}
+                RIGHT HERO IMAGE - LARGE
+                   ================================================== */}
 
           <div
             className="
-              relative
-              flex
-              min-h-[380px]
-              items-center
-              justify-center
-              sm:min-h-[460px]
-              lg:min-h-[560px]
-            "
+    relative
+    flex
+    min-h-[420px]
+    items-center
+    justify-center
+    sm:min-h-[520px]
+    lg:min-h-[680px]
+    xl:min-h-[700px]
+    bottom-[5%]
+  "
           >
-
-            {/* Main Purple-Cyan Glow */}
-
-            <div
-              className="
-                pointer-events-none
-                absolute
-                h-[280px]
-                w-[280px]
-                rounded-full
-                bg-gradient-to-r
-                from-[#8B5CF6]/30
-                via-[#3B82F6]/20
-                to-[#06B6D4]/25
-                blur-[100px]
-                sm:h-[380px]
-                sm:w-[380px]
-              "
-            />
-
-
-            {/* Technical Ring */}
+            {/* =================================================
+      LARGE AMBIENT GLOW
+  ================================================== */}
 
             <div
               className="
-                pointer-events-none
-                absolute
-                h-[300px]
-                w-[300px]
-                rounded-full
-                border
-                border-[#8B5CF6]/20
-                shadow-[0_0_80px_rgba(139,92,246,0.08)]
-                sm:h-[420px]
-                sm:w-[420px]
-                lg:h-[500px]
-                lg:w-[500px]
-              "
+      pointer-events-none
+      absolute
+      left-1/2
+      top-1/2
+      h-[420px]
+      w-[420px]
+      -translate-x-1/2
+      -translate-y-1/2
+      rounded-full
+      bg-gradient-to-r
+      from-[#8B5CF6]/30
+      via-[#3B82F6]/20
+      to-[#06B6D4]/25
+      blur-[120px]
+      sm:h-[560px]
+      sm:w-[560px]
+      lg:h-[680px]
+      lg:w-[680px]
+    "
             />
 
+            {/* =================================================
+      LARGE TECHNICAL RING
+  ================================================== */}
 
-            {/* Rotating Technical Ring */}
+            <div
+              className="
+      pointer-events-none
+      absolute
+      left-1/2
+      top-1/2
+      h-[430px]
+      w-[430px]
+      -translate-x-1/2
+      -translate-y-1/2
+      rounded-full
+      border
+      border-[#8B5CF6]/15
+      shadow-[0_0_100px_rgba(139,92,246,0.08)]
+      sm:h-[560px]
+      sm:w-[560px]
+      lg:h-[680px]
+      lg:w-[680px]
+    "
+            />
+
+            {/* =================================================
+      ROTATING TECHNICAL RING
+  ================================================== */}
 
             <motion.div
               animate={{
                 rotate: 360,
               }}
               transition={{
-                duration: 30,
+                duration: 35,
                 repeat: Infinity,
                 ease: "linear",
               }}
               className="
-                pointer-events-none
-                absolute
-                h-[330px]
-                w-[330px]
-                rounded-full
-                border
-                border-dashed
-                border-[#06B6D4]/20
-                sm:h-[450px]
-                sm:w-[450px]
-                lg:h-[530px]
-                lg:w-[530px]
-              "
+      pointer-events-none
+      absolute
+      left-1/2
+      top-1/2
+      h-[460px]
+      w-[460px]
+      -translate-x-1/2
+      -translate-y-1/2
+      rounded-full
+      border
+      border-dashed
+      border-[#06B6D4]/20
+      sm:h-[590px]
+      sm:w-[590px]
+      lg:h-[710px]
+      lg:w-[710px]
+    "
             />
 
-
             {/* =================================================
-                IMAGE CARD
-            ================================================== */}
+      LARGE HERO PNG
+  ================================================== */}
 
-            <motion.div
+            <motion.img
+              src={heroRightImage}
+              alt="Vaytrix digital technology solutions"
               initial={{
                 opacity: 0,
-                scale: 0.92,
-                rotate: -3,
+                scale: 0.88,
+                x: 30,
               }}
-              whileInView={{
+              animate={{
                 opacity: 1,
                 scale: 1,
-                rotate: -2,
-              }}
-              viewport={{
-                once: true,
+                x: 0,
               }}
               transition={{
-                duration: 0.8,
+                duration: 1,
                 ease: "easeOut",
               }}
-              whileHover={{
-                rotate: 0,
-                scale: 1.025,
+              className="
+  relative
+  z-10
+  -ml-6
+  w-[500px]
+  max-w-none
+  object-contain
+  drop-shadow-[0_35px_80px_rgba(0,0,0,0.75)]
+  sm:w-[650px]
+  md:w-[720px]
+  lg:-ml-12
+  lg:w-[820px]
+  xl:-ml-16
+  xl:w-[900px]
+  2xl:-ml-20
+  2xl:w-[980px]
+  left-[3%]
+  
+  
+"
+            />
+
+            {/* =================================================
+      FLOATING LEFT LABEL
+  ================================================== */}
+
+            <motion.div
+              animate={{
+                y: [0, -7, 0],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
               }}
               className="
-                group
-                relative
-                z-10
-                w-[300px]
-                overflow-hidden
-                rounded-[24px]
-                border
-                border-white/[0.12]
-                bg-[rgba(10,10,15,0.7)]
-                p-2
-                shadow-[0_30px_100px_rgba(0,0,0,0.65)]
-                backdrop-blur-[24px]
-                transition-all
-                duration-500
-                hover:border-[#8B5CF6]/50
-                hover:shadow-[0_30px_100px_rgba(139,92,246,0.25),0_0_40px_rgba(6,182,212,0.1)]
-                sm:w-[390px]
-                sm:p-2.5
-              "
+      absolute
+      bottom-[18%]
+      left-[33%]
+      z-30
+      rounded-xl
+      border
+      border-white/[0.12]
+      bg-[#0A0A0F]/85
+      px-4
+      py-3
+      shadow-[0_15px_45px_rgba(0,0,0,0.65)]
+      backdrop-blur-xl
+      sm:left-[31%]
+      lg:left-[35%]
+    "
             >
+              <div className="flex items-center gap-2">
 
-              {/* Top Highlight */}
-
-              <div
-                className="
-                  pointer-events-none
-                  absolute
-                  left-1/2
-                  top-0
-                  z-20
-                  h-px
-                  w-3/4
-                  -translate-x-1/2
-                  bg-gradient-to-r
-                  from-transparent
-                  via-white/40
-                  to-transparent
-                "
-              />
-
-
-              {/* Image */}
-
-              <div
-                className="
-                  relative
-                  overflow-hidden
-                  rounded-[18px]
-                  border
-                  border-white/[0.08]
-                  bg-[#0A0A0F]
-                "
-              >
-
-                <img
-                  src={heroImage}
-                  alt="Vaytrix technology solutions"
+                <span
                   className="
-                    h-[320px]
-                    w-full
-                    object-cover
-                    transition-transform
-                    duration-700
-                    group-hover:scale-105
-                    sm:h-[400px]
-                  "
+          h-2
+          w-2
+          rounded-full
+          bg-[#06B6D4]
+          shadow-[0_0_12px_rgba(6,182,212,0.9)]
+        "
                 />
 
-                {/* Dark Image Gradient */}
-
-                <div
+                <span
                   className="
-                    pointer-events-none
-                    absolute
-                    inset-0
-                    bg-gradient-to-t
-                    from-[#050508]
-                    via-transparent
-                    to-transparent
-                    opacity-70
-                  "
-                />
-
-                {/* Purple / Cyan Image Wash */}
-
-                <div
-                  className="
-                    pointer-events-none
-                    absolute
-                    inset-0
-                    bg-gradient-to-br
-                    from-[#8B5CF6]/10
-                    via-transparent
-                    to-[#06B6D4]/15
-                    mix-blend-screen
-                  "
-                />
-
-              </div>
-
-
-              {/* =================================================
-                  FLOATING IMAGE LABEL
-              ================================================== */}
-
-              <div
-                className="
-                  absolute
-                  bottom-6
-                  left-6
-                  z-30
-                  rounded-xl
-                  border
-                  border-white/[0.12]
-                  bg-[#0A0A0F]/80
-                  px-4
-                  py-3
-                  shadow-[0_12px_40px_rgba(0,0,0,0.6)]
-                  backdrop-blur-xl
-                  sm:left-7
-                "
-              >
-
-                <div className="flex items-center gap-2">
-
-                  <span
-                    className="
-                      h-2
-                      w-2
-                      rounded-full
-                      bg-[#06B6D4]
-                      shadow-[0_0_12px_rgba(6,182,212,0.9)]
-                    "
-                  />
-
-                  <span
-                    className="
-                      font-mono
-                      text-[10px]
-                      font-semibold
-                      uppercase
-                      tracking-[0.12em]
-                      text-[#F8FAFC]
-                    "
-                  >
-                    SYSTEMS / DIGITAL
-                  </span>
-
-                </div>
-
-                <p className="mt-1 text-[10px] text-[#64748B]">
-                  Engineering what&apos;s next
-                </p>
-
-              </div>
-
-
-              {/* =================================================
-                  FLOATING PERFORMANCE
-              ================================================== */}
-
-              <div
-                className="
-                  absolute
-                  right-[-8px]
-                  top-10
-                  z-30
-                  rounded-xl
-                  border
-                  border-white/[0.12]
-                  bg-[#11111A]/85
-                  px-4
-                  py-3
-                  shadow-[0_16px_40px_rgba(0,0,0,0.6)]
-                  backdrop-blur-xl
-                  sm:right-[-15px]
-                "
-              >
-
-                <p
-                  className="
-                    font-mono
-                    text-[9px]
-                    uppercase
-                    tracking-[0.12em]
-                    text-[#64748B]
-                  "
+          font-mono
+          text-[9px]
+          font-semibold
+          uppercase
+          tracking-[0.12em]
+          text-[#F8FAFC]
+        "
                 >
-                  PERFORMANCE
-                </p>
-
-                <p
-                  className="
-                    mt-1
-                    bg-gradient-to-r
-                    from-[#8B5CF6]
-                    via-[#3B82F6]
-                    to-[#06B6D4]
-                    bg-clip-text
-                    text-xl
-                    font-bold
-                    text-transparent
-                  "
-                >
-                  95%
-                </p>
+                  DIGITAL / INNOVATION
+                </span>
 
               </div>
 
+              <p className="mt-1 text-[10px] text-[#64748B]">
+                Engineering what&apos;s next
+              </p>
             </motion.div>
+
+
 
           </div>
 
@@ -836,23 +723,7 @@ const Hero = () => {
       </div>
 
 
-      {/* =====================================================
-          BOTTOM FADE
-      ====================================================== */}
 
-      <div
-        className="
-          pointer-events-none
-          absolute
-          bottom-0
-          left-0
-          h-32
-          w-full
-          bg-gradient-to-t
-          from-[#050508]
-          to-transparent
-        "
-      />
 
     </section>
   );
