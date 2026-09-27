@@ -584,7 +584,7 @@ function ServicesSection() {
               "
             >
               From technology and talent to intelligent digital
-              solutions, we help businesses turn complex challenges
+              solutions, we help clients turn complex challenges
               into meaningful opportunities for growth.
             </p>
           </ScrollReveal>

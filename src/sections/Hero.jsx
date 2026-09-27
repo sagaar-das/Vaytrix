@@ -704,7 +704,7 @@ lg:py-8
           text-[#F8FAFC]
         "
                 >
-                  DIGITAL / INNOVATION
+                  DIGITAL INNOVATION
                 </span>
 
               </div>

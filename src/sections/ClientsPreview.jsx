@@ -29,7 +29,7 @@ const logos = [
 ];
 
 function ClientsPreview() {
-  const logoPath = (logo) => `/public/clientLogo/${logo}`;
+  const logoPath = (logo) => `/clientLogo/${logo}`;
 
   return (
     <section className="relative overflow-hidden bg-[#050508] px-4 py-20 sm:px-6 sm:py-24 lg:py-28">
