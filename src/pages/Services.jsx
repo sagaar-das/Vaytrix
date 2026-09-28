@@ -9,12 +9,7 @@ import IT from "../services/IT";
 import BPO from "../services/BPO";
 import AI from "../services/AI";
 
-import bg1 from "../assets/service1.webp";
-import bg2 from "../assets/service2.webp";
-import bg3 from "../assets/service3.webp";
-import bg4 from "../assets/service4.webp";
-import bg5 from "../assets/service5.webp";
-import bg6 from "../assets/service6.webp";
+
 import { Helmet } from "react-helmet-async";
 
 function Services() {
@@ -22,12 +17,12 @@ function Services() {
   const navigate = useNavigate();
 
   const services = [
-    { id: "software", title: "Software Development", image: bg1, component: <Software /> },
-    { id: "it", title: "IT Staffing", image: bg4, component: <IT /> },
-    { id: "app", title: "Application Development", image: bg2, component: <Application /> },
-    { id: "consulting", title: "Management Consulting", image: bg3, component: <Consulting /> },
-    { id: "bpo", title: "BPO / KPO", image: bg5, component: <BPO /> },
-    { id: "ai", title: "IoT / AI Development", image: bg6, component: <AI /> },
+    { id: "software", title: "Software Development", component: <Software /> },
+    { id: "it", title: "IT Staffing",  component: <IT /> },
+    { id: "app", title: "Application Development",  component: <Application /> },
+    { id: "consulting", title: "Management Consulting",  component: <Consulting /> },
+    { id: "bpo", title: "BPO / KPO",  component: <BPO /> },
+    { id: "ai", title: "IoT / AI Development", component: <AI /> },
   ];
 
   const [active, setActive] = useState(0);

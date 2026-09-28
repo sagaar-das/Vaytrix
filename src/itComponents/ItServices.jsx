@@ -1,367 +1,440 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-    Box,
-    FileUser,
-    MessageSquareCode,
-    MonitorCog,
-    SearchCheck,
-    UserStar,
-    ArrowRight,
-    TriangleAlert,
-    Lightbulb,
+  UserStar,
+  Box,
+  FileUser,
+  SearchCheck,
+  MessageSquareCode,
+  MonitorCog,
+  ArrowUpRight,
+  TriangleAlert,
+  Lightbulb,
+  Plus,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import bgImage from "../assets/service2.webp";
 
 function ItServices() {
-
-    const services = [
-        {
-            icon: <UserStar size={28} />,
-            title: "1-on-1 Career Mentorship",
-            short:
-                "Personalized career guidance from experienced industry professionals.",
-            problem:
-                "Navigating your career path alone can be overwhelming. Without expert guidance, it's easy to make costly decisions or miss valuable opportunities.",
-            solution:
-                "Work one-on-one with an experienced mentor who understands your background and creates a personalized roadmap tailored to your career goals.",
-            
-        },
-
-        {
-            icon: <Box size={28} />,
-            title: "Skill Assessment",
-            short:
-                "Evaluate your technical and professional strengths with expert feedback.",
-            problem:
-                "Many candidates apply for jobs without knowing which skills employers actually expect.",
-            solution:
-                "Our comprehensive assessments identify your strengths, weaknesses, and the exact areas you should improve before applying.",
-            
-        },
-
-        {
-            icon: <FileUser size={28} />,
-            title: "Resume & LinkedIn Building",
-            short:
-                "Build ATS-friendly resumes and recruiter-ready LinkedIn profiles.",
-            problem:
-                "Even highly qualified candidates often receive no interview calls because their resumes fail ATS screening.",
-            solution:
-                "We optimize your resume and LinkedIn profile using industry best practices to maximize recruiter visibility.",
-            
-        },
-
-        {
-            icon: <SearchCheck size={28} />,
-            title: "Job Search Support",
-            short:
-                "Smart job application strategy with continuous application tracking.",
-            problem:
-                "Applying randomly wastes time and significantly reduces interview opportunities.",
-            solution:
-                "We develop a targeted application strategy based on your skills, experience, and career objectives.",
-            
-        },
-
-        {
-            icon: <MessageSquareCode size={28} />,
-            title: "Mock Interviews",
-            short:
-                "Practice real interview scenarios with detailed expert feedback.",
-            problem:
-                "Most candidates lose confidence during interviews because they lack practical interview experience.",
-            solution:
-                "Practice technical and HR interviews with experts who provide personalized feedback and improvement strategies.",
-            
-        },
-
-        {
-            icon: <MonitorCog size={28} />,
-            title: "IT Staffing Solutions",
-            short:
-                "Connect with top employers through our trusted hiring network.",
-            problem:
-                "Finding reliable employers and genuine job opportunities can be difficult in today's competitive market.",
-            solution:
-                "Our staffing team connects you with verified hiring partners, direct clients, and exciting technology opportunities.",
-            
-        },
-    ];
-
-    const [selected, setSelected] = useState(null);
-
-    return (
-        <section className="relative py-24 px-6 overflow-hidden">
-
-            {/* Fixed Background */}
-                  <div
-                    className="absolute inset-0 bg-cover bg-center bg-fixed"
-                    style={{
-                      backgroundImage: `url(${bgImage})`,
-                    }}
-                  />
-            
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-black/75 backdrop-blur-[1px]" />
-
-            <div className="relative max-w-7xl mx-auto">
-
-                {/* Header */}
-
-                <div className="text-center max-w-4xl mx-auto mb-20">
-
-                    <div className="inline-flex px-5 py-2 rounded-full border border-yellow-400/30 bg-yellow-400/10">
-
-                        <span className="text-yellow-400 text-xs uppercase tracking-[0.22em] font-semibold">
-
-                            OUR SERVICES
-
-                        </span>
-
-                    </div>
-
-                    <h2 className="mt-7 text-4xl md:text-5xl font-bold text-white">
-
-                        Everything You Need To Build A
-                        <span className="text-yellow-400"> Successful Career</span>
-
-                    </h2>
-
-                    <p className="mt-6 text-gray-400 text-lg leading-8">
-
-                        Explore our complete career consulting services designed to
-                        help you grow faster, prepare smarter, and secure the right
-                        opportunities.
-
-                    </p>
-
-                </div>
-
-                {/* Timeline Layout */}
-
-                <div className="space-y-12">
-
-                    {services.map((service, index) => {
-
-                        const isLeft = index % 2 === 0;
-                        const active = selected === index;
-
-                        return (
-
-                            <div
-                                key={index}
-                                className={`flex flex-col lg:flex-row gap-10 items-center ${!isLeft ? "lg:flex-row-reverse" : ""
-                                    }`}
-                            >
-
-                                {/* Card */}
-
-                                <motion.div
-                                    whileHover={{ y: -5 }}
-                                    onClick={() =>
-                                        setSelected(selected === index ? null : index)
-                                    }
-                                    className={`w-full lg:w-[60%] cursor-pointer group rounded-2xl p-[1px]
-                  transition-all duration-300
-                  ${active
-                                            ? "bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-400"
-                                            : "bg-gradient-to-r from-gray-700 via-transparent to-gray-700"
-                                        }`}
-                                >
-
-                                    <div
-                                        className={`rounded-2xl bg-[#111]/95 p-7 border transition-all duration-300
-                    ${active
-                                                ? "border-yellow-400"
-                                                : "border-gray-800 group-hover:border-yellow-400"
-                                            }`}
-                                    >
-
-                                        <div className="flex items-start gap-5">
-
-                                            <div
-                                                className={`w-14 h-14 rounded-xl flex items-center justify-center border transition
-                        ${active
-                                                        ? "bg-yellow-400 text-black border-yellow-400"
-                                                        : "bg-[#1a1a1a] border-gray-800 text-yellow-400"
-                                                    }`}
-                                            >
-
-                                                {service.icon}
-
-                                            </div>
-
-                                            <div className="flex-1">
-
-                                                <h3
-                                                    className={`text-xl font-semibold transition
-                          ${active
-                                                            ? "text-yellow-400"
-                                                            : "text-white group-hover:text-yellow-400"
-                                                        }`}
-                                                >
-
-                                                    {service.title}
-
-                                                </h3>
-
-                                                <p className="mt-3 text-gray-400 leading-7">
-
-                                                    {service.short}
-
-                                                </p>
-
-                                                <div className="flex items-center gap-2 mt-5 text-yellow-400 text-sm font-medium">
-
-                                                    View Details
-
-                                                    <ArrowRight
-                                                        className={`transition ${active ? "translate-x-2" : ""
-                                                            }`}
-                                                        size={18}
-                                                    />
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                </motion.div>
-
-                                {/* Detail Panel */}
-
-                                <AnimatePresence>
-
-                                    {active && (
-
-                                        <motion.div
-                                            initial={{
-                                                opacity: 0,
-                                                x: isLeft ? 40 : -40,
-                                            }}
-                                            animate={{
-                                                opacity: 1,
-                                                x: 0,
-                                            }}
-                                            exit={{
-                                                opacity: 0,
-                                                x: isLeft ? 40 : -40,
-                                            }}
-                                            transition={{
-                                                duration: 0.35,
-                                            }}
-                                            className=" w-full lg:w-[60%] relative rounded-2xl p-[1px] bg-gradient-to-br from-yellow-400/40 via-transparent to-yellow-400/40"
-                                        >
-
-                                            <div className="relative h-full rounded-2xl bg-[#111]/95 border border-yellow-400 p-8 overflow-hidden">
-
-                                                {/* Glow */}
-
-                                                <div className="absolute -top-10 -right-10 w-40 h-40 bg-yellow-400/10 blur-3xl rounded-full"></div>
-
-                                                <div className="relative z-10">
-
-                                                    
-
-                                                    {/* Problem */}
-
-                                                    <div className="border-l-4 border-red-500 pl-5 mb-8">
-
-                                                        <div className="flex items-center gap-2 mb-3">
-
-                                                            <TriangleAlert
-                                                                className="text-red-500"
-                                                                size={20}
-                                                            />
-
-                                                            <h4 className="text-lg font-semibold text-white">
-
-                                                                The Problem
-
-                                                            </h4>
-
-                                                        </div>
-
-                                                        <p className="text-gray-400 leading-7">
-
-                                                            {service.problem}
-
-                                                        </p>
-
-                                                    </div>
-
-                                                    {/* Solution */}
-
-                                                    <div className="border-l-4 border-yellow-400 pl-5 mb-8">
-
-                                                        <div className="flex items-center gap-2 mb-3">
-
-                                                            <Lightbulb
-                                                                className="text-yellow-400"
-                                                                size={20}
-                                                            />
-
-                                                            <h4 className="text-lg font-semibold text-white">
-
-                                                                Our Solution
-
-                                                            </h4>
-
-                                                        </div>
-
-                                                        <p className="text-gray-400 leading-7">
-
-                                                            {service.solution}
-
-                                                        </p>
-
-                                                    </div>
-
-                                                    
-
-                                                    {/* Button */}
-
-                                                    <Link
-                                                        to="/contact"
-                                                        className="inline-flex items-center gap-2  bg-yellow-400 hover:bg-yellow-300 text-black font-semibold px-3 py-1 rounded-lg transition"
-                                                    >
-
-                                                        Get Started
-
-                                                        <ArrowRight size={12} />
-
-                                                    </Link>
-
-                                                </div>
-
-                                            </div>
-
-                                        </motion.div>
-
-                                    )}
-
-                                </AnimatePresence>
-
-                            </div>
-
-                        );
-
-                    })}
-
-                </div>
-
+  const services = [
+    {
+      number: "01",
+      icon: <UserStar size={22} strokeWidth={1.7} />,
+      title: "Personal Career Mentorship",
+      short:
+        "Receive focused career direction from professionals with practical industry experience.",
+      problem:
+        "Choosing the right career direction without experienced guidance can create uncertainty, slow progress, and lead to missed opportunities.",
+      solution:
+        "Our mentors understand your background and goals, then help you build a practical career roadmap with clear and achievable next steps.",
+    },
+    {
+      number: "02",
+      icon: <Box size={22} strokeWidth={1.7} />,
+      title: "Professional Skill Assessment",
+      short:
+        "Understand your current capabilities and identify the skills required for your target role.",
+      problem:
+        "Many candidates begin their job search without a clear understanding of the technical and professional capabilities expected by employers.",
+      solution:
+        "We assess your existing strengths, identify development areas, and help you focus your preparation on the skills that matter most.",
+    },
+    {
+      number: "03",
+      icon: <FileUser size={22} strokeWidth={1.7} />,
+      title: "Resume & LinkedIn Optimization",
+      short:
+        "Create stronger professional profiles designed for recruiters and modern hiring systems.",
+      problem:
+        "Strong candidates can miss interview opportunities when their resumes and online profiles are not structured effectively for ATS and recruiter searches.",
+      solution:
+        "We refine your resume and LinkedIn presence using practical industry standards to improve clarity, relevance, and professional visibility.",
+    },
+    {
+      number: "04",
+      icon: <SearchCheck size={22} strokeWidth={1.7} />,
+      title: "Strategic Job Search",
+      short:
+        "Follow a focused application strategy instead of applying randomly across unrelated opportunities.",
+      problem:
+        "Submitting applications without a defined strategy can consume valuable time while producing fewer relevant interview opportunities.",
+      solution:
+        "We help create a targeted job-search approach based on your experience, capabilities, preferred roles, and career direction.",
+    },
+    {
+      number: "05",
+      icon: <MessageSquareCode size={22} strokeWidth={1.7} />,
+      title: "Interview Readiness",
+      short:
+        "Prepare through realistic interview practice and detailed feedback from experienced professionals.",
+      problem:
+        "Candidates may have the required skills but struggle to communicate their knowledge confidently in real interview situations.",
+      solution:
+        "Our practice sessions cover technical and HR scenarios while providing actionable feedback to strengthen your confidence and responses.",
+    },
+    {
+      number: "06",
+      icon: <MonitorCog size={22} strokeWidth={1.7} />,
+      title: "Technology Staffing Network",
+      short:
+        "Access relevant technology opportunities through a connected network of hiring organizations.",
+      problem:
+        "Identifying credible employers and suitable technology openings can be challenging in a highly competitive hiring environment.",
+      solution:
+        "Our staffing network helps connect suitable professionals with hiring partners, direct opportunities, and relevant technology positions.",
+    },
+  ];
+
+  const [selected, setSelected] = useState(null);
+
+  return (
+    <section className="relative overflow-hidden bg-[#050508] px-4 py-20 sm:px-6 md:py-24 lg:px-10">
+      {/* BACKGROUND IMAGE */}
+      <div
+        className="pointer-events-none absolute inset-0 bg-cover bg-center bg-fixed opacity-[0.66]"
+        style={{
+          backgroundImage: `url(${bgImage})`,
+        }}
+      />
+
+      {/* DARK OVERLAY */}
+      <div className="pointer-events-none absolute inset-0 bg-[#050508]/30" />
+
+      {/* GRADIENT OVERLAY */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#050508]/65 via-[#050508]/30 to-[#050508]/65" />
+
+      {/* TECHNICAL GRID */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.035]"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(255,255,255,0.7) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.7) 1px, transparent 1px)
+          `,
+          backgroundSize: "48px 48px",
+        }}
+      />
+
+      {/* AMBIENT GLOWS */}
+      <div className="pointer-events-none absolute -left-40 top-40 h-96 w-96 rounded-full bg-[#8B5CF6]/10 blur-[140px]" />
+
+      <div className="pointer-events-none absolute -right-40 bottom-40 h-96 w-96 rounded-full bg-[#06B6D4]/10 blur-[140px]" />
+
+      <div className="relative z-10 mx-auto max-w-7xl">
+        {/* HEADER */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="mx-auto mb-16 max-w-4xl"
+        >
+          <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+            <div>
+              {/* EYEBROW */}
+              <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-2 backdrop-blur-xl">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#8B5CF6] shadow-[0_0_12px_#8B5CF6]" />
+
+                <span className="font-mono text-[9px] uppercase tracking-[0.22em] text-[#94A3B8] sm:text-[10px]">
+                  Career Infrastructure / 02
+                </span>
+              </div>
+
+              <h2 className="max-w-3xl text-3xl font-semibold leading-tight tracking-[-0.035em] text-[#F8FAFC] sm:text-4xl md:text-5xl">
+                A Smarter Path From
+                <span className="block bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] bg-clip-text text-transparent">
+                  Preparation to Opportunity.
+                </span>
+              </h2>
             </div>
 
-        </section>
+            {/* HEADER META */}
+            <div className="hidden shrink-0 md:block">
+              <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#475569]">
+                VAYTRIX / CAREER SYSTEM
+              </p>
 
-    );
+              <p className="mt-2 text-right text-xs text-[#64748B]">
+                06 Service Modules
+              </p>
+            </div>
+          </div>
 
+          <p className="mt-6 max-w-2xl text-sm leading-7 text-[#94A3B8] sm:text-base sm:leading-8">
+            From career planning and skill development to interview preparation
+            and technology staffing, Vaytrix brings the essential pieces of
+            your professional journey into one connected experience.
+          </p>
+        </motion.div>
+
+        {/* SERVICE SYSTEM */}
+        <div className="relative">
+          {/* CENTRAL LINE - DESKTOP */}
+          <div className="pointer-events-none absolute bottom-0 left-1/2 top-0 hidden w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-white/[0.08] to-transparent lg:block" />
+
+          <div className="space-y-4">
+            {services.map((service, index) => {
+              const active = selected === index;
+              const isLeft = index % 2 === 0;
+
+              return (
+                <motion.div
+                  key={service.number}
+                  initial={{
+                    opacity: 0,
+                    y: 30,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  viewport={{
+                    once: true,
+                    amount: 0.15,
+                  }}
+                  transition={{
+                    duration: 0.55,
+                    delay: index * 0.06,
+                  }}
+                  className="relative"
+                >
+                  <div
+                    className={`flex flex-col gap-4 lg:flex-row lg:items-start ${
+                      !isLeft ? "lg:flex-row-reverse" : ""
+                    }`}
+                  >
+                    {/* SERVICE CARD */}
+                    <motion.button
+                      type="button"
+                      onClick={() =>
+                        setSelected(active ? null : index)
+                      }
+                      whileHover={{
+                        y: -3,
+                      }}
+                      className={`group relative w-full overflow-hidden rounded-2xl border text-left transition-all duration-500 lg:w-[47%] ${
+                        active
+                          ? "border-[#8B5CF6]/50 bg-[#0D0D16]/95 shadow-[0_20px_60px_rgba(139,92,246,0.10)]"
+                          : "border-white/[0.07] bg-[#0A0A0F]/75 hover:border-white/[0.15] hover:bg-[#0D0D14]/90"
+                      }`}
+                    >
+                      {/* HOVER GRADIENT */}
+                      <div
+                        className={`pointer-events-none absolute inset-0 bg-gradient-to-br from-[#8B5CF6]/[0.07] via-transparent to-[#06B6D4]/[0.05] transition-opacity duration-500 ${
+                          active
+                            ? "opacity-100"
+                            : "opacity-0 group-hover:opacity-100"
+                        }`}
+                      />
+
+                      <div className="relative p-5 sm:p-6">
+                        {/* TOP ROW */}
+                        <div className="flex items-center justify-between">
+                          <span className="font-mono text-[10px] tracking-[0.2em] text-[#475569]">
+                            MODULE {service.number}
+                          </span>
+
+                          <div
+                            className={`flex h-9 w-9 items-center justify-center rounded-xl border transition-all duration-300 ${
+                              active
+                                ? "border-[#8B5CF6]/40 bg-gradient-to-br from-[#8B5CF6]/20 to-[#06B6D4]/10 text-[#F8FAFC]"
+                                : "border-white/[0.08] bg-white/[0.03] text-[#8B5CF6] group-hover:border-[#8B5CF6]/30"
+                            }`}
+                          >
+                            {service.icon}
+                          </div>
+                        </div>
+
+                        {/* TITLE */}
+                        <div className="mt-7">
+                          <h3
+                            className={`text-lg font-semibold tracking-tight transition-colors duration-300 sm:text-xl ${
+                              active
+                                ? "text-[#F8FAFC]"
+                                : "text-[#E2E8F0] group-hover:text-white"
+                            }`}
+                          >
+                            {service.title}
+                          </h3>
+
+                          <p className="mt-2 max-w-lg text-xs leading-6 text-[#64748B] sm:text-sm">
+                            {service.short}
+                          </p>
+                        </div>
+
+                        {/* BOTTOM */}
+                        <div className="mt-6 flex items-center justify-between border-t border-white/[0.06] pt-4">
+                          <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-[#475569]">
+                            {active
+                              ? "Module Expanded"
+                              : "Explore Module"}
+                          </span>
+
+                          <div
+                            className={`flex h-8 w-8 items-center justify-center rounded-full border transition-all duration-300 ${
+                              active
+                                ? "rotate-45 border-[#8B5CF6]/40 bg-[#8B5CF6]/10"
+                                : "border-white/[0.08] group-hover:border-[#06B6D4]/30"
+                            }`}
+                          >
+                            <Plus
+                              size={15}
+                              className={`transition-colors ${
+                                active
+                                  ? "text-[#A855F7]"
+                                  : "text-[#64748B] group-hover:text-[#06B6D4]"
+                              }`}
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* ACTIVE EDGE */}
+                      {active && (
+                        <motion.div
+                          layoutId="activeService"
+                          className="absolute bottom-0 left-0 h-[2px] w-full bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4]"
+                        />
+                      )}
+                    </motion.button>
+
+                    {/* DESKTOP CONNECTOR */}
+                    <div className="pointer-events-none absolute left-1/2 top-10 hidden -translate-x-1/2 lg:block">
+                      <motion.div
+                        animate={{
+                          scale: active ? 1.25 : 1,
+                        }}
+                        className={`h-2.5 w-2.5 rounded-full border transition-all duration-300 ${
+                          active
+                            ? "border-[#8B5CF6] bg-[#8B5CF6] shadow-[0_0_18px_rgba(139,92,246,0.8)]"
+                            : "border-white/[0.15] bg-[#11111A]"
+                        }`}
+                      />
+                    </div>
+
+                    {/* DETAIL PANEL */}
+                    <AnimatePresence mode="wait">
+                      {active && (
+                        <motion.div
+                          initial={{
+                            opacity: 0,
+                            x: isLeft ? 30 : -30,
+                          }}
+                          animate={{
+                            opacity: 1,
+                            x: 0,
+                          }}
+                          exit={{
+                            opacity: 0,
+                            x: isLeft ? 30 : -30,
+                          }}
+                          transition={{
+                            duration: 0.4,
+                            ease: "easeOut",
+                          }}
+                          className={`w-full lg:w-[47%] ${
+                            !isLeft ? "lg:mr-auto" : "lg:ml-auto"
+                          }`}
+                        >
+                          <div className="relative h-full overflow-hidden rounded-2xl border border-[#8B5CF6]/25 bg-[#0A0A0F]/90 p-5 backdrop-blur-xl sm:p-6">
+                            {/* PANEL GLOW */}
+                            <div className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full bg-[#8B5CF6]/10 blur-[70px]" />
+
+                            <div className="relative z-10">
+                              {/* PANEL HEADER */}
+                              <div className="mb-6 flex items-center justify-between">
+                                <div>
+                                  <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#8B5CF6]">
+                                    Service Intelligence
+                                  </p>
+
+                                  <p className="mt-1 font-mono text-[9px] text-[#475569]">
+                                    MODULE_{service.number}
+                                  </p>
+                                </div>
+
+                                <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-[#06B6D4]/20 bg-[#06B6D4]/10">
+                                  <ArrowUpRight
+                                    size={15}
+                                    className="text-[#06B6D4]"
+                                  />
+                                </div>
+                              </div>
+
+                              {/* CHALLENGE */}
+                              <div className="rounded-xl border border-red-400/10 bg-red-400/[0.025] p-4">
+                                <div className="mb-3 flex items-center gap-2">
+                                  <TriangleAlert
+                                    size={16}
+                                    strokeWidth={1.7}
+                                    className="text-red-400"
+                                  />
+
+                                  <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-red-300/80">
+                                    Challenge
+                                  </span>
+                                </div>
+
+                                <p className="text-xs leading-6 text-[#94A3B8] sm:text-sm">
+                                  {service.problem}
+                                </p>
+                              </div>
+
+                              {/* SOLUTION */}
+                              <div className="mt-4 rounded-xl border border-[#8B5CF6]/15 bg-[#8B5CF6]/[0.035] p-4">
+                                <div className="mb-3 flex items-center gap-2">
+                                  <Lightbulb
+                                    size={16}
+                                    strokeWidth={1.7}
+                                    className="text-[#A855F7]"
+                                  />
+
+                                  <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-[#A855F7]">
+                                    Vaytrix Approach
+                                  </span>
+                                </div>
+
+                                <p className="text-xs leading-6 text-[#94A3B8] sm:text-sm">
+                                  {service.solution}
+                                </p>
+                              </div>
+
+                              {/* CTA */}
+                              <Link
+                                to="/contact"
+                                className="mt-5 inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] px-4 py-2.5 text-xs font-semibold text-white shadow-[0_8px_25px_rgba(139,92,246,0.2)] transition-all duration-300 hover:brightness-110"
+                              >
+                                Start a Conversation
+                                <ArrowUpRight size={14} />
+                              </Link>
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* FOOTER */}
+        <div className="mt-14 flex items-center gap-4">
+          <span className="font-mono text-[9px] uppercase tracking-[0.22em] text-[#475569]">
+            VAYTRIX / CAREER SERVICES
+          </span>
+
+          <div className="h-px flex-1 bg-gradient-to-r from-white/[0.08] to-transparent" />
+
+          <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-[#475569]">
+            06 Modules
+          </span>
+        </div>
+      </div>
+    </section>
+  );
 }
 
 export default ItServices;

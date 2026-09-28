@@ -5,6 +5,8 @@ import {
   Users,
   UserCheck,
   ArrowRight,
+  CheckCircle2,
+  ArrowUpRight,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -13,9 +15,9 @@ function HiringModels() {
 
   const models = [
     {
-      icon: <Users className="w-7 h-7" />,
+      icon: <Users className="h-6 w-6" />,
       title: "Contract Staffing",
-      desc: "Quickly scale your workforce with highly skilled professionals for short or long-term projects.",
+      desc: "Scale your workforce with skilled professionals for short-term assignments, long-term projects, or changing business requirements.",
       points: [
         "Fast deployment",
         "Flexible contracts",
@@ -23,9 +25,9 @@ function HiringModels() {
       ],
     },
     {
-      icon: <UserCheck className="w-7 h-7" />,
+      icon: <UserCheck className="h-6 w-6" />,
       title: "Contract-to-Hire",
-      desc: "Evaluate candidates on the job before making a permanent hiring decision.",
+      desc: "Evaluate a professional through real project experience before making a long-term employment decision.",
       points: [
         "Trial before hiring",
         "Reduced turnover",
@@ -34,9 +36,9 @@ function HiringModels() {
       featured: true,
     },
     {
-      icon: <BriefcaseBusiness className="w-7 h-7" />,
+      icon: <BriefcaseBusiness className="h-6 w-6" />,
       title: "Direct Placement",
-      desc: "Hire experienced professionals directly into your organization for long-term success.",
+      desc: "Bring experienced professionals directly into your organization for permanent roles and long-term business growth.",
       points: [
         "Permanent employees",
         "Leadership hiring",
@@ -46,59 +48,66 @@ function HiringModels() {
   ];
 
   return (
-    <section className="relative bg-[#181818] py-24 px-6 overflow-hidden">
+    <section className="relative overflow-hidden bg-[#050508] px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
 
-      {/* Glow */}
-      <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-yellow-400/5 blur-[160px] rounded-full pointer-events-none" />
+      {/* Technical Grid */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.035]"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)
+          `,
+          backgroundSize: "48px 48px",
+        }}
+      />
 
-      <div className="max-w-7xl mx-auto">
+      {/* Ambient Glows */}
+      <div className="pointer-events-none absolute -right-40 top-20 h-[500px] w-[500px] rounded-full bg-[#8B5CF6]/10 blur-[160px]" />
 
-        {/* Heading */}
+      <div className="pointer-events-none absolute -left-40 bottom-0 h-[450px] w-[450px] rounded-full bg-[#06B6D4]/10 blur-[150px]" />
 
-        <div className="text-center max-w-3xl mx-auto">
+      <div className="relative mx-auto max-w-7xl">
+
+        {/* Header */}
+        <div className="mx-auto max-w-3xl text-center">
 
           <ScrollReveal>
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-2 backdrop-blur-xl">
 
-            <div className="inline-flex px-5 py-2 rounded-full border border-yellow-400/30 bg-yellow-400/10">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#8B5CF6] shadow-[0_0_12px_rgba(139,92,246,0.8)]" />
 
-              <span className="text-yellow-400 uppercase tracking-[0.2em] text-xs md:text-sm font-semibold">
-
-                Hiring Models
-
+              <span className="font-mono text-[10px] font-medium uppercase tracking-[0.2em] text-[#94A3B8] sm:text-xs">
+                Hiring Architecture / 02
               </span>
 
             </div>
-
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
+            <h2 className="text-3xl font-semibold leading-tight tracking-[-0.03em] text-[#F8FAFC] sm:text-4xl md:text-5xl">
 
-            <h2 className="mt-7 text-3xl md:text-5xl font-bold text-white">
+              Flexible Hiring Models for
 
-              Flexible Hiring
-              <span className="text-yellow-400"> Solutions</span>
+              <span className="block bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] bg-clip-text text-transparent">
+                Every Business Need.
+              </span>
 
             </h2>
-
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-
-            <p className="mt-5 text-gray-400 text-base md:text-lg leading-7">
-
-              Whether you're hiring one engineer or building an entire
-              technology team, we offer recruitment models that fit
-              your business needs.
-
+            <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-[#94A3B8] sm:text-base sm:leading-8">
+              Whether you need one technology professional or are building an
+              entire team, choose an engagement model that aligns with your
+              workforce strategy and business requirements.
             </p>
-
           </ScrollReveal>
 
         </div>
 
-        {/* Cards */}
-
-        <div className="grid lg:grid-cols-3 gap-8 mt-16">
+        {/* Models */}
+        <div className="mt-12 grid gap-5 sm:mt-14 lg:grid-cols-3 lg:gap-6">
 
           {models.map((item, index) => (
 
@@ -108,72 +117,69 @@ function HiringModels() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{
-                duration: .5,
-                delay: index * .08,
+                duration: 0.5,
+                delay: index * 0.08,
               }}
               whileHover={{
                 y: -8,
               }}
-              className={`group relative rounded-3xl p-[1px]
-              ${
+              className={`group relative rounded-2xl p-[1px] ${
                 item.featured
-                  ? "bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-400"
-                  : "bg-gradient-to-br from-yellow-400/30 via-transparent to-yellow-400/30"
+                  ? "bg-gradient-to-br from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4]"
+                  : "bg-gradient-to-br from-[#8B5CF6]/30 via-transparent to-[#06B6D4]/25"
               }`}
             >
 
               <div
-                className={`relative rounded-3xl h-full p-8 border transition duration-300
-                ${
+                className={`relative h-full overflow-hidden rounded-2xl border p-6 backdrop-blur-xl transition-all duration-300 sm:p-7 lg:p-8 ${
                   item.featured
-                    ? "bg-[#111] border-yellow-400"
-                    : "bg-[#111] border-gray-800 group-hover:border-yellow-400"
+                    ? "border-[#8B5CF6]/40 bg-[rgba(10,10,15,0.92)] shadow-[0_25px_80px_rgba(139,92,246,0.12)]"
+                    : "border-white/[0.08] bg-[rgba(10,10,15,0.78)] group-hover:border-[#8B5CF6]/40 group-hover:shadow-[0_25px_70px_rgba(139,92,246,0.08)]"
                 }`}
               >
 
-                {/* Glow */}
+                {/* Hover Glows */}
+                <div className="pointer-events-none absolute -left-16 -top-16 h-40 w-40 rounded-full bg-[#8B5CF6]/10 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
 
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500">
+                <div className="pointer-events-none absolute -bottom-16 -right-16 h-40 w-40 rounded-full bg-[#06B6D4]/10 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
 
-                  <div className="absolute -top-12 -left-12 w-40 h-40 bg-yellow-400/10 blur-3xl rounded-full" />
+                <div className="relative z-10 flex h-full flex-col">
 
-                  <div className="absolute bottom-0 right-0 w-40 h-40 bg-yellow-400/10 blur-3xl rounded-full" />
+                  {/* Card Top */}
+                  <div className="flex items-center justify-between">
 
-                </div>
+                    <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-[#475569]">
+                      Model / {String(index + 1).padStart(2, "0")}
+                    </span>
 
-                <div className="relative z-10">
-
-                  {/* Icon */}
-
-                  <div className="w-14 h-14 rounded-xl bg-[#1b1b1b] border border-gray-800 flex items-center justify-center text-yellow-400">
-
-                    {item.icon}
+                    {item.featured && (
+                      <span className="rounded-full border border-[#8B5CF6]/30 bg-[#8B5CF6]/10 px-3 py-1 font-mono text-[8px] font-semibold uppercase tracking-[0.15em] text-[#C4B5FD]">
+                        Featured
+                      </span>
+                    )}
 
                   </div>
 
+                  {/* Icon */}
+                  <div className="mt-7 flex h-12 w-12 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.03] text-[#A78BFA] transition-all duration-300 group-hover:border-[#8B5CF6]/40 group-hover:bg-[#8B5CF6]/10 group-hover:text-[#C4B5FD]">
+                    {item.icon}
+                  </div>
+
                   {/* Title */}
-
-                  <h3 className="mt-6 text-2xl font-bold text-white group-hover:text-yellow-400 transition">
-
+                  <h3 className="mt-6 text-xl font-semibold tracking-[-0.02em] text-[#F8FAFC] transition-colors duration-300 group-hover:text-white sm:text-2xl">
                     {item.title}
-
                   </h3>
 
                   {/* Divider */}
-
-                  <div className="mt-4 w-12 h-[2px] bg-yellow-400 group-hover:w-20 transition-all duration-300"></div>
+                  <div className="mt-4 h-px w-10 bg-gradient-to-r from-[#8B5CF6] to-[#06B6D4] transition-all duration-300 group-hover:w-20" />
 
                   {/* Description */}
-
-                  <p className="mt-5 text-gray-400 leading-7">
-
+                  <p className="mt-5 text-sm leading-7 text-[#64748B] transition-colors duration-300 group-hover:text-[#94A3B8]">
                     {item.desc}
-
                   </p>
 
-                  {/* Bullet Points */}
-
-                  <div className="mt-8 space-y-4">
+                  {/* Points */}
+                  <div className="mt-7 space-y-3">
 
                     {item.points.map((point, i) => (
 
@@ -181,39 +187,50 @@ function HiringModels() {
                         key={i}
                         className="flex items-center gap-3"
                       >
+                        <CheckCircle2
+                          className="h-4 w-4 shrink-0 text-[#8B5CF6]"
+                          strokeWidth={1.8}
+                        />
 
-                        <div className="w-2 h-2 rounded-full bg-yellow-400"></div>
-
-                        <span className="text-gray-300">
-
+                        <span className="text-sm text-[#CBD5E1]">
                           {point}
-
                         </span>
-
                       </div>
 
                     ))}
 
                   </div>
 
-                  {/* Button */}
-
+                  {/* CTA */}
                   <motion.button
                     whileHover={{ x: 4 }}
                     onClick={() => navigate("/contact")}
-                    className="mt-10 flex items-center gap-2 text-yellow-400 font-medium"
+                    className="group/btn mt-9 flex items-center gap-2 font-mono text-[10px] font-medium uppercase tracking-[0.16em] text-[#A78BFA] transition-colors hover:text-[#C4B5FD]"
                   >
+                    Explore Hiring Model
 
-                    Get Started
-
-                    <ArrowRight className="w-5 h-5" />
-
+                    <ArrowRight
+                      className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1"
+                      strokeWidth={1.8}
+                    />
                   </motion.button>
 
+                  {/* Bottom Technical Detail */}
+                  <div className="mt-7 flex items-center justify-between border-t border-white/[0.06] pt-4">
+
+                    <span className="font-mono text-[8px] uppercase tracking-[0.16em] text-[#475569]">
+                      VAYTRIX / TALENT
+                    </span>
+
+                    <ArrowUpRight
+                      className="h-3.5 w-3.5 text-[#475569] transition-colors group-hover:text-[#8B5CF6]"
+                      strokeWidth={1.7}
+                    />
+
+                  </div>
+
                 </div>
-
               </div>
-
             </motion.div>
 
           ))}
@@ -221,7 +238,6 @@ function HiringModels() {
         </div>
 
       </div>
-
     </section>
   );
 }

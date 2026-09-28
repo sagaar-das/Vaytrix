@@ -38,24 +38,25 @@ function Navbar() {
 
   const serviceLinks = [
     {
-      name: "Technology Solutions",
-      id: "technology",
+      name: "IT Staffing",
+      id: "it",
+    },
+    {
+      name: "Application Development",
+      id: "app",
     },
     {
       name: "Software Development",
       id: "software",
     },
     {
-      name: "Digital Solutions",
-      id: "digital",
-    },
-    {
-      name: "IT Consulting",
+      name: "Management Consulting",
       id: "consulting",
     },
+    
     {
-      name: "Business Solutions",
-      id: "business",
+      name: "BPO / KPO",
+      id: "bpo",
     },
     {
       name: "AI & Automation",

@@ -131,9 +131,9 @@ function App() {
 
         <AnimatedRoutes />
 
-        {/* <Suspense fallback={null}>
+        <Suspense fallback={null}>
           <WhatsAppButton />
-        </Suspense> */}
+        </Suspense>
 
       </BrowserRouter>
 
