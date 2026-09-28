@@ -1,326 +1,524 @@
 import { motion } from "framer-motion";
+import { ArrowUpRight, Orbit, Radar, Sparkles } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 function TechTrendsSection() {
   const navigate = useNavigate();
 
-  const leftItems = [
-    "Data Centers Evolving Into Critical Infrastructure",
-    "The Rise of Robotic Automation",
-    "AI-Powered Cybersecurity",
+  const trends = [
+    {
+      number: "01",
+      category: "INFRASTRUCTURE",
+      title: "Data Centers Evolving Into Critical Infrastructure",
+      short: "Infrastructure",
+    },
+    {
+      number: "02",
+      category: "AUTOMATION",
+      title: "The Rise of Robotic Automation",
+      short: "Automation",
+    },
+    {
+      number: "03",
+      category: "SECURITY",
+      title: "AI-Powered Cybersecurity",
+      short: "Cybersecurity",
+    },
+    {
+      number: "04",
+      category: "PHYSICAL AI",
+      title: "The Emergence of Physical AI",
+      short: "Physical AI",
+    },
+    {
+      number: "05",
+      category: "WORKPLACE AI",
+      title: "Agentic AI Transforming the Workplace",
+      short: "Agentic AI",
+    },
   ];
-
-  const rightItems = [
-    "The Emergence of Physical AI",
-    "Agentic AI Transforming the Workplace",
-  ];
-
-  const allItems = [...leftItems, ...rightItems];
 
   return (
-    <section className="relative overflow-hidden bg-[#050508] py-16 sm:py-20 lg:py-24">
+    <section className="relative overflow-hidden bg-[#050508] py-20 sm:py-24 lg:py-32">
 
       {/* =========================================================
-          BACKGROUND GRID
+          AMBIENT BACKGROUND
       ========================================================== */}
-      <div
-        className="
-          pointer-events-none
-          absolute
-          inset-0
-          opacity-[0.035]
-        "
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)
-          `,
-          backgroundSize: "48px 48px",
-        }}
-      />
 
-      {/* =========================================================
-          AMBIENT GLOWS
-      ========================================================== */}
-      <div className="pointer-events-none absolute -left-32 top-20 h-72 w-72 rounded-full bg-[#8B5CF6]/10 blur-[120px]" />
+      <div className="pointer-events-none absolute inset-0">
 
-      <div className="pointer-events-none absolute -right-32 bottom-0 h-80 w-80 rounded-full bg-[#06B6D4]/10 blur-[130px]" />
+        <div className="absolute left-[-180px] top-[-120px] h-[420px] w-[420px] rounded-full bg-[#8B5CF6]/10 blur-[150px]" />
 
-      {/* =========================================================
-          BACKGROUND YEAR
-      ========================================================== */}
-      <div
-        className="
-          pointer-events-none
-          absolute
-          right-2
-          bottom-[-20px]
-          select-none
-          text-[100px]
-          font-black
-          leading-none
-          tracking-[-0.08em]
-          text-white/[0.025]
-          sm:right-6
-          sm:text-[150px]
-          lg:text-[190px]
-        "
-      >
-        2026
+        <div className="absolute bottom-[-180px] right-[-120px] h-[420px] w-[420px] rounded-full bg-[#06B6D4]/10 blur-[160px]" />
+
+        <div
+          className="absolute inset-0 opacity-[0.025]"
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)
+            `,
+            backgroundSize: "64px 64px",
+          }}
+        />
+
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
 
         {/* =========================================================
-            HEADER
+            TOP HEADER
         ========================================================== */}
-        <div className="flex flex-col gap-5 border-b border-white/[0.08] pb-7 md:flex-row md:items-end md:justify-between">
 
-          <div className="max-w-3xl">
+        <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
 
-            {/* TECHNICAL LABEL */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4 }}
-              className="mb-3 flex items-center gap-3"
-            >
-              <span className="h-px w-8 bg-gradient-to-r from-[#8B5CF6] to-[#06B6D4]" />
-
-              <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-[#64748B]">
-                Technology Outlook / 2026
-              </span>
-            </motion.div>
-
-            {/* HEADING */}
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="
-                max-w-2xl
-                text-2xl
-                font-semibold
-                leading-tight
-                tracking-[-0.03em]
-                text-[#F8FAFC]
-                sm:text-3xl
-                lg:text-4xl
-              "
-            >
-              Technology Trends Defining{" "}
-              <span className="bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] bg-clip-text text-transparent">
-                2026
-              </span>
-            </motion.h2>
-
-            <motion.p
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1, duration: 0.4 }}
-              className="mt-3 max-w-xl text-sm leading-6 text-[#94A3B8]"
-            >
-              Discover the emerging technologies transforming businesses,
-              accelerating digital innovation, and reshaping the future of work.
-            </motion.p>
-          </div>
-
-          {/* =========================================================
-              EXPLORE BUTTON
-          ========================================================== */}
-          <motion.button
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
+          {/* LEFT — BIG YEAR */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 0.4 }}
-            onClick={() => navigate("/technology-trends")}
-            className="
-              group
-              inline-flex
-              w-fit
-              items-center
-              gap-2
-              rounded-full
-              border
-              border-white/[0.10]
-              bg-white/[0.03]
-              px-5
-              py-2.5
-              text-xs
-              font-semibold
-              text-[#F8FAFC]
-              backdrop-blur-md
-              transition-all
-              duration-300
-              hover:border-[#8B5CF6]/50
-              hover:bg-[#8B5CF6]/10
-              hover:shadow-[0_0_25px_rgba(139,92,246,0.15)]
-            "
+            transition={{ duration: 0.7 }}
+            className="relative"
           >
-            Discover the Latest Trends
 
-            <span className="text-[#8B5CF6] transition-transform duration-300 group-hover:translate-x-1">
-              →
-            </span>
-          </motion.button>
-        </div>
-
-        {/* =========================================================
-            TREND GRID
-        ========================================================== */}
-        <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-
-          {allItems.map((item, i) => (
-            <motion.div
-              key={item}
-              initial={{
-                opacity: 0,
-                y: 18,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{ once: true }}
-              transition={{
-                delay: i * 0.08,
-                duration: 0.45,
-              }}
-              className="
-                group
-                relative
-                overflow-hidden
-                rounded-2xl
-                border
-                border-white/[0.08]
-                bg-[rgba(10,10,15,0.72)]
-                p-5
-                backdrop-blur-xl
-                transition-all
-                duration-300
-                hover:-translate-y-1
-                hover:border-[#8B5CF6]/45
-                hover:bg-[rgba(13,13,22,0.85)]
-                hover:shadow-[0_12px_40px_rgba(139,92,246,0.10)]
-              "
-            >
-              {/* CARD HOVER GLOW */}
-              <div
-                className="
-                  pointer-events-none
-                  absolute
-                  -right-8
-                  -top-8
-                  h-20
-                  w-20
-                  rounded-full
-                  bg-[#06B6D4]/10
-                  blur-2xl
-                  opacity-0
-                  transition-opacity
-                  duration-300
-                  group-hover:opacity-100
-                "
-              />
-
-              {/* NUMBER */}
-              <div className="relative mb-5 flex items-center justify-between">
-
-                <span className="font-mono text-[10px] font-semibold tracking-[0.18em] text-[#64748B]">
-                  0{i + 1}
-                </span>
-
-                <span className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-[#8B5CF6] to-[#06B6D4] opacity-70 transition-all duration-300 group-hover:scale-150 group-hover:opacity-100" />
+            <div className="mb-6 flex items-center gap-3">
+              <div className="flex h-9 w-9 items-center justify-center rounded-full border border-[#8B5CF6]/30 bg-[#8B5CF6]/10">
+                <Radar
+                  size={16}
+                  className="text-[#A855F7]"
+                />
               </div>
 
-              {/* VERTICAL ACCENT */}
+              <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-[#64748B]">
+                Technology Radar
+              </span>
+            </div>
+
+            <div className="relative">
+
               <div
                 className="
                   absolute
-                  left-0
-                  top-16
-                  h-7
-                  w-[2px]
-                  bg-gradient-to-b
-                  from-[#8B5CF6]
-                  to-[#06B6D4]
-                  transition-all
-                  duration-300
-                  group-hover:h-10
-                "
-              />
-
-              {/* CONTENT */}
-              <p
-                className="
-                  relative
-                  pr-2
-                  text-sm
-                  font-medium
-                  leading-6
-                  text-[#94A3B8]
-                  transition-colors
-                  duration-300
-                  group-hover:text-[#F8FAFC]
+                  -right-10
+                  -top-8
+                  select-none
+                  text-[150px]
+                  font-black
+                  leading-none
+                  tracking-[-0.10em]
+                  text-white/[0.045]
+                  sm:text-[190px]
+                  lg:text-[230px]
                 "
               >
-                {item}
-              </p>
+                2026
+              </div>
 
-              {/* BOTTOM LINE */}
-              <div
+              <h2
                 className="
-                  mt-6
-                  h-px
-                  w-0
-                  bg-gradient-to-r
-                  from-[#8B5CF6]
-                  via-[#3B82F6]
-                  to-[#06B6D4]
-                  transition-all
-                  duration-500
-                  group-hover:w-full
+                  relative
+                  max-w-xl
+                  text-4xl
+                  font-semibold
+                  leading-[1.05]
+                  tracking-[-0.045em]
+                  text-[#F8FAFC]
+                  sm:text-5xl
+                  lg:text-6xl
+                "
+              >
+                The technology
+                <br />
+
+                <span className="bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] bg-clip-text text-transparent">
+                  landscape is shifting.
+                </span>
+              </h2>
+
+            </div>
+
+          </motion.div>
+
+
+          {/* RIGHT — INTRO */}
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.15, duration: 0.6 }}
+            className="flex flex-col items-start lg:items-end"
+          >
+
+            <p className="max-w-xl text-base leading-7 text-[#94A3B8] lg:text-right">
+              Discover the technologies influencing how businesses operate,
+              automate, secure their environments, and prepare for the next
+              generation of digital growth.
+            </p>
+
+            <button
+              onClick={() => navigate("/technology-trends")}
+              className="
+                group
+                mt-7
+                inline-flex
+                items-center
+                gap-3
+                border-b
+                border-white/20
+                pb-2
+                text-sm
+                font-medium
+                text-[#F8FAFC]
+                transition-all
+                duration-300
+                hover:border-[#06B6D4]
+              "
+            >
+              Explore technology trends
+
+              <ArrowUpRight
+                size={16}
+                className="
+                  text-[#06B6D4]
+                  transition-transform
+                  duration-300
+                  group-hover:translate-x-1
+                  group-hover:-translate-y-1
                 "
               />
-            </motion.div>
-          ))}
+            </button>
+
+          </motion.div>
 
         </div>
 
+
         {/* =========================================================
-            BOTTOM TECHNICAL BAR
+            DIVIDER
         ========================================================== */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5, duration: 0.5 }}
-          className="
-            mt-8
-            flex
-            flex-wrap
+
+        <div className="mt-14 h-px w-full bg-white/[0.08] sm:mt-20" />
+
+
+        {/* =========================================================
+    COMPACT TECHNOLOGY RADAR
+========================================================== */}
+
+        <div className="mt-6">
+
+          {/* HEADER */}
+          <div className="mb-2 hidden grid-cols-[60px_130px_1fr_30px] px-3 md:grid">
+            <span className="font-mono text-[8px] uppercase tracking-[0.18em] text-[#475569]">
+              No.
+            </span>
+
+            <span className="font-mono text-[8px] uppercase tracking-[0.18em] text-[#475569]">
+              Domain
+            </span>
+
+            <span className="font-mono text-[8px] uppercase tracking-[0.18em] text-[#475569]">
+              Emerging Signal
+            </span>
+
+            <span />
+          </div>
+
+
+          {/* TREND ROWS */}
+
+          <div>
+            {trends.map((trend, index) => (
+
+              <motion.div
+                key={trend.number}
+                initial={{
+                  opacity: 0,
+                  y: 15,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                viewport={{ once: true }}
+                transition={{
+                  delay: index * 0.06,
+                  duration: 0.4,
+                }}
+                className="
+          group
+          relative
+          border-t
+          border-white/[0.07]
+          transition-all
+          duration-300
+          hover:bg-white/[0.02]
+        "
+              >
+
+                {/* LEFT HOVER LINE */}
+                <div
+                  className="
+            absolute
+            left-0
+            top-0
+            h-full
+            w-[2px]
+            origin-top
+            scale-y-0
+            bg-gradient-to-b
+            from-[#8B5CF6]
+            to-[#06B6D4]
+            transition-transform
+            duration-300
+            group-hover:scale-y-100
+          "
+                />
+
+                <div
+                  className="
+            grid
+            min-h-[82px]
             items-center
-            justify-between
             gap-3
-            border-t
-            border-white/[0.08]
-            pt-5
+            px-3
+            py-4
+            md:grid-cols-[60px_130px_1fr_30px]
+            md:gap-4
+            md:py-4
+            lg:min-h-[88px]
+            lg:px-4
+          "
+                >
+
+                  {/* NUMBER */}
+
+                  <div className="flex items-center gap-2">
+
+                    <span
+                      className="
+                font-mono
+                text-[10px]
+                font-medium
+                tracking-[0.12em]
+                text-[#64748B]
+                transition-colors
+                duration-300
+                group-hover:text-[#A855F7]
+              "
+                    >
+                      {trend.number}
+                    </span>
+
+                    <span className="h-px w-3 bg-white/10 transition-all duration-300 group-hover:w-5 group-hover:bg-[#8B5CF6]/60" />
+
+                  </div>
+
+
+                  {/* CATEGORY */}
+
+                  <div>
+                    <span
+                      className="
+                inline-flex
+                rounded-full
+                border
+                border-white/[0.07]
+                px-2.5
+                py-1
+                font-mono
+                text-[8px]
+                font-semibold
+                uppercase
+                tracking-[0.12em]
+                text-[#64748B]
+                transition-all
+                duration-300
+                group-hover:border-[#8B5CF6]/30
+                group-hover:text-[#A855F7]
+              "
+                    >
+                      {trend.category}
+                    </span>
+                  </div>
+
+
+                  {/* TITLE */}
+
+                  <div>
+
+                    <h3
+                      className="
+                max-w-2xl
+                text-base
+                font-medium
+                leading-5
+                tracking-[-0.015em]
+                text-[#CBD5E1]
+                transition-all
+                duration-300
+                group-hover:translate-x-1
+                group-hover:text-[#F8FAFC]
+                sm:text-[17px]
+                lg:text-lg
+              "
+                    >
+                      {trend.title}
+                    </h3>
+
+                    {/* MOBILE LABEL */}
+
+                    <div className="mt-1.5 flex items-center gap-1.5 md:hidden">
+
+                      <span className="h-1 w-1 rounded-full bg-[#06B6D4]" />
+
+                      <span className="font-mono text-[8px] uppercase tracking-[0.12em] text-[#475569]">
+                        {trend.short}
+                      </span>
+
+                    </div>
+
+                  </div>
+
+
+                  {/* ARROW */}
+
+                  <div className="hidden md:flex">
+
+                    <ArrowUpRight
+                      size={15}
+                      className="
+                text-[#475569]
+                transition-all
+                duration-300
+                group-hover:-translate-y-0.5
+                group-hover:translate-x-0.5
+                group-hover:text-[#06B6D4]
+              "
+                    />
+
+                  </div>
+
+                </div>
+
+
+                {/* HOVER UNDERLINE */}
+
+                <div
+                  className="
+            absolute
+            bottom-0
+            left-0
+            h-px
+            w-0
+            bg-gradient-to-r
+            from-[#8B5CF6]
+            via-[#3B82F6]
+            to-[#06B6D4]
+            transition-all
+            duration-500
+            group-hover:w-full
+          "
+                />
+
+              </motion.div>
+
+            ))}
+          </div>
+
+        </div>
+
+
+        {/* =========================================================
+            BOTTOM FEATURE AREA
+        ========================================================== */}
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          className="
+            mt-10
+            grid
+            gap-4
+            sm:grid-cols-3
           "
         >
-          <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#64748B]">
-            Emerging Technology Landscape
-          </span>
 
-          <div className="flex items-center gap-2">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#06B6D4] shadow-[0_0_10px_rgba(6,182,212,0.8)]" />
+          {/* SIGNAL */}
 
-            <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-[#64748B]">
-              Tracking / 2026
-            </span>
+          <div className="flex items-center gap-4 border border-white/[0.07] bg-white/[0.02] px-5 py-4">
+
+            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#8B5CF6]/10">
+              <Orbit
+                size={16}
+                className="text-[#A855F7]"
+              />
+            </div>
+
+            <div>
+              <p className="font-mono text-[9px] uppercase tracking-[0.15em] text-[#475569]">
+                Signal
+              </p>
+
+              <p className="mt-1 text-xs font-medium text-[#CBD5E1]">
+                Emerging Technologies
+              </p>
+            </div>
+
           </div>
+
+
+          {/* YEAR */}
+
+          <div className="flex items-center gap-4 border border-white/[0.07] bg-white/[0.02] px-5 py-4">
+
+            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#3B82F6]/10">
+              <Sparkles
+                size={16}
+                className="text-[#3B82F6]"
+              />
+            </div>
+
+            <div>
+              <p className="font-mono text-[9px] uppercase tracking-[0.15em] text-[#475569]">
+                Outlook
+              </p>
+
+              <p className="mt-1 text-xs font-medium text-[#CBD5E1]">
+                2026 Technology Shift
+              </p>
+            </div>
+
+          </div>
+
+
+          {/* STATUS */}
+
+          <div className="flex items-center justify-between border border-white/[0.07] bg-white/[0.02] px-5 py-4">
+
+            <div>
+              <p className="font-mono text-[9px] uppercase tracking-[0.15em] text-[#475569]">
+                Intelligence
+              </p>
+
+              <p className="mt-1 text-xs font-medium text-[#CBD5E1]">
+                Tracking Technology
+              </p>
+            </div>
+
+            <div className="flex items-center gap-2">
+
+              <span className="h-2 w-2 animate-pulse rounded-full bg-[#06B6D4] shadow-[0_0_12px_rgba(6,182,212,0.8)]" />
+
+              <span className="font-mono text-[9px] uppercase tracking-[0.15em] text-[#06B6D4]">
+                Active
+              </span>
+
+            </div>
+
+          </div>
+
         </motion.div>
 
       </div>

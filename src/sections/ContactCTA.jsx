@@ -6,13 +6,16 @@ import "react-phone-number-input/style.css";
 import { useNavigate } from "react-router-dom";
 
 import {
-  Mail,
-  Phone,
-  MapPin,
+  ArrowUpRight,
   Clock,
-  Linkedin,
   Facebook,
   Instagram,
+  Linkedin,
+  Mail,
+  MapPin,
+  Phone,
+  Send,
+  Sparkles,
 } from "lucide-react";
 
 function ContactCTA() {
@@ -103,23 +106,20 @@ function ContactCTA() {
         relative
         overflow-hidden
         bg-[#050508]
-        px-4
+        px-5
         py-20
-        sm:px-6
+        sm:px-8
         sm:py-24
+        lg:px-10
         lg:py-28
       "
     >
       {/* =========================================================
-          TECHNICAL GRID
+          BACKGROUND
       ========================================================== */}
+
       <div
-        className="
-          pointer-events-none
-          absolute
-          inset-0
-          opacity-[0.035]
-        "
+        className="pointer-events-none absolute inset-0 opacity-[0.035]"
         style={{
           backgroundImage: `
             linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
@@ -129,573 +129,500 @@ function ContactCTA() {
         }}
       />
 
+      <div className="pointer-events-none absolute -left-40 top-20 h-[420px] w-[420px] rounded-full bg-[#8B5CF6]/10 blur-[150px]" />
+
+      <div className="pointer-events-none absolute -right-40 bottom-0 h-[420px] w-[420px] rounded-full bg-[#06B6D4]/10 blur-[150px]" />
+
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#3B82F6]/5 blur-[160px]" />
+
       {/* =========================================================
-          AMBIENT GLOWS
+          MAIN CONTAINER
       ========================================================== */}
-      <div className="pointer-events-none absolute -left-40 top-10 h-80 w-80 rounded-full bg-[#8B5CF6]/10 blur-[130px]" />
 
-      <div className="pointer-events-none absolute -right-40 bottom-10 h-80 w-80 rounded-full bg-[#06B6D4]/10 blur-[130px]" />
+      <div className="relative z-10 mx-auto max-w-7xl">
 
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#3B82F6]/5 blur-[150px]" />
+        {/* =======================================================
+            TOP TECHNICAL HEADER
+        ======================================================== */}
 
-      <div className="relative z-10 mx-auto max-w-6xl">
-
-        {/* =========================================================
-            SECTION HEADER
-        ========================================================== */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-10 max-w-3xl"
+          transition={{ duration: 0.6 }}
+          className="mb-14 flex items-end justify-between border-b border-white/[0.07] pb-5"
         >
-          <div className="mb-4 flex items-center gap-3">
-            <span className="h-px w-8 bg-gradient-to-r from-[#8B5CF6] to-[#06B6D4]" />
+          <div className="flex items-center gap-3">
 
-            <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-[#A78BFA]">
-              Contact / Connect
-            </span>
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-[#8B5CF6]/30 bg-[#8B5CF6]/10">
+              <Sparkles
+                size={16}
+                className="text-[#A855F7]"
+              />
+            </div>
+
+            <div>
+              <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#64748B]">
+                Vaytrix / Communication
+              </p>
+
+              <p className="mt-1 text-xs text-[#94A3B8]">
+                Start a meaningful conversation
+              </p>
+            </div>
+
           </div>
 
-          <h2 className="text-3xl font-semibold leading-tight tracking-[-0.035em] text-[#F8FAFC] sm:text-4xl lg:text-5xl">
-            Let&apos;s Build Something{" "}
-            <span className="bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] bg-clip-text text-transparent">
-              Great Together
-            </span>
-          </h2>
+          <span className="hidden font-mono text-[9px] uppercase tracking-[0.2em] text-[#475569] sm:block">
+            CONTACT / 06
+          </span>
 
-          <p className="mt-4 max-w-2xl text-sm leading-7 text-[#94A3B8] sm:text-base">
-            Have a question or want to discuss your requirements? Reach out to
-            our team and we&apos;ll get back to you soon.
-          </p>
         </motion.div>
 
-        {/* =========================================================
-            MAIN GRID
-        ========================================================== */}
-        <div className="grid items-stretch gap-6 md:grid-cols-2">
+        {/* =======================================================
+            MAIN ASYMMETRIC LAYOUT
+        ======================================================== */}
 
-          {/* =======================================================
-              LEFT SIDE
-          ======================================================== */}
+        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+
+          {/* =====================================================
+              LEFT EDITORIAL AREA
+          ====================================================== */}
+
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
+            initial={{ opacity: 0, x: -35 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="
-              relative
-              flex
-              h-full
-              flex-col
-              overflow-hidden
-              rounded-2xl
-              border
-              border-white/[0.08]
-              bg-[rgba(10,10,15,0.72)]
-              p-6
-              backdrop-blur-xl
-              sm:p-8
-            "
+            transition={{ duration: 0.7 }}
+            className="relative flex flex-col justify-between"
           >
-            {/* CARD GLOW */}
-            <div className="pointer-events-none absolute -left-20 -top-20 h-48 w-48 rounded-full bg-[#8B5CF6]/10 blur-[70px]" />
 
-            <div className="relative z-10 flex h-full flex-col justify-between">
+            <div>
 
-              <div>
+              {/* Label */}
 
-                {/* CARD LABEL */}
-                <div className="mb-3 flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#8B5CF6] shadow-[0_0_10px_rgba(139,92,246,0.8)]" />
+              <div className="mb-7 flex items-center gap-3">
 
-                  <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-[#64748B]">
-                    Direct Communication
-                  </span>
-                </div>
+                <span className="h-px w-10 bg-gradient-to-r from-[#8B5CF6] to-[#06B6D4]" />
 
-                <h2 className="text-2xl font-semibold text-[#F8FAFC]">
-                  Contact Information
-                </h2>
-
-                <p className="mt-2 max-w-md text-sm leading-6 text-[#64748B]">
-                  Connect with our team through any of the channels below.
-                </p>
-
-                {/* CONTACT DETAILS */}
-                <div className="mt-7 space-y-5">
-
-                  {/* EMAIL */}
-                  <div className="group flex gap-4">
-                    <div
-                      className="
-                        flex
-                        h-11
-                        w-11
-                        shrink-0
-                        items-center
-                        justify-center
-                        rounded-xl
-                        border
-                        border-white/[0.08]
-                        bg-white/[0.03]
-                        text-[#A78BFA]
-                        transition-all
-                        duration-300
-                        group-hover:border-[#8B5CF6]/40
-                        group-hover:bg-[#8B5CF6]/10
-                        group-hover:text-[#C4B5FD]
-                      "
-                    >
-                      <Mail size={19} />
-                    </div>
-
-                    <div className="min-w-0">
-                      <p className="font-mono text-[9px] uppercase tracking-[0.15em] text-[#64748B]">
-                        Email
-                      </p>
-
-                      <p className="mt-1 break-all text-sm text-[#F8FAFC]">
-                        info@vaytrix-itservice.com
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* PHONE */}
-                  <div className="group flex gap-4">
-                    <div
-                      className="
-                        flex
-                        h-11
-                        w-11
-                        shrink-0
-                        items-center
-                        justify-center
-                        rounded-xl
-                        border
-                        border-white/[0.08]
-                        bg-white/[0.03]
-                        text-[#A78BFA]
-                        transition-all
-                        duration-300
-                        group-hover:border-[#8B5CF6]/40
-                        group-hover:bg-[#8B5CF6]/10
-                        group-hover:text-[#C4B5FD]
-                      "
-                    >
-                      <Phone size={19} />
-                    </div>
-
-                    <div>
-                      <p className="font-mono text-[9px] uppercase tracking-[0.15em] text-[#64748B]">
-                        Phone
-                      </p>
-
-                      <p className="mt-1 text-sm text-[#F8FAFC]">
-                        xxxxxxxxx
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* OFFICE */}
-                  <div className="group flex gap-4">
-                    <div
-                      className="
-                        flex
-                        h-11
-                        w-11
-                        shrink-0
-                        items-center
-                        justify-center
-                        rounded-xl
-                        border
-                        border-white/[0.08]
-                        bg-white/[0.03]
-                        text-[#A78BFA]
-                        transition-all
-                        duration-300
-                        group-hover:border-[#8B5CF6]/40
-                        group-hover:bg-[#8B5CF6]/10
-                        group-hover:text-[#C4B5FD]
-                      "
-                    >
-                      <MapPin size={19} />
-                    </div>
-
-                    <div>
-                      <p className="font-mono text-[9px] uppercase tracking-[0.15em] text-[#64748B]">
-                        Office
-                      </p>
-
-                      <p className="mt-1 max-w-sm text-sm leading-6 text-[#F8FAFC]">
-                       xxxxxxxx
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* HOURS */}
-                  <div className="group flex gap-4">
-                    <div
-                      className="
-                        flex
-                        h-11
-                        w-11
-                        shrink-0
-                        items-center
-                        justify-center
-                        rounded-xl
-                        border
-                        border-white/[0.08]
-                        bg-white/[0.03]
-                        text-[#A78BFA]
-                        transition-all
-                        duration-300
-                        group-hover:border-[#8B5CF6]/40
-                        group-hover:bg-[#8B5CF6]/10
-                        group-hover:text-[#C4B5FD]
-                      "
-                    >
-                      <Clock size={19} />
-                    </div>
-
-                    <div>
-                      <p className="font-mono text-[9px] uppercase tracking-[0.15em] text-[#64748B]">
-                        Hours
-                      </p>
-
-                      <p className="mt-1 text-sm text-[#F8FAFC]">
-                        Mon - Fri: 9:00 AM - 6:00 PM EST
-                      </p>
-                    </div>
-                  </div>
-
-                </div>
-
-                {/* RESPONSE CARD */}
-                <div
-                  className="
-                    mt-8
-                    rounded-2xl
-                    border
-                    border-[#8B5CF6]/20
-                    bg-gradient-to-br
-                    from-[#8B5CF6]/[0.08]
-                    via-[#0A0A0F]/70
-                    to-[#06B6D4]/[0.05]
-                    p-5
-                  "
-                >
-                  <div className="flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#06B6D4] shadow-[0_0_10px_rgba(6,182,212,0.8)]" />
-
-                    <h3 className="text-sm font-semibold text-[#F8FAFC]">
-                      Have Questions?
-                    </h3>
-                  </div>
-
-                  <p className="mt-2 text-sm leading-6 text-[#94A3B8]">
-                    We typically respond within 24 hours.
-                  </p>
-
-                  <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.12em] text-[#A78BFA]">
-                    Response Time: Within 24 Hours
-                  </p>
-                </div>
+                <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-[#A78BFA]">
+                  Contact / Connect
+                </span>
 
               </div>
 
-              {/* SOCIAL */}
-              <div className="mt-8">
+              {/* Heading */}
 
-                <h3 className="text-sm font-semibold text-[#F8FAFC]">
-                  Follow Us
-                </h3>
+              <h2 className="max-w-xl text-4xl font-semibold leading-[1.05] tracking-[-0.045em] text-[#F8FAFC] sm:text-5xl lg:text-6xl">
 
-                <div className="mt-3 flex gap-3">
+                Let's turn your
+                <br />
 
-                  {/* LINKEDIN */}
-                  <a
-                    href=""
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="LinkedIn"
-                    className="
-                      flex
-                      h-10
-                      w-10
-                      items-center
-                      justify-center
-                      rounded-xl
-                      border
-                      border-white/[0.08]
-                      bg-white/[0.03]
-                      text-[#94A3B8]
-                      transition-all
-                      duration-300
-                      hover:border-[#8B5CF6]/50
-                      hover:bg-[#8B5CF6]/10
-                      hover:text-[#C4B5FD]
-                      hover:shadow-[0_0_20px_rgba(139,92,246,0.12)]
-                    "
-                  >
-                    <Linkedin size={17} />
-                  </a>
+                <span className="bg-gradient-to-r from-[#A855F7] via-[#3B82F6] to-[#06B6D4] bg-clip-text text-transparent">
+                  next idea
+                </span>
 
-                  {/* FACEBOOK */}
-                  <a
-                    aria-label="Facebook"
-                    className="
-                      flex
-                      h-10
-                      w-10
-                      items-center
-                      justify-center
-                      rounded-xl
-                      border
-                      border-white/[0.08]
-                      bg-white/[0.03]
-                      text-[#94A3B8]
-                      transition-all
-                      duration-300
-                      hover:border-[#3B82F6]/50
-                      hover:bg-[#3B82F6]/10
-                      hover:text-[#93C5FD]
-                    "
-                  >
-                    <Facebook size={17} />
-                  </a>
+                <br />
 
-                  {/* INSTAGRAM */}
-                  <a
-                    aria-label="Instagram"
-                    className="
-                      flex
-                      h-10
-                      w-10
-                      items-center
-                      justify-center
-                      rounded-xl
-                      border
-                      border-white/[0.08]
-                      bg-white/[0.03]
-                      text-[#94A3B8]
-                      transition-all
-                      duration-300
-                      hover:border-[#06B6D4]/50
-                      hover:bg-[#06B6D4]/10
-                      hover:text-[#67E8F9]
-                    "
-                  >
-                    <Instagram size={17} />
-                  </a>
+                into reality.
+
+              </h2>
+
+              <p className="mt-7 max-w-lg text-sm leading-7 text-[#94A3B8] sm:text-base">
+
+                Have a question, project requirement, or business challenge?
+                Connect with the Vaytrix team and let's explore how technology
+                can help move your goals forward.
+
+              </p>
+
+            </div>
+
+            {/* =================================================
+                CONTACT CHANNELS
+            ================================================== */}
+
+            <div className="mt-12">
+
+              <p className="mb-5 font-mono text-[9px] uppercase tracking-[0.2em] text-[#475569]">
+                Direct Channels
+              </p>
+
+              <div className="space-y-3">
+
+                {/* EMAIL */}
+
+                <div className="group flex items-center gap-4 border-b border-white/[0.07] pb-4">
+
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.025] transition-all duration-300 group-hover:border-[#8B5CF6]/40 group-hover:bg-[#8B5CF6]/10">
+                    <Mail
+                      size={17}
+                      className="text-[#A78BFA]"
+                    />
+                  </div>
+
+                  <div className="min-w-0">
+                    <p className="font-mono text-[8px] uppercase tracking-[0.16em] text-[#64748B]">
+                      Email
+                    </p>
+
+                    <p className="mt-1 break-all text-sm text-[#F8FAFC]">
+                      info@vaytrix-itservice.com
+                    </p>
+                  </div>
+
+                  <ArrowUpRight
+                    size={15}
+                    className="ml-auto text-[#475569] transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-[#A78BFA]"
+                  />
+
+                </div>
+
+                {/* PHONE */}
+
+                <div className="group flex items-center gap-4 border-b border-white/[0.07] pb-4">
+
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.025] transition-all duration-300 group-hover:border-[#3B82F6]/40 group-hover:bg-[#3B82F6]/10">
+                    <Phone
+                      size={17}
+                      className="text-[#60A5FA]"
+                    />
+                  </div>
+
+                  <div>
+                    <p className="font-mono text-[8px] uppercase tracking-[0.16em] text-[#64748B]">
+                      Phone
+                    </p>
+
+                    <p className="mt-1 text-sm text-[#F8FAFC]">
+                      xxxxxxxxx
+                    </p>
+                  </div>
+
+                  <ArrowUpRight
+                    size={15}
+                    className="ml-auto text-[#475569] transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-[#60A5FA]"
+                  />
+
+                </div>
+
+                {/* OFFICE */}
+
+                <div className="group flex items-center gap-4 border-b border-white/[0.07] pb-4">
+
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.025] transition-all duration-300 group-hover:border-[#06B6D4]/40 group-hover:bg-[#06B6D4]/10">
+                    <MapPin
+                      size={17}
+                      className="text-[#22D3EE]"
+                    />
+                  </div>
+
+                  <div>
+                    <p className="font-mono text-[8px] uppercase tracking-[0.16em] text-[#64748B]">
+                      Office
+                    </p>
+
+                    <p className="mt-1 text-sm text-[#F8FAFC]">
+                      xxxxxxxx
+                    </p>
+                  </div>
+
+                  <ArrowUpRight
+                    size={15}
+                    className="ml-auto text-[#475569] transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-[#22D3EE]"
+                  />
+
+                </div>
+
+                {/* HOURS */}
+
+                <div className="group flex items-center gap-4">
+
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.025] transition-all duration-300 group-hover:border-[#8B5CF6]/40 group-hover:bg-[#8B5CF6]/10">
+                    <Clock
+                      size={17}
+                      className="text-[#A78BFA]"
+                    />
+                  </div>
+
+                  <div>
+                    <p className="font-mono text-[8px] uppercase tracking-[0.16em] text-[#64748B]">
+                      Availability
+                    </p>
+
+                    <p className="mt-1 text-sm text-[#F8FAFC]">
+                      Mon - Fri: 9:00 AM - 6:00 PM EST
+                    </p>
+                  </div>
 
                 </div>
 
               </div>
 
             </div>
-          </motion.div>
 
-          {/* =======================================================
-              RIGHT SIDE - FORM
-          ======================================================== */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="
-              relative
-              flex
-              h-full
-              flex-col
-              overflow-hidden
-              rounded-2xl
-              border
-              border-white/[0.08]
-              bg-[rgba(10,10,15,0.72)]
-              p-6
-              backdrop-blur-xl
-              sm:p-8
-            "
-          >
-            {/* FORM CARD GLOW */}
-            <div className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full bg-[#06B6D4]/10 blur-[70px]" />
+            {/* SOCIAL */}
 
-            <div className="relative z-10 flex h-full flex-col">
+            <div className="mt-10 flex items-center gap-4">
 
-              {/* FORM HEADER */}
-              <div>
-                <div className="mb-3 flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#06B6D4] shadow-[0_0_10px_rgba(6,182,212,0.8)]" />
+              <span className="font-mono text-[8px] uppercase tracking-[0.18em] text-[#475569]">
+                Follow
+              </span>
 
-                  <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-[#64748B]">
-                    Start A Conversation
-                  </span>
-                </div>
+              <div className="h-px w-8 bg-white/[0.08]" />
 
-                <h2 className="text-2xl font-semibold text-[#F8FAFC]">
-                  Get in Touch
-                </h2>
+              <div className="flex gap-2">
 
-                <p className="mt-2 text-sm leading-6 text-[#64748B]">
-                  Fill the form and our team will contact you soon.
-                </p>
+                <a
+                  href=""
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.02] text-[#64748B] transition-all duration-300 hover:border-[#8B5CF6]/50 hover:bg-[#8B5CF6]/10 hover:text-[#C4B5FD]"
+                >
+                  <Linkedin size={15} />
+                </a>
+
+                <a
+                  aria-label="Facebook"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.02] text-[#64748B] transition-all duration-300 hover:border-[#3B82F6]/50 hover:bg-[#3B82F6]/10 hover:text-[#93C5FD]"
+                >
+                  <Facebook size={15} />
+                </a>
+
+                <a
+                  aria-label="Instagram"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.02] text-[#64748B] transition-all duration-300 hover:border-[#06B6D4]/50 hover:bg-[#06B6D4]/10 hover:text-[#67E8F9]"
+                >
+                  <Instagram size={15} />
+                </a>
+
               </div>
 
-              {/* ===================================================
-                  FORM
-              ==================================================== */}
+            </div>
+
+          </motion.div>
+
+          {/* =====================================================
+              RIGHT FORM
+          ====================================================== */}
+
+          <motion.div
+            initial={{ opacity: 0, x: 35 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="relative"
+          >
+
+            {/* Form outer glow */}
+
+            <div className="pointer-events-none absolute -inset-3 rounded-[28px] bg-gradient-to-br from-[#8B5CF6]/10 via-transparent to-[#06B6D4]/10 blur-2xl" />
+
+            <div className="relative overflow-hidden rounded-[24px] border border-white/[0.09] bg-[#0A0A0F]">
+
+              {/* FORM TOP BAR */}
+
+              <div className="flex items-center justify-between border-b border-white/[0.07] px-6 py-4 sm:px-8">
+
+                <div className="flex items-center gap-3">
+
+                  <div className="flex h-8 w-8 items-center justify-center rounded-md bg-gradient-to-br from-[#8B5CF6] to-[#3B82F6]">
+                    <Send
+                      size={14}
+                      className="text-white"
+                    />
+                  </div>
+
+                  <div>
+                    <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-[#64748B]">
+                      Inquiry Form
+                    </p>
+
+                    <p className="mt-0.5 text-xs text-[#94A3B8]">
+                      Start your conversation
+                    </p>
+                  </div>
+
+                </div>
+
+                <span className="font-mono text-[9px] text-[#475569]">
+                  01 / 01
+                </span>
+
+              </div>
+
+              {/* FORM */}
+
               <form
                 onSubmit={handleSubmit}
-                className="mt-7 flex flex-1 flex-col gap-4"
+                className="p-6 sm:p-8"
               >
 
-                {/* NAME */}
-                <input
-                  type="text"
-                  name="name"
-                  value={form.name}
-                  onChange={handleChange}
-                  placeholder="Full Name"
-                  autoComplete="name"
-                  required
-                  className="
-                    w-full
-                    rounded-xl
-                    border
-                    border-white/[0.08]
-                    bg-white/[0.03]
-                    px-4
-                    py-3
-                    text-sm
-                    text-[#F8FAFC]
-                    outline-none
-                    placeholder:text-[#475569]
-                    transition-all
-                    duration-300
-                    focus:border-[#8B5CF6]/50
-                    focus:bg-[#8B5CF6]/[0.04]
-                    focus:ring-1
-                    focus:ring-[#8B5CF6]/20
-                  "
-                />
+                <div className="mb-7">
 
-                {/* EMAIL */}
-                <input
-                  type="email"
-                  name="email"
-                  value={form.email}
-                  onChange={handleChange}
-                  placeholder="Email Address"
-                  autoComplete="email"
-                  required
-                  className="
-                    w-full
-                    rounded-xl
-                    border
-                    border-white/[0.08]
-                    bg-white/[0.03]
-                    px-4
-                    py-3
-                    text-sm
-                    text-[#F8FAFC]
-                    outline-none
-                    placeholder:text-[#475569]
-                    transition-all
-                    duration-300
-                    focus:border-[#8B5CF6]/50
-                    focus:bg-[#8B5CF6]/[0.04]
-                    focus:ring-1
-                    focus:ring-[#8B5CF6]/20
-                  "
-                />
+                  <h3 className="text-2xl font-semibold tracking-tight text-[#F8FAFC]">
+                    Tell us what you need.
+                  </h3>
+
+                  <p className="mt-2 text-sm leading-6 text-[#64748B]">
+                    Share your details and our team will get back to you.
+                  </p>
+
+                </div>
+
+                {/* NAME + EMAIL */}
+
+                <div className="grid gap-4 sm:grid-cols-2">
+
+                  <div>
+                    <label className="mb-2 block font-mono text-[8px] uppercase tracking-[0.16em] text-[#64748B]">
+                      Full Name
+                    </label>
+
+                    <input
+                      type="text"
+                      name="name"
+                      value={form.name}
+                      onChange={handleChange}
+                      placeholder="Your name"
+                      autoComplete="name"
+                      required
+                      className="
+                        w-full rounded-lg
+                        border border-white/[0.08]
+                        bg-white/[0.025]
+                        px-4 py-3
+                        text-sm text-[#F8FAFC]
+                        outline-none
+                        placeholder:text-[#475569]
+                        transition-all duration-300
+                        focus:border-[#8B5CF6]/50
+                        focus:bg-[#8B5CF6]/[0.04]
+                        focus:ring-1
+                        focus:ring-[#8B5CF6]/20
+                      "
+                    />
+                  </div>
+
+                  <div>
+                    <label className="mb-2 block font-mono text-[8px] uppercase tracking-[0.16em] text-[#64748B]">
+                      Email Address
+                    </label>
+
+                    <input
+                      type="email"
+                      name="email"
+                      value={form.email}
+                      onChange={handleChange}
+                      placeholder="you@example.com"
+                      autoComplete="email"
+                      required
+                      className="
+                        w-full rounded-lg
+                        border border-white/[0.08]
+                        bg-white/[0.025]
+                        px-4 py-3
+                        text-sm text-[#F8FAFC]
+                        outline-none
+                        placeholder:text-[#475569]
+                        transition-all duration-300
+                        focus:border-[#8B5CF6]/50
+                        focus:bg-[#8B5CF6]/[0.04]
+                        focus:ring-1
+                        focus:ring-[#8B5CF6]/20
+                      "
+                    />
+                  </div>
+
+                </div>
 
                 {/* PHONE */}
-                <div
-                  className="
-                    rounded-xl
-                    border
-                    border-white/[0.08]
-                    bg-white/[0.03]
-                    px-4
-                    py-3
-                    transition-all
-                    duration-300
-                    focus-within:border-[#8B5CF6]/50
-                    focus-within:bg-[#8B5CF6]/[0.04]
-                    focus-within:ring-1
-                    focus-within:ring-[#8B5CF6]/20
-                  "
-                >
-                  <PhoneInput
-                    international
-                    defaultCountry="US"
-                    value={form.phone}
-                    onChange={(value) =>
-                      setForm({
-                        ...form,
-                        phone: value,
-                      })
-                    }
-                    placeholder="Phone number"
-                    required
-                    className="w-full bg-transparent text-sm text-[#F8FAFC]"
-                  />
+
+                <div className="mt-4">
+
+                  <label className="mb-2 block font-mono text-[8px] uppercase tracking-[0.16em] text-[#64748B]">
+                    Phone Number
+                  </label>
+
+                  <div
+                    className="
+                      rounded-lg
+                      border border-white/[0.08]
+                      bg-white/[0.025]
+                      px-4 py-3
+                      transition-all duration-300
+                      focus-within:border-[#8B5CF6]/50
+                      focus-within:bg-[#8B5CF6]/[0.04]
+                      focus-within:ring-1
+                      focus-within:ring-[#8B5CF6]/20
+                    "
+                  >
+                    <PhoneInput
+                      international
+                      defaultCountry="US"
+                      value={form.phone}
+                      onChange={(value) =>
+                        setForm({
+                          ...form,
+                          phone: value,
+                        })
+                      }
+                      placeholder="Phone number"
+                      required
+                      className="w-full bg-transparent text-sm text-[#F8FAFC]"
+                    />
+                  </div>
+
                 </div>
 
                 {/* LOCATION */}
-                <input
-                  type="text"
-                  name="location"
-                  value={form.location}
-                  onChange={handleChange}
-                  placeholder="Location"
-                  autoComplete="address-level2"
-                  required
-                  className="
-                    w-full
-                    rounded-xl
-                    border
-                    border-white/[0.08]
-                    bg-white/[0.03]
-                    px-4
-                    py-3
-                    text-sm
-                    text-[#F8FAFC]
-                    outline-none
-                    placeholder:text-[#475569]
-                    transition-all
-                    duration-300
-                    focus:border-[#8B5CF6]/50
-                    focus:bg-[#8B5CF6]/[0.04]
-                    focus:ring-1
-                    focus:ring-[#8B5CF6]/20
-                  "
-                />
 
-                {/* =================================================
-                    CONSENT
-                ================================================== */}
-                <div className="flex items-start gap-3 rounded-xl border border-white/[0.06] bg-white/[0.02] p-3 text-xs text-[#64748B]">
+                <div className="mt-4">
+
+                  <label className="mb-2 block font-mono text-[8px] uppercase tracking-[0.16em] text-[#64748B]">
+                    Location
+                  </label>
+
+                  <input
+                    type="text"
+                    name="location"
+                    value={form.location}
+                    onChange={handleChange}
+                    placeholder="City / Country"
+                    autoComplete="address-level2"
+                    required
+                    className="
+                      w-full rounded-lg
+                      border border-white/[0.08]
+                      bg-white/[0.025]
+                      px-4 py-3
+                      text-sm text-[#F8FAFC]
+                      outline-none
+                      placeholder:text-[#475569]
+                      transition-all duration-300
+                      focus:border-[#8B5CF6]/50
+                      focus:bg-[#8B5CF6]/[0.04]
+                      focus:ring-1
+                      focus:ring-[#8B5CF6]/20
+                    "
+                  />
+
+                </div>
+
+                {/* CONSENT */}
+
+                <div className="mt-5 flex items-start gap-3 rounded-lg border border-white/[0.06] bg-white/[0.015] p-3">
 
                   <input
                     type="checkbox"
                     checked={accepted}
                     onChange={() => setAccepted(!accepted)}
                     required
-                    className="
-                      mt-1
-                      h-3.5
-                      w-3.5
-                      shrink-0
-                      cursor-pointer
-                      accent-[#8B5CF6]
-                    "
+                    className="mt-1 h-3.5 w-3.5 shrink-0 cursor-pointer accent-[#8B5CF6]"
                   />
 
-                  <p className="leading-5">
+                  <p className="text-[11px] leading-5 text-[#64748B]">
 
                     By opting in for text messages, you agree to receive
                     appointment reminders and important updates from brightitinc
@@ -705,13 +632,7 @@ function ContactCTA() {
 
                     <span
                       onClick={() => navigate("/privacy-policy")}
-                      className="
-                        cursor-pointer
-                        font-medium
-                        text-[#A78BFA]
-                        transition-colors
-                        hover:text-[#67E8F9]
-                      "
+                      className="cursor-pointer font-medium text-[#A78BFA] hover:text-[#67E8F9]"
                     >
                       Privacy Policy
                     </span>
@@ -720,13 +641,7 @@ function ContactCTA() {
 
                     <span
                       onClick={() => navigate("/terms-conditions")}
-                      className="
-                        cursor-pointer
-                        font-medium
-                        text-[#A78BFA]
-                        transition-colors
-                        hover:text-[#67E8F9]
-                      "
+                      className="cursor-pointer font-medium text-[#A78BFA] hover:text-[#67E8F9]"
                     >
                       Terms & Conditions
                     </span>
@@ -734,128 +649,137 @@ function ContactCTA() {
                     {" "}for more information.
 
                   </p>
+
                 </div>
 
-                {/* =================================================
-                    ERROR
-                ================================================== */}
+                {/* ERROR */}
+
                 {error && (
                   <motion.p
                     initial={{ opacity: 0, y: -5 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="
-                      rounded-lg
-                      border
-                      border-red-500/20
-                      bg-red-500/[0.05]
-                      px-3
-                      py-2
-                      text-xs
-                      text-red-400
-                    "
+                    className="mt-4 rounded-lg border border-red-500/20 bg-red-500/[0.05] px-3 py-2 text-xs text-red-400"
                   >
                     {error}
                   </motion.p>
                 )}
 
-                {/* =================================================
-                    SUCCESS
-                ================================================== */}
+                {/* SUCCESS */}
+
                 {success && (
                   <motion.p
                     initial={{ opacity: 0, y: -5 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="
-                      rounded-lg
-                      border
-                      border-emerald-500/20
-                      bg-emerald-500/[0.05]
-                      px-3
-                      py-2
-                      text-xs
-                      text-emerald-400
-                    "
+                    className="mt-4 rounded-lg border border-emerald-500/20 bg-emerald-500/[0.05] px-3 py-2 text-xs text-emerald-400"
                   >
                     {success}
                   </motion.p>
                 )}
 
-                {/* =================================================
-                    SUBMIT BUTTON
-                ================================================== */}
+                {/* SUBMIT */}
+
                 <motion.button
                   type="submit"
                   whileHover={{
-                    scale: loading ? 1 : 1.02,
+                    scale: loading ? 1 : 1.015,
                   }}
                   whileTap={{
-                    scale: loading ? 1 : 0.98,
+                    scale: loading ? 1 : 0.985,
                   }}
                   disabled={loading}
                   className="
-                    relative
-                    mt-auto
-                    overflow-hidden
-                    rounded-xl
+                    group relative mt-6 flex w-full
+                    items-center justify-center gap-3
+                    overflow-hidden rounded-lg
                     bg-gradient-to-r
                     from-[#8B5CF6]
                     via-[#3B82F6]
                     to-[#06B6D4]
-                    py-3
-                    text-sm
-                    font-semibold
-                    text-white
-                    shadow-[0_8px_30px_rgba(139,92,246,0.18)]
-                    transition-all
-                    duration-300
+                    px-5 py-3.5
+                    text-sm font-semibold text-white
+                    shadow-[0_10px_35px_rgba(139,92,246,0.18)]
+                    transition-all duration-300
                     hover:brightness-110
-                    hover:shadow-[0_10px_35px_rgba(59,130,246,0.25)]
                     disabled:cursor-not-allowed
                     disabled:opacity-70
                   "
                 >
-                  {/* BUTTON SHINE */}
-                  <span
-                    className="
-                      absolute
-                      inset-0
-                      -translate-x-full
-                      bg-gradient-to-r
-                      from-transparent
-                      via-white/15
-                      to-transparent
-                      transition-transform
-                      duration-700
-                      hover:translate-x-full
-                    "
-                  />
+
+                  <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/15 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
 
                   <span className="relative">
-                    {loading ? "Sending..." : "Submit"}
+                    {loading ? "Sending..." : "Send Message"}
                   </span>
+
+                  {!loading && (
+                    <ArrowUpRight
+                      size={17}
+                      className="relative transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    />
+                  )}
+
                 </motion.button>
+
+                {/* RESPONSE */}
+
+                <div className="mt-5 flex items-center justify-center gap-2">
+
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#06B6D4] shadow-[0_0_10px_rgba(6,182,212,0.8)]" />
+
+                  <span className="font-mono text-[8px] uppercase tracking-[0.15em] text-[#475569]">
+                    Typical response within 24 hours
+                  </span>
+
+                </div>
 
               </form>
 
             </div>
+
           </motion.div>
 
         </div>
 
-        {/* =========================================================
-            BOTTOM TECHNICAL BAR
-        ========================================================== */}
-        <div className="mt-8 flex items-center justify-center gap-3">
+        {/* =======================================================
+            BOTTOM STATEMENT
+        ======================================================== */}
 
-          <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#8B5CF6]/40" />
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-white/[0.06] pt-6 sm:flex-row"
+        >
 
-          <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#475569]">
-            Your Next Conversation Starts Here
-          </span>
+          <div className="flex items-center gap-3">
 
-          <span className="h-px w-10 bg-gradient-to-l from-transparent to-[#06B6D4]/40" />
+            <span className="font-mono text-[9px] text-[#475569]">
+              VAYTRIX
+            </span>
 
-        </div>
+            <span className="h-px w-8 bg-white/[0.08]" />
+
+            <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-[#64748B]">
+              Technology / People / Possibility
+            </span>
+
+          </div>
+
+          <div className="flex items-center gap-2">
+
+            <Clock
+              size={12}
+              className="text-[#06B6D4]"
+            />
+
+            <span className="font-mono text-[9px] uppercase tracking-[0.14em] text-[#475569]">
+              We're ready when you are
+            </span>
+
+          </div>
+
+        </motion.div>
 
       </div>
     </section>
