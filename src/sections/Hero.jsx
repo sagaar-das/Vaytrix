@@ -228,7 +228,7 @@ lg:py-8
               <br />
 
               <span className="text-[#F8FAFC]">
-                extraordinary.
+                extraordinary
               </span>
             </motion.h1>
 
@@ -258,7 +258,7 @@ lg:py-8
                 sm:leading-8
               "
             >
-              We create innovative digital solutions that help businesses
+              We create innovative digital solutions that help clients
               simplify complexity, accelerate growth, and build experiences
               that truly make a difference.
             </motion.p>
@@ -335,7 +335,7 @@ lg:py-8
                 />
 
                 <span className="relative z-10">
-                  Let's Talk
+                  Book a Schedul
                 </span>
 
                 <span
@@ -356,7 +356,7 @@ lg:py-8
               {/* Secondary CTA */}
 
               <a
-                href="#services"
+                href="tel:+1812 495 4121"
                 className="
                   group
                   inline-flex
@@ -381,7 +381,7 @@ lg:py-8
                   hover:shadow-[0_8px_30px_rgba(139,92,246,0.12)]
                 "
               >
-                Explore Services
+                Call Us
 
                 <span
                   className="
@@ -646,7 +646,7 @@ lg:py-8
   xl:w-[900px]
   2xl:-ml-20
   2xl:w-[980px]
-  left-[3%]
+  left-[4%]
   
   
 "
@@ -696,15 +696,15 @@ lg:py-8
 
                 <span
                   className="
-          font-mono
+          
           text-[9px]
           font-semibold
           uppercase
-          tracking-[0.12em]
+          tracking-[0.15em]
           text-[#F8FAFC]
         "
                 >
-                  DIGITAL INNOVATION
+                  RESUME PREPARATION
                 </span>
 
               </div>

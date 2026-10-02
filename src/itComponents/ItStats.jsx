@@ -9,7 +9,7 @@ import {
 function ItStats() {
   const stats = [
     {
-      value: "1,500+",
+      value: "200+",
       label: "Professionals Supported",
       detail: "Career journeys enabled",
       icon: BriefcaseBusiness,
@@ -60,7 +60,7 @@ function ItStats() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-[#050508] px-4 py-10 sm:px-6 md:py-14 lg:px-10">
+    <section className="relative overflow-hidden bg-[#050508] px-4 py-1 sm:px-6 md:py-1 lg:px-10">
       {/* TECHNICAL GRID */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.025]"

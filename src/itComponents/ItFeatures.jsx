@@ -49,7 +49,7 @@ function ItFeatures() {
   return (
     <section
       ref={ref}
-      className="relative overflow-hidden bg-[#050508] px-4 py-20 sm:px-6 md:py-24 lg:px-10"
+      className="relative overflow-hidden bg-[#050508] px-4 py-10 sm:px-6 md:py-10 lg:px-10"
     >
       {/* TECH GRID */}
       <div
@@ -75,7 +75,7 @@ function ItFeatures() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="mb-12 flex flex-col gap-5 md:flex-row md:items-end md:justify-between"
+          className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between"
         >
           <div>
             <div className="mb-4 inline-flex items-center gap-3 rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-2 backdrop-blur-xl">
@@ -89,7 +89,7 @@ function ItFeatures() {
             <h2 className="max-w-3xl text-3xl font-semibold tracking-[-0.035em] text-[#F8FAFC] sm:text-4xl md:text-5xl">
               Skills Built Around
               <span className="block bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] bg-clip-text text-transparent">
-                Real Technology Careers.
+                Real Technology Careers
               </span>
             </h2>
           </div>

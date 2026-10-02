@@ -22,7 +22,7 @@ function ServiceGraphic({ type }) {
   ========================================================== */
   if (type === "it") {
     return (
-      <div className="relative h-[90px] w-full overflow-hidden rounded-xl border border-white/[0.06] bg-[#08080D]">
+      <div className="relative h-[65px] w-full overflow-hidden rounded-xl border border-white/[0.06] bg-[#08080D]">
         <div className={`${common} bg-gradient-to-br from-[#8B5CF6]/10 to-transparent`} />
 
         {/* Connecting Lines */}
@@ -57,7 +57,7 @@ function ServiceGraphic({ type }) {
   ========================================================== */
   if (type === "software") {
     return (
-      <div className="relative h-[90px] w-full overflow-hidden rounded-xl border border-white/[0.06] bg-[#08080D]">
+      <div className="relative h-[65px] w-full overflow-hidden rounded-xl border border-white/[0.06] bg-[#08080D]">
         <div className={`${common} bg-gradient-to-br from-[#3B82F6]/10 to-transparent`} />
 
         {/* Terminal */}
@@ -100,7 +100,7 @@ function ServiceGraphic({ type }) {
   ========================================================== */
   if (type === "app") {
     return (
-      <div className="relative h-[90px] w-full overflow-hidden rounded-xl border border-white/[0.06] bg-[#08080D]">
+      <div className="relative h-[65px] w-full overflow-hidden rounded-xl border border-white/[0.06] bg-[#08080D]">
         <div className={`${common} bg-gradient-to-br from-[#06B6D4]/10 to-transparent`} />
 
         {/* Phone */}
@@ -138,7 +138,7 @@ function ServiceGraphic({ type }) {
   ========================================================== */
   if (type === "consulting") {
     return (
-      <div className="relative h-[90px] w-full overflow-hidden rounded-xl border border-white/[0.06] bg-[#08080D]">
+      <div className="relative h-[65px] w-full overflow-hidden rounded-xl border border-white/[0.06] bg-[#08080D]">
         <div className={`${common} bg-gradient-to-br from-[#8B5CF6]/10 to-[#06B6D4]/5`} />
 
         {/* Graph Line */}
@@ -193,7 +193,7 @@ function ServiceGraphic({ type }) {
   ========================================================== */
   if (type === "bpo") {
     return (
-      <div className="relative h-[90px] w-full overflow-hidden rounded-xl border border-white/[0.06] bg-[#08080D]">
+      <div className="relative h-[65px] w-full overflow-hidden rounded-xl border border-white/[0.06] bg-[#08080D]">
         <div className={`${common} bg-gradient-to-br from-[#3B82F6]/10 to-[#8B5CF6]/5`} />
 
         {/* Workflow Nodes */}
@@ -236,7 +236,7 @@ function ServiceGraphic({ type }) {
   ========================================================== */
   if (type === "ai") {
     return (
-      <div className="relative h-[90px] w-full overflow-hidden rounded-xl border border-white/[0.06] bg-[#08080D]">
+      <div className="relative h-[65px] w-full overflow-hidden rounded-xl border border-white/[0.06] bg-[#08080D]">
         <div className={`${common} bg-gradient-to-br from-[#06B6D4]/10 via-[#3B82F6]/5 to-[#8B5CF6]/10`} />
 
         {/* Neural Connections */}
@@ -412,16 +412,16 @@ function ServicesSection() {
     <section
       id="services"
       className="
-        relative
-        overflow-hidden
-        bg-[#050508]
-        px-5
-        py-20
-        text-[#F8FAFC]
-        sm:px-8
-        lg:px-10
-        lg:py-28
-      "
+  relative
+  overflow-hidden
+  bg-[#050508]
+  px-4
+  py-5
+  text-[#F8FAFC]
+  sm:px-6
+  lg:px-8
+  lg:py-6
+"
     >
       {/* =========================================================
           BACKGROUND
@@ -543,13 +543,14 @@ function ServicesSection() {
           <ScrollReveal delay={0.1}>
             <h2
               className="
-                text-3xl
+                text-2xl
+sm:text-3xl
+lg:text-4xl
                 font-semibold
                 leading-[1.08]
                 tracking-[-0.04em]
                 text-[#F8FAFC]
-                sm:text-4xl
-                lg:text-5xl
+                
               "
             >
               Solutions built for
@@ -575,10 +576,10 @@ function ServicesSection() {
             <p
               className="
                 mx-auto
-                mt-5
+                mt-3
                 max-w-[620px]
                 text-sm
-                leading-7
+                leading-5
                 text-[#94A3B8]
                 sm:text-base
               "
@@ -595,16 +596,16 @@ function ServicesSection() {
         ======================================================= */}
 
         <div
-          className="
-            mt-12
-            grid
-            grid-cols-1
-            gap-4
-            sm:grid-cols-2
-            lg:grid-cols-3
-            lg:gap-5
-          "
-        >
+  className="
+    mt-6
+    grid
+    grid-cols-1
+    gap-3
+    sm:grid-cols-2
+    lg:grid-cols-3
+    lg:gap-4
+  "
+>
           {services.map((service, index) => (
             <motion.div
               key={service.id}
@@ -637,14 +638,14 @@ function ServicesSection() {
               className="
                 group
                 relative
-                min-h-[340px]
+                min-h-[250px]
                 cursor-pointer
                 overflow-hidden
                 rounded-2xl
                 border
                 border-white/[0.08]
                 bg-[rgba(10,10,15,0.72)]
-                p-5
+                p-4
                 shadow-[0_18px_60px_rgba(0,0,0,0.35)]
                 backdrop-blur-[20px]
                 transition-all
@@ -652,7 +653,7 @@ function ServicesSection() {
                 hover:border-[#8B5CF6]/45
                 hover:bg-[rgba(13,13,22,0.82)]
                 hover:shadow-[0_25px_80px_rgba(139,92,246,0.16),0_0_50px_rgba(6,182,212,0.06)]
-                sm:p-6
+               
               "
             >
               {/* =================================================
@@ -809,17 +810,17 @@ function ServicesSection() {
     SERVICE GRAPHIC
 ================================================== */}
 
-<div className="mt-6">
-  <ServiceGraphic type={service.id} />
-</div>
+                <div className="mt-2">
+                  <ServiceGraphic type={service.id} />
+                </div>
 
-{/* =================================================
+                {/* =================================================
     SERVICE ICON
 ================================================== */}
 
-<div className="mt-4 flex items-center justify-between">
-  <div
-    className="
+                <div className="mt-2 flex items-center justify-between">
+                  <div
+                    className="
       relative
       flex
       h-10
@@ -843,9 +844,9 @@ function ServicesSection() {
       group-hover:text-white
       group-hover:shadow-[0_0_30px_rgba(139,92,246,0.28)]
     "
-  >
-    <div
-      className="
+                  >
+                    <div
+                      className="
         pointer-events-none
         absolute
         inset-0
@@ -854,17 +855,17 @@ function ServicesSection() {
         via-transparent
         to-transparent
       "
-    />
+                    />
 
-    <span className="relative z-10">
-      {service.icon}
-    </span>
-  </div>
+                    <span className="relative z-10">
+                      {service.icon}
+                    </span>
+                  </div>
 
-  <span className="font-mono text-[8px] uppercase tracking-[0.16em] text-[#475569] transition-colors group-hover:text-[#06B6D4]">
-    Vaytrix / {service.number}
-  </span>
-</div>
+                  <span className="font-mono text-[8px] uppercase tracking-[0.16em] text-[#475569] transition-colors group-hover:text-[#06B6D4]">
+                    Vaytrix / {service.number}
+                  </span>
+                </div>
 
                 {/* =================================================
                     TITLE
@@ -872,8 +873,8 @@ function ServicesSection() {
 
                 <h3
                   className="
-                    mt-6
-                    text-[17px]
+                    mt-3
+                    text-[15px]
                     font-semibold
                     tracking-[-0.02em]
                     text-[#F8FAFC]
@@ -896,10 +897,10 @@ function ServicesSection() {
 
                 <p
                   className="
-                    mt-2
+                    mt-1
                     max-w-[330px]
-                    text-[13px]
-                    leading-5
+                    text-[11px]
+                    leading-4
                     text-[#94A3B8]
                     transition-colors
                     duration-300
@@ -919,13 +920,13 @@ function ServicesSection() {
 
                 <div
                   className="
-                    mt-6
+                    mt-2
                     flex
                     items-center
                     justify-between
                     border-t
                     border-white/[0.07]
-                    pt-4
+                    pt-2
                   "
                 >
                   <span
@@ -981,7 +982,7 @@ function ServicesSection() {
         ======================================================= */}
 
         <ScrollReveal delay={0.3}>
-          <div className="mt-12 flex justify-center">
+          <div className="mt-5 flex justify-center">
 
             <button
               onClick={() => navigate("/services")}
@@ -994,8 +995,8 @@ function ServicesSection() {
                 border
                 border-white/[0.09]
                 bg-white/[0.025]
-                px-6
-                py-3
+                px-5
+                py-2
                 font-mono
                 text-[10px]
                 font-medium

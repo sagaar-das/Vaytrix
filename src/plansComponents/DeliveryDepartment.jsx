@@ -40,7 +40,7 @@ const deliveryPlans = [
 
 const DeliveryDepartment = () => {
   return (
-    <section className="relative overflow-hidden bg-[#050508] py-20 sm:py-24 lg:py-28">
+    <section className="relative overflow-hidden bg-[#050508] py-10 sm:py-10 lg:py-10">
       {/* Technical Grid */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.035]"

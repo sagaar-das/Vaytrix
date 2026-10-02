@@ -17,7 +17,7 @@ function ItHero() {
   ];
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#050508] px-4 py-20 sm:px-6 md:py-24 lg:px-10 lg:py-28">
+    <section className="relative min-h-screen overflow-hidden bg-[#050508] px-4 py-10 sm:px-6 md:py-10 lg:px-10 lg:py-10">
       {/* BACKGROUND GRID */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.035]"
@@ -77,7 +77,7 @@ function ItHero() {
           >
             Build Teams That
             <span className="block bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] bg-clip-text text-transparent">
-              Move Business Forward.
+              Turn Your Goals Into Results
             </span>
           </motion.h1>
 

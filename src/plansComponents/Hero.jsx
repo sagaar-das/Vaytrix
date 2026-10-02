@@ -2,7 +2,7 @@ import { ArrowUpRight, Sparkles } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden bg-[#050508] py-20 sm:py-24 md:py-28 lg:py-32">
+    <section className="relative overflow-hidden bg-[#050508] py-10 sm:py-24 md:py-10 lg:py-5">
       {/* Technical Grid */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.035]"
@@ -42,10 +42,7 @@ const Hero = () => {
 
           {/* Description */}
           <p className="mt-7 max-w-2xl text-sm leading-7 text-[#94A3B8] sm:text-base md:text-lg md:leading-8">
-            Explore flexible technology plans designed for growing businesses,
-            established organizations, and enterprise teams. Choose the right
-            level of expertise, technology support, and solutions for your
-            business needs.
+            Explore flexible technology solutions designed for the evolving needs of our clients. Choose the right level of expertise, technology support, and solutions to help our clients achieve their goals and drive sustainable growth.
           </p>
 
           {/* Pricing Signal */}

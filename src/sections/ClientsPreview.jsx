@@ -1,38 +1,37 @@
 import { motion } from "framer-motion";
 
 const logos = [
-  "bain-company-logo.svg",
-  "paypal-3.svg",
-  // "mckinsey-company.svg",
-  "amazon-web-services-2.svg",
-  "intel.svg",
-  "startek.svg",
-  "cgi-logo.svg",
-  // "teleperformance-group.svg",
-  "genpact-logo.svg",
-  "linkedin-icon-2.svg",
-  "meta-3.svg",
-  "ibm.svg",
-  "globant-1.svg",
-  // "boston-consulting-group.svg",
-  "oracle-6.svg",
-  // "hp-hewlett-packard.svg",
-  "fujitsu-logo.svg",
-  "tech-mahindra-new-logo.svg",
-  "wipro-1.svg",
-  "infosys-technologies-logo.svg",
-  "tata-consultancy-services-1.svg",
-  "deloitte-1.svg",
-  "capgemini-201x-logo-1.svg",
-  "cognizant-1.svg",
-  "accenture-6.svg",
+  "alliancebernstein.webp",
+  "apple.webp",
+  "atlassian.webp",
+  "barclays.webp",
+  "bcg.webp",
+  "blackrock.webp",
+  "brooks.webp",
+  "cvs.webp",
+  "deloitte.webp",
+  "doordash.webp",
+  "ey.webp",
+  "foundersfund.webp",
+  
+  "goldmansachs.webp",
+  
+  "ibm.webp",
+  "mckinseyandcompany.webp",
+  "microsoft.webp",
+  "nasdaq.webp",
+  "ondeck.webp",
+  "paypal.webp",
+  "robinhood.webp",
+  "shonfeld.webp",
+  "stripe.webp",
 ];
 
 function ClientsPreview() {
   const logoPath = (logo) => `/clientLogo/${logo}`;
 
   return (
-    <section className="relative overflow-hidden bg-[#050508] px-4 py-20 sm:px-6 sm:py-24 lg:py-28">
+    <section className="relative overflow-hidden bg-[#050508] px-4 py-20 sm:px-6 sm:py-24 lg:py-10">
 
       {/* =========================================================
           TECHNICAL GRID
@@ -302,21 +301,23 @@ function ClientsPreview() {
                     sm:w-48
                   "
                 >
-                  <img
-                    src={logoPath(logo)}
-                    alt={`Client logo ${index + 1}`}
-                    className="
-                      max-h-10
-                      max-w-[125px]
-                      object-contain
-                      
-                      transition-all
-                      duration-300
-                      
-                      sm:max-h-11
-                      sm:max-w-[145px]
-                    "
-                  />
+                  <div className="flex h-full w-full items-center justify-center overflow-hidden">
+  <img
+    src={logoPath(logo)}
+    alt={`Client logo ${index + 1}`}
+    className="
+      max-h-10
+      max-w-[125px]
+      object-contain
+      scale-[3]
+      transition-transform
+      duration-300
+
+      sm:max-h-11
+      sm:max-w-[145px]
+    "
+  />
+</div>
                 </div>
               ))}
 
@@ -347,21 +348,23 @@ function ClientsPreview() {
                     sm:w-48
                   "
                 >
-                  <img
-                    src={logoPath(logo)}
-                    alt={`Client logo ${index + 1}`}
-                    className="
-                      max-h-10
-                      max-w-[125px]
-                      object-contain
-                      
-                      transition-all
-                      duration-300
-                      
-                      sm:max-h-11
-                      sm:max-w-[145px]
-                    "
-                  />
+                 <div className="flex h-full w-full items-center justify-center overflow-hidden">
+  <img
+    src={logoPath(logo)}
+    alt={`Client logo ${index + 1}`}
+    className="
+      max-h-10
+      max-w-[125px]
+      object-contain
+      scale-[3]
+      transition-transform
+      duration-300
+
+      sm:max-h-11
+      sm:max-w-[145px]
+    "
+  />
+</div>
                 </div>
               ))}
 

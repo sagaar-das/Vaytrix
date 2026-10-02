@@ -69,6 +69,7 @@ function ItHowItWorks() {
       glow: "bg-[#8B5CF6]/15",
       dot: "bg-[#8B5CF6]",
     },
+
     blue: {
       icon: "text-[#3B82F6]",
       iconBg: "bg-[#3B82F6]/10",
@@ -76,6 +77,7 @@ function ItHowItWorks() {
       glow: "bg-[#3B82F6]/15",
       dot: "bg-[#3B82F6]",
     },
+
     cyan: {
       icon: "text-[#06B6D4]",
       iconBg: "bg-[#06B6D4]/10",
@@ -90,7 +92,10 @@ function ItHowItWorks() {
       ref={containerRef}
       className="relative overflow-hidden bg-[#050508]"
     >
-      {/* BACKGROUND GRID */}
+      {/* =====================================================
+          BACKGROUND GRID
+      ===================================================== */}
+
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.025]"
         style={{
@@ -102,7 +107,10 @@ function ItHowItWorks() {
         }}
       />
 
-      {/* AMBIENT GLOWS */}
+      {/* =====================================================
+          AMBIENT GLOWS
+      ===================================================== */}
+
       <div className="pointer-events-none absolute left-[-180px] top-[20%] h-[420px] w-[420px] rounded-full bg-[#8B5CF6]/10 blur-[150px]" />
 
       <div className="pointer-events-none absolute right-[-180px] top-[65%] h-[420px] w-[420px] rounded-full bg-[#06B6D4]/10 blur-[150px]" />
@@ -111,9 +119,10 @@ function ItHowItWorks() {
           INTRO
       ===================================================== */}
 
-      <div className="relative z-10 flex min-h-[85vh] items-center justify-center px-5 py-24 sm:px-8 lg:px-10">
+      <div className="relative z-10 flex min-h-[55vh] items-center justify-center px-5 py-10 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-5xl text-center">
           {/* LABEL */}
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -129,6 +138,7 @@ function ItHowItWorks() {
           </motion.div>
 
           {/* MAIN HEADING */}
+
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -141,6 +151,8 @@ function ItHowItWorks() {
               Structured.
             </span>
           </motion.h2>
+
+          {/* DESCRIPTION */}
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -155,6 +167,7 @@ function ItHowItWorks() {
           </motion.p>
 
           {/* SCROLL INDICATOR */}
+
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{
@@ -182,25 +195,34 @@ function ItHowItWorks() {
       ===================================================== */}
 
       <div className="relative">
-        {/* DESKTOP PROGRESS LINE */}
+        {/* =====================================================
+            DESKTOP PROGRESS LINE
+        ===================================================== */}
+
         <div className="pointer-events-none absolute bottom-0 left-1/2 top-0 z-0 hidden w-px -translate-x-1/2 lg:block">
           {/* BASE */}
+
           <div className="absolute inset-0 bg-white/[0.07]" />
 
           {/* PROGRESS */}
+
           <motion.div
             style={{ height: progressHeight }}
             className="absolute left-0 top-0 w-full bg-gradient-to-b from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4]"
           />
 
           {/* GLOW */}
+
           <motion.div
             style={{ height: progressHeight }}
             className="absolute -left-[2px] top-0 w-[5px] bg-gradient-to-b from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] opacity-40 blur-[5px]"
           />
         </div>
 
-        {/* STEPS */}
+        {/* =====================================================
+            STEPS
+        ===================================================== */}
+
         {steps.map((step, index) => {
           const Icon = step.icon;
           const style = accentStyles[step.accent];
@@ -208,20 +230,28 @@ function ItHowItWorks() {
           return (
             <div
               key={step.number}
-              className="relative min-h-[52vh] px-5 py-8 sm:px-8 lg:px-10"
+              className="relative min-h-[21vh] px-5 py-3 sm:px-8 lg:px-10"
             >
-              <div className="mx-auto flex min-h-[45vh] max-w-7xl items-center">
-                {/* DESKTOP LAYOUT */}
+              {/* =================================================
+                  DESKTOP CONTENT
+              ================================================== */}
+
+              <div className="mx-auto flex min-h-[13vh] max-w-6xl items-center">
                 <div
-                  className={`hidden w-full items-center lg:flex ${index % 2 === 0
+                  className={`hidden w-full items-center lg:flex ${
+                    index % 2 === 0
                       ? "justify-start"
                       : "justify-end"
-                    }`}
+                  }`}
                 >
+                  {/* =================================================
+                      DESKTOP CARD
+                  ================================================== */}
+
                   <motion.div
                     initial={{
                       opacity: 0,
-                      x: index % 2 === 0 ? -60 : 60,
+                      x: index % 2 === 0 ? -40 : 40,
                     }}
                     whileInView={{
                       opacity: 1,
@@ -236,48 +266,52 @@ function ItHowItWorks() {
                       ease: "easeOut",
                     }}
                     whileHover={{
-                      y: -5,
+                      y: -4,
                     }}
-                    className="group relative w-[42%]"
+                    className="group relative w-[46%]"
                   >
-                    {/* CARD */}
                     <div
-                      className={`relative overflow-hidden rounded-[24px] border bg-[#0A0A0F]/90 p-7 backdrop-blur-2xl transition-all duration-500 ${style.border}`}
+                      className={`relative overflow-hidden rounded-[20px] border bg-[#0A0A0F]/90 p-5 backdrop-blur-2xl transition-all duration-500 ${style.border}`}
                     >
                       {/* GLOW */}
+
                       <div
                         className={`pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full opacity-0 blur-[70px] transition-opacity duration-500 group-hover:opacity-100 ${style.glow}`}
                       />
 
                       {/* TOP */}
+
                       <div className="relative z-10 flex items-center justify-between">
                         <div
-                          className={`flex h-12 w-12 items-center justify-center rounded-xl border border-white/[0.07] ${style.iconBg}`}
+                          className={`flex h-11 w-11 items-center justify-center rounded-xl border border-white/[0.07] ${style.iconBg}`}
                         >
                           <Icon
-                            size={21}
+                            size={20}
                             strokeWidth={1.7}
                             className={style.icon}
                           />
                         </div>
 
-                        <span className="font-mono text-[10px] tracking-[0.22em] text-[#475569]">
+                        <span className="font-mono text-[9px] tracking-[0.22em] text-[#475569]">
                           STEP_{step.number}
                         </span>
                       </div>
 
                       {/* TITLE */}
-                      <h3 className="relative z-10 mt-7 text-2xl font-semibold tracking-tight text-[#F8FAFC]">
+
+                      <h3 className="relative z-10 mt-5 text-xl font-semibold tracking-tight text-[#F8FAFC]">
                         {step.title}
                       </h3>
 
                       {/* DESCRIPTION */}
-                      <p className="relative z-10 mt-3 text-sm leading-7 text-[#64748B]">
+
+                      <p className="relative z-10 mt-2 text-sm leading-6 text-[#64748B]">
                         {step.desc}
                       </p>
 
                       {/* FOOTER */}
-                      <div className="relative z-10 mt-7 flex items-center gap-3 border-t border-white/[0.06] pt-5">
+
+                      <div className="relative z-10 mt-5 flex items-center gap-3 border-t border-white/[0.06] pt-4">
                         <span
                           className={`h-1.5 w-1.5 rounded-full ${style.dot}`}
                         />
@@ -288,24 +322,32 @@ function ItHowItWorks() {
                       </div>
 
                       {/* ACCENT LINE */}
+
                       <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] transition-all duration-500 group-hover:w-full" />
                     </div>
 
-                    {/* CONNECTOR */}
+                    {/* =================================================
+                        SHORT CONNECTOR
+                    ================================================== */}
+
                     <div
-                      className={`absolute top-1/2 hidden h-px w-[90px] -translate-y-1/2 bg-gradient-to-r lg:block ${index % 2 === 0
-                          ? "-right-[90px] from-white/[0.08] to-transparent"
-                          : "-left-[90px] from-transparent to-white/[0.08]"
-                        }`}
+                      className={`absolute top-1/2 hidden h-px w-[28px] -translate-y-1/2 bg-gradient-to-r lg:block ${
+                        index % 2 === 0
+                          ? "-right-[28px] from-white/[0.12] to-transparent"
+                          : "-left-[28px] from-transparent to-white/[0.12]"
+                      }`}
                     />
                   </motion.div>
                 </div>
 
-                {/* MOBILE LAYOUT */}
+                {/* =================================================
+                    MOBILE LAYOUT
+                ================================================== */}
+
                 <motion.div
                   initial={{
                     opacity: 0,
-                    y: 35,
+                    y: 30,
                   }}
                   whileInView={{
                     opacity: 1,
@@ -321,8 +363,10 @@ function ItHowItWorks() {
                   className="w-full lg:hidden"
                 >
                   <div
-                    className={`relative overflow-hidden rounded-[22px] border bg-[#0A0A0F]/90 p-5 backdrop-blur-xl ${style.border}`}
+                    className={`relative overflow-hidden rounded-[20px] border bg-[#0A0A0F]/90 p-5 backdrop-blur-xl ${style.border}`}
                   >
+                    {/* TOP */}
+
                     <div className="flex items-center justify-between">
                       <div
                         className={`flex h-11 w-11 items-center justify-center rounded-xl border border-white/[0.07] ${style.iconBg}`}
@@ -339,15 +383,21 @@ function ItHowItWorks() {
                       </span>
                     </div>
 
-                    <h3 className="mt-6 text-xl font-semibold text-[#F8FAFC]">
+                    {/* TITLE */}
+
+                    <h3 className="mt-5 text-xl font-semibold text-[#F8FAFC]">
                       {step.title}
                     </h3>
 
-                    <p className="mt-3 text-xs leading-6 text-[#64748B] sm:text-sm">
+                    {/* DESCRIPTION */}
+
+                    <p className="mt-2 text-xs leading-6 text-[#64748B] sm:text-sm">
                       {step.desc}
                     </p>
 
-                    <div className="mt-6 flex items-center gap-2 border-t border-white/[0.06] pt-4">
+                    {/* FOOTER */}
+
+                    <div className="mt-5 flex items-center gap-2 border-t border-white/[0.06] pt-4">
                       <span
                         className={`h-1.5 w-1.5 rounded-full ${style.dot}`}
                       />
@@ -356,13 +406,25 @@ function ItHowItWorks() {
                         Vaytrix Process
                       </span>
                     </div>
+
+                    {/* ACCENT LINE */}
+
+                    <div
+                      className="absolute bottom-0 left-0 h-[2px] w-full bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4]"
+                    />
                   </div>
                 </motion.div>
 
-                {/* DESKTOP CENTER NODE */}
-                <div className="absolute left-1/2 top-1/2 z-20 hidden h-9 w-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/[0.12] bg-[#050508] lg:flex">
+                {/* =================================================
+                    CENTER NODE
+                ================================================== */}
+
+                <div className="absolute left-1/2 top-1/2 z-20 hidden h-8 w-8 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/[0.12] bg-[#050508] lg:flex">
                   <div
-                    className={`h-2.5 w-2.5 rounded-full ${style.dot} shadow-[0_0_15px_currentColor]`}
+                    className={`h-2.5 w-2.5 rounded-full ${style.dot}`}
+                    style={{
+                      boxShadow: `0 0 14px currentColor`,
+                    }}
                   />
                 </div>
               </div>
@@ -371,7 +433,10 @@ function ItHowItWorks() {
         })}
       </div>
 
-      {/* FINAL CTA / END */}
+      {/* =====================================================
+          FINAL CTA / END
+      ===================================================== */}
+
       <div className="relative z-10 flex min-h-[55vh] items-center justify-center px-5 py-24 sm:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

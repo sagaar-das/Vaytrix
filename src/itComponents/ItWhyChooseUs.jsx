@@ -80,7 +80,7 @@ function ItWhyChooseUs() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-[#050508] px-4 py-20 sm:px-6 md:py-24 lg:px-10">
+    <section className="relative overflow-hidden bg-[#050508] px-4 py-10 sm:px-6 md:py-10 lg:px-10">
       {/* TECHNICAL GRID */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.03]"
@@ -122,9 +122,9 @@ function ItWhyChooseUs() {
 
             {/* HEADING */}
             <h2 className="text-3xl font-semibold leading-tight tracking-[-0.035em] text-[#F8FAFC] sm:text-4xl md:text-5xl">
-              More Than Career Support.
+              More Than Career Support
               <span className="block bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] bg-clip-text text-transparent">
-                A System Built Around You.
+                A System Built Around You
               </span>
             </h2>
 

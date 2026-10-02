@@ -65,11 +65,11 @@ function WhyUs() {
         overflow-hidden
         bg-[#050508]
         px-5
-        py-20
+        py-10
         sm:px-8
-        sm:py-24
+        sm:py-15
         lg:px-10
-        lg:py-28
+        lg:py-15
       "
     >
 
@@ -152,107 +152,104 @@ function WhyUs() {
       <div className="relative z-10 mx-auto max-w-[1250px]">
 
         {/* =======================================================
-            HEADER
-        ======================================================== */}
+    HEADER
+======================================================== */}
 
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: 30,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-            amount: 0.2,
-          }}
-          transition={{
-            duration: 0.6,
-            ease: "easeOut",
-          }}
-          className="mb-12"
-        >
+<motion.div
+  initial={{
+    opacity: 0,
+    y: 20,
+  }}
+  whileInView={{
+    opacity: 1,
+    y: 0,
+  }}
+  viewport={{
+    once: true,
+    amount: 0.2,
+  }}
+  transition={{
+    duration: 0.6,
+    ease: "easeOut",
+  }}
+  className="mb-7 text-center"
+>
 
-          {/* Technical Label */}
+  {/* Technical Label */}
 
-          <div className="flex items-center justify-between">
+  <div className="mb-3 flex items-center justify-center gap-3">
 
-            <div className="flex items-center gap-3">
+    <div className="flex h-7 w-7 items-center justify-center rounded-lg border border-[#8B5CF6]/30 bg-[#8B5CF6]/10">
+      <Sparkles
+        size={13}
+        className="text-[#A855F7]"
+      />
+    </div>
 
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-[#8B5CF6]/30 bg-[#8B5CF6]/10">
-                <Sparkles
-                  size={14}
-                  className="text-[#A855F7]"
-                />
-              </div>
+    <div className="text-left">
 
-              <div>
+      <p className="font-mono text-[8px] uppercase tracking-[0.2em] text-[#64748B]">
+        Why Vaytrix
+      </p>
 
-                <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#64748B]">
-                  Why Vaytrix
-                </p>
+      <p className="mt-0.5 text-[10px] text-[#94A3B8]">
+        Built around your future
+      </p>
 
-                <p className="mt-1 text-xs text-[#94A3B8]">
-                  Built around your business
-                </p>
+    </div>
 
-              </div>
+  </div>
 
-            </div>
+  {/* Heading */}
 
-            <span className="hidden font-mono text-[9px] uppercase tracking-[0.2em] text-[#475569] sm:block">
-              CAPABILITY / 06
-            </span>
+  <h2
+    className="
+      mx-auto
+      max-w-2xl
+      text-3xl
+      font-semibold
+      leading-[1.05]
+      tracking-[-0.04em]
+      text-[#F8FAFC]
+      sm:text-4xl
+      lg:text-[44px]
+    "
+  >
+    Why clients{" "}
+    <span
+      className="
+        bg-gradient-to-r
+        from-[#A855F7]
+        via-[#3B82F6]
+        to-[#06B6D4]
+        bg-clip-text
+        text-transparent
+      "
+    >
+      choose Vaytrix
+    </span>
+  </h2>
 
-          </div>
+  {/* Description */}
 
-          {/* Heading */}
+  <p
+    className="
+      mx-auto
+      mt-3
+      max-w-2xl
+      text-xs
+      leading-5
+      text-[#94A3B8]
+      sm:text-sm
+    "
+  >
+   We bring together technology, industry expertise, and a
+client-first approach to deliver scalable solutions that enhance
+performance, accelerate growth, and help you stay ahead in a
+changing digital landscape.
+  </p>
 
-          <div className="mt-8 grid gap-6 lg:grid-cols-[1fr_0.8fr] lg:items-end">
-
-            <h2
-              className="
-                max-w-3xl
-                text-4xl
-                font-semibold
-                leading-[1.05]
-                tracking-[-0.045em]
-                text-[#F8FAFC]
-                sm:text-5xl
-                lg:text-[54px]
-              "
-            >
-              Why businesses
-              <br />
-
-              <span
-                className="
-                  bg-gradient-to-r
-                  from-[#A855F7]
-                  via-[#3B82F6]
-                  to-[#06B6D4]
-                  bg-clip-text
-                  text-transparent
-                "
-              >
-                choose Vaytrix.
-              </span>
-            </h2>
-
-            <p className="max-w-lg text-sm leading-7 text-[#94A3B8] lg:pb-1">
-
-              We bring together technology, industry knowledge, and a
-              client-first approach to create scalable solutions that improve
-              performance, support growth, and keep businesses ready for a
-              changing digital landscape.
-
-            </p>
-
-          </div>
-
-        </motion.div>
+</motion.div>
 
         {/* =======================================================
             CAPABILITY GRID
@@ -290,7 +287,7 @@ function WhyUs() {
               className="
                 group
                 relative
-                min-h-[275px]
+                min-h-[220px]
                 overflow-hidden
                 rounded-[20px]
                 border
@@ -336,10 +333,10 @@ function WhyUs() {
                   -right-2
                   -top-5
                   font-mono
-                  text-[100px]
+                  text-[70px]
                   font-bold
                   leading-none
-                  tracking-[-0.08em]
+                  tracking-[-0.03em]
                   text-white/[0.025]
                   transition-all
                   duration-500
@@ -395,14 +392,14 @@ function WhyUs() {
                   ICON
               ================================================== */}
 
-              <div className="relative z-10 mt-9">
+              <div className="relative z-10 mt-2">
 
                 <div
                   className="
                     relative
                     flex
-                    h-14
-                    w-14
+                    h-11
+                    w-11
                     items-center
                     justify-center
                     overflow-hidden
@@ -453,11 +450,11 @@ function WhyUs() {
                 className="
                   relative
                   z-10
-                  mt-6
+                  mt-3
                   max-w-[270px]
-                  text-lg
+                  text-sm
                   font-semibold
-                  leading-6
+                  leading-5
                   tracking-[-0.02em]
                   text-[#F8FAFC]
                   transition-all
@@ -480,15 +477,15 @@ function WhyUs() {
                 className="
                   relative
                   z-10
-                  mt-3
-                  max-w-[330px]
-                  text-xs
-                  leading-6
+                  mt-1.5
+                  max-w-[300px]
+                  text-[11px]
+                  leading-4
                   text-[#64748B]
                   transition-colors
                   duration-300
                   group-hover:text-[#94A3B8]
-                  sm:text-[13px]
+                  sm:text-xs
                 "
               >
                 {item.desc}
@@ -562,10 +559,10 @@ function WhyUs() {
             delay: 0.2,
           }}
           className="
-            mt-10
+            mt-5
             flex
             flex-col
-            gap-5
+            gap-3
             rounded-2xl
             border
             border-white/[0.07]

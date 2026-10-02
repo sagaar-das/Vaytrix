@@ -47,7 +47,7 @@ export default function FAQs() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-[#050508] px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
+    <section className="relative overflow-hidden bg-[#050508] px-4 py-10  sm:px-6 sm:py-24 lg:px-8 lg:py-10">
 
       {/* =========================================================
           TECHNICAL GRID

@@ -65,7 +65,7 @@ function Navbar() {
   ];
 
   const navLinkClass = ({ isActive }) =>
-    `group relative text-sm font-medium font-['Consolas'] tracking-[+0.09em] transition-all duration-300 ${
+    `group relative text-sm font-medium  tracking-[+0.06em] transition-all duration-300 ${
       isActive
         ? "text-white"
         : "text-[#94A3B8] hover:text-white"
@@ -197,12 +197,12 @@ function Navbar() {
                 bg-transparent
                 text-sm
                 font-medium
-                tracking-[-0.01em]
+                tracking-[+0.06em]
                 text-[#94A3B8]
                 transition-all
                 duration-300
                 hover:text-white
-                font-['Consolas']
+                
               "
             >
               <span className="relative">

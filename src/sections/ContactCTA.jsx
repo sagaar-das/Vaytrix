@@ -107,11 +107,14 @@ function ContactCTA() {
         overflow-hidden
         bg-[#050508]
         px-5
-        py-20
+        py-10
+        pb-2
         sm:px-8
-        sm:py-24
+        sm:py-5
         lg:px-10
-        lg:py-28
+        lg:py-10
+        lg:pb-5
+
       "
     >
       {/* =========================================================
@@ -230,7 +233,7 @@ function ContactCTA() {
 
               <p className="mt-7 max-w-lg text-sm leading-7 text-[#94A3B8] sm:text-base">
 
-                Have a question, project requirement, or business challenge?
+                Have a question, project requirement, or future challenge?
                 Connect with the Vaytrix team and let's explore how technology
                 can help move your goals forward.
 
@@ -295,7 +298,7 @@ function ContactCTA() {
                     </p>
 
                     <p className="mt-1 text-sm text-[#F8FAFC]">
-                      xxxxxxxxx
+                      +1812 495 4121
                     </p>
                   </div>
 
@@ -323,7 +326,8 @@ function ContactCTA() {
                     </p>
 
                     <p className="mt-1 text-sm text-[#F8FAFC]">
-                      xxxxxxxx
+                      20 Cooper Square, New York,
+                      NY 10003, USA
                     </p>
                   </div>
 
@@ -607,6 +611,49 @@ function ContactCTA() {
                       focus:ring-[#8B5CF6]/20
                     "
                   />
+
+                </div>
+
+                {/* MESSAGE */}
+
+                <div className="mt-4">
+
+                  <label className="mb-2 block font-mono text-[8px] uppercase tracking-[0.16em] text-[#64748B]">
+                    Message
+                  </label>
+
+                  <textarea
+                    name="message"
+                    value={form.message}
+                    onChange={handleChange}
+                    placeholder="Tell us about your requirement..."
+                    rows={1}
+                    required
+                    className="
+      w-full
+      resize-none
+      rounded-lg
+      border border-white/[0.08]
+      bg-white/[0.025]
+      px-4 py-3
+      text-sm
+      text-[#F8FAFC]
+      outline-none
+      placeholder:text-[#475569]
+      transition-all
+      duration-300
+      focus:border-[#8B5CF6]/50
+      focus:bg-[#8B5CF6]/[0.04]
+      focus:ring-1
+      focus:ring-[#8B5CF6]/20
+    "
+                  />
+
+                  <div className="mt-1 flex justify-end">
+                    <span className="font-mono text-[8px] text-[#475569]">
+                      Share your requirements or questions
+                    </span>
+                  </div>
 
                 </div>
 

@@ -52,7 +52,7 @@ function Services() {
 
     <>
       <Helmet>
-        <title>Services | Xlent IT Services</title>
+        <title>Services | Vaytrix Services</title>
 
         <meta name="description" content="Explore IT staffing, contract hiring, permanent placement, recruiting, and workforce solutions tailored for modern businesses." />
 
