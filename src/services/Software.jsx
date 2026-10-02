@@ -1,143 +1,249 @@
-// import { motion } from "framer-motion";
-// import AnimatedHeading from "../components/AnimatedHeading";
-// import AnimatedText from "../components/AnimatedText";
-// import { useNavigate } from "react-router-dom";
-
-// function Software() {
-//   const navigate = useNavigate();
-
-//   const services = [
-//     {
-//       title: "Website Development",
-//       desc: "Professional websites that build credibility and attract customers.",
-//       best: "Startups, small businesses, personal brands",
-//       points: ["Fast loading", "SEO-ready", "Conversion-focused design"],
-//     },
-//     {
-//       title: "Web Application Development",
-//       desc: "Custom dashboards, admin panels, and business tools.",
-//       best: "SaaS products, internal teams, growing companies",
-//       points: ["Secure role-based access", "Scalable architecture", "Custom APIs"],
-//     },
-//     {
-//       title: "Mobile Application Development",
-//       desc: "Native and cross-platform mobile apps for iOS and Android.",
-//       best: "Startups, service platforms, consumer apps",
-//       points: ["Smooth performance", "Real-time features", "App store ready"],
-//     },
-//     {
-//       title: "Custom Software Solutions",
-//       desc: "Tailored systems designed around your business needs.",
-//       best: "Businesses with unique workflows",
-//       points: ["End-to-end ownership", "Clean, maintainable code", "Long-term scalability"],
-//     },
-//     {
-//       title: "Maintenance & Support",
-//       desc: "Ongoing updates, improvements, and technical support.",
-//       best: "Businesses that need reliability",
-//       points: ["Bug fixes", "Feature upgrades", "Priority support"],
-//     },
-//   ];
-
-//   return (
-//     <div className="w-full bg-black text-white py-20">
-
-//       {/* CENTERED CONTENT WRAPPER */}
-//       <div className="w-full px-4 sm:px-6 lg:px-12">
-
-//         {/* HEADING SECTION */}
-//         <div className="max-w-4xl mx-auto text-center">
-
-//           <AnimatedHeading
-//             text="Software Development"
-//             className="text-[26px] sm:text-5xl font-bold text-yellow-400 mb-4 whitespace-nowrap"
-//           />
-
-//           <AnimatedText
-//             className="text-gray-400 mb-12 text-sm sm:text-base"
-//             delay={0.4}
-//           >
-//             We deliver scalable, secure, and high-performance software solutions tailored to business needs.
-//           </AnimatedText>
-
-//         </div>
-
-//         {/* CARDS GRID  */}
-//         <div className="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-//           {services.map((item, i) => (
-
-//             <motion.div
-//               key={i}
-//               initial={{ opacity: 0, y: 40 }}
-//               whileInView={{ opacity: 1, y: 0 }}
-//               viewport={{ once: true }}
-//               transition={{ duration: 0.5, delay: i * 0.08 }}
-//               whileHover={{ scale: 1.04 }}
-//               className="group relative overflow-hidden rounded-2xl p-[1px] bg-gradient-to-br from-yellow-400/30 via-transparent to-yellow-400/30"
-//             >
-
-//               {/* INNER CARD */}
-//               <div className="relative h-full flex flex-col justify-between bg-[#0d0d0f]/90 backdrop-blur-md rounded-2xl p-6 border border-gray-800 transition duration-300 group-hover:border-yellow-400">
-
-//                 {/* GLOW */}
-//                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 pointer-events-none">
-//                   <div className="absolute -top-10 -left-10 w-40 h-40 bg-yellow-400/10 blur-3xl rounded-full"></div>
-//                   <div className="absolute bottom-0 right-0 w-40 h-40 bg-yellow-400/10 blur-3xl rounded-full"></div>
-//                 </div>
-
-//                 {/* CONTENT */}
-//                 <div className="relative z-10">
-
-//                   <h3 className="text-lg font-semibold text-white mb-2 transition duration-300 group-hover:text-yellow-400">
-//                     {item.title}
-//                   </h3>
-
-//                   <p className="text-gray-400 text-sm mb-4">
-//                     {item.desc}
-//                   </p>
-
-//                   <p className="text-xs text-gray-500 mb-3">
-//                     <span className="text-gray-300 font-medium">Best for:</span> {item.best}
-//                   </p>
-
-//                   <ul className="space-y-1 text-sm text-gray-300 mb-6">
-//                     {item.points.map((point, idx) => (
-//                       <li
-//                         key={idx}
-//                         className="flex items-center gap-2 group-hover:text-yellow-400 transition"
-//                       >
-//                         <span className="text-yellow-400">✔</span> {point}
-//                       </li>
-//                     ))}
-//                   </ul>
-
-//                 </div>
-
-          
-
-//               </div>
-
-//             </motion.div>
-
-//           ))}
-
-//         </div>
-
-//       </div>
-
-//     </div>
-//   );
-// }
-
-// export default Software;
-
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import {
+  Code2,
+  Sparkles,
+  Globe,
+  Smartphone,
+  Layers3,
+} from "lucide-react";
 
 function Software() {
+  // =========================
+  // Countdown Timer
+  // =========================
+  const calculateTimeLeft = () => {
+    const targetDate = new Date("2027-01-01T00:00:00");
+    const now = new Date();
+    const difference = targetDate.getTime() - now.getTime();
+
+    if (difference <= 0) {
+      return {
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+      };
+    }
+
+    return {
+      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((difference / (1000 * 60)) % 60),
+      seconds: Math.floor((difference / 1000) % 60),
+    };
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const isLive =
+    timeLeft.days === 0 &&
+    timeLeft.hours === 0 &&
+    timeLeft.minutes === 0 &&
+    timeLeft.seconds === 0;
+
+  const countdown = [
+    { label: "Days", value: timeLeft.days },
+    { label: "Hours", value: timeLeft.hours },
+    { label: "Minutes", value: timeLeft.minutes },
+    { label: "Seconds", value: timeLeft.seconds },
+  ];
+
+  // =========================
+  // Software Development Services
+  // =========================
+  const services = [
+    {
+      icon: Globe,
+      title: "Web Development",
+      description:
+        "Scalable and responsive web applications designed around our clients' business requirements, users, and digital goals.",
+    },
+    {
+      icon: Smartphone,
+      title: "Mobile Development",
+      description:
+        "Modern mobile applications focused on usability, performance, security, and seamless digital experiences.",
+    },
+    {
+      icon: Layers3,
+      title: "Enterprise Solutions",
+      description:
+        "Reliable software solutions that support complex workflows, integrations, automation, and long-term business growth.",
+    },
+  ];
+
   return (
-    <div>Software</div>
-  )
+    <section className="relative min-h-[calc(100vh-20px)] overflow-hidden bg-[#050508] px-5 py-12 text-white sm:px-8 sm:py-14 lg:px-10 lg:py-16">
+      {/* =========================
+          Background
+      ========================= */}
+      <div className="pointer-events-none absolute inset-0">
+        {/* Purple Glow */}
+        <div className="absolute left-1/2 top-0 h-[300px] w-[500px] -translate-x-1/2 rounded-full bg-[#8B5CF6]/10 blur-[120px]" />
+
+        {/* Blue Glow */}
+        <div className="absolute bottom-0 right-0 h-[250px] w-[300px] rounded-full bg-[#3B82F6]/5 blur-[100px]" />
+
+        {/* Grid */}
+        <div
+          className="absolute inset-0 opacity-[0.025]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
+            backgroundSize: "45px 45px",
+          }}
+        />
+      </div>
+
+      {/* =========================
+          Main Content
+      ========================= */}
+      <div className="relative mx-auto flex min-h-[680px] max-w-6xl flex-col justify-center">
+        {/* =========================
+            Header
+        ========================= */}
+        <div className="text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#8B5CF6]/20 bg-[#8B5CF6]/5 px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.18em] text-[#A78BFA]"
+          >
+            <Sparkles className="h-3.5 w-3.5" />
+            Software Development
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl"
+          >
+            Software{" "}
+            <span className="bg-gradient-to-r from-[#8B5CF6] via-[#A855F7] to-[#3B82F6] bg-clip-text text-transparent">
+              Development.
+            </span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mx-auto mt-3 max-w-2xl text-xs leading-5 text-slate-400 sm:text-sm"
+          >
+            Build powerful, scalable, and future-ready software solutions
+            designed around the unique needs of our clients, from modern web
+            platforms to enterprise applications.
+          </motion.p>
+        </div>
+
+        {/* =========================
+            Countdown
+        ========================= */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.97 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.15 }}
+          className="mx-auto mt-6 w-full max-w-3xl rounded-xl border border-white/[0.08] bg-white/[0.025] p-3 shadow-2xl shadow-black/20"
+        >
+          {/* Countdown Header */}
+          <div className="mb-2 flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Code2 className="h-4 w-4 text-[#A78BFA]" />
+
+              <span className="text-[11px] font-medium text-slate-300">
+                {isLive ? "Now Live" : "Launching January 2027"}
+              </span>
+            </div>
+
+            <span className="text-[10px] text-slate-500">
+              01.01.2027
+            </span>
+          </div>
+
+          {/* Countdown Boxes */}
+          <div className="grid grid-cols-4 gap-2">
+            {countdown.map((item) => (
+              <div
+                key={item.label}
+                className="rounded-lg border border-white/[0.06] bg-black/20 px-2 py-2 text-center"
+              >
+                <div className="text-xl font-semibold tabular-nums text-white sm:text-2xl">
+                  {String(item.value).padStart(2, "0")}
+                </div>
+
+                <div className="mt-0.5 text-[9px] uppercase tracking-wider text-slate-500">
+                  {item.label}
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* =========================
+            Service Cards
+        ========================= */}
+        <div className="mt-7 grid gap-3 md:grid-cols-3">
+          {services.map((service, index) => {
+            const Icon = service.icon;
+
+            return (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.45,
+                  delay: 0.2 + index * 0.08,
+                }}
+                whileHover={{ y: -3 }}
+                className="group rounded-xl border border-white/[0.07] bg-white/[0.025] p-4 transition-all duration-300 hover:border-[#8B5CF6]/25 hover:bg-[#8B5CF6]/[0.035]"
+              >
+                {/* Icon */}
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#8B5CF6]/10 text-[#A78BFA] transition-all duration-300 group-hover:bg-[#8B5CF6]/15">
+                  <Icon className="h-5 w-5" />
+                </div>
+
+                {/* Title */}
+                <h3 className="mt-3 text-sm font-semibold text-white">
+                  {service.title}
+                </h3>
+
+                {/* Description */}
+                <p className="mt-1.5 text-[11px] leading-5 text-slate-400">
+                  {service.description}
+                </p>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* =========================
+            Bottom Text
+        ========================= */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="mt-7 text-center"
+        >
+          <p className="text-[10px] uppercase tracking-[0.2em] text-slate-600">
+            Scalable Solutions / Modern Technology / Client-Focused
+            Development
+          </p>
+        </motion.div>
+      </div>
+    </section>
+  );
 }
 
-export default Software
+export default Software;

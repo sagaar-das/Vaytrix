@@ -1,64 +1,248 @@
-
-// import ServiceSections from "../components/ServiceSections";
-// import AnimatedHeading from "../components/AnimatedHeading";
-// import AnimatedText from "../components/AnimatedText";
-
-// function AI() {
-
-//   const data = [
-//     {
-//       title: "AI/ML Solutions",
-//       description:
-//         "We develop intelligent AI and machine learning models that automate processes and generate actionable insights, helping businesses improve efficiency and decision-making."
-//     },
-//     {
-//       title: "IoT Integration",
-//       description:
-//         "We design and implement IoT solutions that connect devices and systems seamlessly, enabling real-time monitoring and improved operational efficiency."
-//     },
-//     {
-//       title: "Predictive Analytics",
-//       description:
-//         "We leverage advanced analytics to predict trends, identify opportunities, and mitigate risks, helping businesses stay ahead in a competitive environment."
-//     },
-//     {
-//       title: "Smart Automation",
-//       description:
-//         "We build automation systems that enhance productivity and reduce manual effort by integrating advanced technologies into intelligent workflows."
-//     }
-//   ];
-
-//   return (
-//     <section className="text-white px-6 py-16 max-w-7xl mx-auto">
-
-//       {/* Heading (Left → Right Reveal) */}
-//       <AnimatedHeading
-//         text="IoT / AI Development"
-//         className="text-[26px] sm:text-5xl font-bold text-yellow-400 mb-4 whitespace-nowrap"
-//       />
-
-//       {/* Description (Scroll Reveal) */} 
-//       <AnimatedText className="text-center text-gray-400 mb-10" delay={0.5}>
-//        We leverage advanced technologies like AI and IoT to build intelligent systems that drive automation and insights.
-//       </AnimatedText>
-
-//       {/* Sections */}
-//       <div className="mt-12">
-//         <ServiceSections data={data} />
-//       </div>
-
-//     </section>
-//   );
-// }
-
-// export default AI;
-
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import {
+  Sparkles,
+  Bot,
+  BrainCircuit,
+  Workflow,
+  Zap,
+} from "lucide-react";
 
 function AI() {
+  // =========================
+  // Countdown Timer
+  // =========================
+  const calculateTimeLeft = () => {
+    const targetDate = new Date("2027-01-01T00:00:00");
+    const now = new Date();
+    const difference = targetDate.getTime() - now.getTime();
+
+    if (difference <= 0) {
+      return {
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+      };
+    }
+
+    return {
+      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((difference / (1000 * 60)) % 60),
+      seconds: Math.floor((difference / 1000) % 60),
+    };
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const isLive =
+    timeLeft.days === 0 &&
+    timeLeft.hours === 0 &&
+    timeLeft.minutes === 0 &&
+    timeLeft.seconds === 0;
+
+  const countdown = [
+    { label: "Days", value: timeLeft.days },
+    { label: "Hours", value: timeLeft.hours },
+    { label: "Minutes", value: timeLeft.minutes },
+    { label: "Seconds", value: timeLeft.seconds },
+  ];
+
+  // =========================
+  // AI & Automation Services
+  // =========================
+  const services = [
+    {
+      icon: Bot,
+      title: "AI Solutions",
+      description:
+        "Intelligent AI solutions designed around our clients' business needs to improve efficiency, insights, and customer experiences.",
+    },
+    {
+      icon: BrainCircuit,
+      title: "Intelligent Automation",
+      description:
+        "Smart automation solutions that reduce repetitive work, streamline workflows, and improve operational productivity.",
+    },
+    {
+      icon: Workflow,
+      title: "AI-Powered Workflows",
+      description:
+        "Connected AI-driven workflows that help our clients automate processes, make faster decisions, and scale operations effectively.",
+    },
+  ];
+
   return (
-    <div>AI</div>
-  )
+    <section className="relative min-h-[calc(100vh-20px)] overflow-hidden bg-[#050508] px-5 py-12 text-white sm:px-8 sm:py-14 lg:px-10 lg:py-16">
+      {/* =========================
+          Background
+      ========================= */}
+      <div className="pointer-events-none absolute inset-0">
+        {/* Purple Glow */}
+        <div className="absolute left-1/2 top-0 h-[300px] w-[500px] -translate-x-1/2 rounded-full bg-[#8B5CF6]/10 blur-[120px]" />
+
+        {/* Blue Glow */}
+        <div className="absolute bottom-0 right-0 h-[250px] w-[300px] rounded-full bg-[#3B82F6]/5 blur-[100px]" />
+
+        {/* Grid */}
+        <div
+          className="absolute inset-0 opacity-[0.025]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
+            backgroundSize: "45px 45px",
+          }}
+        />
+      </div>
+
+      {/* =========================
+          Main Content
+      ========================= */}
+      <div className="relative mx-auto flex min-h-[680px] max-w-6xl flex-col justify-center">
+        {/* =========================
+            Header
+        ========================= */}
+        <div className="text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#8B5CF6]/20 bg-[#8B5CF6]/5 px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.18em] text-[#A78BFA]"
+          >
+            <Sparkles className="h-3.5 w-3.5" />
+            AI & Automation
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl"
+          >
+            AI &{" "}
+            <span className="bg-gradient-to-r from-[#8B5CF6] via-[#A855F7] to-[#3B82F6] bg-clip-text text-transparent">
+              Automation.
+            </span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mx-auto mt-3 max-w-2xl text-xs leading-5 text-slate-400 sm:text-sm"
+          >
+            Empower our clients with intelligent AI and automation solutions
+            that simplify operations, improve productivity, accelerate
+            decision-making, and create scalable digital experiences.
+          </motion.p>
+        </div>
+
+        {/* =========================
+            Countdown
+        ========================= */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.97 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.15 }}
+          className="mx-auto mt-6 w-full max-w-3xl rounded-xl border border-white/[0.08] bg-white/[0.025] p-3 shadow-2xl shadow-black/20"
+        >
+          {/* Countdown Header */}
+          <div className="mb-2 flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Zap className="h-4 w-4 text-[#A78BFA]" />
+
+              <span className="text-[11px] font-medium text-slate-300">
+                {isLive ? "Now Live" : "Launching January 2027"}
+              </span>
+            </div>
+
+            <span className="text-[10px] text-slate-500">
+              01.01.2027
+            </span>
+          </div>
+
+          {/* Countdown Boxes */}
+          <div className="grid grid-cols-4 gap-2">
+            {countdown.map((item) => (
+              <div
+                key={item.label}
+                className="rounded-lg border border-white/[0.06] bg-black/20 px-2 py-2 text-center"
+              >
+                <div className="text-xl font-semibold tabular-nums text-white sm:text-2xl">
+                  {String(item.value).padStart(2, "0")}
+                </div>
+
+                <div className="mt-0.5 text-[9px] uppercase tracking-wider text-slate-500">
+                  {item.label}
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* =========================
+            Service Cards
+        ========================= */}
+        <div className="mt-7 grid gap-3 md:grid-cols-3">
+          {services.map((service, index) => {
+            const Icon = service.icon;
+
+            return (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.45,
+                  delay: 0.2 + index * 0.08,
+                }}
+                whileHover={{ y: -3 }}
+                className="group rounded-xl border border-white/[0.07] bg-white/[0.025] p-4 transition-all duration-300 hover:border-[#8B5CF6]/25 hover:bg-[#8B5CF6]/[0.035]"
+              >
+                {/* Icon */}
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#8B5CF6]/10 text-[#A78BFA] transition-all duration-300 group-hover:bg-[#8B5CF6]/15">
+                  <Icon className="h-5 w-5" />
+                </div>
+
+                {/* Title */}
+                <h3 className="mt-3 text-sm font-semibold text-white">
+                  {service.title}
+                </h3>
+
+                {/* Description */}
+                <p className="mt-1.5 text-[11px] leading-5 text-slate-400">
+                  {service.description}
+                </p>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* =========================
+            Bottom Text
+        ========================= */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="mt-7 text-center"
+        >
+          <p className="text-[10px] uppercase tracking-[0.2em] text-slate-600">
+            Intelligent Solutions / Smart Automation / Digital Innovation
+          </p>
+        </motion.div>
+      </div>
+    </section>
+  );
 }
 
-export default AI
+export default AI;
