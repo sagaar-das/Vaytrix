@@ -221,7 +221,7 @@ function Footer() {
                   </p>
 
                   <span className="text-[13px] text-white/50 transition group-hover:text-white">
-                    info@vaytrix.com
+                    info@vaytrixtechit.com
                   </span>
                 </div>
 
@@ -240,7 +240,7 @@ function Footer() {
                   </p>
 
                   <span className="text-[13px] text-white/50 transition group-hover:text-white">
-                    +1 (000) 000-0000
+                    +1812 495 4121
                   </span>
                 </div>
 
@@ -259,7 +259,7 @@ function Footer() {
                   </p>
 
                   <span className="text-[13px] leading-5 text-white/50 transition group-hover:text-white">
-                    Austin, Texas, United States
+                    20 Cooper Square, New York, NY 10003, USA
                   </span>
                 </div>
 
