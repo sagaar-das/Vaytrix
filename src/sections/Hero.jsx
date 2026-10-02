@@ -335,7 +335,7 @@ lg:py-8
                 />
 
                 <span className="relative z-10">
-                  Book a Schedul
+                  Book a Schedule
                 </span>
 
                 <span
