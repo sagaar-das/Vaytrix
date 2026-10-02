@@ -130,7 +130,7 @@ function Consulting() {
           >
             Management{" "}
             <span className="bg-gradient-to-r from-[#8B5CF6] via-[#A855F7] to-[#3B82F6] bg-clip-text text-transparent">
-              Consulting.
+              Consulting
             </span>
           </motion.h1>
 
