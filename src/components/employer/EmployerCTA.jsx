@@ -173,10 +173,10 @@ function EmployerCTA() {
                 </motion.button>
 
                 {/* Secondary CTA */}
-                <motion.button
+                <motion.a
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
-                  onClick={() => navigate("/contact")}
+                  href="tel:+1812 495 4121"
                   className="
                     group inline-flex items-center justify-center gap-3
                     rounded-xl
@@ -198,7 +198,7 @@ function EmployerCTA() {
 
                   Schedule a Consultation
 
-                </motion.button>
+                </motion.a>
 
               </div>
 

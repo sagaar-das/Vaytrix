@@ -5,7 +5,7 @@ const faqs = [
   {
     question: "Is there any cost to use the service?",
     answer:
-      "Yes, our service is provided at no cost when you secure a job within one month with our support.",
+      "Yes, we do charge bare minimal to initiate the service to get you full service.",
   },
   {
     question: "Can I try the service before getting started?",
@@ -36,6 +36,16 @@ const faqs = [
     question: "Can I share a professional reference?",
     answer:
       "Absolutely. You can provide relevant references, and our team will be happy to review and consider them.",
+  },
+  {
+    question: "Can i get H1B from you?",
+    answer:
+      "Yes you can depending upon the vacancy we have.",
+  },
+  {
+    question: "Do you help STEM candidate?",
+    answer:
+      "Yes we do help them to get placement and Payroll.",
   },
 ];
 

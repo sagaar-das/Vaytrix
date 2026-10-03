@@ -87,6 +87,215 @@ function ItHowItWorks() {
     },
   };
 
+  const SideGraphic = ({ step, index, accent }) => {
+    const colors = {
+      violet: {
+        primary: "#8B5CF6",
+        secondary: "#3B82F6",
+        soft: "rgba(139,92,246,0.12)",
+      },
+      blue: {
+        primary: "#3B82F6",
+        secondary: "#06B6D4",
+        soft: "rgba(59,130,246,0.12)",
+      },
+      cyan: {
+        primary: "#06B6D4",
+        secondary: "#8B5CF6",
+        soft: "rgba(6,182,212,0.12)",
+      },
+    };
+
+    const color = colors[accent];
+
+    return (
+      <motion.div
+        initial={{
+          opacity: 0,
+          scale: 0.8,
+          x: index % 2 === 0 ? 40 : -40,
+        }}
+        whileInView={{
+          opacity: 1,
+          scale: 1,
+          x: 0,
+        }}
+        viewport={{ once: true, amount: 0.25 }}
+        transition={{
+          duration: 0.9,
+          ease: "easeOut",
+        }}
+        className="relative hidden h-[300px] w-[46%] items-center justify-center lg:flex"
+      >
+        {/* MAIN ROTATING RING */}
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{
+            duration: 35,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          className="absolute h-[270px] w-[270px] rounded-full border"
+          style={{
+            borderColor: `${color.primary}22`,
+            boxShadow: `0 0 80px ${color.primary}12`,
+          }}
+        >
+          {/* Ring markers */}
+          <span
+            className="absolute left-1/2 top-[-5px] h-3 w-3 -translate-x-1/2 rounded-full"
+            style={{
+              background: color.primary,
+              boxShadow: `0 0 20px ${color.primary}`,
+            }}
+          />
+
+          <span
+            className="absolute bottom-[18px] right-[35px] h-2 w-2 rounded-full"
+            style={{
+              background: color.secondary,
+              boxShadow: `0 0 15px ${color.secondary}`,
+            }}
+          />
+
+          <span
+            className="absolute left-[25px] top-[65px] h-1.5 w-1.5 rounded-full"
+            style={{
+              background: color.primary,
+            }}
+          />
+        </motion.div>
+
+        {/* SECOND RING */}
+        <motion.div
+          animate={{ rotate: -360 }}
+          transition={{
+            duration: 24,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          className="absolute h-[205px] w-[205px] rounded-full border border-dashed"
+          style={{
+            borderColor: `${color.secondary}30`,
+          }}
+        />
+
+        {/* THIRD RING */}
+        <motion.div
+          animate={{
+            scale: [1, 1.08, 1],
+            opacity: [0.35, 0.7, 0.35],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute h-[145px] w-[145px] rounded-full border"
+          style={{
+            borderColor: `${color.primary}35`,
+            background: color.soft,
+            boxShadow: `0 0 60px ${color.primary}18`,
+          }}
+        />
+
+        {/* CENTER CORE */}
+        <motion.div
+          animate={{
+            scale: [1, 1.12, 1],
+            boxShadow: [
+              `0 0 15px ${color.primary}30`,
+              `0 0 35px ${color.primary}60`,
+              `0 0 15px ${color.primary}30`,
+            ],
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="relative z-10 flex h-[82px] w-[82px] items-center justify-center rounded-full border border-white/[0.12] bg-[#08080D]"
+        >
+          <div
+            className="flex h-12 w-12 items-center justify-center rounded-full border"
+            style={{
+              borderColor: `${color.primary}55`,
+              background: color.soft,
+            }}
+          >
+            <span
+              className="font-mono text-sm font-semibold"
+              style={{ color: color.primary }}
+            >
+              {step.number}
+            </span>
+          </div>
+        </motion.div>
+
+        {/* ORBITING DOT */}
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          className="absolute h-[320px] w-[320px]"
+        >
+          <span
+            className="absolute left-1/2 top-[-3px] h-2 w-2 -translate-x-1/2 rounded-full"
+            style={{
+              background: color.secondary,
+              boxShadow: `0 0 18px ${color.secondary}`,
+            }}
+          />
+        </motion.div>
+
+        {/* TECHNICAL LINES */}
+        <div className="absolute left-[5%] top-1/2 h-px w-[85px] bg-gradient-to-r from-transparent to-white/[0.12]" />
+
+        <div className="absolute right-[5%] top-1/2 h-px w-[85px] bg-gradient-to-l from-transparent to-white/[0.12]" />
+
+        {/* DATA LABEL */}
+        <div className="absolute bottom-[18px] left-1/2 flex -translate-x-1/2 items-center gap-3 whitespace-nowrap">
+          <span
+            className="h-1.5 w-1.5 rounded-full"
+            style={{
+              background: color.primary,
+              boxShadow: `0 0 10px ${color.primary}`,
+            }}
+          />
+
+          <span className="font-mono text-[8px] uppercase tracking-[0.25em] text-[#475569]">
+            PROCESS_NODE / {step.number}
+          </span>
+        </div>
+
+        {/* CORNER TECH MARKS */}
+        <div
+          className="absolute left-[15%] top-[18%] h-7 w-7 border-l border-t"
+          style={{ borderColor: `${color.primary}30` }}
+        />
+
+        <div
+          className="absolute bottom-[18%] right-[15%] h-7 w-7 border-b border-r"
+          style={{ borderColor: `${color.secondary}30` }}
+        />
+
+        {/* SMALL DATA POINTS */}
+        <span
+          className="absolute left-[18%] top-[32%] h-1 w-1 rounded-full"
+          style={{ background: color.primary }}
+        />
+
+        <span
+          className="absolute right-[18%] bottom-[32%] h-1 w-1 rounded-full"
+          style={{ background: color.secondary }}
+        />
+      </motion.div>
+    );
+  };
+
   return (
     <section
       ref={containerRef}
@@ -114,6 +323,8 @@ function ItHowItWorks() {
       <div className="pointer-events-none absolute left-[-180px] top-[20%] h-[420px] w-[420px] rounded-full bg-[#8B5CF6]/10 blur-[150px]" />
 
       <div className="pointer-events-none absolute right-[-180px] top-[65%] h-[420px] w-[420px] rounded-full bg-[#06B6D4]/10 blur-[150px]" />
+
+
 
       {/* =====================================================
           INTRO
@@ -237,107 +448,186 @@ function ItHowItWorks() {
               ================================================== */}
 
               <div className="mx-auto flex min-h-[13vh] max-w-6xl items-center">
-                <div
-                  className={`hidden w-full items-center lg:flex ${
-                    index % 2 === 0
-                      ? "justify-start"
-                      : "justify-end"
-                  }`}
-                >
-                  {/* =================================================
-                      DESKTOP CARD
-                  ================================================== */}
+                <div className="hidden w-full items-center justify-between lg:flex">
 
-                  <motion.div
-                    initial={{
-                      opacity: 0,
-                      x: index % 2 === 0 ? -40 : 40,
-                    }}
-                    whileInView={{
-                      opacity: 1,
-                      x: 0,
-                    }}
-                    viewport={{
-                      once: true,
-                      amount: 0.35,
-                    }}
-                    transition={{
-                      duration: 0.7,
-                      ease: "easeOut",
-                    }}
-                    whileHover={{
-                      y: -4,
-                    }}
-                    className="group relative w-[46%]"
-                  >
-                    <div
-                      className={`relative overflow-hidden rounded-[20px] border bg-[#0A0A0F]/90 p-5 backdrop-blur-2xl transition-all duration-500 ${style.border}`}
-                    >
-                      {/* GLOW */}
+                  {/* =====================================================
+      STEP 01 / 03 / 05
+      CARD LEFT → GRAPHIC RIGHT
+  ===================================================== */}
 
-                      <div
-                        className={`pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full opacity-0 blur-[70px] transition-opacity duration-500 group-hover:opacity-100 ${style.glow}`}
-                      />
-
-                      {/* TOP */}
-
-                      <div className="relative z-10 flex items-center justify-between">
+                  {index % 2 === 0 ? (
+                    <>
+                      {/* CARD */}
+                      <motion.div
+                        initial={{
+                          opacity: 0,
+                          x: -50,
+                        }}
+                        whileInView={{
+                          opacity: 1,
+                          x: 0,
+                        }}
+                        viewport={{
+                          once: true,
+                          amount: 0.35,
+                        }}
+                        transition={{
+                          duration: 0.7,
+                          ease: "easeOut",
+                        }}
+                        whileHover={{
+                          y: -4,
+                        }}
+                        className="group relative w-[46%]"
+                      >
                         <div
-                          className={`flex h-11 w-11 items-center justify-center rounded-xl border border-white/[0.07] ${style.iconBg}`}
+                          className={`relative overflow-hidden rounded-[20px] border bg-[#0A0A0F]/90 p-5 backdrop-blur-2xl transition-all duration-500 ${style.border}`}
                         >
-                          <Icon
-                            size={20}
-                            strokeWidth={1.7}
-                            className={style.icon}
+                          {/* GLOW */}
+                          <div
+                            className={`pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full opacity-0 blur-[70px] transition-opacity duration-500 group-hover:opacity-100 ${style.glow}`}
                           />
+
+                          {/* TOP */}
+                          <div className="relative z-10 flex items-center justify-between">
+                            <div
+                              className={`flex h-11 w-11 items-center justify-center rounded-xl border border-white/[0.07] ${style.iconBg}`}
+                            >
+                              <Icon
+                                size={20}
+                                strokeWidth={1.7}
+                                className={style.icon}
+                              />
+                            </div>
+
+                            <span className="font-mono text-[9px] tracking-[0.22em] text-[#475569]">
+                              STEP_{step.number}
+                            </span>
+                          </div>
+
+                          {/* TITLE */}
+                          <h3 className="relative z-10 mt-5 text-xl font-semibold tracking-tight text-[#F8FAFC]">
+                            {step.title}
+                          </h3>
+
+                          {/* DESCRIPTION */}
+                          <p className="relative z-10 mt-2 text-sm leading-6 text-[#64748B]">
+                            {step.desc}
+                          </p>
+
+                          {/* FOOTER */}
+                          <div className="relative z-10 mt-5 flex items-center gap-3 border-t border-white/[0.06] pt-4">
+                            <span
+                              className={`h-1.5 w-1.5 rounded-full ${style.dot}`}
+                            />
+
+                            <span className="font-mono text-[8px] uppercase tracking-[0.2em] text-[#475569]">
+                              Vaytrix Process
+                            </span>
+                          </div>
+
+                          {/* ACCENT */}
+                          <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] transition-all duration-500 group-hover:w-full" />
                         </div>
 
-                        <span className="font-mono text-[9px] tracking-[0.22em] text-[#475569]">
-                          STEP_{step.number}
-                        </span>
-                      </div>
+                        {/* CONNECTOR */}
+                        <div className="absolute right-[-30px] top-1/2 h-px w-[30px] -translate-y-1/2 bg-gradient-to-r from-white/[0.15] to-transparent" />
+                      </motion.div>
 
-                      {/* TITLE */}
+                      {/* GRAPHIC */}
+                      <SideGraphic
+                        step={step}
+                        index={index}
+                        accent={step.accent}
+                      />
+                    </>
+                  ) : (
+                    <>
+                      {/* GRAPHIC */}
+                      <SideGraphic
+                        step={step}
+                        index={index}
+                        accent={step.accent}
+                      />
 
-                      <h3 className="relative z-10 mt-5 text-xl font-semibold tracking-tight text-[#F8FAFC]">
-                        {step.title}
-                      </h3>
+                      {/* CARD */}
+                      <motion.div
+                        initial={{
+                          opacity: 0,
+                          x: 50,
+                        }}
+                        whileInView={{
+                          opacity: 1,
+                          x: 0,
+                        }}
+                        viewport={{
+                          once: true,
+                          amount: 0.35,
+                        }}
+                        transition={{
+                          duration: 0.7,
+                          ease: "easeOut",
+                        }}
+                        whileHover={{
+                          y: -4,
+                        }}
+                        className="group relative w-[46%]"
+                      >
+                        <div
+                          className={`relative overflow-hidden rounded-[20px] border bg-[#0A0A0F]/90 p-5 backdrop-blur-2xl transition-all duration-500 ${style.border}`}
+                        >
+                          {/* GLOW */}
+                          <div
+                            className={`pointer-events-none absolute -left-20 -top-20 h-48 w-48 rounded-full opacity-0 blur-[70px] transition-opacity duration-500 group-hover:opacity-100 ${style.glow}`}
+                          />
 
-                      {/* DESCRIPTION */}
+                          {/* TOP */}
+                          <div className="relative z-10 flex items-center justify-between">
+                            <div
+                              className={`flex h-11 w-11 items-center justify-center rounded-xl border border-white/[0.07] ${style.iconBg}`}
+                            >
+                              <Icon
+                                size={20}
+                                strokeWidth={1.7}
+                                className={style.icon}
+                              />
+                            </div>
 
-                      <p className="relative z-10 mt-2 text-sm leading-6 text-[#64748B]">
-                        {step.desc}
-                      </p>
+                            <span className="font-mono text-[9px] tracking-[0.22em] text-[#475569]">
+                              STEP_{step.number}
+                            </span>
+                          </div>
 
-                      {/* FOOTER */}
+                          {/* TITLE */}
+                          <h3 className="relative z-10 mt-5 text-xl font-semibold tracking-tight text-[#F8FAFC]">
+                            {step.title}
+                          </h3>
 
-                      <div className="relative z-10 mt-5 flex items-center gap-3 border-t border-white/[0.06] pt-4">
-                        <span
-                          className={`h-1.5 w-1.5 rounded-full ${style.dot}`}
-                        />
+                          {/* DESCRIPTION */}
+                          <p className="relative z-10 mt-2 text-sm leading-6 text-[#64748B]">
+                            {step.desc}
+                          </p>
 
-                        <span className="font-mono text-[8px] uppercase tracking-[0.2em] text-[#475569]">
-                          Vaytrix Process
-                        </span>
-                      </div>
+                          {/* FOOTER */}
+                          <div className="relative z-10 mt-5 flex items-center gap-3 border-t border-white/[0.06] pt-4">
+                            <span
+                              className={`h-1.5 w-1.5 rounded-full ${style.dot}`}
+                            />
 
-                      {/* ACCENT LINE */}
+                            <span className="font-mono text-[8px] uppercase tracking-[0.2em] text-[#475569]">
+                              Vaytrix Process
+                            </span>
+                          </div>
 
-                      <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] transition-all duration-500 group-hover:w-full" />
-                    </div>
+                          {/* ACCENT */}
+                          <div className="absolute bottom-0 right-0 h-[2px] w-0 bg-gradient-to-l from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] transition-all duration-500 group-hover:w-full" />
+                        </div>
 
-                    {/* =================================================
-                        SHORT CONNECTOR
-                    ================================================== */}
-
-                    <div
-                      className={`absolute top-1/2 hidden h-px w-[28px] -translate-y-1/2 bg-gradient-to-r lg:block ${
-                        index % 2 === 0
-                          ? "-right-[28px] from-white/[0.12] to-transparent"
-                          : "-left-[28px] from-transparent to-white/[0.12]"
-                      }`}
-                    />
-                  </motion.div>
+                        {/* CONNECTOR */}
+                        <div className="absolute left-[-30px] top-1/2 h-px w-[30px] -translate-y-1/2 bg-gradient-to-l from-white/[0.15] to-transparent" />
+                      </motion.div>
+                    </>
+                  )}
                 </div>
 
                 {/* =================================================

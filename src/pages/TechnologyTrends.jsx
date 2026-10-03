@@ -1,378 +1,229 @@
+// TechnologyTrends.jsx
 
-// import { useState } from "react";
-// import { motion, AnimatePresence } from "framer-motion";
-// import { Plus, Minus } from "lucide-react";
-// import { useNavigate } from "react-router-dom";
-// import { Helmet } from "react-helmet-async";
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  BrainCircuit,
+  Cloud,
+  ShieldCheck,
+  Database,
+  Cpu,
+  Globe2,
+  ArrowUpRight,
+  Sparkles,
+} from "lucide-react";
 
-// function TechnologyTrends() {
-//     const navigate = useNavigate();
-//     const [openIndex, setOpenIndex] = useState(null);
+const trends = [
+  {
+    id: "01",
+    category: "AI / AUTOMATION",
+    title: "AI & Intelligent Automation",
+    description:
+      "AI-powered systems are transforming business operations through intelligent decision-making, workflow automation, predictive insights, and personalized digital experiences.",
+    icon: BrainCircuit,
+    tags: ["Generative AI", "Automation", "AI Agents"],
+  },
+  {
+    id: "02",
+    category: "CLOUD",
+    title: "Cloud-Native Architecture",
+    description:
+      "Modern businesses are moving toward scalable cloud-native platforms designed for flexibility, faster deployment, high availability, and seamless digital growth.",
+    icon: Cloud,
+    tags: ["Cloud", "Microservices", "DevOps"],
+  },
+  {
+    id: "03",
+    category: "SECURITY",
+    title: "Cybersecurity & Zero Trust",
+    description:
+      "Security is becoming an intelligent, continuous process with Zero Trust architecture, identity-first protection, threat detection, and proactive risk management.",
+    icon: ShieldCheck,
+    tags: ["Zero Trust", "IAM", "Threat Detection"],
+  },
+  {
+    id: "04",
+    category: "DATA",
+    title: "Data Intelligence & Analytics",
+    description:
+      "Organizations are using real-time analytics, modern data platforms, and intelligent dashboards to convert complex data into faster and more informed business decisions.",
+    icon: Database,
+    tags: ["Big Data", "Analytics", "BI"],
+  },
+  {
+    id: "05",
+    category: "EMERGING TECH",
+    title: "Edge Computing & IoT",
+    description:
+      "Connected devices and edge computing are bringing processing closer to where data is generated, enabling faster responses across smart systems and connected environments.",
+    icon: Cpu,
+    tags: ["IoT", "Edge", "Real-Time"],
+  },
+  {
+    id: "06",
+    category: "DIGITAL EXPERIENCE",
+    title: "Next-Gen Digital Experiences",
+    description:
+      "Businesses are creating faster, smarter, and more immersive digital experiences using modern web technologies, intelligent interfaces, and connected customer journeys.",
+    icon: Globe2,
+    tags: ["Web Apps", "UX", "Digital Platforms"],
+  },
+];
 
-
-//     const trends = [
-//         {
-//             title: "1. Data Centers Are Becoming Strategic Infrastructure",
-//             content: [
-//                 {
-//                     type: "highlight",
-//                     text: "Data centers have evolved into strategic assets with implications far beyond day-to-day tech operations."
-//                 },
-//                 {
-//                     type: "paragraph",
-//                     text: "The rapid growth of AI workloads is driving unprecedented demand for computing power, storage, and connectivity, resulting not only in more data centers, but significantly larger ones. International demand for data centers and computing power is expected to increase by 16% each year through 2028."
-//                 },
-//                 {
-//                     type: "paragraph",
-//                     text: "Bloom Energy projects that a growing share of data center sites are expected to reach gigawatt-scale capacity in the coming years, fundamentally changing how infrastructure is planned and governed."
-//                 },
-//                 {
-//                     type: "paragraph",
-//                     text: "Power availability and long-term operating costs are now central considerations from the earliest planning stages. Energy consumption has emerged as one of the key constraints, placing increasing strain on local power grids."
-//                 },
-//                 {
-//                     type: "paragraph",
-//                     text: "Geopolitics is also influencing strategy. The rise of sovereign AI has heightened concerns around where technology is built, who controls it, and how national interests shape infrastructure decisions."
-//                 },
-//                 {
-//                     type: "paragraph",
-//                     text: "For technology leaders, infrastructure now intersects with cloud strategy, cybersecurity risk, compliance, and workforce planning."
-//                 }
-//             ]
-//         },
-
-//         {
-//             title: "2. Physical AI Accelerates Across Real-World Systems",
-//             content: [
-//                 {
-//                     type: "highlight",
-//                     text: "Already embedded in technology today, physical AI is now scaling rapidly across operations and infrastructure."
-//                 },
-//                 {
-//                     type: "paragraph",
-//                     text: "Physical AI combines artificial intelligence with sensors, controls, and robotics to interact directly with the physical world."
-//                 },
-//                 {
-//                     type: "bullet",
-//                     text: "Computer vision in cameras can detect anomalies instantly."
-//                 },
-//                 {
-//                     type: "bullet",
-//                     text: "Wearables capture health data and trigger alerts in real time."
-//                 },
-//                 {
-//                     type: "bullet",
-//                     text: "Autonomous vehicles continuously interpret surroundings."
-//                 },
-//                 {
-//                     type: "bullet",
-//                     text: "AI-powered sensors identify equipment failures before breakdowns."
-//                 },
-//                 {
-//                     type: "paragraph",
-//                     text: "CB Insights reports investment in world models increased by over $5 billion from 2024 to 2025, showing rapid acceleration in R&D."
-//                 }
-//             ]
-//         },
-
-//         {
-//             title: "3. Robotics Shifts from Experimentation to Execution",
-//             content: [
-//                 {
-//                     type: "highlight",
-//                     text: "Operational AI and robotics are moving decisively from proof-of-concept to production."
-//                 },
-//                 {
-//                     type: "paragraph",
-//                     text: "Many organizations are deploying robotics into real production environments where measurable ROI matters."
-//                 },
-//                 {
-//                     type: "paragraph",
-//                     text: "Amazon utilizes more than a million robots across fulfillment centers, resulting in a reported 25% boost in efficiency."
-//                 },
-//                 {
-//                     type: "paragraph",
-//                     text: "Modern robotics systems are shifting beyond rigid automation toward context-aware capabilities."
-//                 },
-//                 {
-//                     type: "paragraph",
-//                     text: "Human-in-the-loop models remain critical for safety, oversight, and continuous improvement."
-//                 }
-//             ]
-//         },
-
-//         {
-//             title: "4. Agentic AI and the Workforce Impact",
-//             content: [
-//                 {
-//                     type: "highlight",
-//                     text: "Agentic AI is increasingly embedded into enterprise workflows, redefining the partnership between humans and autonomous systems."
-//                 },
-//                 {
-//                     type: "paragraph",
-//                     text: "Unlike traditional generative AI, agentic systems can act autonomously within defined parameters, performing tasks and making decisions."
-//                 },
-//                 {
-//                     type: "paragraph",
-//                     text: "Demand is growing for AI fluency, governance, integration, and oversight skills."
-//                 },
-//                 {
-//                     type: "stat",
-//                     number: "22%",
-//                     text: "of organizations have formal policies guiding employees’ use of AI, according to IDC."
-//                 },
-//                 {
-//                     type: "paragraph",
-//                     text: "This creates a strong opportunity for technology leaders to build governance early and responsibly."
-//                 }
-//             ]
-//         },
-
-//         {
-//             title: "5. Cybersecurity and Trust in an AI-Enabled Landscape",
-//             content: [
-//                 {
-//                     type: "highlight",
-//                     text: "AI is reshaping both sides of security by improving defense while amplifying cyber threats."
-//                 },
-//                 {
-//                     type: "paragraph",
-//                     text: "Threat actors are using AI to automate attacks, generate phishing campaigns, and exploit vulnerabilities faster."
-//                 },
-//                 {
-//                     type: "stat",
-//                     number: "37%",
-//                     text: "of surveyed organizations have moderate AI governance coverage."
-//                 },
-//                 {
-//                     type: "stat",
-//                     number: "36%",
-//                     text: "of surveyed organizations have limited AI governance coverage."
-//                 },
-//                 {
-//                     type: "paragraph",
-//                     text: "Security leaders expect AI to be the most significant driver of change in cybersecurity over the coming years."
-//                 }
-//             ]
-//         }
-//     ];
-
-
-//     const toggleAccordion = (index) => {
-//         setOpenIndex(openIndex === index ? null : index);
-//     };
-
-//     return (
-
-//         <>
-//             <Helmet>
-//                 <title>Technology Trends | XLent IT Services</title>
-
-//                 <meta
-//                     name="description"
-//                     content="Stay updated with the latest technology trends, AI innovations, cloud computing, software development, data analytics, and digital transformation insights."
-//                 />
-
-//                 <link rel="canonical" href="https://www.xlent-itservice.com/technology-trends" />
-//             </Helmet>
-
-
-//             <section className="min-h-screen bg-[#0d0d0f] text-white px-6 py-16">
-//                 <div className="max-w-5xl mx-auto">
-
-//                     {/* Back Button */}
-//                     <button
-//                         onClick={() => navigate(-1)}
-//                         className="text-[#d4af37] text-sm mb-8 hover:text-white transition hover:underline "
-//                     >
-//                         ← Back
-//                     </button>
-
-//                     {/* Header */}
-//                     <motion.p
-//                         initial={{ opacity: 0, y: 20 }}
-//                         animate={{ opacity: 1, y: 0 }}
-//                         transition={{ duration: 0.4 }}
-//                         className="text-[#d4af37] uppercase tracking-[3px] text-sm font-medium"
-//                     >
-//                         2026 Industry Trends
-//                     </motion.p>
-
-//                     <motion.h1
-//                         initial={{ opacity: 0, y: 20 }}
-//                         animate={{ opacity: 1, y: 0 }}
-//                         transition={{ delay: 0.1, duration: 0.5 }}
-//                         className="text-4xl md:text-6xl font-semibold mt-3"
-//                     >
-//                         Technology
-//                     </motion.h1>
-
-//                     <div className="mt-8 border-t border-gray-800"></div>
-
-//                     {/* Intro Content */}
-//                     <motion.div
-//                         initial={{ opacity: 0, y: 25 }}
-//                         animate={{ opacity: 1, y: 0 }}
-//                         transition={{ delay: 0.2, duration: 0.6 }}
-//                         className="mt-10 space-y-6 text-gray-400 text-[15px] md:text-base leading-8"
-//                     >
-//                         <p>
-//                             The technology industry is entering 2026 with a level of momentum
-//                             and pressure that few leaders have experienced before. Advances
-//                             across infrastructure, automation, and security are reshaping how
-//                             technology organizations operate.
-//                         </p>
-
-//                         <p>
-//                             They’re influencing how data centers are designed and powered, how
-//                             work gets done, how robotics and physical AI systems operate in
-//                             real-world environments, how agentic AI is moving beyond pilot
-//                             programs, and how organizations defend themselves against
-//                             increasingly sophisticated cyberthreats.
-//                         </p>
-
-//                         <p>
-//                             For technology leaders, the conversation has become how to scale
-//                             these technologies responsibly, securely, and sustainably across the
-//                             enterprise. Recent industry data underscores how quickly this shift
-//                             is happening.
-//                         </p>
-
-//                         <div className="bg-[#151517] border border-gray-800 rounded-2xl p-6">
-//                             <p className="text-white text-lg font-medium">
-//                                 According to the International Data Corporation (IDC),
-//                             </p>
-
-//                             <p className="text-[#d4af37] text-3xl md:text-5xl font-bold mt-3">
-//                                 72%
-//                             </p>
-
-//                             <p className="text-gray-400 mt-2">
-//                                 of technology organizations are actively scaling AI initiatives
-//                                 beyond experimentation and into production environments.
-//                             </p>
-//                         </div>
-
-//                         <p>
-//                             Leaders are prioritizing the following technology trends, with a
-//                             focus on where innovation is moving from theory to execution.
-//                         </p>
-//                     </motion.div>
-
-//                     {/* Trends Section */}
-//                     <div className="mt-20">
-//                         <h2 className="text-3xl md:text-4xl font-semibold text-white mb-10">
-//                             Top Trends In Technology
-//                         </h2>
-
-//                         <div className="space-y-4">
-//                             {trends.map((item, index) => (
-//                                 <div
-//                                     key={index}
-//                                     className="border border-gray-800 rounded-xl bg-[#151517] overflow-hidden"
-//                                 >
-//                                     <button
-//                                         onClick={() => toggleAccordion(index)}
-//                                         className="w-full flex justify-between items-center px-6 py-5 text-left"
-//                                     >
-//                                         <span className="text-white text-lg font-medium">
-//                                             {item.title}
-//                                         </span>
-
-//                                         {openIndex === index ? (
-//                                             <Minus className="text-[#d4af37]" size={22} />
-//                                         ) : (
-//                                             <Plus className="text-[#d4af37]" size={22} />
-//                                         )}
-//                                     </button>
-
-//                                     <AnimatePresence>
-//                                         {openIndex === index && (
-//                                             <motion.div
-//                                                 initial={{ height: 0, opacity: 0 }}
-//                                                 animate={{ height: "auto", opacity: 1 }}
-//                                                 exit={{ height: 0, opacity: 0 }}
-//                                                 transition={{ duration: 0.3 }}
-//                                                 className="overflow-hidden"
-//                                             >
-
-//                                                 {/* data of each heading */}
-//                                                 <div className="px-6 pb-6 border-t border-gray-800">
-//                                                     <div className="pt-6 space-y-5">
-
-//                                                         {item.content.map((block, i) => {
-
-//                                                             if (block.type === "highlight") {
-//                                                                 return (
-//                                                                     <h3
-//                                                                         key={i}
-//                                                                         className="text-xl md:text-2xl font-semibold text-white leading-relaxed"
-//                                                                     >
-//                                                                         {block.text}
-//                                                                     </h3>
-//                                                                 );
-//                                                             }
-
-//                                                             if (block.type === "bullet") {
-//                                                                 return (
-//                                                                     <div key={i} className="flex gap-3">
-//                                                                         <div className="w-2 h-2 rounded-full bg-[#d4af37] mt-3"></div>
-//                                                                         <p className="text-gray-400 leading-8">{block.text}</p>
-//                                                                     </div>
-//                                                                 );
-//                                                             }
-
-//                                                             if (block.type === "stat") {
-//                                                                 return (
-//                                                                     <div
-//                                                                         key={i}
-//                                                                         className="bg-[#111] border border-gray-800 rounded-xl p-5"
-//                                                                     >
-//                                                                         <p className="text-[#d4af37] text-4xl font-bold">
-//                                                                             {block.number}
-//                                                                         </p>
-//                                                                         <p className="text-gray-400 mt-2 leading-7">
-//                                                                             {block.text}
-//                                                                         </p>
-//                                                                     </div>
-//                                                                 );
-//                                                             }
-
-//                                                             return (
-//                                                                 <p key={i} className="text-gray-400 leading-8">
-//                                                                     {block.text}
-//                                                                 </p>
-//                                                             );
-//                                                         })}
-
-//                                                     </div>
-//                                                 </div>
-
-//                                             </motion.div>
-//                                         )}
-//                                     </AnimatePresence>
-//                                 </div>
-//                             ))}
-//                         </div>
-//                     </div>
-
-//                 </div>
-//             </section>
-//         </>
-
-//     );
-// }
-
-// export default TechnologyTrends;
-
-import React from 'react'
-
-function TechnologyTrends() {
+const TechnologyTrends = () => {
   return (
-    <div>TechnologyTrends</div>
-  )
-}
+    <section
+      id="technology-trends"
+      className="relative overflow-hidden bg-[#050508] px-5 py-10 text-white sm:px-8 lg:px-10 lg:py-10"
+    >
+      {/* Background Grid */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.035]"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(255,255,255,0.7) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.7) 1px, transparent 1px)",
+          backgroundSize: "42px 42px",
+        }}
+      />
 
-export default TechnologyTrends
+      {/* Ambient Glow */}
+      <div className="pointer-events-none absolute left-1/2 top-[-180px] h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-violet-600/10 blur-[120px]" />
+
+      <div className="pointer-events-none absolute bottom-[-180px] left-[-100px] h-[350px] w-[350px] rounded-full bg-blue-600/10 blur-[120px]" />
+
+      <div className="relative mx-auto max-w-7xl">
+        {/* Header */}
+        <div className="mx-auto mb-14 max-w-3xl text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-5 inline-flex items-center gap-2 rounded-full border border-violet-400/20 bg-violet-500/[0.06] px-4 py-2 text-xs font-semibold tracking-[0.18em] text-violet-300"
+          >
+            <Sparkles size={14} />
+            TECHNOLOGY INTELLIGENCE
+          </motion.div>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl"
+          >
+            Technology Trends
+            <span className="block bg-gradient-to-r from-violet-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
+              Shaping Tomorrow
+            </span>
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mt-5 text-sm leading-7 text-white/55 sm:text-base"
+          >
+            We track emerging technologies and evolving digital capabilities
+            to help businesses build smarter, faster, more secure, and
+            future-ready solutions.
+          </motion.p>
+        </div>
+
+        {/* Trend Grid */}
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {trends.map((trend, index) => {
+            const Icon = trend.icon;
+
+            return (
+              <motion.article
+                key={trend.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.08,
+                }}
+                whileHover={{ y: -6 }}
+                className="group relative overflow-hidden rounded-2xl border border-white/[0.07] bg-[#08080d] p-6 transition-all duration-300 hover:border-violet-400/25 hover:shadow-[0_20px_70px_rgba(124,58,237,0.12)]"
+              >
+                {/* Card Glow */}
+                <div className="pointer-events-none absolute -right-16 -top-16 h-32 w-32 rounded-full bg-violet-500/10 blur-3xl transition-all duration-500 group-hover:bg-violet-500/20" />
+
+                {/* Top Row */}
+                <div className="relative flex items-center justify-between">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-violet-400/20 bg-violet-500/[0.08] text-violet-300 transition-all duration-300 group-hover:border-violet-400/40 group-hover:bg-violet-500/[0.14]">
+                    <Icon size={21} />
+                  </div>
+
+                  <span className="font-mono text-xs text-white/20">
+                    {trend.id}
+                  </span>
+                </div>
+
+                {/* Category */}
+                <div className="relative mt-6 text-[10px] font-semibold tracking-[0.2em] text-violet-400/80">
+                  {trend.category}
+                </div>
+
+                {/* Title */}
+                <h3 className="relative mt-2 text-xl font-semibold tracking-tight text-white transition-colors duration-300 group-hover:text-violet-200">
+                  {trend.title}
+                </h3>
+
+                {/* Description */}
+                <p className="relative mt-3 text-sm leading-6 text-white/50">
+                  {trend.description}
+                </p>
+
+                {/* Tags */}
+                <div className="relative mt-6 flex flex-wrap gap-2">
+                  {trend.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-white/[0.06] bg-white/[0.025] px-2.5 py-1 text-[10px] text-white/45"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Bottom */}
+                <div className="relative mt-7 flex items-center justify-between border-t border-white/[0.06] pt-4">
+                  <span className="text-xs text-white/30">
+                    Future-ready technology
+                  </span>
+
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full border border-white/[0.08] text-white/30 transition-all duration-300 group-hover:border-violet-400/30 group-hover:text-violet-300">
+                    <ArrowUpRight size={15} />
+                  </div>
+                </div>
+              </motion.article>
+            );
+          })}
+        </div>
+
+        {/* Bottom Statement */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-12 text-center"
+        >
+          <p className="text-xs uppercase tracking-[0.18em] text-white/25 sm:text-sm">
+            AI • Cloud • Cybersecurity • Data • IoT • Digital Innovation
+          </p>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default TechnologyTrends;
+
+
 
 

@@ -41,7 +41,7 @@ function ItWhyChooseUs() {
     },
     {
       number: "05",
-      title: "150+ Hiring Connections",
+      title: "350+ Hiring Connections",
       desc: "Gain access to an established network of hiring organizations seeking skilled professionals across technology roles.",
       ui: <Handshake size={21} strokeWidth={1.7} />,
       accent: "blue",

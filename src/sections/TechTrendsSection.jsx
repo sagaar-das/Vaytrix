@@ -101,10 +101,10 @@ function TechTrendsSection() {
             </span>
           </div>
 
-<div className="relative">
+          <div className="relative">
 
-              <div
-                className="
+            <div
+              className="
                   absolute
                   -right-10
                   -top-8
@@ -117,13 +117,13 @@ function TechTrendsSection() {
                   sm:text-[190px]
                   lg:text-[150px]
                 "
-              >
-                2026 - 2027
-              </div>
-          {/* Heading */}
+            >
+              2026 - 2027
+            </div>
+            {/* Heading */}
 
-          <h2
-            className="
+            <h2
+              className="
               text-3xl
               font-semibold
               leading-[1.05]
@@ -132,12 +132,12 @@ function TechTrendsSection() {
               sm:text-4xl
               lg:text-[46px]
             "
-          >
-            The technology{" "}
-            <span className="bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] bg-clip-text text-transparent">
-              landscape is shifting.
-            </span>
-          </h2>
+            >
+              The technology{" "}
+              <span className="bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] bg-clip-text text-transparent">
+                landscape is shifting.
+              </span>
+            </h2>
 
           </div>
 
@@ -155,43 +155,24 @@ function TechTrendsSection() {
               sm:leading-6
             "
           >
-           Discover the technologies helping our clients innovate,
-automate, strengthen security, and build the capabilities needed
-for sustainable digital growth.
+            Discover the technologies helping our clients innovate,
+            automate, strengthen security, and build the capabilities needed
+            for sustainable digital growth.
           </p>
 
           {/* CTA */}
 
+          {/* CTA */}
           <button
+            type="button"
             onClick={() => navigate("/technology-trends")}
-            className="
-              group
-              mt-4
-              inline-flex
-              items-center
-              gap-2
-              border-b
-              border-white/20
-              pb-1.5
-              text-xs
-              font-medium
-              text-[#F8FAFC]
-              transition-all
-              duration-300
-              hover:border-[#06B6D4]
-            "
+            className="group relative z-20 mt-4 inline-flex cursor-pointer items-center gap-2 border-b border-white/20 pb-1.5 text-xs font-medium text-[#F8FAFC] transition-all duration-300 hover:border-[#06B6D4] hover:text-white"
           >
-            Explore technology trends
+            <span>Explore technology trends</span>
 
             <ArrowUpRight
               size={14}
-              className="
-                text-[#06B6D4]
-                transition-transform
-                duration-300
-                group-hover:translate-x-1
-                group-hover:-translate-y-1
-              "
+              className="text-[#06B6D4] transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
             />
           </button>
         </motion.div>

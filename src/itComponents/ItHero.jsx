@@ -75,7 +75,7 @@ function ItHero() {
             transition={{ delay: 0.25, duration: 0.7 }}
             className="max-w-3xl text-4xl font-semibold leading-[1.05] tracking-[-0.04em] text-[#F8FAFC] sm:text-5xl md:text-6xl lg:text-7xl"
           >
-            Build Teams That
+            Building You That
             <span className="block bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] bg-clip-text text-transparent">
               Turn Your Goals Into Results
             </span>

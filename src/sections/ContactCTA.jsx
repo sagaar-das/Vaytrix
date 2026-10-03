@@ -11,12 +11,14 @@ import {
   Facebook,
   Instagram,
   Linkedin,
+  
   Mail,
   MapPin,
   Phone,
   Send,
   Sparkles,
 } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 function ContactCTA() {
   const navigate = useNavigate();
@@ -283,7 +285,7 @@ function ContactCTA() {
 
                 {/* PHONE */}
 
-                <div className="group flex items-center gap-4 border-b border-white/[0.07] pb-4">
+                <a href="tel:+18124954121" className="group flex items-center gap-4 border-b border-white/[0.07] pb-4">
 
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.025] transition-all duration-300 group-hover:border-[#3B82F6]/40 group-hover:bg-[#3B82F6]/10">
                     <Phone
@@ -297,7 +299,7 @@ function ContactCTA() {
                       Phone
                     </p>
 
-                    <p className="mt-1 text-sm text-[#F8FAFC]">
+                    <p href="tel:+18124954121" className="mt-1 text-sm text-[#F8FAFC]">
                       +1812 495 4121
                     </p>
                   </div>
@@ -307,7 +309,37 @@ function ContactCTA() {
                     className="ml-auto text-[#475569] transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-[#60A5FA]"
                   />
 
-                </div>
+                </a>
+
+                {/* WHATSAPP */}
+
+                <a href= "https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4 border-b border-white/[0.07] pb-4">
+
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.025] transition-all duration-300 group-hover:border-[#06B6D4]/40 group-hover:bg-[#06B6D4]/10">
+                    <FaWhatsapp
+                      size={17}
+                      className="text-[#22D3EE]"
+                    />
+                  </div>
+
+                  <div>
+                    <p className="font-mono text-[8px] uppercase tracking-[0.16em] text-[#64748B]">
+                      WhatsApp
+                    </p>
+
+                    <p className="mt-1 text-sm text-[#F8FAFC]">
+                      +1 614 812 0792
+                    </p>
+                  </div>
+
+                  
+
+                  <ArrowUpRight
+                    size={15}
+                    className="ml-auto text-[#475569] transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-[#22D3EE]"
+                  />
+
+                </a>
 
                 {/* OFFICE */}
 
@@ -331,6 +363,8 @@ function ContactCTA() {
                     </p>
                   </div>
 
+                  
+
                   <ArrowUpRight
                     size={15}
                     className="ml-auto text-[#475569] transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-[#22D3EE]"
@@ -338,6 +372,8 @@ function ContactCTA() {
 
                 </div>
 
+                
+            
                 {/* HOURS */}
 
                 <div className="group flex items-center gap-4">

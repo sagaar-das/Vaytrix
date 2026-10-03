@@ -105,7 +105,10 @@ const PricingPlans = () => {
                 </span>
 
                 <span className="bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] bg-clip-text text-6xl font-bold tracking-[-0.05em] text-transparent sm:text-7xl md:text-8xl">
-                  599
+                  499
+                </span>
+                <span className="mt-4 mr-1 text-2xl font-medium text-[#94A3B8] sm:text-3xl">
+                  +tax(3%)
                 </span>
               </div>
 

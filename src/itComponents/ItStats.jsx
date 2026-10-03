@@ -4,6 +4,8 @@ import {
   Building2,
   Star,
   Target,
+  MessageSquareQuote,
+  StarIcon,
 } from "lucide-react";
 
 function ItStats() {
@@ -23,7 +25,7 @@ function ItStats() {
       accent: "blue",
     },
     {
-      value: "150+",
+      value: "350+",
       label: "Hiring Partners",
       detail: "Connected business network",
       icon: Building2,
@@ -35,6 +37,13 @@ function ItStats() {
       detail: "Experience across engagements",
       icon: Star,
       accent: "violet",
+    },
+    {
+      value: "120+",
+      label: "Google Reviews",
+      detail: "Verified client feedback",
+      icon: MessageSquareQuote,
+      accent: "cyan",
     },
   ];
 
@@ -101,7 +110,7 @@ function ItStats() {
         </div>
 
         {/* STATS */}
-        <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
+        <div className="grid grid-cols-2 gap-3 md:grid-cols-5 md:gap-4">
           {stats.map((stat, index) => {
             const Icon = stat.icon;
             const style = accentStyles[stat.accent];
@@ -164,13 +173,12 @@ function ItStats() {
 
                 <div className="mt-3 flex items-center gap-2">
                   <span
-                    className={`h-1.5 w-1.5 rounded-full ${
-                      stat.accent === "violet"
+                    className={`h-1.5 w-1.5 rounded-full ${stat.accent === "violet"
                         ? "bg-[#8B5CF6]"
                         : stat.accent === "blue"
-                        ? "bg-[#3B82F6]"
-                        : "bg-[#06B6D4]"
-                    }`}
+                          ? "bg-[#3B82F6]"
+                          : "bg-[#06B6D4]"
+                      }`}
                   />
 
                   <span className="font-mono text-[8px] uppercase tracking-[0.18em] text-[#475569]">
@@ -180,18 +188,18 @@ function ItStats() {
 
                 {/* HOVER GLOW */}
                 <div
-                  className={`pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100 ${
-                    stat.accent === "violet"
+                  className={`pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100 ${stat.accent === "violet"
                       ? "bg-[#8B5CF6]/20"
                       : stat.accent === "blue"
-                      ? "bg-[#3B82F6]/20"
-                      : "bg-[#06B6D4]/20"
-                  }`}
+                        ? "bg-[#3B82F6]/20"
+                        : "bg-[#06B6D4]/20"
+                    }`}
                 />
               </motion.div>
             );
           })}
         </div>
+
 
         {/* BOTTOM TECHNICAL FOOTER */}
         <div className="mt-5 flex items-center gap-3">
@@ -202,7 +210,7 @@ function ItStats() {
           <div className="h-px flex-1 bg-gradient-to-r from-white/[0.08] to-transparent" />
 
           <span className="font-mono text-[8px] uppercase tracking-[0.18em] text-[#475569]">
-            04 Signals
+            05 Signals
           </span>
         </div>
       </div>
