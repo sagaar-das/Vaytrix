@@ -146,31 +146,31 @@ function EmployerCTA() {
 
               <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
 
-                {/* Primary CTA */}
-                <motion.button
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                  onClick={() => navigate("/contact")}
-                  className="
-                    group inline-flex items-center justify-center gap-3
-                    rounded-xl
-                    bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4]
-                    px-7 py-3.5
-                    font-semibold text-white
-                    shadow-[0_0_35px_rgba(139,92,246,0.2)]
-                    transition-all duration-300
-                    hover:brightness-110
-                    hover:shadow-[0_0_45px_rgba(139,92,246,0.32)]
-                  "
-                >
-                  Start Hiring
+                <motion.a
+  whileHover={{ scale: 1.03 }}
+  whileTap={{ scale: 0.97 }}
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=info@vaytrixtechit.com&su=Hiring%20Inquiry%20-%20VaytrixTechIT&body=Hello%20VaytrixTechIT%20Team%2C%0A%0AI%20am%20interested%20in%20discussing%20your%20staffing%20and%20hiring%20services.%20I%20would%20like%20to%20understand%20how%20VaytrixTechIT%20can%20support%20our%20hiring%20requirements.%0A%0APlease%20let%20me%20know%20a%20convenient%20time%20to%20connect.%0A%0ARegards%2C%0A%5BYour%20Name%5D"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="
+    group inline-flex items-center justify-center gap-3
+    rounded-xl
+    bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4]
+    px-7 py-3.5
+    font-semibold text-white
+    shadow-[0_0_35px_rgba(139,92,246,0.2)]
+    transition-all duration-300
+    hover:brightness-110
+    hover:shadow-[0_0_45px_rgba(139,92,246,0.32)]
+  "
+>
+  Start Hiring
 
-                  <ArrowUpRight
-                    size={19}
-                    className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  />
-
-                </motion.button>
+  <ArrowUpRight
+    size={19}
+    className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+  />
+</motion.a>
 
                 {/* Secondary CTA */}
                 <motion.a

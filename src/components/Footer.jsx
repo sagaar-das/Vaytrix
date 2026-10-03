@@ -209,7 +209,9 @@ function Footer() {
             <div className="space-y-4">
 
               {/* EMAIL */}
-              <div className="group flex items-start gap-3">
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@vaytrixtechit.com&su=Hiring%20Inquiry%20-%20VaytrixTechIT&body=Hello%20VaytrixTechIT%20Team%2C%0A%0AI%20am%20interested%20in%20discussing%20your%20staffing%20and%20hiring%20services.%20I%20would%20like%20to%20understand%20how%20VaytrixTechIT%20can%20support%20our%20hiring%20requirements.%0A%0APlease%20let%20me%20know%20a%20convenient%20time%20to%20connect.%0A%0ARegards%2C%0A%5BYour%20Name%5D"
+                target="_blank"
+                rel="noopener noreferrer" className="group flex items-start gap-3">
 
                 <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/[0.03] text-purple-400 transition-all duration-300 group-hover:border-purple-500/40 group-hover:bg-purple-500/10">
                   <Mail size={16} />
@@ -225,10 +227,10 @@ function Footer() {
                   </span>
                 </div>
 
-              </div>
+              </a>
 
               {/* PHONE */}
-              <div className="group flex items-start gap-3">
+              <a href="tel:+18124954121" className="group flex items-start gap-3">
 
                 <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/[0.03] text-blue-400 transition-all duration-300 group-hover:border-blue-500/40 group-hover:bg-blue-500/10">
                   <Phone size={16} />
@@ -244,7 +246,7 @@ function Footer() {
                   </span>
                 </div>
 
-              </div>
+              </a>
 
               {/* LOCATION */}
               <div className="group flex items-start gap-3">

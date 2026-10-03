@@ -874,7 +874,7 @@ lg:text-4xl
                 <h3
                   className="
                     mt-3
-                    text-[15px]
+                    text-[25px]
                     font-semibold
                     tracking-[-0.02em]
                     text-[#F8FAFC]

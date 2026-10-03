@@ -11,7 +11,7 @@ import {
   Facebook,
   Instagram,
   Linkedin,
-  
+
   Mail,
   MapPin,
   Phone,
@@ -257,7 +257,9 @@ function ContactCTA() {
 
                 {/* EMAIL */}
 
-                <div className="group flex items-center gap-4 border-b border-white/[0.07] pb-4">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@vaytrixtechit.com&su=Hiring%20Inquiry%20-%20VaytrixTechIT&body=Hello%20VaytrixTechIT%20Team%2C%0A%0AI%20am%20interested%20in%20discussing%20your%20staffing%20and%20hiring%20services.%20I%20would%20like%20to%20understand%20how%20VaytrixTechIT%20can%20support%20our%20hiring%20requirements.%0A%0APlease%20let%20me%20know%20a%20convenient%20time%20to%20connect.%0A%0ARegards%2C%0A%5BYour%20Name%5D"
+                  target="_blank"
+                  rel="noopener noreferrer" className="group flex items-center gap-4 border-b border-white/[0.07] pb-4">
 
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.025] transition-all duration-300 group-hover:border-[#8B5CF6]/40 group-hover:bg-[#8B5CF6]/10">
                     <Mail
@@ -281,7 +283,7 @@ function ContactCTA() {
                     className="ml-auto text-[#475569] transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-[#A78BFA]"
                   />
 
-                </div>
+                </a>
 
                 {/* PHONE */}
 
@@ -299,7 +301,7 @@ function ContactCTA() {
                       Phone
                     </p>
 
-                    <p href="tel:+18124954121" className="mt-1 text-sm text-[#F8FAFC]">
+                    <p className="mt-1 text-sm text-[#F8FAFC]">
                       +1812 495 4121
                     </p>
                   </div>
@@ -313,7 +315,7 @@ function ContactCTA() {
 
                 {/* WHATSAPP */}
 
-                <a href= "https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4 border-b border-white/[0.07] pb-4">
+                <a href="https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4 border-b border-white/[0.07] pb-4">
 
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.025] transition-all duration-300 group-hover:border-[#06B6D4]/40 group-hover:bg-[#06B6D4]/10">
                     <FaWhatsapp
@@ -332,7 +334,7 @@ function ContactCTA() {
                     </p>
                   </div>
 
-                  
+
 
                   <ArrowUpRight
                     size={15}
@@ -363,7 +365,7 @@ function ContactCTA() {
                     </p>
                   </div>
 
-                  
+
 
                   <ArrowUpRight
                     size={15}
@@ -372,8 +374,8 @@ function ContactCTA() {
 
                 </div>
 
-                
-            
+
+
                 {/* HOURS */}
 
                 <div className="group flex items-center gap-4">
