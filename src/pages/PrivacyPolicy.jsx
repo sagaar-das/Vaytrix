@@ -15,6 +15,8 @@ import {
   AlertCircle,
 } from "lucide-react";
 
+import { Helmet } from "react-helmet-async";
+
 function PrivacyPolicy() {
   const sections = [
     { id: "information", number: "01", title: "Information We Collect" },
@@ -151,7 +153,49 @@ function PrivacyPolicy() {
     </div>
   );
 
+  
+
   return (
+
+<>
+<Helmet>
+  <title>Privacy Policy | Vaytrix Tech IT</title>
+
+  <meta
+    name="description"
+    content="Read the Vaytrix Tech IT Privacy Policy to understand how we collect, use, protect, and manage information provided through our website."
+  />
+
+  <link
+    rel="canonical"
+    href="https://vaytrixtechit.com/privacy-policy"
+  />
+
+  <meta
+    name="robots"
+    content="index, follow"
+  />
+
+  <meta
+    property="og:title"
+    content="Privacy Policy | Vaytrix Tech IT"
+  />
+
+  <meta
+    property="og:description"
+    content="Learn how Vaytrix Tech IT handles information and protects user privacy."
+  />
+
+  <meta
+    property="og:url"
+    content="https://vaytrixtechit.com/privacy-policy"
+  />
+
+  <meta
+    property="og:type"
+    content="website"
+  />
+</Helmet>
     <main className="relative min-h-screen overflow-hidden bg-[#050508] text-white">
       {/* =====================================================
           BACKGROUND
@@ -1090,6 +1134,9 @@ function PrivacyPolicy() {
         </div>
       </div>
     </main>
+
+</>
+      
   );
 }
 

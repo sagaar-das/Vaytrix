@@ -42,43 +42,50 @@ function Home() {
   
   return (
     <>
-      {/* <Helmet>
-        <title>
-          Xlent IT Services | IT Solutions, Staffing & Career Services
-        </title>
+      
+       <Helmet>
+        <title>Vaytrix Tech IT | Technology, Talent & Digital Solutions</title>
 
         <meta
           name="description"
-          content="XLent IT Services provides innovative IT solutions, staffing, recruitment, career services, and technology consulting to help businesses and professionals succeed."
+          content="Vaytrix Tech IT delivers technology solutions, software development, IT staffing, professional training, consulting, and career solutions for modern businesses."
+        />
+
+        <meta
+          name="keywords"
+          content="Vaytrix Tech IT, IT Services, Software Development, IT Staffing, Technology Solutions, Digital Solutions, IT Consulting"
         />
 
         <link
           rel="canonical"
-          href="https://www.xlent-itservice.com/"
+          href="https://vaytrixtechit.com/"
         />
 
-        <script type="application/ld+json">
-          {`
-          {
-            "@context":"https://schema.org",
-            "@type":"Organization",
-            "name":"Xlent IT Services",
-            "url":"https://www.xlent-itservice.com",
-            "logo":"https://www.xlent-itservice.com/logo.png",
-            "email":"info@xlent-itservice.com",
-            "telephone":"+1-780-851-7844",
-            "address":{
-              "@type":"PostalAddress",
-              "streetAddress":"823 Congress Ave STE 300",
-              "addressLocality":"Austin",
-              "addressRegion":"TX",
-              "postalCode":"78701",
-              "addressCountry":"US"
-            }
-          }
-          `}
-        </script>
-      </Helmet> */}
+        <meta
+          property="og:title"
+          content="Vaytrix Tech IT | Technology, Talent & Digital Solutions"
+        />
+
+        <meta
+          property="og:description"
+          content="Technology, talent, training, consulting, and digital solutions designed to create meaningful business impact."
+        />
+
+        <meta
+          property="og:url"
+          content="https://vaytrixtechit.com/"
+        />
+
+        <meta
+          property="og:type"
+          content="website"
+        />
+
+        <meta
+          property="og:image"
+          content="https://vaytrixtechit.com/og-image.jpg"
+        />
+      </Helmet>
 
       <Hero />
 

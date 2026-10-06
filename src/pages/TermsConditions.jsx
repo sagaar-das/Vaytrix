@@ -26,6 +26,8 @@ import {
   ArrowUpRight,
 } from "lucide-react";
 
+import { Helmet } from "react-helmet-async";
+
 const sections = [
   {
     id: "introduction",
@@ -209,6 +211,48 @@ const BulletList = ({ items }) => (
 
 const TermsConditions = () => {
   return (
+
+    <>
+
+    <Helmet>
+  <title>Terms & Conditions | Vaytrix Tech IT</title>
+
+  <meta
+    name="description"
+    content="Read the Terms and Conditions governing the use of the Vaytrix Tech IT website and its services."
+  />
+
+  <link
+    rel="canonical"
+    href="https://vaytrixtechit.com/terms-and-conditions"
+  />
+
+  <meta
+    name="robots"
+    content="index, follow"
+  />
+
+  <meta
+    property="og:title"
+    content="Terms & Conditions | Vaytrix Tech IT"
+  />
+
+  <meta
+    property="og:description"
+    content="Review the terms and conditions for using the Vaytrix Tech IT website."
+  />
+
+  <meta
+    property="og:url"
+    content="https://vaytrixtechit.com/terms-and-conditions"
+  />
+
+  <meta
+    property="og:type"
+    content="website"
+  />
+</Helmet>
+    
     <main className="relative min-h-screen overflow-hidden bg-[#050508] text-white">
       {/* Ambient Background */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -2193,6 +2237,8 @@ const TermsConditions = () => {
         </div>
       </div>
     </main>
+
+    </>
   );
 };
 

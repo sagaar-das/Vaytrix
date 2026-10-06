@@ -26,7 +26,7 @@ const Home = lazy(() => import("./pages/Home"));
 const Services = lazy(() => import("./pages/Services"));
 const ForEmployers = lazy(() => import("./pages/ForEmployer"));
 const Careers = lazy(() => import("./pages/Careers"));
-const ClientsPage = lazy(() => import("./pages/ClientsPage"));
+
 const ContactUs = lazy(() => import("./pages/ContactUs"));
 const About = lazy(() => import("./pages/About"));
 const TermsConditions = lazy(() => import("./pages/TermsConditions"));
@@ -107,7 +107,7 @@ function AnimatedRoutes() {
             <Route path="services/:serviceId" element={<Services />} />
             <Route path="careers" element={<Careers />} />
             <Route path="for-employers" element={<ForEmployers />} />
-            <Route path="clients" element={<ClientsPage />} />
+            
             <Route path="contact" element={<ContactUs />} />
             <Route path="about" element={<About />} />
             <Route path="privacy-policy" element={<PrivacyPolicy />} />

@@ -1,15 +1,32 @@
 {
-  "name": "XLent IT Services",
-  "short_name": "Xlent",
+  "name": "Vaytrix Tech IT",
+  "short_name": "Vaytrix",
+  "description": "Vaytrix Tech IT - Technology, talent, training and career solutions.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#0d0d0f",
-  "theme_color": "#0d0d0f",
+  "orientation": "portrait-primary",
+  "background_color": "#050508",
+  "theme_color": "#050508",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": [
+    "business",
+    "technology",
+    "education"
+  ],
   "icons": [
     {
       "src": "/favicon.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }

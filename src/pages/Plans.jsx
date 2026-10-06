@@ -10,6 +10,8 @@ import PricingPlans from '../plansComponents/PricingPlans'
 function Plans() {
   return (
     <>
+      
+
     <Hero />
     <TechnicalDepartment />
     <ResumeDepartment />

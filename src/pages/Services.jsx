@@ -10,7 +10,6 @@ import BPO from "../services/BPO";
 import AI from "../services/AI";
 
 
-import { Helmet } from "react-helmet-async";
 
 function Services() {
   const { serviceId } = useParams();
@@ -51,13 +50,7 @@ function Services() {
 
 
     <>
-      <Helmet>
-        <title>Services | Vaytrix Services</title>
-
-        <meta name="description" content="Explore IT staffing, contract hiring, permanent placement, recruiting, and workforce solutions tailored for modern businesses." />
-
-        <link rel="canonical" href="https://www.xlent-itservice.com/services/it" />
-      </Helmet>
+      
 
       <div className="bg-[#1a1a1a] text-white min-h-screen">
 

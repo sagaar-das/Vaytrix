@@ -13,6 +13,8 @@ import {
   Sparkles,
 } from "lucide-react";
 
+import { Helmet } from "react-helmet-async";
+
 const trends = [
   {
     id: "01",
@@ -72,6 +74,51 @@ const trends = [
 
 const TechnologyTrends = () => {
   return (
+
+    <>
+    <Helmet>
+  <title>Technology Trends | AI, Innovation & Digital Future | Vaytrix</title>
+
+  <meta
+    name="description"
+    content="Explore the latest technology trends, AI developments, digital innovation, and emerging technologies shaping the future of modern businesses."
+  />
+
+  <meta
+    name="keywords"
+    content="Technology Trends, AI Trends, Artificial Intelligence, Digital Innovation, Emerging Technology, Technology News, Vaytrix"
+  />
+
+  <link
+    rel="canonical"
+    href="https://vaytrixtechit.com/technology-trends"
+  />
+
+  <meta
+    property="og:title"
+    content="Technology Trends | AI, Innovation & Digital Future | Vaytrix"
+  />
+
+  <meta
+    property="og:description"
+    content="Stay informed about AI, emerging technologies, digital innovation, and the trends shaping tomorrow."
+  />
+
+  <meta
+    property="og:url"
+    content="https://vaytrixtechit.com/technology-trends"
+  />
+
+  <meta
+    property="og:type"
+    content="website"
+  />
+
+  <meta
+    property="og:image"
+    content="https://vaytrixtechit.com/og-image.jpg"
+  />
+</Helmet>
     <section
       id="technology-trends"
       className="relative overflow-hidden bg-[#050508] px-5 py-10 text-white sm:px-8 lg:px-10 lg:py-10"
@@ -219,6 +266,7 @@ const TechnologyTrends = () => {
         </motion.div>
       </div>
     </section>
+    </>
   );
 };
 
