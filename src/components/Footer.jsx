@@ -230,7 +230,7 @@ function Footer() {
               </a>
 
               {/* PHONE */}
-              <a href="tel:+18124954121" className="group flex items-start gap-3">
+              <a href="tel:+1 614-802-4217" className="group flex items-start gap-3">
 
                 <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/[0.03] text-blue-400 transition-all duration-300 group-hover:border-blue-500/40 group-hover:bg-blue-500/10">
                   <Phone size={16} />
@@ -242,7 +242,7 @@ function Footer() {
                   </p>
 
                   <span className="text-[13px] text-white/50 transition group-hover:text-white">
-                    +1812 495 4121
+                    +1 614-802-4217
                   </span>
                 </div>
 

@@ -287,7 +287,7 @@ function ContactCTA() {
 
                 {/* PHONE */}
 
-                <a href="tel:+18124954121" className="group flex items-center gap-4 border-b border-white/[0.07] pb-4">
+                <a href="tel:+1 614-802-4217" className="group flex items-center gap-4 border-b border-white/[0.07] pb-4">
 
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.025] transition-all duration-300 group-hover:border-[#3B82F6]/40 group-hover:bg-[#3B82F6]/10">
                     <Phone
@@ -302,7 +302,7 @@ function ContactCTA() {
                     </p>
 
                     <p className="mt-1 text-sm text-[#F8FAFC]">
-                      +1812 495 4121
+                      +1 614-802-4217
                     </p>
                   </div>
 
