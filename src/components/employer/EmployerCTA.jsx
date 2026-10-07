@@ -7,7 +7,7 @@ function EmployerCTA() {
   const navigate = useNavigate();
 
   return (
-    <section className="relative overflow-hidden bg-[#050508] px-5 py-20 sm:px-8 lg:px-10 lg:py-24">
+    <section className="relative overflow-hidden bg-[#050508] px-5 py-10 sm:px-8 lg:px-10 lg:py-10">
 
       {/* =========================================================
           BACKGROUND SYSTEM
@@ -49,7 +49,7 @@ function EmployerCTA() {
         className="relative mx-auto max-w-6xl"
       >
 
-        <div className="relative overflow-hidden rounded-[28px] border border-white/[0.08] bg-[rgba(10,10,15,0.82)] px-6 py-14 backdrop-blur-2xl sm:px-10 md:px-16 md:py-16">
+        <div className="relative overflow-hidden rounded-[28px] border border-white/[0.08] bg-[rgba(10,10,15,0.82)] px-6 py-10 backdrop-blur-2xl sm:px-10 md:px-16 md:py-10">
 
           {/* =====================================================
               INNER LIGHT EFFECTS

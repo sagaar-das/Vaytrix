@@ -4,9 +4,11 @@ import ItHowItWorks from "../itComponents/ItHowItWorks";
 import ItServices from "../itComponents/ItServices";
 import ItStats from "../itComponents/ItStats";
 import ItWhyChooseUs from "../itComponents/ItWhyChooseUs";
-import Plans from "../pages/Plans";
+
 
 import { Helmet } from "react-helmet-async";
+import PricingTable from "../itComponents/PricingTable";
+import PricingPlans from "../itComponents/PricingPlans";
 
 
 function IT() {
@@ -104,7 +106,9 @@ function IT() {
       <ItFeatures/>
       <ItWhyChooseUs/>
       <ItHowItWorks/>
-      <Plans />
+      <PricingTable />
+      <PricingPlans />
+      
 
       
     </>

@@ -355,11 +355,11 @@ function ItHowItWorks() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-5xl font-semibold leading-[0.95] tracking-[-0.05em] text-[#F8FAFC] sm:text-6xl md:text-7xl lg:text-8xl"
+            className="text-5xl font-semibold leading-[0.95] tracking-[-0.05em] text-[#F8FAFC] sm:text-5xl md:text-6xl lg:text-7xl"
           >
-            Your Career.
+            Your Career
             <span className="block bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] bg-clip-text text-transparent">
-              Structured.
+              Structured
             </span>
           </motion.h2>
 

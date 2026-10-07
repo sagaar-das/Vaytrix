@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Users, Sparkles } from "lucide-react";
+import { ArrowUpRight,PhoneCall, Users, Sparkles } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import ScrollReveal from "../ScrollReveal";
 
@@ -7,7 +7,7 @@ function EmployerHero() {
   const navigate = useNavigate();
 
   return (
-    <section className="relative overflow-hidden bg-[#050508] px-5 pb-20 pt-16 sm:px-8 sm:pb-24 sm:pt-20 lg:px-10 lg:pb-28 lg:pt-24">
+    <section className="relative overflow-hidden bg-[#050508] px-5 pb-10 pt-15 sm:px-8 sm:pb-10 sm:pt-15 lg:px-10 lg:pb-10 lg:pt-20">
 
       {/* Technical Grid */}
       <div
@@ -76,47 +76,69 @@ function EmployerHero() {
 
         {/* Buttons */}
         <ScrollReveal delay={0.3}>
-          <div className="mt-10 flex flex-col justify-center gap-4 sm:mt-12 sm:flex-row">
-
-            {/* Primary */}
-            <motion.button
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              onClick={() => navigate("/contact")}
-              className="group relative overflow-hidden rounded-xl bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] px-8 py-4 font-semibold text-white shadow-[0_0_35px_rgba(139,92,246,0.2)] transition-all duration-300 hover:brightness-110 sm:px-10"
-            >
-              <span className="relative z-10 flex items-center justify-center gap-3">
-                Start Hiring
-
-                <ArrowRight
-                  size={19}
-                  className="transition-transform duration-300 group-hover:translate-x-1"
-                />
-              </span>
-            </motion.button>
-
-            {/* Secondary */}
-            <motion.button
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              onClick={() => navigate("/contact")}
-              className="group rounded-xl border border-white/[0.12] bg-white/[0.03] px-8 py-4 font-semibold text-[#F8FAFC] backdrop-blur-xl transition-all duration-300 hover:border-[#8B5CF6]/45 hover:bg-[#8B5CF6]/[0.06] sm:px-10"
-            >
-              <span className="flex items-center justify-center gap-3">
-                Schedule a Consultation
-
-                <ArrowRight
-                  size={18}
-                  className="text-[#94A3B8] transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#A78BFA]"
-                />
-              </span>
-            </motion.button>
-
-          </div>
-        </ScrollReveal>
+        
+                      <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
+        
+                        <motion.a
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.97 }}
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=info@vaytrixtechit.com&su=Hiring%20Inquiry%20-%20VaytrixTechIT&body=Hello%20VaytrixTechIT%20Team%2C%0A%0AI%20am%20interested%20in%20discussing%20your%20staffing%20and%20hiring%20services.%20I%20would%20like%20to%20understand%20how%20VaytrixTechIT%20can%20support%20our%20hiring%20requirements.%0A%0APlease%20let%20me%20know%20a%20convenient%20time%20to%20connect.%0A%0ARegards%2C%0A%5BYour%20Name%5D"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="
+            group inline-flex items-center justify-center gap-3
+            rounded-xl
+            bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4]
+            px-7 py-3.5
+            font-semibold text-white
+            shadow-[0_0_35px_rgba(139,92,246,0.2)]
+            transition-all duration-300
+            hover:brightness-110
+            hover:shadow-[0_0_45px_rgba(139,92,246,0.32)]
+          "
+        >
+          Start Hiring
+        
+          <ArrowUpRight
+            size={19}
+            className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+          />
+        </motion.a>
+        
+                        {/* Secondary CTA */}
+                        <motion.a
+                          whileHover={{ scale: 1.03 }}
+                          whileTap={{ scale: 0.97 }}
+                          href="tel:+1812 495 4121"
+                          className="
+                            group inline-flex items-center justify-center gap-3
+                            rounded-xl
+                            border border-white/[0.12]
+                            bg-white/[0.03]
+                            px-7 py-3.5
+                            font-semibold text-[#F8FAFC]
+                            backdrop-blur-md
+                            transition-all duration-300
+                            hover:border-[#8B5CF6]/50
+                            hover:bg-[#8B5CF6]/10
+                          "
+                        >
+        
+                          <PhoneCall
+                            size={18}
+                            className="text-[#06B6D4] transition-transform duration-300 group-hover:scale-110"
+                          />
+        
+                          Schedule a Consultation
+        
+                        </motion.a>
+        
+                      </div>
+        
+                    </ScrollReveal>
 
         {/* Trust / Technical Strip */}
-        <ScrollReveal delay={0.4}>
+        <ScrollReveal >
           <div className="mx-auto mt-14 max-w-4xl border-t border-white/[0.08] pt-6 sm:mt-16">
 
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:justify-between">

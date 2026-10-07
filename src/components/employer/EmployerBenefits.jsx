@@ -33,7 +33,7 @@ function EmployerBenefits() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-[#050508] px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
+    <section className="relative overflow-hidden bg-[#050508] px-5 py-10 sm:px-8 sm:py-10 lg:px-10 lg:py-10">
 
       {/* Technical Grid */}
       <div
