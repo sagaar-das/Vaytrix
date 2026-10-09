@@ -163,8 +163,8 @@ function ItServices() {
           <div className="mb-3 flex items-center justify-center gap-2">
             <span className="h-px w-6 bg-gradient-to-r from-[#8B5CF6] to-[#06B6D4]" />
 
-            <span className="font-mono text-[8px] uppercase tracking-[0.22em] text-[#94A3B8] sm:text-[9px]">
-              Career Infrastructure / 02
+            <span className="font-mono text-[8px] uppercase tracking-[0.22em] text-[#bacce7] sm:text-[15px]">
+              Career Infrastructure / 03
             </span>
 
             <span className="h-px w-6 bg-gradient-to-r from-[#06B6D4] to-[#8B5CF6]" />
@@ -180,7 +180,7 @@ function ItServices() {
               tracking-[-0.04em]
               text-[#F8FAFC]
               sm:text-4xl
-              lg:text-[44px]
+              lg:text-[50px]
             "
           >
             A Smarter Path From{" "}
@@ -199,7 +199,7 @@ function ItServices() {
               text-xs
               leading-5
               text-[#94A3B8]
-              sm:text-sm
+              sm:text-[17px]
               sm:leading-6
             "
           >
@@ -301,15 +301,15 @@ function ItServices() {
 
                     <div className="flex items-center justify-between">
 
-                      <span className="font-mono text-[9px] tracking-[0.2em] text-[#475569]">
+                      <span className="font-mono text-[12px] tracking-[0.2em] text-[#8eaad1]">
                         MODULE {service.number}
                       </span>
 
                       <div
                         className={`
                           flex
-                          h-8
-                          w-8
+                          h-12
+                          w-12
                           items-center
                           justify-center
                           rounded-lg
@@ -330,7 +330,7 @@ function ItServices() {
 
                     {/* TITLE */}
 
-                    <div className="mt-4">
+                    <div>
 
                       <h3
                         className={`
@@ -339,7 +339,7 @@ function ItServices() {
                           tracking-tight
                           transition-colors
                           duration-300
-                          sm:text-lg
+                          sm:text-[22px]
 
                           ${
                             active
@@ -351,7 +351,7 @@ function ItServices() {
                         {service.title}
                       </h3>
 
-                      <p className="mt-1.5 max-w-lg text-[11px] leading-5 text-[#64748B] sm:text-xs">
+                      <p className="mt-1 max-w-lg text-[9px] leading-5 text-[#64748B] sm:text-[15px]">
                         {service.short}
                       </p>
 
@@ -359,9 +359,9 @@ function ItServices() {
 
                     {/* BOTTOM */}
 
-                    <div className="mt-4 flex items-center justify-between border-t border-white/[0.06] pt-3">
+                    <div className="mt-1 flex items-center justify-between border-t border-white/[0.06] pt-1">
 
-                      <span className="font-mono text-[8px] uppercase tracking-[0.18em] text-[#475569]">
+                      <span className="font-mono text-[12px] uppercase tracking-[0.18em] text-[#91add3]">
                         {active
                           ? "Module Expanded"
                           : "Explore Module"}
@@ -370,8 +370,8 @@ function ItServices() {
                       <div
                         className={`
                           flex
-                          h-7
-                          w-7
+                          h-10
+                          w-10
                           items-center
                           justify-center
                           rounded-full
@@ -382,19 +382,19 @@ function ItServices() {
                           ${
                             active
                               ? "rotate-45 border-[#8B5CF6]/40 bg-[#8B5CF6]/10"
-                              : "border-white/[0.08] group-hover:border-[#06B6D4]/30"
+                              : "border-white/40 group-hover:border-[#06B6D4]/30"
                           }
                         `}
                       >
                         <Plus
-                          size={14}
+                          size={18}
                           className={`
                             transition-colors
 
                             ${
                               active
                                 ? "text-[#A855F7]"
-                                : "text-[#64748B] group-hover:text-[#06B6D4]"
+                                : "text-[#a2bce0] group-hover:text-[#06B6D4]"
                             }
                           `}
                         />

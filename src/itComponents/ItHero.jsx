@@ -141,7 +141,7 @@ function ItHero() {
               </div>
 
               <div>
-                <p className="font-mono text-[10px] uppercase tracking-wider text-[#64748B]">
+                <p className="font-mono text-[10px] uppercase tracking-wider text-[#8fa6c6]">
                   Talent Network
                 </p>
                 <p className="text-sm font-medium text-[#E2E8F0]">
@@ -162,7 +162,7 @@ function ItHero() {
               </div>
 
               <div>
-                <p className="font-mono text-[10px] uppercase tracking-wider text-[#64748B]">
+                <p className="font-mono text-[10px] uppercase tracking-wider text-[#8ba2c1]">
                   Focus
                 </p>
                 <p className="text-sm font-medium text-[#E2E8F0]">
@@ -209,7 +209,7 @@ function ItHero() {
                   className="text-[#A855F7]"
                 />
 
-                <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-[#CBD5E1]">
+                <span className="font-mono text-[12px] uppercase tracking-[0.16em] text-[#CBD5E1]">
                   Talent / Technology
                 </span>
               </div>
@@ -219,7 +219,7 @@ function ItHero() {
                 <div className="rounded-2xl border border-white/[0.1] bg-[#050508]/75 p-4 backdrop-blur-xl sm:p-5">
                   <div className="flex items-end justify-between gap-4">
                     <div>
-                      <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#64748B]">
+                      <p className="font-bold text-[12px] uppercase tracking-[0.2em] text-[#3575d0]">
                         Vaytrix Staffing Network
                       </p>
 
@@ -264,7 +264,7 @@ function ItHero() {
               </div>
 
               <div>
-                <p className="font-mono text-[9px] uppercase tracking-wider text-[#64748B]">
+                <p className="font-mono text-[12px] uppercase tracking-wider text-[#92abcd]">
                   Talent Match
                 </p>
                 <p className="text-xs font-semibold text-[#F8FAFC]">
@@ -278,14 +278,14 @@ function ItHero() {
 
       {/* BOTTOM TECHNICAL LINE */}
       <div className="relative z-10 mx-auto mt-16 flex max-w-7xl items-center gap-4">
-        <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-[#475569]">
+        <span className="font-mono text-[12px] uppercase tracking-[0.25em] text-[#829dc2]">
           VAYTRIX / IT STAFFING
         </span>
 
         <div className="h-px flex-1 bg-gradient-to-r from-white/[0.08] to-transparent" />
 
-        <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#475569]">
-          01 / 04
+        <span className="font-mono text-[12px] uppercase tracking-[0.2em] text-[#8fabd1]">
+          01 / 08
         </span>
       </div>
     </section>

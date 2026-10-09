@@ -81,8 +81,8 @@ function ItFeatures() {
             <div className="mb-4 inline-flex items-center gap-3 rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-2 backdrop-blur-xl">
               <span className="h-1.5 w-1.5 rounded-full bg-[#06B6D4] shadow-[0_0_12px_#06B6D4]" />
 
-              <span className="font-mono text-[9px] uppercase tracking-[0.22em] text-[#94A3B8]">
-                Career Capability Matrix / 03
+              <span className="font-mono text-[12px] uppercase tracking-[0.22em] text-[#b1c3dd]">
+                Career Capability Matrix / 04
               </span>
             </div>
 
@@ -95,11 +95,11 @@ function ItFeatures() {
           </div>
 
           <div className="hidden text-right md:block">
-            <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#475569]">
+            <p className="font-mono text-[12px] uppercase tracking-[0.2em] text-[#8aa5cb]">
               VAYTRIX / TALENT SYSTEM
             </p>
 
-            <p className="mt-2 text-xs text-[#64748B]">
+            <p className="mt-2 text-[12px] text-[#91a9cb]">
               20+ Career Paths
             </p>
           </div>
@@ -132,16 +132,16 @@ function ItFeatures() {
                       />
                     </div>
 
-                    <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#64748B]">
+                    <span className="font-mono text-[15px] uppercase tracking-[0.2em] text-[#98b0d1]">
                       Role Architecture
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-semibold text-[#F8FAFC] sm:text-2xl">
+                  <h3 className="text-xl font-semibold text-[#F8FAFC] sm:text-[30px]">
                     Technology Roles We Support
                   </h3>
 
-                  <p className="mt-2 max-w-xl text-xs leading-6 text-[#64748B] sm:text-sm">
+                  <p className="mt-2 max-w-xl text-xs leading-6 text-[#8da4c5] sm:text-[15px]">
                     Explore career directions across software, data, cloud,
                     artificial intelligence, product, engineering, and
                     technology leadership.
@@ -149,7 +149,7 @@ function ItFeatures() {
                 </div>
 
                 <div className="hidden rounded-lg border border-white/[0.07] bg-white/[0.025] px-3 py-2 sm:block">
-                  <span className="font-mono text-[9px] text-[#475569]">
+                  <span className="font-mono text-[15px] text-[#7d95b8]">
                     INDEX_20
                   </span>
                 </div>
@@ -169,13 +169,13 @@ function ItFeatures() {
                     }}
                     className="group flex items-center gap-3 rounded-xl border border-white/[0.055] bg-white/[0.018] px-3 py-3 transition-all duration-300 hover:border-[#8B5CF6]/30 hover:bg-[#8B5CF6]/[0.04]"
                   >
-                    <span className="font-mono text-[8px] text-[#475569]">
+                    <span className="font-mono text-[15px] text-[#8eaad0]">
                       {String(index + 1).padStart(2, "0")}
                     </span>
 
                     <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#3B82F6]/60 transition-all duration-300 group-hover:bg-[#06B6D4] group-hover:shadow-[0_0_8px_#06B6D4]" />
 
-                    <span className="text-[11px] leading-5 text-[#CBD5E1] transition-colors group-hover:text-white sm:text-xs">
+                    <span className="text-[11px] leading-5 text-[#CBD5E1] transition-colors group-hover:text-white sm:text-[15px]">
                       {role}
                     </span>
                   </motion.div>
@@ -216,7 +216,7 @@ function ItFeatures() {
                   </div>
 
                   <div>
-                    <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#64748B]">
+                    <p className="font-mono text-[12px] uppercase tracking-[0.2em] text-[#9db5d6]">
                       Human Development
                     </p>
 
@@ -226,21 +226,21 @@ function ItFeatures() {
                   </div>
                 </div>
 
-                <span className="font-mono text-[9px] text-[#475569]">
-                  03
+                <span className="font-mono text-[12px] text-[#8aa5ca]">
+                  04
                 </span>
               </div>
 
               {/* HEADING */}
-              <h3 className="mt-10 max-w-md text-2xl font-semibold leading-tight tracking-[-0.025em] text-[#F8FAFC] sm:text-3xl">
+              <h3 className="mt-10 max-w-md text-2xl font-semibold leading-tight tracking-[-0.025em] text-[#F8FAFC] sm:text-[35px]">
                 Turning Potential Into
                 <span className="block bg-gradient-to-r from-[#8B5CF6] to-[#06B6D4] bg-clip-text text-transparent">
-                  Industry-Ready Talent.
+                  Industry-Ready Talent
                 </span>
               </h3>
 
               {/* DESCRIPTION */}
-              <p className="mt-5 text-sm leading-7 text-[#94A3B8]">
+              <p className="mt-5 text-[17px] leading-7 text-[#94A3B8]">
                 At Vaytrix, career support goes beyond helping professionals
                 find opportunities. We combine practical mentorship,
                 real-world project exposure, modern technology learning, and
@@ -248,7 +248,7 @@ function ItFeatures() {
                 industry-ready professionals.
               </p>
 
-              <p className="mt-4 text-sm leading-7 text-[#94A3B8]">
+              <p className="mt-4 text-[17px] leading-7 text-[#94A3B8]">
                 Whether someone is beginning their technology journey or
                 looking to advance an established career, our approach focuses
                 on stronger problem-solving, relevant skills, practical
@@ -275,7 +275,7 @@ function ItFeatures() {
                         className="text-[#06B6D4]"
                       />
 
-                      <span className="text-[10px] text-[#CBD5E1]">
+                      <span className="text-[15px] text-[#CBD5E1]">
                         {item}
                       </span>
                     </div>
@@ -284,7 +284,7 @@ function ItFeatures() {
 
                 {/* FOOTER */}
                 <div className="mt-6 flex items-center justify-between border-t border-white/[0.07] pt-5">
-                  <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-[#475569]">
+                  <span className="font-mono text-[15px] uppercase tracking-[0.18em] text-[#7f98ba]">
                     From Potential → Performance
                   </span>
 
@@ -302,13 +302,13 @@ function ItFeatures() {
 
         {/* BOTTOM TECHNICAL FOOTER */}
         <div className="mt-6 flex items-center gap-4">
-          <span className="font-mono text-[8px] uppercase tracking-[0.22em] text-[#475569]">
+          <span className="font-mono text-[15px] uppercase tracking-[0.22em] text-[#8099bc]">
             VAYTRIX / CAREER INTELLIGENCE
           </span>
 
           <div className="h-px flex-1 bg-gradient-to-r from-white/[0.08] to-transparent" />
 
-          <span className="font-mono text-[8px] uppercase tracking-[0.18em] text-[#475569]">
+          <span className="font-mono text-[15px] uppercase tracking-[0.18em] text-[#8099bc]">
             BUILD / LEARN / GROW
           </span>
         </div>

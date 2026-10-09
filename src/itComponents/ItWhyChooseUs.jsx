@@ -115,8 +115,8 @@ function ItWhyChooseUs() {
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-[#8B5CF6]" />
               </span>
 
-              <span className="font-mono text-[9px] uppercase tracking-[0.22em] text-[#94A3B8] sm:text-[10px]">
-                Why Vaytrix / 04
+              <span className="font-mono text-[9px] uppercase tracking-[0.22em] text-[#afc0d8] sm:text-[15px]">
+                Why Vaytrix / 05
               </span>
             </div>
 
@@ -129,7 +129,7 @@ function ItWhyChooseUs() {
             </h2>
 
             {/* DESCRIPTION */}
-            <p className="mt-5 max-w-2xl text-sm leading-7 text-[#94A3B8] sm:text-base sm:leading-8">
+            <p className="mt-5 max-w-2xl text-sm leading-7 text-[#94A3B8] sm:text-[18px] sm:leading-8">
               We combine personalized guidance, industry expertise, hiring
               connections, and continued support to create a more structured
               path from professional preparation to long-term career growth.
@@ -138,14 +138,14 @@ function ItWhyChooseUs() {
 
           {/* HEADER META */}
           <div className="hidden shrink-0 md:block">
-            <p className="font-mono text-[9px] uppercase tracking-[0.22em] text-[#475569]">
+            <p className="font-mono text-[12px] uppercase tracking-[0.22em] text-[#849dc0]">
               VAYTRIX / ADVANTAGE
             </p>
 
             <div className="mt-3 flex items-center justify-end gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-[#06B6D4] shadow-[0_0_10px_#06B6D4]" />
 
-              <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-[#64748B]">
+              <span className="font-mono text-[12px] uppercase tracking-[0.18em] text-[#849dc0]">
                 06 Core Benefits
               </span>
             </div>
@@ -195,7 +195,7 @@ function ItWhyChooseUs() {
                   </div>
 
                   <span
-                    className={`font-mono text-[10px] tracking-[0.2em] opacity-70 ${style.number}`}
+                    className={`font-mono text-[15px] tracking-[0.2em] opacity-70 ${style.number}`}
                   >
                     {item.number}
                   </span>
@@ -203,23 +203,23 @@ function ItWhyChooseUs() {
 
                 {/* CONTENT */}
                 <div className="relative z-10 mt-7">
-                  <h3 className="text-lg font-semibold tracking-tight text-[#F8FAFC] transition-colors duration-300 group-hover:text-white sm:text-xl">
+                  <h3 className="text-lg font-semibold tracking-tight text-[#F8FAFC] transition-colors duration-300 group-hover:text-white sm:text-[22px]">
                     {item.title}
                   </h3>
 
-                  <div className="mt-4 h-px w-10 bg-gradient-to-r from-[#8B5CF6] to-[#06B6D4] transition-all duration-500 group-hover:w-20" />
+                  <div className="mt-2 h-px w-10 bg-gradient-to-r from-[#8B5CF6] to-[#06B6D4] transition-all duration-500 group-hover:w-20" />
 
-                  <p className="mt-4 text-xs leading-6 text-[#64748B] transition-colors duration-300 group-hover:text-[#94A3B8] sm:text-sm">
+                  <p className="mt-2 text-xs leading-6 text-[#64748B] transition-colors duration-300 group-hover:text-[#94A3B8] sm:text-[15px]">
                     {item.desc}
                   </p>
                 </div>
 
                 {/* BOTTOM */}
-                <div className="relative z-10 mt-7 flex items-center justify-between border-t border-white/[0.06] pt-4">
+                <div className="relative z-10 mt-4 flex items-center justify-between border-t border-white/[0.06] pt-4">
                   <div className="flex items-center gap-2">
                     <span className="h-1.5 w-1.5 rounded-full bg-[#06B6D4] shadow-[0_0_8px_rgba(6,182,212,0.6)]" />
 
-                    <span className="font-mono text-[8px] uppercase tracking-[0.18em] text-[#475569]">
+                    <span className="font-mono text-[12px] uppercase tracking-[0.18em] text-[#8ba7ce]">
                       Vaytrix Advantage
                     </span>
                   </div>
@@ -247,13 +247,13 @@ function ItWhyChooseUs() {
           transition={{ delay: 0.5 }}
           className="mt-8 flex items-center gap-4"
         >
-          <span className="font-mono text-[8px] uppercase tracking-[0.22em] text-[#475569]">
+          <span className="font-mono text-[12px] uppercase tracking-[0.22em] text-[#90acd3]">
             VAYTRIX / CAREER ADVANTAGE
           </span>
 
           <div className="h-px flex-1 bg-gradient-to-r from-white/[0.08] to-transparent" />
 
-          <span className="font-mono text-[8px] uppercase tracking-[0.18em] text-[#475569]">
+          <span className="font-mono text-[12px] uppercase tracking-[0.18em] text-[#90acd3]">
             BUILD WITH CONFIDENCE
           </span>
         </motion.div>

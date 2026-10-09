@@ -40,8 +40,8 @@ const PricingPlans = () => {
           <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-2 backdrop-blur-xl">
             <span className="h-1.5 w-1.5 rounded-full bg-[#8B5CF6] shadow-[0_0_12px_rgba(139,92,246,0.8)]" />
 
-            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#94A3B8] sm:text-xs">
-              Pricing Architecture / 05
+            <span className="font-mono text-[12px] uppercase tracking-[0.2em] text-[#94A3B8] sm:text-xs">
+              Pricing Architecture / 08
             </span>
           </div>
 
@@ -49,12 +49,12 @@ const PricingPlans = () => {
           <h2 className="text-3xl font-semibold leading-tight tracking-[-0.04em] text-[#F8FAFC] sm:text-4xl md:text-5xl">
             Choose Your
             <span className="block bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] bg-clip-text text-transparent">
-              Career Acceleration Plan.
+              Career Acceleration Plan
             </span>
           </h2>
 
           {/* Description */}
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-[#94A3B8] sm:text-base sm:leading-8">
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-[#94A3B8] sm:text-[16px] sm:leading-8">
             Select a career support plan designed to strengthen your profile,
             improve interview readiness, expand your opportunities, and support
             your journey toward the next role.
@@ -83,7 +83,7 @@ const PricingPlans = () => {
                   strokeWidth={1.8}
                 />
 
-                <span className="font-mono text-[9px] font-semibold uppercase tracking-[0.18em] text-[#C4B5FD] sm:text-[10px]">
+                <span className="font-mono text-[9px] font-semibold uppercase tracking-[0.18em] text-[#C4B5FD] sm:text-[14px]">
                   Career Acceleration Program
                 </span>
               </div>
@@ -94,26 +94,26 @@ const PricingPlans = () => {
               </h3>
 
               {/* Price Label */}
-              <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.2em] text-[#64748B]">
+              <p className="mt-6 font-mono text-[12px] uppercase tracking-[0.2em] text-[#7a8da8]">
                 Plans Starting From
               </p>
 
               {/* Price */}
               <div className="mt-2 flex items-start justify-center">
-                <span className="mt-4 mr-1 text-2xl font-medium text-[#94A3B8] sm:text-3xl">
+                <span className="mt-6 mr-3 text-2xl font-medium text-[#94A3B8] sm:text-5xl">
                   $
                 </span>
 
                 <span className="bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] bg-clip-text text-6xl font-bold tracking-[-0.05em] text-transparent sm:text-7xl md:text-8xl">
                   499
                 </span>
-                <span className="mt-4 mr-1 text-2xl font-medium text-[#94A3B8] sm:text-3xl">
+                <span className="mt-7 mr-1 text-2xl font-medium text-[#94A3B8] sm:text-4xl">
                   +tax(3%)
                 </span>
               </div>
 
               {/* Description */}
-              <p className="mt-5 max-w-2xl text-sm leading-7 text-[#94A3B8] sm:text-base sm:leading-8">
+              <p className="mt-2 max-w-2xl text-sm leading-7 text-[#94A3B8] sm:text-lg sm:leading-8">
                 Comprehensive career support designed to help you strengthen
                 your professional profile, prepare for interviews, connect with
                 opportunities, and move forward with greater confidence.
@@ -124,7 +124,7 @@ const PricingPlans = () => {
             <div className="my-10 flex items-center gap-4">
               <div className="h-px flex-1 bg-gradient-to-r from-transparent to-white/[0.08]" />
 
-              <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-[#475569]">
+              <span className="font-mono text-[12px] uppercase tracking-[0.18em] text-[#829bbe]">
                 Included Services
               </span>
 
@@ -147,7 +147,7 @@ const PricingPlans = () => {
                   </div>
 
                   <div className="min-w-0">
-                    <span className="mr-2 font-mono text-[9px] text-[#475569]">
+                    <span className="mr-2 font-mono text-[15px] text-[#7f98ba]">
                       {String(index + 1).padStart(2, "0")}
                     </span>
 
@@ -165,12 +165,12 @@ const PricingPlans = () => {
               <div className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#06B6D4] shadow-[0_0_10px_rgba(6,182,212,0.8)]" />
 
-                <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-[#64748B]">
+                <span className="font-mono text-[12px] uppercase tracking-[0.16em] text-[#97b0d1]">
                   Career Support / Active
                 </span>
               </div>
 
-              <div className="flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.16em] text-[#64748B]">
+              <div className="flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.16em] text-[#9eb6d9]">
                 VAYTRIX
                 <ArrowUpRight className="h-3 w-3 text-[#8B5CF6]" />
               </div>
@@ -180,7 +180,7 @@ const PricingPlans = () => {
 
         {/* Bottom Note */}
         <div className="mt-7 text-center">
-          <p className="font-mono text-[9px] uppercase tracking-[0.16em] text-[#475569]">
+          <p className="font-mono text-[12px] uppercase tracking-[0.16em] text-[#94afd6]">
             Flexible career support / Transparent starting price
           </p>
         </div>

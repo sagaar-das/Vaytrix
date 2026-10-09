@@ -343,8 +343,8 @@ function ItHowItWorks() {
           >
             <span className="h-1.5 w-1.5 rounded-full bg-[#8B5CF6] shadow-[0_0_12px_#8B5CF6]" />
 
-            <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-[#94A3B8]">
-              How It Works / 05
+            <span className="font-mono text-[12px] uppercase tracking-[0.25em] text-[#94A3B8]">
+              How It Works / 06
             </span>
           </motion.div>
 
@@ -370,7 +370,7 @@ function ItHowItWorks() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="mx-auto mt-7 max-w-2xl text-sm leading-7 text-[#94A3B8] sm:text-base sm:leading-8"
+            className="mx-auto mt-7 max-w-2xl text-sm leading-7 text-[#94A3B8] sm:text-[18px] sm:leading-8"
           >
             A clear five-stage process designed to take you from
             understanding your strengths to becoming ready for the right
@@ -388,7 +388,7 @@ function ItHowItWorks() {
             }}
             className="mt-12 flex flex-col items-center gap-3"
           >
-            <span className="font-mono text-[8px] uppercase tracking-[0.25em] text-[#475569]">
+            <span className="font-mono text-[12px] uppercase tracking-[0.25em] text-[#8da9d0]">
               Explore The Process
             </span>
 
@@ -500,13 +500,13 @@ function ItHowItWorks() {
                               />
                             </div>
 
-                            <span className="font-mono text-[9px] tracking-[0.22em] text-[#475569]">
+                            <span className="font-mono text-[12px] tracking-[0.22em] text-[#8da7cc]">
                               STEP_{step.number}
                             </span>
                           </div>
 
                           {/* TITLE */}
-                          <h3 className="relative z-10 mt-5 text-xl font-semibold tracking-tight text-[#F8FAFC]">
+                          <h3 className="relative z-10 mt-5 text-[25px] font-semibold tracking-tight text-[#F8FAFC]">
                             {step.title}
                           </h3>
 
@@ -521,7 +521,7 @@ function ItHowItWorks() {
                               className={`h-1.5 w-1.5 rounded-full ${style.dot}`}
                             />
 
-                            <span className="font-mono text-[8px] uppercase tracking-[0.2em] text-[#475569]">
+                            <span className="font-mono text-[12px] uppercase tracking-[0.2em] text-[#8aa4c9]">
                               Vaytrix Process
                             </span>
                           </div>
@@ -593,13 +593,13 @@ function ItHowItWorks() {
                               />
                             </div>
 
-                            <span className="font-mono text-[9px] tracking-[0.22em] text-[#475569]">
+                            <span className="font-mono text-[12px] tracking-[0.22em] text-[#89a2c6]">
                               STEP_{step.number}
                             </span>
                           </div>
 
                           {/* TITLE */}
-                          <h3 className="relative z-10 mt-5 text-xl font-semibold tracking-tight text-[#F8FAFC]">
+                          <h3 className="relative z-10 mt-5 text-[25px] font-semibold tracking-tight text-[#F8FAFC]">
                             {step.title}
                           </h3>
 
@@ -614,7 +614,7 @@ function ItHowItWorks() {
                               className={`h-1.5 w-1.5 rounded-full ${style.dot}`}
                             />
 
-                            <span className="font-mono text-[8px] uppercase tracking-[0.2em] text-[#475569]">
+                            <span className="font-mono text-[12px] uppercase tracking-[0.2em] text-[#8ea8cd]">
                               Vaytrix Process
                             </span>
                           </div>
@@ -735,18 +735,18 @@ function ItHowItWorks() {
           transition={{ duration: 0.7 }}
           className="max-w-2xl text-center"
         >
-          <p className="font-mono text-[9px] uppercase tracking-[0.25em] text-[#475569]">
+          <p className="font-mono text-[15px] uppercase tracking-[0.25em] text-[#87a1c6]">
             Journey Complete / Next Step
           </p>
 
-          <h3 className="mt-5 text-3xl font-semibold tracking-tight text-[#F8FAFC] sm:text-4xl">
+          <h3 className="mt-5 text-3xl font-semibold tracking-tight text-[#F8FAFC] sm:text-5xl">
             Ready to Move Your Career
             <span className="block bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] bg-clip-text text-transparent">
               Forward?
             </span>
           </h3>
 
-          <p className="mt-5 text-sm leading-7 text-[#64748B]">
+          <p className="mt-5 text-[18px] leading-7 text-[#91a8c8]">
             Start with your current position, define where you want to go,
             and build a practical path toward the next opportunity.
           </p>

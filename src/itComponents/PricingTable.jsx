@@ -147,26 +147,26 @@ const PricingCard = ({
             </div>
 
             <div className="min-w-0">
-              <div className="truncate font-mono text-[10px] uppercase tracking-[0.16em] text-cyan-400">
+              <div className="truncate font-mono text-[14px] uppercase tracking-[0.16em] text-cyan-400">
                 {label}
               </div>
 
-              <div className="mt-1 font-mono text-[9px] uppercase tracking-wider text-white/25">
+              <div className="mt-1 font-mono text-[12px] uppercase tracking-wider text-white/70">
                 MODULE_{number}
               </div>
             </div>
           </div>
 
-          <span className="shrink-0 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 font-mono text-[8px] uppercase tracking-wider text-white/35">
+          <span className="shrink-0 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 font-mono text-[8px] uppercase tracking-wider text-white/75">
             {code}
           </span>
         </div>
 
-        <h3 className="text-xl font-semibold leading-tight text-white">
+        <h3 className="text-[25px] font-semibold leading-tight text-white">
           {title}
         </h3>
 
-        <p className="mt-2.5 text-[13px] leading-5.5 text-white/40">
+        <p className="mt-2.5 text-[15px] leading-5.5 text-white/50">
           {description}
         </p>
       </div>
@@ -176,15 +176,15 @@ const PricingCard = ({
       {/* ================================================= */}
 
       <div className="grid grid-cols-[minmax(0,1fr)_72px_72px] border-b border-white/10 bg-white/[0.025]">
-        <div className="flex items-center px-4 py-3.5 font-mono text-[10px] uppercase tracking-[0.14em] text-white/35">
+        <div className="flex items-center px-4 py-3.5 font-mono text-[12px] uppercase tracking-[0.14em] text-white/55">
           Features
         </div>
 
-        <div className="flex items-center justify-center border-l border-white/10 px-1 py-3.5 text-center font-mono text-[9px] uppercase tracking-wider text-cyan-400">
+        <div className="flex items-center justify-center border-l border-white/10 px-1 py-3.5 text-center font-mono text-[12px] uppercase tracking-wider text-cyan-400">
           Premium
         </div>
 
-        <div className="flex items-center justify-center border-l border-white/10 px-1 py-3.5 text-center font-mono text-[9px] uppercase tracking-wider text-white/35">
+        <div className="flex items-center justify-center border-l border-white/10 px-1 py-3.5 text-center font-mono text-[12px] uppercase tracking-wider text-white/55">
           Basic
         </div>
       </div>
@@ -206,7 +206,7 @@ const PricingCard = ({
           >
             {/* Feature */}
             <div className="flex min-h-[58px] items-center px-4 py-3">
-              <span className="text-[13px] leading-5 text-white/70">
+              <span className="text-[15px] leading-5 text-white/70">
                 {feature}
               </span>
             </div>
@@ -218,7 +218,7 @@ const PricingCard = ({
                   <Check className="h-4 w-4 text-cyan-400" />
                 </div>
               ) : (
-                <X className="h-4 w-4 text-white/10" />
+                <X className="h-4 w-4 text-white/70" />
               )}
             </div>
 
@@ -229,7 +229,7 @@ const PricingCard = ({
                   <Check className="h-4 w-4 text-violet-400" />
                 </div>
               ) : (
-                <X className="h-4 w-4 text-white/10" />
+                <X className="h-4 w-4 text-white/70" />
               )}
             </div>
           </motion.div>
@@ -241,11 +241,11 @@ const PricingCard = ({
       {/* ================================================= */}
 
       <div className="flex items-center justify-between border-t border-white/10 bg-white/[0.015] px-6 py-4">
-        <span className="font-mono text-[9px] uppercase tracking-[0.14em] text-white/20">
+        <span className="font-mono text-[12px] uppercase tracking-[0.14em] text-white/70">
           VAYTRIX / {code}
         </span>
 
-        <ArrowUpRight className="h-4 w-4 text-white/20 transition-colors duration-200 group-hover:text-cyan-400" />
+        <ArrowUpRight className="h-4 w-4 text-white/70 transition-colors duration-200 group-hover:text-cyan-400" />
       </div>
     </motion.div>
   );
@@ -303,7 +303,7 @@ const PricingTable = () => {
           <div className="mb-3 flex items-center justify-center gap-2.5">
             <span className="h-px w-10 bg-gradient-to-r from-transparent to-violet-500/60" />
 
-            <span className="font-mono text-[9px] uppercase tracking-[0.22em] text-violet-400">
+            <span className="font-mono text-[15px] uppercase tracking-[0.22em] text-violet-400">
               Vaytrix / Solutions
             </span>
 
@@ -356,7 +356,7 @@ const PricingTable = () => {
         >
           <span className="h-px w-14 bg-white/10" />
 
-          <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/20">
+          <span className="font-mono text-[15px] uppercase tracking-[0.18em] text-white/70">
             VAYTRIX / GROWTH_ENGINE
           </span>
 

@@ -91,11 +91,24 @@ function ItStats() {
         {/* SECTION HEADER */}
         <div className="mb-6 flex items-center justify-between gap-4">
           <div>
-            <p className="font-mono text-[9px] uppercase tracking-[0.25em] text-[#64748B] sm:text-[10px]">
-              Performance Signals / 01
-            </p>
+            {/* TECHNICAL LABEL */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15, duration: 0.6 }}
+            className="mb-6 inline-flex items-center gap-3 rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-2 backdrop-blur-xl"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#06B6D4] opacity-70" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#06B6D4]" />
+            </span>
 
-            <h2 className="mt-2 text-lg font-semibold tracking-tight text-[#F8FAFC] sm:text-xl">
+            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#94A3B8] sm:text-xs">
+              Performance signals / 02
+            </span>
+          </motion.div>
+
+            <h2 className=" text-lg font-semibold tracking-tight text-[#F8FAFC] sm:text-[35px]">
               Staffing Network Insights
             </h2>
           </div>
@@ -103,7 +116,7 @@ function ItStats() {
           <div className="hidden items-center gap-2 sm:flex">
             <span className="h-1.5 w-1.5 rounded-full bg-[#06B6D4] shadow-[0_0_10px_#06B6D4]" />
 
-            <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#64748B]">
+            <span className="font-mono text-[12px] uppercase tracking-[0.2em] text-[#91a8c8]">
               Live Metrics
             </span>
           </div>
@@ -139,7 +152,7 @@ function ItStats() {
                     />
                   </div>
 
-                  <span className="font-mono text-[9px] text-[#475569]">
+                  <span className="font-mono text-[15px] text-[#88a3c8]">
                     0{index + 1}
                   </span>
                 </div>
@@ -164,7 +177,7 @@ function ItStats() {
                 </p>
 
                 {/* DETAIL */}
-                <p className="mt-1 text-[10px] leading-5 text-[#64748B] sm:text-xs">
+                <p className="mt-1 text-[12px] leading-5 text-[#889ebd] sm:text-xs">
                   {stat.detail}
                 </p>
 
@@ -181,7 +194,7 @@ function ItStats() {
                       }`}
                   />
 
-                  <span className="font-mono text-[8px] uppercase tracking-[0.18em] text-[#475569]">
+                  <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#87a1c5]">
                     Verified Signal
                   </span>
                 </div>
@@ -203,15 +216,15 @@ function ItStats() {
 
         {/* BOTTOM TECHNICAL FOOTER */}
         <div className="mt-5 flex items-center gap-3">
-          <span className="font-mono text-[8px] uppercase tracking-[0.22em] text-[#475569]">
+          <span className="font-mono text-[12px] uppercase tracking-[0.22em] text-[#8ba6cc]">
             VAYTRIX / TALENT INTELLIGENCE
           </span>
 
           <div className="h-px flex-1 bg-gradient-to-r from-white/[0.08] to-transparent" />
 
-          <span className="font-mono text-[8px] uppercase tracking-[0.18em] text-[#475569]">
-            05 Signals
-          </span>
+          <span className="font-mono text-[12px] uppercase tracking-[0.2em] text-[#8fabd1]">
+          02 / 08
+        </span>
         </div>
       </div>
     </section>
