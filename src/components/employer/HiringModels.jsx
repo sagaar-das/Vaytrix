@@ -90,7 +90,7 @@ function HiringModels() {
               Flexible Hiring Models for
 
               <span className="block bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] bg-clip-text text-transparent">
-                Every Business Need.
+                Every Business Need
               </span>
 
             </h2>
@@ -148,12 +148,12 @@ function HiringModels() {
                   {/* Card Top */}
                   <div className="flex items-center justify-between">
 
-                    <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-[#475569]">
+                    <span className="font-mono text-[12px] uppercase tracking-[0.18em] text-[#90acd3]">
                       Model / {String(index + 1).padStart(2, "0")}
                     </span>
 
                     {item.featured && (
-                      <span className="rounded-full border border-[#8B5CF6]/30 bg-[#8B5CF6]/10 px-3 py-1 font-mono text-[8px] font-semibold uppercase tracking-[0.15em] text-[#C4B5FD]">
+                      <span className="rounded-full border border-[#8B5CF6]/30 bg-[#8B5CF6]/10 px-3 py-1 font-mono text-[12px] font-semibold uppercase tracking-[0.15em] text-[#C4B5FD]">
                         Featured
                       </span>
                     )}
@@ -205,7 +205,7 @@ function HiringModels() {
                   <motion.button
                     whileHover={{ x: 4 }}
                     onClick={() => navigate("/contact")}
-                    className="group/btn mt-9 flex items-center gap-2 font-mono text-[10px] font-medium uppercase tracking-[0.16em] text-[#A78BFA] transition-colors hover:text-[#C4B5FD]"
+                    className="group/btn mt-9 flex items-center gap-2 font-mono text-[12px] font-medium uppercase tracking-[0.16em] text-[#A78BFA] transition-colors hover:text-[#C4B5FD]"
                   >
                     Explore Hiring Model
 
@@ -218,7 +218,7 @@ function HiringModels() {
                   {/* Bottom Technical Detail */}
                   <div className="mt-7 flex items-center justify-between border-t border-white/[0.06] pt-4">
 
-                    <span className="font-mono text-[8px] uppercase tracking-[0.16em] text-[#475569]">
+                    <span className="font-mono text-[12px] uppercase tracking-[0.16em] text-[#97afd1]">
                       VAYTRIX / TALENT
                     </span>
 

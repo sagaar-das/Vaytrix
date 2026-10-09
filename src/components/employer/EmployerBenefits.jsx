@@ -77,7 +77,7 @@ function EmployerBenefits() {
               Hiring, Reimagined for
 
               <span className="block bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] bg-clip-text text-transparent">
-                Modern Technology Teams.
+                Modern Technology Teams
               </span>
 
             </h2>
@@ -126,7 +126,7 @@ function EmployerBenefits() {
 
                   {/* Number */}
                   <div className="mb-4 flex items-center justify-between">
-                    <span className="font-mono text-[9px] tracking-[0.18em] text-[#475569]">
+                    <span className="font-mono text-[12px] tracking-[0.18em] text-[#8ea9cf]">
                       {String(index + 1).padStart(2, "0")}
                     </span>
 
@@ -169,12 +169,12 @@ function EmployerBenefits() {
             <div className="flex items-center gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-[#06B6D4] shadow-[0_0_10px_rgba(6,182,212,0.8)]" />
 
-              <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-[#64748B]">
+              <span className="font-mono text-[12px] uppercase tracking-[0.18em] text-[#98b0d3]">
                 Employer Talent Infrastructure
               </span>
             </div>
 
-            <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-[#475569]">
+            <span className="font-mono text-[12px] uppercase tracking-[0.18em] text-[#98b0d3]">
               VAYTRIX / TALENT SOLUTIONS
             </span>
 

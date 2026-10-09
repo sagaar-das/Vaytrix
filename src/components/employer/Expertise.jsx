@@ -107,7 +107,7 @@ function Expertise() {
               Technology Talent Across
 
               <span className="block bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] bg-clip-text text-transparent">
-                Every Critical Domain.
+                Every Critical Domain
               </span>
 
             </h2>
@@ -162,7 +162,7 @@ function Expertise() {
                       </div>
 
                       <div>
-                        <span className="font-mono text-[8px] uppercase tracking-[0.18em] text-[#475569]">
+                        <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#98b0d3]">
                           Capability
                         </span>
 
@@ -175,7 +175,7 @@ function Expertise() {
 
                     <div className="flex items-center gap-2">
 
-                      <span className="font-mono text-[8px] tracking-[0.16em] text-[#475569]">
+                      <span className="font-mono text-[12px] tracking-[0.16em] text-[#8ca7ce]">
                         {category.code}
                       </span>
 
@@ -213,11 +213,11 @@ function Expertise() {
                   {/* Bottom */}
                   <div className="mt-6 flex items-center justify-between border-t border-white/[0.06] pt-4">
 
-                    <span className="font-mono text-[8px] uppercase tracking-[0.16em] text-[#475569]">
+                    <span className="font-mono text-[12px] uppercase tracking-[0.16em] text-[#98b0d3]">
                       Technology Coverage
                     </span>
 
-                    <span className="font-mono text-[8px] text-[#64748B]">
+                    <span className="font-mono text-[12px] text-[#98b0d3]">
                       {String(category.skills.length).padStart(2, "0")} SKILLS
                     </span>
 
@@ -235,11 +235,11 @@ function Expertise() {
         <ScrollReveal delay={0.35}>
           <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-white/[0.07] pt-5 sm:flex-row">
 
-            <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-[#64748B]">
+            <span className="font-mono text-[12px] uppercase tracking-[0.18em] text-[#8fa8cb]">
               Technology Capability Network
             </span>
 
-            <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-[#475569]">
+            <span className="font-mono text-[12px] uppercase tracking-[0.18em] text-[#86a1c6]">
               VAYTRIX / TECHNOLOGY EXPERTISE
             </span>
 

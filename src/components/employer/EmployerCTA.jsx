@@ -75,13 +75,13 @@ function EmployerCTA() {
                 />
               </div>
 
-              <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-[#64748B]">
+              <span className="font-mono text-[12px] uppercase tracking-[0.22em] text-[#9ab2d3]">
                 Employer Solutions
               </span>
 
             </div>
 
-            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#64748B]">
+            <span className="font-mono text-[12px] uppercase tracking-[0.2em] text-[#9ab2d3]">
               VAYTRIX / 05
             </span>
 
@@ -117,7 +117,7 @@ function EmployerCTA() {
                 <br />
 
                 <span className="bg-gradient-to-r from-[#A855F7] via-[#3B82F6] to-[#06B6D4] bg-clip-text text-transparent">
-                  Ready to Deliver.
+                  Ready to Deliver
                 </span>
 
               </h2>
@@ -213,28 +213,28 @@ function EmployerCTA() {
           <div className="relative mt-12 grid grid-cols-1 gap-3 border-t border-white/[0.06] pt-5 sm:grid-cols-3">
 
             <div className="text-center sm:text-left">
-              <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#64748B]">
+              <p className="font-mono text-[12px] uppercase tracking-[0.2em] text-[#9ab2d3]">
                 Talent Access
               </p>
-              <p className="mt-1 text-xs text-[#94A3B8]">
+              <p className="mt-1 text-[15px] text-[#94A3B8]">
                 Qualified Technology Professionals
               </p>
             </div>
 
             <div className="text-center">
-              <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#64748B]">
+              <p className="font-mono text-[12px] uppercase tracking-[0.2em] text-[#9ab2d3]">
                 Hiring Model
               </p>
-              <p className="mt-1 text-xs text-[#94A3B8]">
+              <p className="mt-1 text-[15px] text-[#94A3B8]">
                 Flexible & Scalable
               </p>
             </div>
 
             <div className="text-center sm:text-right">
-              <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#64748B]">
+              <p className="font-mono text-[12px] uppercase tracking-[0.2em] text-[#9ab2d3]">
                 Next Step
               </p>
-              <p className="mt-1 text-xs text-[#94A3B8]">
+              <p className="mt-1 text-[15px] text-[#94A3B8]">
                 Start a Conversation
               </p>
             </div>

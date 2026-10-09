@@ -102,11 +102,11 @@ function Footer() {
               <img
                 src={logo}
                 alt="Vaytrix Logo"
-                className="h-[42px] w-auto max-w-[150px] object-contain"
+                className="h-[80px] w-auto max-w-[150px] object-contain"
               />
             </button>
 
-            <p className="text-sm leading-7 text-white/40">
+            <p className="text-sm leading-7 text-white/70">
               Building smarter digital experiences through technology,
               innovation, and strategic solutions designed to help modern
               businesses grow and move forward.
@@ -116,7 +116,9 @@ function Footer() {
             <div className="mt-7 flex gap-3">
 
               <a
-                href="#"
+                href="https://www.linkedin.com/company/145247638/"
+                target="_blank"
+                  rel="noopener noreferrer"
                 aria-label="LinkedIn"
                 className="group flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-white/45 transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/50 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-600 hover:text-white"
               >
@@ -145,7 +147,7 @@ function Footer() {
           {/* ================= SERVICES ================= */}
 
           <div>
-            <h3 className="mb-5 text-sm font-semibold text-white">
+            <h3 className="mb-5 text-[18px] font-semibold text-white">
               Services
             </h3>
 
@@ -155,7 +157,7 @@ function Footer() {
                 <li key={item.name}>
                   <button
                     onClick={() => navigate(item.path)}
-                    className="group flex items-center gap-1 text-left text-[13px] text-white/40 transition-all duration-300 hover:translate-x-1 hover:text-white"
+                    className="group flex items-center gap-1 text-left text-[15px] text-white/40 transition-all duration-300 hover:translate-x-1 hover:text-white"
                   >
                     <span>{item.name}</span>
 
@@ -173,7 +175,7 @@ function Footer() {
           {/* ================= COMPANY ================= */}
 
           <div>
-            <h3 className="mb-5 text-sm font-semibold text-white">
+            <h3 className="mb-5 text-[18px] font-semibold text-white">
               Company
             </h3>
 
@@ -183,7 +185,7 @@ function Footer() {
                 <li key={item.name}>
                   <button
                     onClick={() => navigate(item.path)}
-                    className="group flex items-center gap-1 text-left text-[13px] text-white/40 transition-all duration-300 hover:translate-x-1 hover:text-white"
+                    className="group flex items-center gap-1 text-left text-[15px] text-white/40 transition-all duration-300 hover:translate-x-1 hover:text-white"
                   >
                     <span>{item.name}</span>
 
@@ -202,7 +204,7 @@ function Footer() {
 
           <div>
 
-            <h3 className="mb-5 text-sm font-semibold text-white">
+            <h3 className="mb-5 text-[18px] font-semibold text-white">
               Get In Touch
             </h3>
 
@@ -218,7 +220,7 @@ function Footer() {
                 </div>
 
                 <div>
-                  <p className="mb-1 text-[10px] uppercase tracking-[0.15em] text-white/25">
+                  <p className="mb-1 text-[12px] uppercase tracking-[0.15em] text-white">
                     Email
                   </p>
 
@@ -237,7 +239,7 @@ function Footer() {
                 </div>
 
                 <div>
-                  <p className="mb-1 text-[10px] uppercase tracking-[0.15em] text-white/25">
+                  <p className="mb-1 text-[12px] uppercase tracking-[0.15em] text-white">
                     Phone
                   </p>
 
@@ -256,7 +258,7 @@ function Footer() {
                 </div>
 
                 <div>
-                  <p className="mb-1 text-[10px] uppercase tracking-[0.15em] text-white/25">
+                  <p className="mb-1 text-[12px] uppercase tracking-[0.15em] text-white">
                     Location
                   </p>
 
@@ -272,7 +274,7 @@ function Footer() {
             {/* E-VERIFY */}
             <div className="mt-7">
 
-              <p className="mb-3 text-[10px] uppercase tracking-[0.15em] text-white/25">
+              <p className="mb-3 text-[12px] uppercase tracking-[0.15em] text-white/55">
                 Verified Partner
               </p>
 
@@ -294,13 +296,13 @@ function Footer() {
 
         <div className="mt-14 flex flex-col gap-4 border-t border-white/[0.08] pt-7 sm:flex-row sm:items-center sm:justify-between">
 
-          <p className="text-[11px] text-white/25">
+          <p className="text-[12px] text-white/55">
             © 2026 Vaytrix. All rights reserved.
           </p>
 
           <button
             onClick={() => navigate("/privacy-policy")}
-            className="text-left text-[11px] text-white/25 transition hover:text-purple-400 sm:text-right"
+            className="text-left text-[12px] text-white/55 transition hover:text-purple-400 sm:text-right"
           >
             Privacy Policy
           </button>

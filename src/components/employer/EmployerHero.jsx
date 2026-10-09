@@ -56,7 +56,7 @@ function EmployerHero() {
             Build Your Team With
 
             <span className="block bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] bg-clip-text text-transparent">
-              Technology Talent That Delivers.
+              Technology Talent That Delivers
             </span>
 
           </h1>
@@ -149,14 +149,14 @@ function EmployerHero() {
                   strokeWidth={1.8}
                 />
 
-                <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-[#64748B]">
+                <span className="font-mono text-[12px] uppercase tracking-[0.18em] text-[#97afd1]">
                   Technology Talent Network
                 </span>
               </div>
 
               <div className="hidden h-px w-16 bg-gradient-to-r from-[#8B5CF6]/40 to-[#06B6D4]/40 sm:block" />
 
-              <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-[#64748B]">
+              <span className="font-mono text-[12px] uppercase tracking-[0.18em] text-[#97afd1]">
                 VAYTRIX / EMPLOYER SOLUTIONS
               </span>
 

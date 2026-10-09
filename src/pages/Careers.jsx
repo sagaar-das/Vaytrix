@@ -21,6 +21,7 @@ import {
   ChevronDown,
 } from "lucide-react";
 import { Helmet } from "react-helmet-async";
+import CtaCareers from "../components/CtaCareers";
 
 const rolesData = [
   {
@@ -220,641 +221,347 @@ const iconMap = {
   "Data Architect": Database,
 };
 
+function CareerOrbit() {
+  const orbitNodes = [
+    { icon: Code, label: "ENGINEERING", className: "left-0 top-[24%]" },
+    { icon: Brain, label: "INTELLIGENCE", className: "right-0 top-[28%]" },
+    { icon: Briefcase, label: "OPPORTUNITY", className: "bottom-[12%] left-[30%]" },
+  ];
+
+  return (
+    <div className="relative mx-auto flex aspect-square w-full max-w-[440px] items-center justify-center">
+      <div className="absolute inset-[5%] rounded-full border border-[#8B5CF6]/20" />
+      <div className="absolute inset-[13%] animate-[spin_32s_linear_infinite] rounded-full border border-dashed border-[#06B6D4]/25" />
+      <div className="absolute inset-[23%] rounded-full border border-white/[0.08]" />
+
+      <div className="absolute h-[70%] w-[70%] rounded-full bg-[#8B5CF6]/10 blur-[65px]" />
+      <div className="absolute h-[45%] w-[45%] rounded-full bg-[#06B6D4]/10 blur-[45px]" />
+
+      <motion.div
+        animate={{ rotate: 360 }}
+        transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
+        className="absolute inset-[13%] rounded-full"
+      >
+        <span className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 rounded-full bg-[#A78BFA] shadow-[0_0_20px_#8B5CF6]" />
+        <span className="absolute bottom-[10%] right-[8%] h-2.5 w-2.5 rounded-full bg-[#06B6D4] shadow-[0_0_16px_#06B6D4]" />
+      </motion.div>
+
+      <motion.div
+        animate={{ y: [0, -8, 0] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        className="relative z-10 flex h-32 w-32 items-center justify-center rounded-full border border-[#8B5CF6]/40 bg-[#0A0A0F]/90 shadow-[0_0_65px_rgba(139,92,246,0.18)] sm:h-40 sm:w-40"
+      >
+        <div className="absolute inset-3 rounded-full border border-white/[0.08]" />
+        <Network size={54} strokeWidth={1.1} className="text-[#A78BFA] sm:h-16 sm:w-16" />
+      </motion.div>
+
+      {orbitNodes.map((node, index) => {
+        const Icon = node.icon;
+
+        return (
+          <motion.div
+            key={node.label}
+            animate={{ y: [0, index % 2 === 0 ? -7 : 7, 0] }}
+            transition={{
+              duration: 3.5 + index,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className={`absolute z-20 ${node.className}`}
+          >
+            <div className="flex items-center gap-2 rounded-xl border border-white/10 bg-[#0A0A0F]/95 px-3 py-3 shadow-xl backdrop-blur-xl sm:px-4">
+              <Icon size={19} className="shrink-0 text-[#67E8F9]" />
+              <span className="text-xs font-semibold tracking-wide text-slate-200 sm:text-sm">
+                {node.label}
+              </span>
+            </div>
+          </motion.div>
+        );
+      })}
+
+      <div className="absolute left-[5%] top-[8%] font-mono text-xs tracking-wider text-slate-400">
+        VX / 01
+      </div>
+      <div className="absolute bottom-[5%] right-[3%] font-mono text-xs tracking-wider text-slate-400">
+        PEOPLE × TECH
+      </div>
+    </div>
+  );
+}
+
 export default function Careers() {
   const [filter, setFilter] = useState("All");
   const [activeRole, setActiveRole] = useState(null);
 
-  const filteredRoles = rolesData.filter((role) => {
-    if (filter === "All") return true;
-    return role.type === filter;
-  });
+  const filteredRoles = rolesData.filter(
+    (role) => filter === "All" || role.type === filter
+  );
 
   const itCount = rolesData.filter((role) => role.type === "IT").length;
   const leadershipCount = rolesData.filter(
     (role) => role.type === "Leadership"
   ).length;
 
+  const filters = [
+    { id: "All", label: "All Opportunities", count: rolesData.length },
+    { id: "IT", label: "Technology", count: itCount },
+    { id: "Leadership", label: "Leadership", count: leadershipCount },
+  ];
+
   return (
     <>
       <Helmet>
-  <title>Careers at Vaytrix Tech IT | Explore Opportunities</title>
+        <title>Careers at Vaytrix Tech IT | Explore Opportunities</title>
+        <meta
+          name="description"
+          content="Explore career opportunities at Vaytrix Tech IT and discover opportunities to grow your skills, build your career, and work with a forward-thinking technology team."
+        />
+        <meta
+          name="keywords"
+          content="Vaytrix Careers, IT Jobs, Technology Jobs, Software Jobs, Career Opportunities, Vaytrix Jobs"
+        />
+        <link rel="canonical" href="https://vaytrixtechit.com/careers" />
+        <meta
+          property="og:title"
+          content="Careers at Vaytrix Tech IT | Explore Opportunities"
+        />
+        <meta
+          property="og:description"
+          content="Find your next opportunity and build your career with Vaytrix Tech IT."
+        />
+        <meta property="og:url" content="https://vaytrixtechit.com/careers" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content="https://vaytrixtechit.com/og-image.jpg"
+        />
+      </Helmet>
 
-  <meta
-    name="description"
-    content="Explore career opportunities at Vaytrix Tech IT and discover opportunities to grow your skills, build your career, and work with a forward-thinking technology team."
-  />
-
-  <meta
-    name="keywords"
-    content="Vaytrix Careers, IT Jobs, Technology Jobs, Software Jobs, Career Opportunities, Vaytrix Jobs"
-  />
-
-  <link
-    rel="canonical"
-    href="https://vaytrixtechit.com/careers"
-  />
-
-  <meta
-    property="og:title"
-    content="Careers at Vaytrix Tech IT | Explore Opportunities"
-  />
-
-  <meta
-    property="og:description"
-    content="Find your next opportunity and build your career with Vaytrix Tech IT."
-  />
-
-  <meta
-    property="og:url"
-    content="https://vaytrixtechit.com/careers"
-  />
-
-  <meta
-    property="og:type"
-    content="website"
-  />
-
-  <meta
-    property="og:image"
-    content="https://vaytrixtechit.com/og-image.jpg"
-  />
-</Helmet>
-
-      <section className="relative min-h-screen overflow-hidden bg-[#050508] px-5 py-16 text-[#F8FAFC] sm:px-8 sm:py-20 lg:px-10 lg:py-24">
-
-        {/* =====================================================
-            BACKGROUND
-        ====================================================== */}
-
+      <section className="relative min-h-screen overflow-hidden bg-[#050508] px-5 py-16 text-[#F8FAFC] sm:px-8 sm:py-20 lg:px-10 lg:py-6">
+        {/* Background grid */}
         <div
-          className="pointer-events-none absolute inset-0 opacity-[0.025]"
+          className="pointer-events-none absolute inset-0 opacity-[0.035]"
           style={{
-            backgroundImage: `
-              linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)
-            `,
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
             backgroundSize: "56px 56px",
           }}
         />
 
         <div className="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full bg-[#8B5CF6]/10 blur-[150px]" />
-
         <div className="pointer-events-none absolute -right-40 top-[45%] h-96 w-96 rounded-full bg-[#06B6D4]/10 blur-[150px]" />
 
-        <div className="relative z-10 mx-auto max-w-7xl">
-
-          {/* =====================================================
-              HEADER
-          ====================================================== */}
-
-          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-
+        <div className="relative z-10 mx-auto w-full max-w-7xl">
+          {/* Hero */}
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
             <motion.div
               initial={{ opacity: 0, x: -25 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-
-              <div className="mb-5 flex items-center gap-3">
-
-                <div className="flex h-8 w-8 items-center justify-center border border-[#8B5CF6]/30 bg-[#8B5CF6]/10">
-                  <Sparkles
-                    size={14}
-                    className="text-[#A78BFA]"
-                  />
+              <div className="mb-6 flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#8B5CF6]/30 bg-[#8B5CF6]/10">
+                  <Sparkles size={21} className="text-[#A78BFA]" />
                 </div>
-
-                <span className="font-mono text-[9px] font-semibold uppercase tracking-[0.22em] text-[#64748B]">
+                <span className="font-mono text-sm font-semibold uppercase tracking-[0.18em] text-slate-300">
                   Vaytrix / Careers
                 </span>
-
               </div>
 
-              <h1 className="max-w-xl text-4xl font-semibold leading-[1.05] tracking-[-0.05em] text-[#F8FAFC] sm:text-5xl lg:text-6xl">
-
+              <h1 className="max-w-2xl text-4xl font-semibold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
                 Find your next
-                <br />
-
-                <span className="bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] bg-clip-text text-transparent">
-                  opportunity.
+                <span className="block bg-gradient-to-r from-[#A78BFA] via-[#3B82F6] to-[#06B6D4] bg-clip-text pb-2 text-transparent">
+                  opportunity
                 </span>
-
               </h1>
 
-            </motion.div>
-
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.15, duration: 0.6 }}
-              className="lg:pb-1"
-            >
-
-              <p className="max-w-xl text-sm leading-7 text-[#94A3B8] sm:text-base">
+              <p className="mt-6 max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
                 Explore technology and leadership opportunities across
-                software engineering, data, AI, cloud, cybersecurity,
-                product, delivery, and technology leadership.
+                software engineering, data, AI, cloud, cybersecurity, product,
+                delivery, and technology leadership.
               </p>
 
+              <div className="mt-7 flex flex-wrap items-center gap-3 text-sm text-slate-300 sm:text-base">
+                <span className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2">
+                  24 Career Paths
+                </span>
+                <span className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2">
+                  Technology & Leadership
+                </span>
+              </div>
             </motion.div>
 
+            <motion.div
+              initial={{ opacity: 0, scale: 0.94 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="w-full"
+            >
+              <CareerOrbit />
+            </motion.div>
           </div>
 
-
-          {/* =====================================================
-              MAIN DIRECTORY
-          ====================================================== */}
-
-          <div className="mt-14 grid gap-8 lg:grid-cols-[230px_1fr] lg:items-start">
-
-            {/* ===================================================
-                LEFT SIDEBAR
-            ==================================================== */}
-
-            <aside className="lg:sticky lg:top-24">
-
-              <div className="border-y border-white/[0.08] py-5">
-
-                <p className="font-mono text-[8px] uppercase tracking-[0.2em] text-[#475569]">
-                  Career Directory
+          {/* Career directory */}
+          <div className="mt-16 w-full border-t border-white/10 pt-10 sm:mt-5 sm:pt-12">
+            <div className="mb-7">
+              <p className="font-mono text-sm uppercase tracking-[0.2em] text-[#A78BFA]">
+                Career Directory
+              </p>
+              <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                <h2 className="text-3xl font-semibold text-white sm:text-4xl">
+                  Explore Opportunities
+                </h2>
+                <p className="max-w-xl text-base leading-7 text-slate-300 sm:text-lg">
+                  Find a role that matches your skills and career goals.
                 </p>
-
-                <div className="mt-4">
-
-                  {[
-                    {
-                      id: "All",
-                      label: "All Opportunities",
-                      count: rolesData.length,
-                    },
-                    {
-                      id: "IT",
-                      label: "Technology",
-                      count: itCount,
-                    },
-                    {
-                      id: "Leadership",
-                      label: "Leadership",
-                      count: leadershipCount,
-                    },
-                  ].map((item) => {
-
-                    const active = filter === item.id;
-
-                    return (
-                      <button
-                        key={item.id}
-                        onClick={() => {
-                          setFilter(item.id);
-                          setActiveRole(null);
-                        }}
-                        className={`
-                          group
-                          flex
-                          w-full
-                          items-center
-                          justify-between
-                          border-b
-                          border-white/[0.06]
-                          py-3
-                          text-left
-                          transition-all
-                          duration-300
-                          ${
-                            active
-                              ? "text-[#F8FAFC]"
-                              : "text-[#64748B] hover:text-[#CBD5E1]"
-                          }
-                        `}
-                      >
-
-                        <span className="flex items-center gap-3">
-
-                          <span
-                            className={`
-                              h-1.5
-                              w-1.5
-                              rounded-full
-                              transition-all
-                              ${
-                                active
-                                  ? "bg-[#8B5CF6] shadow-[0_0_10px_rgba(139,92,246,0.8)]"
-                                  : "bg-white/10"
-                              }
-                            `}
-                          />
-
-                          <span className="text-xs font-medium">
-                            {item.label}
-                          </span>
-
-                        </span>
-
-                        <span
-                          className={`
-                            font-mono
-                            text-[9px]
-                            ${
-                              active
-                                ? "text-[#A78BFA]"
-                                : "text-[#475569]"
-                            }
-                          `}
-                        >
-                          {String(item.count).padStart(2, "0")}
-                        </span>
-
-                      </button>
-                    );
-                  })}
-
-                </div>
-
               </div>
-
-
-              {/* SMALL INFO BLOCK */}
-
-              <div className="mt-5 hidden border border-white/[0.07] bg-white/[0.015] p-4 lg:block">
-
-                <p className="font-mono text-[8px] uppercase tracking-[0.16em] text-[#475569]">
-                  Current View
-                </p>
-
-                <p className="mt-2 text-sm font-medium text-[#CBD5E1]">
-                  {filteredRoles.length} available paths
-                </p>
-
-                <div className="mt-4 h-px bg-white/[0.07]" />
-
-                <div className="mt-3 flex items-center justify-between">
-
-                  <span className="font-mono text-[8px] text-[#475569]">
-                    STATUS
-                  </span>
-
-                  <span className="flex items-center gap-1.5 font-mono text-[8px] text-[#06B6D4]">
-
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#06B6D4] shadow-[0_0_8px_rgba(6,182,212,0.8)]" />
-
-                    ACTIVE
-
-                  </span>
-
-                </div>
-
-              </div>
-
-            </aside>
-
-
-            {/* ===================================================
-                ROLE DIRECTORY
-            ==================================================== */}
-
-            <div>
-
-              {/* DIRECTORY HEADER */}
-
-              <div className="mb-2 hidden grid-cols-[45px_1fr_110px_25px] items-center gap-4 px-4 md:grid">
-
-                <span className="font-mono text-[8px] uppercase tracking-[0.18em] text-[#475569]">
-                  No.
-                </span>
-
-                <span className="font-mono text-[8px] uppercase tracking-[0.18em] text-[#475569]">
-                  Position
-                </span>
-
-                <span className="font-mono text-[8px] uppercase tracking-[0.18em] text-[#475569]">
-                  Track
-                </span>
-
-                <span />
-              </div>
-
-
-              {/* ROLE LIST */}
-
-              <div className="border-t border-white/[0.08]">
-
-                {filteredRoles.map((role, index) => {
-
-                  const Icon = iconMap[role.title];
-                  const isActive = activeRole === role.title;
-
-                  return (
-                    <motion.div
-                      key={role.title}
-                      layout
-                      initial={{
-                        opacity: 0,
-                        y: 10,
-                      }}
-                      animate={{
-                        opacity: 1,
-                        y: 0,
-                      }}
-                      transition={{
-                        duration: 0.3,
-                        delay: Math.min(index * 0.025, 0.2),
-                      }}
-                      className={`
-                        group
-                        relative
-                        border-b
-                        border-white/[0.07]
-                        transition-all
-                        duration-300
-                        ${
-                          isActive
-                            ? "bg-white/[0.025]"
-                            : "hover:bg-white/[0.018]"
-                        }
-                      `}
-                    >
-
-                      {/* ACTIVE LINE */}
-
-                      <div
-                        className={`
-                          absolute
-                          bottom-0
-                          left-0
-                          top-0
-                          w-[2px]
-                          bg-gradient-to-b
-                          from-[#8B5CF6]
-                          to-[#06B6D4]
-                          transition-transform
-                          duration-300
-                          ${
-                            isActive
-                              ? "scale-y-100"
-                              : "scale-y-0 group-hover:scale-y-100"
-                          }
-                        `}
-                      />
-
-
-                      {/* MAIN ROW */}
-
-                      <button
-                        onClick={() =>
-                          setActiveRole(
-                            isActive ? null : role.title
-                          )
-                        }
-                        className="w-full px-3 py-4 text-left sm:px-4"
-                      >
-
-                        <div className="grid grid-cols-[35px_1fr_auto] items-center gap-3 md:grid-cols-[45px_1fr_110px_25px] md:gap-4">
-
-                          {/* NUMBER */}
-
-                          <span
-                            className={`
-                              font-mono
-                              text-[9px]
-                              tracking-[0.12em]
-                              transition-colors
-                              ${
-                                isActive
-                                  ? "text-[#A78BFA]"
-                                  : "text-[#475569]"
-                              }
-                            `}
-                          >
-                            {String(index + 1).padStart(2, "0")}
-                          </span>
-
-
-                          {/* TITLE + ICON */}
-
-                          <div className="flex min-w-0 items-center gap-3">
-
-                            <div
-                              className={`
-                                hidden
-                                h-7
-                                w-7
-                                shrink-0
-                                items-center
-                                justify-center
-                                border
-                                transition-all
-                                duration-300
-                                sm:flex
-                                ${
-                                  isActive
-                                    ? "border-[#8B5CF6]/30 bg-[#8B5CF6]/10 text-[#A78BFA]"
-                                    : "border-white/[0.07] text-[#475569] group-hover:border-[#8B5CF6]/20 group-hover:text-[#94A3B8]"
-                                }
-                              `}
-                            >
-                              <Icon size={13} strokeWidth={1.7} />
-                            </div>
-
-                            <span
-                              className={`
-                                truncate
-                                text-sm
-                                font-medium
-                                transition-colors
-                                duration-300
-                                ${
-                                  isActive
-                                    ? "text-[#F8FAFC]"
-                                    : "text-[#CBD5E1] group-hover:text-[#F8FAFC]"
-                                }
-                              `}
-                            >
-                              {role.title}
-                            </span>
-
-                          </div>
-
-
-                          {/* TYPE */}
-
-                          <span
-                            className={`
-                              hidden
-                              font-mono
-                              text-[8px]
-                              uppercase
-                              tracking-[0.12em]
-                              md:block
-                              ${
-                                role.type === "IT"
-                                  ? "text-[#60A5FA]"
-                                  : "text-[#A78BFA]"
-                              }
-                            `}
-                          >
-                            {role.type === "IT"
-                              ? "Technology"
-                              : "Leadership"}
-                          </span>
-
-
-                          {/* ARROW */}
-
-                          <span
-                            className={`
-                              flex
-                              h-6
-                              w-6
-                              items-center
-                              justify-center
-                              text-[#475569]
-                              transition-all
-                              duration-300
-                              ${
-                                isActive
-                                  ? "rotate-180 text-[#A78BFA]"
-                                  : "group-hover:text-[#06B6D4]"
-                              }
-                            `}
-                          >
-                            <ChevronDown size={14} />
-                          </span>
-
-                        </div>
-
-                      </button>
-
-
-                      {/* EXPANDED CONTENT */}
-
-                      <AnimatePresence initial={false}>
-
-                        {isActive && (
-                          <motion.div
-                            initial={{
-                              height: 0,
-                              opacity: 0,
-                            }}
-                            animate={{
-                              height: "auto",
-                              opacity: 1,
-                            }}
-                            exit={{
-                              height: 0,
-                              opacity: 0,
-                            }}
-                            transition={{
-                              duration: 0.3,
-                            }}
-                            className="overflow-hidden"
-                          >
-
-                            <div className="grid gap-6 border-t border-white/[0.06] px-4 pb-5 pt-4 sm:px-16 md:grid-cols-[1fr_auto]">
-
-                              {/* DESCRIPTION */}
-
-                              <div>
-
-                                <p className="font-mono text-[8px] uppercase tracking-[0.16em] text-[#475569]">
-                                  Role Overview
-                                </p>
-
-                                <p className="mt-2 max-w-2xl text-xs leading-6 text-[#94A3B8]">
-                                  {role.description}
-                                </p>
-
-                              </div>
-
-
-                              {/* SKILLS */}
-
-                              <div className="md:min-w-[230px]">
-
-                                <p className="font-mono text-[8px] uppercase tracking-[0.16em] text-[#475569]">
-                                  Core Skills
-                                </p>
-
-                                <div className="mt-2 flex flex-wrap gap-1.5">
-
-                                  {role.skills.map((skill) => (
-                                    <span
-                                      key={skill}
-                                      className="
-                                        border
-                                        border-white/[0.07]
-                                        bg-white/[0.025]
-                                        px-2
-                                        py-1
-                                        font-mono
-                                        text-[8px]
-                                        text-[#64748B]
-                                      "
-                                    >
-                                      {skill}
-                                    </span>
-                                  ))}
-
-                                </div>
-
-                              </div>
-
-                            </div>
-
-                          </motion.div>
-                        )}
-
-                      </AnimatePresence>
-
-                    </motion.div>
-                  );
-                })}
-
-              </div>
-
-
-              {/* BOTTOM */}
-
-              <div className="mt-5 flex items-center justify-between">
-
-                <span className="font-mono text-[8px] uppercase tracking-[0.16em] text-[#475569]">
-                  Showing {filteredRoles.length} career paths
-                </span>
-
-                <span className="hidden items-center gap-2 font-mono text-[8px] uppercase tracking-[0.16em] text-[#475569] sm:flex">
-
-                  VAYTRIX
-
-                  <span className="h-px w-5 bg-gradient-to-r from-[#8B5CF6] to-[#06B6D4]" />
-
-                  CAREERS
-
-                </span>
-
-              </div>
-
             </div>
 
+            {/* Filters are above the cards */}
+            <div className="flex flex-wrap gap-3">
+              {filters.map((item) => {
+                const isSelected = filter === item.id;
+
+                return (
+                  <button
+                    key={item.id}
+                    type="button"
+                    onClick={() => {
+                      setFilter(item.id);
+                      setActiveRole(null);
+                    }}
+                    aria-pressed={isSelected}
+                    className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border px-4 py-3 text-sm font-semibold transition-all duration-300 sm:px-5 sm:text-base ${
+                      isSelected
+                        ? "border-[#8B5CF6]/60 bg-[#8B5CF6]/15 text-white shadow-[0_0_22px_rgba(139,92,246,0.12)]"
+                        : "border-white/10 bg-[#0A0A0F] text-slate-300 hover:border-[#06B6D4]/40 hover:text-white"
+                    }`}
+                  >
+                    {item.label}
+                    <span
+                      className={`rounded-full px-2 py-0.5 text-sm ${
+                        isSelected
+                          ? "bg-[#8B5CF6]/20 text-[#C4B5FD]"
+                          : "bg-white/[0.06] text-slate-300"
+                      }`}
+                    >
+                      {item.count}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Results label directly above the cards */}
+            <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-y border-white/10 py-4">
+              <p className="text-base font-medium text-slate-200 sm:text-lg">
+                Showing {filteredRoles.length} career opportunities
+              </p>
+              <span className="font-mono text-xs uppercase tracking-wider text-slate-400 sm:text-sm">
+                VAYTRIX / CAREERS
+              </span>
+            </div>
+
+            
+{/* RECTANGULAR CAREER CARDS — ALL DETAILS VISIBLE */}
+<div className="mt-6 grid w-full grid-cols-1 items-stretch gap-5 sm:grid-cols-2 xl:grid-cols-3">
+  <AnimatePresence mode="popLayout">
+    {filteredRoles.map((role, index) => {
+      const Icon = iconMap[role.title];
+
+      return (
+        <motion.article
+          key={role.title}
+          layout
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{
+            duration: 0.25,
+            delay: Math.min(index * 0.02, 0.15),
+          }}
+          className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#0A0A0F] transition-all duration-300 hover:border-[#8B5CF6]/40 hover:bg-[#0D0D14] hover:shadow-[0_0_25px_rgba(139,92,246,0.08)]"
+        >
+          {/* Top gradient accent */}
+          <div className="h-1 w-full shrink-0 bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] opacity-70 transition-opacity group-hover:opacity-100" />
+
+          <div className="flex flex-1 flex-col p-5 sm:p-6">
+            {/* Icon and role title */}
+            <div className="flex items-start gap-4">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-[#8B5CF6]/25 bg-[#8B5CF6]/10 text-[#C4B5FD] sm:h-14 sm:w-14">
+                <Icon size={25} strokeWidth={1.7} />
+              </span>
+
+              <div className="min-w-0 flex-1">
+                <h3 className="text-lg font-semibold leading-snug text-white sm:text-xl lg:text-xl">
+                  {role.title}
+                </h3>
+
+                <span
+                  className={`mt-3 inline-flex rounded-full border px-3 py-1 text-xs font-semibold sm:text-[10px] ${
+                    role.type === "IT"
+                      ? "border-[#60A5FA]/20 bg-[#3B82F6]/10 text-[#93C5FD]"
+                      : "border-[#A78BFA]/20 bg-[#8B5CF6]/10 text-[#C4B5FD]"
+                  }`}
+                >
+                  {role.type === "IT" ? "Technology" : "Leadership"}
+                </span>
+              </div>
+            </div>
+
+            {/* Always-visible role description */}
+            <div className="mt-6">
+              <p className="font-mono text-sm font-semibold uppercase tracking-[0.15em] text-[#A78BFA]">
+                Role Overview
+              </p>
+
+              <p className="mt-1 text-base text-slate-300 sm:text-[15px]">
+                {role.description}
+              </p>
+            </div>
+
+            {/* Always-visible skills */}
+            <div className="mt-6">
+              <p className="font-mono text-sm font-semibold uppercase tracking-[0.15em] text-[#67E8F9]">
+                Core Skills
+              </p>
+
+              <div className="mt-3 flex flex-wrap gap-2">
+                {role.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="rounded-lg border border-white/10 bg-white/[0.04] px-4 py-2 text-sm font-medium text-slate-200 sm:text-[12px]"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </motion.article>
+      );
+    })}
+  </AnimatePresence>
+</div>
+
+
+            {/* Results footer */}
+            <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-5">
+              <p className="text-sm text-slate-300 sm:text-base">
+                Showing {filteredRoles.length} of {rolesData.length} career paths
+              </p>
+              <span className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-slate-400 sm:text-sm">
+                <span className="h-2 w-2 rounded-full bg-[#06B6D4] shadow-[0_0_10px_rgba(6,182,212,0.7)]" />
+                VAYTRIX / CAREERS
+              </span>
+            </div>
           </div>
 
-
-          {/* =====================================================
-              FOOTER
-          ====================================================== */}
-
-          <div className="mt-14 flex items-center justify-center gap-3">
-
-            <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#8B5CF6]/40" />
-
-            <span className="font-mono text-[8px] uppercase tracking-[0.2em] text-[#475569]">
-              Explore Your Next Opportunity
-            </span>
-
-            <span className="h-px w-10 bg-gradient-to-l from-transparent to-[#06B6D4]/40" />
-
-          </div>
-
+          
         </div>
+
+
+      <CtaCareers />
 
       </section>
     </>

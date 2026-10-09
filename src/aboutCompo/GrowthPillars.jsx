@@ -139,7 +139,7 @@ function GrowthPillars() {
                 }}
               />
 
-              <span className="font-mono text-[8px] uppercase tracking-[0.25em] text-[#94A3B8]">
+              <span className="font-mono text-[12px] uppercase tracking-[0.25em] text-[#94A3B8]">
                 Our Commitment / Growth
               </span>
             </div>
@@ -149,7 +149,7 @@ function GrowthPillars() {
             <h2 className="text-3xl font-semibold leading-[1] tracking-[-0.04em] text-[#F8FAFC] sm:text-4xl md:text-5xl lg:text-6xl">
               Growth With
               <span className="block bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] bg-clip-text text-transparent">
-                Purpose.
+                Purpose
               </span>
             </h2>
           </motion.div>
@@ -162,7 +162,7 @@ function GrowthPillars() {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <p className="text-xs leading-6 text-[#94A3B8] sm:text-sm">
+            <p className="text-xs leading-6 text-[#94A3B8] sm:text-[15px]">
               At Vaytrix, growth is about creating the right environment for
               people and organizations to discover potential, develop
               capabilities, and move toward meaningful opportunities.
@@ -171,7 +171,7 @@ function GrowthPillars() {
             <div className="mt-3 flex items-center gap-2">
               <span className="h-px w-8 bg-gradient-to-r from-[#8B5CF6] to-[#3B82F6]" />
 
-              <span className="font-mono text-[7px] uppercase tracking-[0.22em] text-[#475569]">
+              <span className="font-mono text-[12px] uppercase tracking-[0.22em] text-[#3e6aa7]">
                 PEOPLE → PROGRESS → POSSIBILITY
               </span>
             </div>
@@ -232,7 +232,7 @@ function GrowthPillars() {
                     </div>
 
                     <span
-                      className={`font-mono text-[8px] tracking-[0.18em] ${style.number}`}
+                      className={`font-mono text-[12px] tracking-[0.18em] ${style.number}`}
                     >
                       {pillar.number}
                     </span>
@@ -241,11 +241,11 @@ function GrowthPillars() {
                   {/* LABEL */}
 
                   <div className="relative z-10 mt-4">
-                    <span className="font-mono text-[7px] uppercase tracking-[0.2em] text-[#475569]">
+                    <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#475569]">
                       {pillar.label}
                     </span>
 
-                    <h3 className="mt-1.5 text-lg font-semibold leading-tight tracking-tight text-[#F8FAFC]">
+                    <h3 className="mt-1.5 text-[18px] font-semibold leading-tight tracking-tight text-[#F8FAFC]">
                       {pillar.title}
                     </h3>
                   </div>
@@ -301,14 +301,14 @@ function GrowthPillars() {
           }}
           className="mx-auto mt-7 max-w-2xl text-center"
         >
-          <span className="font-mono text-[7px] uppercase tracking-[0.28em] text-[#475569]">
+          <span className="font-mono text-[12px] uppercase tracking-[0.28em] text-[#475569]">
             VAYTRIX / GROWTH_ENGINE
           </span>
 
           <h3 className="mt-2 text-lg font-medium leading-relaxed text-[#CBD5E1] sm:text-xl">
-            Every journey begins with potential.
+            Every journey begins with potential
             <span className="block bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] bg-clip-text text-transparent">
-              We help turn it into progress.
+              We help turn it into progress
             </span>
           </h3>
 
@@ -331,7 +331,7 @@ function GrowthPillars() {
         <div className="mt-5 flex items-center justify-center gap-2">
           <span className="h-px w-8 bg-gradient-to-r from-transparent to-white/[0.08]" />
 
-          <span className="font-mono text-[6px] uppercase tracking-[0.25em] text-[#334155]">
+          <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#5083cc]">
             VAYTRIX / BUILDING_WHAT_COMES_NEXT
           </span>
 

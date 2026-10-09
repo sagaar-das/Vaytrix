@@ -149,7 +149,7 @@ function CoreValues() {
               }}
             />
 
-            <span className="font-mono text-[8px] uppercase tracking-[0.25em] text-[#94A3B8]">
+            <span className="font-mono text-[12px] uppercase tracking-[0.25em] text-[#9dadc4]">
               Values & Purpose / 06
             </span>
           </motion.div>
@@ -165,7 +165,7 @@ function CoreValues() {
           >
             What Drives
             <span className="block bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] bg-clip-text text-transparent">
-              Everything We Do.
+              Everything We Do
             </span>
           </motion.h2>
 
@@ -245,7 +245,7 @@ function CoreValues() {
                     {/* Number */}
 
                     <span
-                      className={`font-mono text-[8px] tracking-[0.2em] ${style.number}`}
+                      className={`font-mono text-[12px] tracking-[0.2em] ${style.number}`}
                     >
                       VALUE_{value.number}
                     </span>
@@ -261,7 +261,7 @@ function CoreValues() {
                       }}
                     />
 
-                    <span className="font-mono text-[7px] uppercase tracking-[0.22em] text-[#475569]">
+                    <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-[#86a0c4]">
                       {value.shortTitle}
                     </span>
                   </div>
@@ -319,14 +319,14 @@ function CoreValues() {
             <div className="pointer-events-none absolute left-1/2 top-0 h-20 w-48 -translate-x-1/2 bg-[#8B5CF6]/[0.05] blur-3xl" />
 
             <div className="relative z-10">
-              <span className="font-mono text-[7px] uppercase tracking-[0.28em] text-[#475569]">
+              <span className="font-mono text-[12px] uppercase tracking-[0.28em] text-[#849ec3]">
                 VAYTRIX / CORE_PRINCIPLES
               </span>
 
               <h3 className="mt-2 text-base font-medium leading-relaxed text-[#CBD5E1] sm:text-lg">
-                Building meaningful connections.
+                Building meaningful connections
                 <span className="block bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] bg-clip-text text-transparent">
-                  Creating possibilities that last.
+                  Creating possibilities that last
                 </span>
               </h3>
 
@@ -351,7 +351,7 @@ function CoreValues() {
         <div className="mt-5 flex items-center justify-center gap-2">
           <span className="h-px w-8 bg-gradient-to-r from-transparent to-white/[0.08]" />
 
-          <span className="font-mono text-[6px] uppercase tracking-[0.25em] text-[#334155]">
+          <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#4672b0]">
             PEOPLE / PURPOSE / POSSIBILITY
           </span>
 

@@ -74,7 +74,7 @@ function AboutHero() {
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-[#8B5CF6] shadow-[0_0_12px_#8B5CF6]" />
               </span>
 
-              <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-[#94A3B8]">
+              <span className="font-mono text-[12px] uppercase tracking-[0.25em] text-[#94A3B8]">
                 About Vaytrix / Our Story
               </span>
             </motion.div>
@@ -88,7 +88,7 @@ function AboutHero() {
                 duration: 0.6,
                 delay: 0.1,
               }}
-              className="mb-5 font-mono text-[10px] uppercase tracking-[0.3em] text-[#64748B]"
+              className="mb-5 font-mono text-[12px] uppercase tracking-[0.3em] text-[#64748B]"
             >
               Bringing Aspirations To Life
             </motion.p>
@@ -109,7 +109,7 @@ function AboutHero() {
               <span className="block">
                 Into{" "}
                 <span className="bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] bg-clip-text text-transparent">
-                  Possibility.
+                  Possibility
                 </span>
               </span>
             </motion.h1>
@@ -361,7 +361,7 @@ function AboutHero() {
                 />
 
                 <div>
-                  <p className="font-mono text-[7px] uppercase tracking-[0.2em] text-[#475569]">
+                  <p className="font-mono text-[15px] uppercase tracking-[0.2em] text-[#5278ac]">
                     Focus
                   </p>
 
@@ -395,7 +395,7 @@ function AboutHero() {
                 />
 
                 <div>
-                  <p className="font-mono text-[7px] uppercase tracking-[0.2em] text-[#475569]">
+                  <p className="font-mono text-[15px] uppercase tracking-[0.2em] text-[#5078b0]">
                     Direction
                   </p>
 
@@ -428,7 +428,7 @@ function AboutHero() {
                 }}
               />
 
-              <span className="font-mono text-[8px] uppercase tracking-[0.25em] text-[#475569]">
+              <span className="font-mono text-[12px] uppercase tracking-[0.25em] text-[#3a6096]">
                 VAYTRIX / FUTURE_IN_MOTION
               </span>
             </div>
@@ -481,7 +481,7 @@ function AboutHero() {
                   </span>
                 </div>
 
-                <p className="mt-1 font-mono text-[8px] uppercase tracking-[0.25em] text-[#64748B]">
+                <p className="mt-1 font-mono text-[12px] uppercase tracking-[0.25em] text-[#6e96cf]">
                   Years
                 </p>
 
@@ -501,7 +501,7 @@ function AboutHero() {
                   </span>
                 </div>
 
-                <p className="mt-1 font-mono text-[8px] uppercase tracking-[0.25em] text-[#64748B]">
+                <p className="mt-1 font-mono text-[12px] uppercase tracking-[0.25em] text-[#6e96cf]">
                   Projects
                 </p>
 
@@ -521,7 +521,7 @@ function AboutHero() {
                   </span>
                 </div>
 
-                <p className="mt-1 font-mono text-[8px] uppercase tracking-[0.25em] text-[#64748B]">
+                <p className="mt-1 font-mono text-[12px] uppercase tracking-[0.25em] text-[#6e96cf]">
                   Placements
                 </p>
 
@@ -541,7 +541,7 @@ function AboutHero() {
                   </span>
                 </div>
 
-                <p className="mt-1 font-mono text-[8px] uppercase tracking-[0.25em] text-[#64748B]">
+                <p className="mt-1 font-mono text-[12px] uppercase tracking-[0.25em] text-[#6e96cf]">
                   Trainees
                 </p>
 
@@ -559,7 +559,7 @@ function AboutHero() {
                 }}
               />
 
-              <span className="font-mono text-[7px] uppercase tracking-[0.25em] text-[#475569]">
+              <span className="font-mono text-[12px] uppercase tracking-[0.25em] text-[#859fc3]">
                 VAYTRIX / IMPACT_METRICS
               </span>
 
@@ -588,7 +588,7 @@ function AboutHero() {
           }}
           className="relative z-20 mt-7 flex flex-col items-center gap-2"
         >
-          <span className="font-mono text-[8px] uppercase tracking-[0.25em] text-[#475569]">
+          <span className="font-mono text-[12px] uppercase tracking-[0.25em] text-[#7f99bc]">
             Explore Vaytrix
           </span>
 

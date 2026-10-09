@@ -52,7 +52,7 @@ const PurposeSection = () => {
           <div className="mb-3 flex items-center gap-2">
             <span className="h-px w-7 bg-gradient-to-r from-[#8B5CF6] to-[#06B6D4]" />
 
-            <span className="font-mono text-[8px] uppercase tracking-[0.25em] text-white/40">
+            <span className="font-mono text-[12px] uppercase tracking-[0.25em] text-white/50">
               Purpose / 07
             </span>
           </div>
@@ -60,11 +60,11 @@ const PurposeSection = () => {
           <h2 className="text-3xl font-semibold leading-[1] tracking-[-0.04em] text-white sm:text-4xl lg:text-5xl">
             Our Purpose,
             <span className="block bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] bg-clip-text text-transparent">
-              Kept Personal.
+              Kept Personal
             </span>
           </h2>
 
-          <p className="mt-3 max-w-2xl text-xs leading-6 text-white/50 sm:text-sm">
+          <p className="mt-3 max-w-2xl text-xs leading-6 text-white/50 sm:text-[16px]">
             We believe meaningful growth begins with people. At Vaytrix, our
             purpose is to connect talent, opportunity, and technology in ways
             that create lasting impact.
@@ -107,7 +107,7 @@ const PurposeSection = () => {
               <div className="absolute left-6 top-6 flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#06B6D4] shadow-[0_0_8px_rgba(6,182,212,0.8)]" />
 
-                <span className="font-mono text-[8px] uppercase tracking-[0.22em] text-white/60">
+                <span className="font-mono text-[12px] uppercase tracking-[0.22em] text-white/60">
                   VAYTRIX / PURPOSE
                 </span>
               </div>
@@ -123,13 +123,13 @@ const PurposeSection = () => {
                     />
                   </div>
 
-                  <span className="font-mono text-[8px] uppercase tracking-[0.22em] text-white/40">
+                  <span className="font-mono text-[12px] uppercase tracking-[0.22em] text-white/40">
                     PEOPLE FIRST
                   </span>
                 </div>
 
                 <h3 className="text-lg font-medium leading-snug text-white sm:text-xl">
-                  Connecting potential with meaningful opportunity.
+                  Connecting potential with meaningful opportunity
                 </h3>
               </div>
 
@@ -161,11 +161,11 @@ const PurposeSection = () => {
               </div>
 
               <div>
-                <p className="font-mono text-[8px] uppercase tracking-[0.22em] text-white/35">
+                <p className="font-mono text-[12px] uppercase tracking-[0.22em] text-white/50">
                   OUR MISSION
                 </p>
 
-                <p className="mt-0.5 text-xs text-white/70">
+                <p className="mt-0.5 text-[15px] text-white/70">
                   Turning ambition into possibility
                 </p>
               </div>
@@ -173,7 +173,7 @@ const PurposeSection = () => {
 
             {/* Main Text */}
 
-            <div className="space-y-3 text-xs leading-6 text-white/50 sm:text-sm">
+            <div className="space-y-3 text-xs leading-6 text-white/50 sm:text-[15px]">
               <p>
                 At <span className="text-white">Vaytrix</span>, we believe an
                 organization’s success starts with the people behind it—their
@@ -218,18 +218,18 @@ const PurposeSection = () => {
             {/* ================= FOUNDER QUOTE ================= */}
 
             <div className="mt-5 border-l border-[#8B5CF6]/40 pl-4">
-              <p className="text-xs italic leading-6 text-white/55">
+              <p className="text-[16px] italic leading-6 text-white/55">
                 “Our purpose is to create an ecosystem where people and
                 technology come together to turn aspirations into real
                 possibilities.”
               </p>
 
               <div className="mt-2">
-                <p className="text-xs font-medium text-white">
+                <p className="text-[18px] font-medium text-white">
                   Founder, Vaytrix
                 </p>
 
-                <p className="mt-0.5 font-mono text-[7px] uppercase tracking-[0.2em] text-white/30">
+                <p className="mt-0.5 font-mono text-[12px] uppercase tracking-[0.2em] text-white/30">
                   VAYTRIX / LEADERSHIP
                 </p>
               </div>
@@ -247,11 +247,11 @@ const PurposeSection = () => {
           className="mt-7 border-t border-white/[0.07] pt-4"
         >
           <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-center">
-            <p className="font-mono text-[7px] uppercase tracking-[0.25em] text-white/30">
+            <p className="font-mono text-[12px] uppercase tracking-[0.25em] text-white/50">
               PEOPLE / TECHNOLOGY / OPPORTUNITY
             </p>
 
-            <p className="font-mono text-[7px] uppercase tracking-[0.25em] text-white/20">
+            <p className="font-mono text-[12px] uppercase tracking-[0.25em] text-white/50">
               VAYTRIX / PURPOSE_ENGINE
             </p>
           </div>
@@ -303,11 +303,11 @@ const PurposePoint = ({ icon: Icon, title, text, accent }) => {
         />
       </div>
 
-      <h4 className="relative text-xs font-medium text-white">
+      <h4 className="relative text-[15px] font-medium text-white">
         {title}
       </h4>
 
-      <p className="relative mt-1.5 text-[11px] leading-5 text-white/40">
+      <p className="relative mt-1.5 text-[12px] leading-5 text-white/40">
         {text}
       </p>
 

@@ -79,7 +79,7 @@ function HiringProcess() {
               From Requirement
 
               <span className="block bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] bg-clip-text text-transparent">
-                To Successful Onboarding.
+                To Successful Onboarding
               </span>
 
             </h2>
@@ -136,7 +136,7 @@ function HiringProcess() {
                     {step.icon}
                   </div>
 
-                  <span className="mt-1 font-mono text-[9px] font-semibold tracking-[0.12em] text-[#64748B]">
+                  <span className="mt-1 font-mono text-[12px] font-semibold tracking-[0.12em] text-[#93abcd]">
                     {step.number}
                   </span>
 
@@ -154,7 +154,7 @@ function HiringProcess() {
 
                     {/* Technical Label */}
                     <div className="mb-3 flex items-center justify-between">
-                      <span className="font-mono text-[8px] uppercase tracking-[0.16em] text-[#475569]">
+                      <span className="font-mono text-[12px] uppercase tracking-[0.16em] text-[#92acd1]">
                         Stage {step.number}
                       </span>
 
@@ -194,12 +194,12 @@ function HiringProcess() {
             <div className="flex items-center gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-[#06B6D4] shadow-[0_0_10px_rgba(6,182,212,0.8)]" />
 
-              <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-[#64748B]">
+              <span className="font-mono text-[12px] uppercase tracking-[0.18em] text-[#96aed0]">
                 Structured Hiring Workflow
               </span>
             </div>
 
-            <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-[#475569]">
+            <span className="font-mono text-[12px] uppercase tracking-[0.18em] text-[#8fa8cb]">
               VAYTRIX / EMPLOYER SOLUTIONS
             </span>
 
