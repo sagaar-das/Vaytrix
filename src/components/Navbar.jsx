@@ -65,10 +65,10 @@ function Navbar() {
   ];
 
   const navLinkClass = ({ isActive }) =>
-    `group relative text-sm font-medium  tracking-[+0.06em] transition-all duration-300 ${
+    `group relative text-[16px] font-medium  tracking-[+0.06em] transition-all duration-300 ${
       isActive
         ? "text-white"
-        : "text-[#94A3B8] hover:text-white"
+        : "text-[#a5b5cc] hover:text-white"
     }`;
 
   return (
@@ -195,10 +195,10 @@ function Navbar() {
                 items-center
                 gap-1.5
                 bg-transparent
-                text-sm
+                text-[16px]
                 font-medium
                 tracking-[+0.06em]
-                text-[#94A3B8]
+                text-[#a5b5cc]
                 transition-all
                 duration-300
                 hover:text-white
@@ -490,8 +490,8 @@ function Navbar() {
             DESKTOP CTA
         ========================== */}
 
-        <button
-          onClick={() => navigate("/contact")}
+        <a
+          href="tel:+1 614-802-4217"
           className="
             group
             relative
@@ -546,7 +546,7 @@ function Navbar() {
               group-hover:translate-x-0.5
             "
           />
-        </button>
+        </a>
 
 
         {/* =========================

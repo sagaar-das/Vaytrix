@@ -230,13 +230,13 @@ function Industries() {
           <ScrollReveal>
             <div className="mb-4 flex items-center justify-center gap-3">
 
-              <span className="font-mono text-[10px] font-medium tracking-[0.25em] text-[#64748B]">
+              <span className="font-mono text-[16px] font-medium tracking-[0.25em] text-[#7689a3]">
                 03
               </span>
 
               <span className="h-px w-10 bg-gradient-to-r from-[#8B5CF6] to-[#06B6D4]" />
 
-              <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-[#A78BFA]">
+              <span className="font-mono text-[16px] uppercase tracking-[0.22em] text-[#A78BFA]">
                 Industry Coverage
               </span>
 
@@ -268,7 +268,7 @@ function Industries() {
           text-transparent
         "
               >
-                across industries.
+                across industries
               </span>
             </h2>
           </ScrollReveal>
@@ -282,7 +282,7 @@ function Industries() {
         text-sm
         leading-6
         text-[#94A3B8]
-        sm:text-base
+        sm:text-[17px]
       "
             >
              We combine technology expertise with industry understanding
@@ -369,9 +369,9 @@ challenges, goals, and vision.
         <div
           className="
             font-mono
-            text-[10px]
+            text-[15px]
             tracking-[0.12em]
-            text-[#475569]
+            text-[#839ec3]
             transition-colors
             duration-300
             group-hover:text-[#A855F7]
@@ -445,9 +445,9 @@ challenges, goals, and vision.
             <span
               className="
                 font-mono
-                text-[7px]
+                text-[10px]
                 tracking-[0.16em]
-                text-[#475569]
+                text-[#839dc2]
                 transition-colors
                 group-hover:text-[#64748B]
               "
@@ -466,15 +466,15 @@ challenges, goals, and vision.
           <div
             className="
               flex
-              h-7
-              w-7
+              h-10
+              w-10
               items-center
               justify-center
               rounded-full
               border
-              border-white/[0.08]
+              border-white/[0.09]
               bg-white/[0.02]
-              text-[#475569]
+              text-[#809abe]
               transition-all
               duration-500
               group-hover:-translate-y-1
@@ -484,7 +484,7 @@ challenges, goals, and vision.
               group-hover:text-[#C4B5FD]
             "
           >
-            <ArrowUpRight size={13} />
+            <ArrowUpRight size={20} />
           </div>
 
         </div>
@@ -526,7 +526,7 @@ challenges, goals, and vision.
 
             <div>
 
-              <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#475569]">
+              <p className=" text-[10px] uppercase tracking-[0.2em] text-[#7f99bd]">
                 Cross-Industry Capability
               </p>
 
@@ -538,13 +538,13 @@ challenges, goals, and vision.
 
             <div className="flex items-center gap-3">
 
-              <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-[#475569]">
+              <span className="font-mono text-[15px] uppercase tracking-[0.16em] text-[#7f99bd]">
                 VAYTRIX
               </span>
 
               <span className="h-px w-8 bg-gradient-to-r from-[#8B5CF6] to-[#06B6D4]" />
 
-              <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-[#64748B]">
+              <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#7f99bd ]">
                 Industry / 10
               </span>
 

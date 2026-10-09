@@ -168,7 +168,7 @@ lg:py-8
 
               <span
                 className="
-                  font-mono
+                  
                   text-[10px]
                   font-semibold
                   uppercase
@@ -698,7 +698,7 @@ lg:py-8
                   className="
           
           text-[9px]
-          font-semibold
+          
           uppercase
           tracking-[0.15em]
           text-[#F8FAFC]
@@ -709,7 +709,7 @@ lg:py-8
 
               </div>
 
-              <p className="mt-1 text-[10px] text-[#64748B]">
+              <p className="mt-1 text-[12px] text-[#94a8c5]">
                 Engineering what&apos;s next
               </p>
             </motion.div>

@@ -159,15 +159,15 @@ function ContactCTA() {
         >
           <div className="flex items-center gap-3">
 
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-[#8B5CF6]/30 bg-[#8B5CF6]/10">
+            <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-[#8B5CF6]/30 bg-[#8B5CF6]/10">
               <Sparkles
-                size={16}
+                size={20}
                 className="text-[#A855F7]"
               />
             </div>
 
             <div>
-              <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#64748B]">
+              <p className="font-mono text-[12px] uppercase tracking-[0.2em] text-[#8da7cc]">
                 Vaytrix / Communication
               </p>
 
@@ -178,8 +178,8 @@ function ContactCTA() {
 
           </div>
 
-          <span className="hidden font-mono text-[9px] uppercase tracking-[0.2em] text-[#475569] sm:block">
-            CONTACT / 06
+          <span className="hidden font-mono text-[12px] uppercase tracking-[0.2em] text-[#8da7cc] sm:block">
+            CONTACT US
           </span>
 
         </motion.div>
@@ -210,7 +210,7 @@ function ContactCTA() {
 
                 <span className="h-px w-10 bg-gradient-to-r from-[#8B5CF6] to-[#06B6D4]" />
 
-                <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-[#A78BFA]">
+                <span className="font-mono text-[12px] font-semibold uppercase tracking-[0.22em] text-[#A78BFA]">
                   Contact / Connect
                 </span>
 
@@ -229,11 +229,11 @@ function ContactCTA() {
 
                 <br />
 
-                into reality.
+                into reality
 
               </h2>
 
-              <p className="mt-7 max-w-lg text-sm leading-7 text-[#94A3B8] sm:text-base">
+              <p className="mt-7 max-w-lg text-sm leading-7 text-[#94A3B8] sm:text-[15px]">
 
                 Have a question, project requirement, or future challenge?
                 Connect with the Vaytrix team and let's explore how technology
@@ -247,9 +247,9 @@ function ContactCTA() {
                 CONTACT CHANNELS
             ================================================== */}
 
-            <div className="mt-12">
+            <div className="mt-5">
 
-              <p className="mb-5 font-mono text-[9px] uppercase tracking-[0.2em] text-[#475569]">
+              <p className="mb-2 font-mono text-[12px] uppercase tracking-[0.2em] text-[#8099bd]">
                 Direct Channels
               </p>
 
@@ -269,7 +269,7 @@ function ContactCTA() {
                   </div>
 
                   <div className="min-w-0">
-                    <p className="font-mono text-[8px] uppercase tracking-[0.16em] text-[#64748B]">
+                    <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#95aed0]">
                       Email
                     </p>
 
@@ -297,7 +297,7 @@ function ContactCTA() {
                   </div>
 
                   <div>
-                    <p className="font-mono text-[8px] uppercase tracking-[0.16em] text-[#64748B]">
+                    <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#95aed0]">
                       Phone
                     </p>
 
@@ -325,7 +325,7 @@ function ContactCTA() {
                   </div>
 
                   <div>
-                    <p className="font-mono text-[8px] uppercase tracking-[0.16em] text-[#64748B]">
+                    <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#95aed0]">
                       WhatsApp
                     </p>
 
@@ -355,7 +355,7 @@ function ContactCTA() {
                   </div>
 
                   <div>
-                    <p className="font-mono text-[8px] uppercase tracking-[0.16em] text-[#64748B]">
+                    <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#95aed0]">
                       Office
                     </p>
 
@@ -388,7 +388,7 @@ function ContactCTA() {
                   </div>
 
                   <div>
-                    <p className="font-mono text-[8px] uppercase tracking-[0.16em] text-[#64748B]">
+                    <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#95aed0]">
                       Availability
                     </p>
 
@@ -407,7 +407,7 @@ function ContactCTA() {
 
             <div className="mt-10 flex items-center gap-4">
 
-              <span className="font-mono text-[8px] uppercase tracking-[0.18em] text-[#475569]">
+              <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#95aed0]">
                 Follow
               </span>
 
@@ -416,7 +416,7 @@ function ContactCTA() {
               <div className="flex gap-2">
 
                 <a
-                  href=""
+                  href="https://www.linkedin.com/company/145247638/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
@@ -477,7 +477,7 @@ function ContactCTA() {
                   </div>
 
                   <div>
-                    <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-[#64748B]">
+                    <p className="font-mono text-[12px] uppercase tracking-[0.18em] text-[#95aed0]">
                       Inquiry Form
                     </p>
 
@@ -488,26 +488,22 @@ function ContactCTA() {
 
                 </div>
 
-                <span className="font-mono text-[9px] text-[#475569]">
-                  01 / 01
-                </span>
-
               </div>
 
               {/* FORM */}
 
               <form
                 onSubmit={handleSubmit}
-                className="p-6 sm:p-8"
+                className="p-6 sm:p-6"
               >
 
-                <div className="mb-7">
+                <div className="mb-5">
 
                   <h3 className="text-2xl font-semibold tracking-tight text-[#F8FAFC]">
-                    Tell us what you need.
+                    Tell us what you need
                   </h3>
 
-                  <p className="mt-2 text-sm leading-6 text-[#64748B]">
+                  <p className="mt-2 text-sm leading-6 text-[#8ba1c1]">
                     Share your details and our team will get back to you.
                   </p>
 
@@ -518,7 +514,7 @@ function ContactCTA() {
                 <div className="grid gap-4 sm:grid-cols-2">
 
                   <div>
-                    <label className="mb-2 block font-mono text-[8px] uppercase tracking-[0.16em] text-[#64748B]">
+                    <label className="mb-2 block font-mono text-[12px] uppercase tracking-[0.16em] text-[#8ba1c1]">
                       Full Name
                     </label>
 
@@ -548,7 +544,7 @@ function ContactCTA() {
                   </div>
 
                   <div>
-                    <label className="mb-2 block font-mono text-[8px] uppercase tracking-[0.16em] text-[#64748B]">
+                    <label className="mb-2 block font-mono text-[12px] uppercase tracking-[0.16em] text-[#8ba1c1]">
                       Email Address
                     </label>
 
@@ -583,7 +579,7 @@ function ContactCTA() {
 
                 <div className="mt-4">
 
-                  <label className="mb-2 block font-mono text-[8px] uppercase tracking-[0.16em] text-[#64748B]">
+                  <label className="mb-2 block font-mono text-[12px] uppercase tracking-[0.16em] text-[#8ba1c1]">
                     Phone Number
                   </label>
 
@@ -622,7 +618,7 @@ function ContactCTA() {
 
                 <div className="mt-4">
 
-                  <label className="mb-2 block font-mono text-[8px] uppercase tracking-[0.16em] text-[#64748B]">
+                  <label className="mb-2 block font-mono text-[12px] uppercase tracking-[0.16em] text-[#8ba1c1]">
                     Location
                   </label>
 
@@ -656,7 +652,7 @@ function ContactCTA() {
 
                 <div className="mt-4">
 
-                  <label className="mb-2 block font-mono text-[8px] uppercase tracking-[0.16em] text-[#64748B]">
+                  <label className="mb-2 block font-mono text-[12px] uppercase tracking-[0.16em] text-[#8ba1c1]">
                     Message
                   </label>
 
@@ -688,7 +684,7 @@ function ContactCTA() {
                   />
 
                   <div className="mt-1 flex justify-end">
-                    <span className="font-mono text-[8px] text-[#475569]">
+                    <span className="font-mono text-[11px] text-[#819abe]">
                       Share your requirements or questions
                     </span>
                   </div>
@@ -811,7 +807,7 @@ function ContactCTA() {
 
                   <span className="h-1.5 w-1.5 rounded-full bg-[#06B6D4] shadow-[0_0_10px_rgba(6,182,212,0.8)]" />
 
-                  <span className="font-mono text-[8px] uppercase tracking-[0.15em] text-[#475569]">
+                  <span className="font-mono text-[12px] uppercase tracking-[0.15em] text-[#97b4de]">
                     Typical response within 24 hours
                   </span>
 
@@ -839,13 +835,13 @@ function ContactCTA() {
 
           <div className="flex items-center gap-3">
 
-            <span className="font-mono text-[9px] text-[#475569]">
+            <span className="font-mono text-[12px] text-[#8aa7ce]">
               VAYTRIX
             </span>
 
             <span className="h-px w-8 bg-white/[0.08]" />
 
-            <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-[#64748B]">
+            <span className="font-mono text-[12px] uppercase tracking-[0.16em] text-[#8aa7ce]">
               Technology / People / Possibility
             </span>
 
@@ -858,7 +854,7 @@ function ContactCTA() {
               className="text-[#06B6D4]"
             />
 
-            <span className="font-mono text-[9px] uppercase tracking-[0.14em] text-[#475569]">
+            <span className="font-mono text-[12px] uppercase tracking-[0.14em] text-[#8aa7ce]">
               We're ready when you are
             </span>
 

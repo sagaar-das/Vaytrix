@@ -164,11 +164,17 @@ function Reviews() {
               transition={{ duration: 0.4 }}
               className="mb-4 flex items-center gap-3"
             >
-              <span className="h-px w-8 bg-gradient-to-r from-[#8B5CF6] to-[#06B6D4]" />
-
-              <span className="font-mono text-[9px] font-semibold uppercase tracking-[0.22em] text-[#64748B]">
-                Client Voices / 2026
-              </span>
+               <span className="font-mono text-[16px] font-medium tracking-[0.25em] text-[#7689a3]">
+                          06
+                        </span>
+          
+                        <span className="h-px w-10 bg-gradient-to-r from-[#8B5CF6] to-[#06B6D4]" />
+          
+                        <span className="font-mono text-[16px] uppercase tracking-[0.22em] text-[#A78BFA]">
+                          Client Voices / 2026
+                        </span>
+          
+                        <span className="h-px w-10 bg-gradient-to-r from-[#06B6D4] to-[#8B5CF6]" />
             </motion.div>
 
             <motion.h2
@@ -189,7 +195,7 @@ function Reviews() {
             >
               Experiences that
               <span className="bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] bg-clip-text text-transparent">
-                {" "}speak for themselves.
+                {" "}speak for themselves
               </span>
             </motion.h2>
 
@@ -203,14 +209,14 @@ function Reviews() {
             className="flex items-center gap-3"
           >
 
-            <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-[#475569]">
+            <span className="font-mono text-[15px] uppercase tracking-[0.16em] text-[#8faad1]">
               {String(activeIndex + 1).padStart(2, "0")} /{" "}
               {String(reviews.length).padStart(2, "0")}
             </span>
 
             <div className="h-px w-10 bg-white/[0.08]" />
 
-            <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-[#06B6D4]">
+            <span className="font-mono text-[15px] uppercase tracking-[0.16em] text-[#06B6D4]">
               Verified Experience
             </span>
 
@@ -270,13 +276,13 @@ function Reviews() {
 
                   <div className="mb-6 flex items-center gap-3">
 
-                    <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-[#64748B]">
+                    <span className="font-mono text-[12px] uppercase tracking-[0.18em] text-[#91a8c8]">
                       Testimonial
                     </span>
 
                     <span className="h-px w-5 bg-white/10" />
 
-                    <span className="font-mono text-[9px] tracking-[0.15em] text-[#A855F7]">
+                    <span className="font-mono text-[15px] tracking-[0.15em] text-[#A855F7]">
                       0{activeIndex + 1}
                     </span>
 
@@ -321,11 +327,11 @@ function Reviews() {
 
                   <div className="mt-7 flex items-center gap-3">
 
-                    <span className="font-mono text-[9px] uppercase tracking-[0.14em] text-[#475569]">
+                    <span className="font-mono text-[15px] uppercase tracking-[0.14em] text-[#8ea9cf]">
                       Published
                     </span>
 
-                    <span className="font-mono text-[9px] tracking-[0.1em] text-[#64748B]">
+                    <span className="font-mono text-[15px] tracking-[0.1em] text-[#90a8c8]">
                       {activeReview.date}
                     </span>
 
@@ -393,15 +399,15 @@ function Reviews() {
 
                     {/* NAME */}
 
-                    <h3 className="text-lg font-semibold text-[#F8FAFC]">
+                    <h3 className="text-[25px] font-semibold text-[#F8FAFC]">
                       {activeReview.name}
                     </h3>
 
-                    <p className="mt-1 text-xs text-[#64748B]">
+                    <p className=" text-[15px] text-[#64748B]">
                       {activeReview.designation}
                     </p>
 
-                    <p className="mt-1 text-xs font-medium text-[#A78BFA]">
+                    <p className="mt-1 text-[12px] font-medium text-[#A78BFA]">
                       {activeReview.company}
                     </p>
 
@@ -416,7 +422,7 @@ function Reviews() {
 
                       <span className="h-1.5 w-1.5 rounded-full bg-[#06B6D4] shadow-[0_0_8px_rgba(6,182,212,0.7)]" />
 
-                      <span className="font-mono text-[8px] uppercase tracking-[0.15em] text-[#64748B]">
+                      <span className="font-mono text-[12px] uppercase tracking-[0.15em] text-[#8da4c3]">
                         Professional Profile
                       </span>
 
@@ -462,7 +468,7 @@ function Reviews() {
                   min-w-8
                   px-2
                   font-mono
-                  text-[9px]
+                  text-[15px]
                   transition-all
                   duration-300
                   ${
@@ -510,8 +516,8 @@ function Reviews() {
               onClick={previousReview}
               className="
                 flex
-                h-9
-                w-9
+                h-10
+                w-12
                 items-center
                 justify-center
                 border
@@ -525,15 +531,15 @@ function Reviews() {
               "
               aria-label="Previous testimonial"
             >
-              <ArrowLeft size={14} />
+              <ArrowLeft size={25} />
             </button>
 
             <button
               onClick={nextReview}
               className="
                 flex
-                h-9
-                w-9
+                h-10
+                w-12
                 items-center
                 justify-center
                 border
@@ -547,7 +553,7 @@ function Reviews() {
               "
               aria-label="Next testimonial"
             >
-              <ArrowRight size={14} />
+              <ArrowRight size={25} />
             </button>
 
           </div>
@@ -571,13 +577,13 @@ function Reviews() {
 
             <Quote size={13} className="text-[#8B5CF6]" />
 
-            <span className="font-mono text-[8px] uppercase tracking-[0.18em] text-[#475569]">
+            <span className="font-mono text-[12px] uppercase tracking-[0.18em] text-[#768eaf]">
               Real Experiences / Professional Journeys
             </span>
 
           </div>
 
-          <span className="hidden font-mono text-[8px] uppercase tracking-[0.18em] text-[#475569] sm:block">
+          <span className="hidden font-mono text-[12px] uppercase tracking-[0.18em] text-[#819abd] sm:block">
             VAYTRIX / CLIENT VOICES
           </span>
 

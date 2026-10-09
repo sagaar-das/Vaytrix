@@ -501,51 +501,31 @@ function ServicesSection() {
 
         <div className="mx-auto max-w-[720px] text-center">
 
+          
           <ScrollReveal>
-            <div
-              className="
-                mb-4
-                inline-flex
-                items-center
-                gap-2
-                font-mono
-                text-[15px]
-                font-semibold
-                uppercase
-                tracking-[0.22em]
-                text-[#A855F7]
-              "
-            >
-              <span
-                className="
-                  h-px
-                  w-8
-                  bg-gradient-to-r
-                  from-transparent
-                  to-[#8B5CF6]
-                "
-              />
-
-              WHAT WE DO
-
-              <span
-                className="
-                  h-px
-                  w-8
-                  bg-gradient-to-r
-                  from-[#8B5CF6]
-                  to-[#06B6D4]
-                "
-              />
-            </div>
-          </ScrollReveal>
+                      <div className="mb-4 flex items-center justify-center gap-3">
+          
+                        <span className="font-mono text-[16px] font-medium tracking-[0.25em] text-[#7689a3]">
+                          02
+                        </span>
+          
+                        <span className="h-px w-10 bg-gradient-to-r from-[#8B5CF6] to-[#06B6D4]" />
+          
+                        <span className="font-mono text-[16px] uppercase tracking-[0.22em] text-[#A78BFA]">
+                          Our Services
+                        </span>
+          
+                        <span className="h-px w-10 bg-gradient-to-r from-[#06B6D4] to-[#8B5CF6]" />
+          
+                      </div>
+                    </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
             <h2
               className="
                 text-2xl
 sm:text-3xl
-lg:text-4xl
+lg:text-5xl
                 font-semibold
                 leading-[1.08]
                 tracking-[-0.04em]
@@ -567,7 +547,7 @@ lg:text-4xl
                   text-transparent
                 "
               >
-                what's next.
+                what's next
               </span>
             </h2>
           </ScrollReveal>
@@ -748,69 +728,17 @@ lg:text-4xl
                   z-10
                   flex
                   h-full
-                  min-h-[228px]
+                  min-h-[250px]
                   flex-col
                 "
               >
-                {/* Top Row */}
-
-                <div className="flex items-center justify-between">
-
-                  {/* Number */}
-
-                  <span
-                    className="
-                      font-mono
-                      text-[10px]
-                      font-medium
-                      tracking-[0.15em]
-                      text-[#64748B]
-                      transition-colors
-                      duration-300
-                      group-hover:text-[#8B5CF6]
-                    "
-                  >
-                    {service.number}
-                  </span>
-
-                  {/* Arrow */}
-
-                  <div
-                    className="
-                      flex
-                      h-9
-                      w-9
-                      items-center
-                      justify-center
-                      rounded-full
-                      border
-                      border-white/[0.08]
-                      bg-white/[0.025]
-                      text-[#64748B]
-                      transition-all
-                      duration-500
-                      group-hover:border-[#8B5CF6]/40
-                      group-hover:bg-[#8B5CF6]/10
-                      group-hover:text-[#F8FAFC]
-                    "
-                  >
-                    <ArrowUpRight
-                      size={15}
-                      className="
-                        transition-transform
-                        duration-300
-                        group-hover:-translate-y-0.5
-                        group-hover:translate-x-0.5
-                      "
-                    />
-                  </div>
-                </div>
+                
 
                 {/* =================================================
     SERVICE GRAPHIC
 ================================================== */}
 
-                <div className="mt-2">
+                <div className="mt-1">
                   <ServiceGraphic type={service.id} />
                 </div>
 
@@ -818,7 +746,7 @@ lg:text-4xl
     SERVICE ICON
 ================================================== */}
 
-                <div className="mt-2 flex items-center justify-between">
+                <div className="mt-3 flex items-center justify-between">
                   <div
                     className="
       relative
@@ -862,7 +790,7 @@ lg:text-4xl
                     </span>
                   </div>
 
-                  <span className="font-mono text-[8px] uppercase tracking-[0.16em] text-[#475569] transition-colors group-hover:text-[#06B6D4]">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#8dbdff] transition-colors group-hover:text-[#06B6D4]">
                     Vaytrix / {service.number}
                   </span>
                 </div>
@@ -899,9 +827,9 @@ lg:text-4xl
                   className="
                     mt-1
                     max-w-[330px]
-                    text-[11px]
+                    text-[13px]
                     leading-4
-                    text-[#94A3B8]
+                    text-[#9eafc6]
                     transition-colors
                     duration-300
                     group-hover:text-[#CBD5E1]
@@ -932,11 +860,11 @@ lg:text-4xl
                   <span
                     className="
                       font-mono
-                      text-[9px]
+                      text-[14px]
                       font-medium
                       uppercase
                       tracking-[0.14em]
-                      text-[#64748B]
+                      text-[#8dacd8]
                       transition-colors
                       duration-300
                       group-hover:text-[#A855F7]
@@ -962,9 +890,9 @@ lg:text-4xl
                     />
 
                     <ArrowUpRight
-                      size={13}
+                      size={25}
                       className="
-                        text-[#64748B]
+                        text-[#84a3ce]
                         transition-all
                         duration-300
                         group-hover:text-[#06B6D4]
@@ -977,57 +905,7 @@ lg:text-4xl
           ))}
         </div>
 
-        {/* =======================================================
-            BOTTOM CTA
-        ======================================================= */}
-
-        <ScrollReveal delay={0.3}>
-          <div className="mt-5 flex justify-center">
-
-            <button
-              onClick={() => navigate("/services")}
-              className="
-                group
-                inline-flex
-                items-center
-                gap-2
-                rounded-full
-                border
-                border-white/[0.09]
-                bg-white/[0.025]
-                px-5
-                py-2
-                font-mono
-                text-[10px]
-                font-medium
-                uppercase
-                tracking-[0.12em]
-                text-[#94A3B8]
-                shadow-[0_10px_40px_rgba(0,0,0,0.25)]
-                backdrop-blur-xl
-                transition-all
-                duration-300
-                hover:border-[#8B5CF6]/40
-                hover:bg-[#8B5CF6]/[0.08]
-                hover:text-[#F8FAFC]
-                hover:shadow-[0_0_35px_rgba(139,92,246,0.12)]
-              "
-            >
-              View all solutions
-
-              <ArrowUpRight
-                size={15}
-                className="
-                  transition-transform
-                  duration-300
-                  group-hover:-translate-y-0.5
-                  group-hover:translate-x-0.5
-                "
-              />
-            </button>
-
-          </div>
-        </ScrollReveal>
+        
       </div>
 
       {/* Bottom Fade */}

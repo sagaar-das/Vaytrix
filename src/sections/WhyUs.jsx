@@ -11,6 +11,8 @@ import {
   Sparkles,
 } from "lucide-react";
 
+import ScrollReveal from "../components/ScrollReveal";
+
 function WhyUs() {
   const data = [
     {
@@ -177,28 +179,23 @@ function WhyUs() {
 
   {/* Technical Label */}
 
-  <div className="mb-3 flex items-center justify-center gap-3">
-
-    <div className="flex h-7 w-7 items-center justify-center rounded-lg border border-[#8B5CF6]/30 bg-[#8B5CF6]/10">
-      <Sparkles
-        size={13}
-        className="text-[#A855F7]"
-      />
-    </div>
-
-    <div className="text-left">
-
-      <p className="font-mono text-[8px] uppercase tracking-[0.2em] text-[#64748B]">
-        Why Vaytrix
-      </p>
-
-      <p className="mt-0.5 text-[10px] text-[#94A3B8]">
-        Built around your future
-      </p>
-
-    </div>
-
-  </div>
+  <ScrollReveal>
+                        <div className="mb-4 flex items-center justify-center gap-3">
+            
+                          <span className="font-mono text-[16px] font-medium tracking-[0.25em] text-[#7689a3]">
+                            04
+                          </span>
+            
+                          <span className="h-px w-10 bg-gradient-to-r from-[#8B5CF6] to-[#06B6D4]" />
+            
+                          <span className="font-mono text-[16px] uppercase tracking-[0.22em] text-[#A78BFA]">
+                            Why Choose Us
+                          </span>
+            
+                          <span className="h-px w-10 bg-gradient-to-r from-[#06B6D4] to-[#8B5CF6]" />
+            
+                        </div>
+                      </ScrollReveal>
 
   {/* Heading */}
 
@@ -212,7 +209,7 @@ function WhyUs() {
       tracking-[-0.04em]
       text-[#F8FAFC]
       sm:text-4xl
-      lg:text-[44px]
+      lg:text-[55px]
     "
   >
     Why clients{" "}
@@ -235,12 +232,12 @@ function WhyUs() {
   <p
     className="
       mx-auto
-      mt-3
+      mt-5
       max-w-2xl
       text-xs
       leading-5
       text-[#94A3B8]
-      sm:text-sm
+      sm:text-base
     "
   >
    We bring together technology, industry expertise, and a
@@ -293,7 +290,7 @@ changing digital landscape.
                 border
                 border-white/[0.08]
                 bg-[#0A0A0F]
-                p-6
+                p-3
                 transition-all
                 duration-500
                 hover:border-[#8B5CF6]/40
@@ -352,7 +349,7 @@ changing digital landscape.
 
               <div className="relative z-10 flex items-center justify-between">
 
-                <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-[#64748B]">
+                <span className=" text-[10px] uppercase tracking-[0.18em] text-[#8fa5c4]">
                   {item.code}
                 </span>
 
@@ -452,7 +449,7 @@ changing digital landscape.
                   z-10
                   mt-3
                   max-w-[270px]
-                  text-sm
+                  text-[20px]
                   font-semibold
                   leading-5
                   tracking-[-0.02em]
@@ -485,7 +482,7 @@ changing digital landscape.
                   transition-colors
                   duration-300
                   group-hover:text-[#94A3B8]
-                  sm:text-xs
+                  sm:text-[14px]
                 "
               >
                 {item.desc}
@@ -577,7 +574,7 @@ changing digital landscape.
 
           <div>
 
-            <p className="font-mono text-[8px] uppercase tracking-[0.2em] text-[#475569]">
+            <p className="text-[9px] uppercase tracking-[0.2em] text-[#89a3c6]">
               Vaytrix Advantage
             </p>
 
@@ -589,13 +586,13 @@ changing digital landscape.
 
           <div className="flex items-center gap-3">
 
-            <span className="font-mono text-[9px] uppercase tracking-[0.15em] text-[#475569]">
+            <span className="text-[9px] uppercase tracking-[0.15em] text-[#89a3c6]">
               06 Capabilities
             </span>
 
             <span className="h-1.5 w-1.5 rounded-full bg-[#06B6D4] shadow-[0_0_10px_rgba(6,182,212,0.8)]" />
 
-            <span className="font-mono text-[9px] uppercase tracking-[0.15em] text-[#64748B]">
+            <span className="text-[9px] uppercase tracking-[0.15em] text-[#89a3c6]">
               Active
             </span>
 

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-
+import ScrollReveal from "../components/ScrollReveal";
 const logos = [
   "alliancebernstein.webp",
   "apple.webp",
@@ -81,31 +81,23 @@ function ClientsPreview() {
         {/* =========================================================
             SECTION LABEL
         ========================================================== */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-5 flex items-center justify-center gap-3"
-        >
-          <span className="h-px w-8 bg-gradient-to-r from-transparent to-[#8B5CF6]" />
-
-          <p
-            className="
-              font-mono
-              text-[10px]
-              font-semibold
-              uppercase
-              tracking-[0.3em]
-              text-[#A78BFA]
-              sm:text-xs
-            "
-          >
-            Trusted Network
-          </p>
-
-          <span className="h-px w-8 bg-gradient-to-l from-transparent to-[#06B6D4]" />
-        </motion.div>
+       <ScrollReveal>
+                             <div className="mb-4 flex items-center justify-center gap-3">
+                 
+                               <span className="font-mono text-[16px] font-medium tracking-[0.25em] text-[#7689a3]">
+                                 07
+                               </span>
+                 
+                               <span className="h-px w-10 bg-gradient-to-r from-[#8B5CF6] to-[#06B6D4]" />
+                 
+                               <span className="font-mono text-[16px] uppercase tracking-[0.22em] text-[#A78BFA]">
+                                 Trusted Network
+                               </span>
+                 
+                               <span className="h-px w-10 bg-gradient-to-r from-[#06B6D4] to-[#8B5CF6]" />
+                 
+                             </div>
+                           </ScrollReveal>
 
         {/* =========================================================
             HEADING
@@ -197,7 +189,7 @@ function ClientsPreview() {
 
           <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#8B5CF6]/40" />
 
-          <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#64748B]">
+          <span className="font-mono text-[12px] uppercase tracking-[0.2em] text-[#93aacb]">
             Global Client Network / 2026
           </span>
 
@@ -392,7 +384,7 @@ function ClientsPreview() {
 
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#06B6D4] shadow-[0_0_10px_rgba(6,182,212,0.8)]" />
 
-            <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#64748B]">
+            <span className="font-mono text-[12px] uppercase tracking-[0.2em] text-[#97afd1]">
               Building Long-Term Partnerships
             </span>
 

@@ -7,6 +7,7 @@ import {
   Cloud,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import ScrollReveal from "../components/ScrollReveal";
 
 function TechTrendsSection() {
   const navigate = useNavigate();
@@ -84,41 +85,84 @@ function TechTrendsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mx-auto max-w-3xl text-center"
+          className="mx-auto max-w-7xl text-center"
         >
           {/* Label */}
 
-          <div className="mb-3 flex items-center justify-center gap-2">
-            <div className="flex h-7 w-7 items-center justify-center rounded-full border border-[#8B5CF6]/30 bg-[#8B5CF6]/10">
-              <Radar
-                size={13}
-                className="text-[#A855F7]"
-              />
-            </div>
-
-            <span className="font-mono text-[9px] font-semibold uppercase tracking-[0.22em] text-[#64748B]">
-              Technology Radar
-            </span>
-          </div>
+          <ScrollReveal>
+                                  <div className="mb-4 flex items-center justify-center gap-3">
+                      
+                                    <span className="font-mono text-[16px] font-medium tracking-[0.25em] text-[#7689a3]">
+                                      05
+                                    </span>
+                      
+                                    <span className="h-px w-10 bg-gradient-to-r from-[#8B5CF6] to-[#06B6D4]" />
+                      
+                                    <span className="font-mono text-[16px] uppercase tracking-[0.22em] text-[#A78BFA]">
+                                        Technical radar
+                                    </span>
+                      
+                                    <span className="h-px w-10 bg-gradient-to-r from-[#06B6D4] to-[#8B5CF6]" />
+                      
+                                  </div>
+                                </ScrollReveal>
 
           <div className="relative">
 
             <div
               className="
                   absolute
-                  -right-10
+                  -left-48
                   -top-8
                   select-none
                   text-[150px]
                   font-black
                   leading-none
                   tracking-[-0.10em]
-                  text-white/[0.045]
+                  text-white/[0.095]
                   sm:text-[190px]
                   lg:text-[150px]
                 "
             >
-              2026 - 2027
+              2026 
+            </div>
+
+            <div
+              className="
+                  absolute
+                  -top-12
+                  -inset-0
+                  select-none
+                  text-[150px]
+                  font-black
+                  leading-none
+                  tracking-[-0.10em]
+                  text-white/[0.095]
+                  sm:text-[190px]
+                  lg:text-[190px]
+                "
+            >
+               ➜
+            </div>
+
+
+
+            <div
+              className="
+                  absolute
+                  -right-48
+                  -top-8
+                  select-none
+                  text-[150px]
+                  font-black
+                  leading-none
+                  tracking-[-0.10em]
+                  text-white/[0.095]
+                  sm:text-[190px]
+                  lg:text-[150px]
+                "
+            >
+               2027
             </div>
             {/* Heading */}
 
@@ -130,12 +174,12 @@ function TechTrendsSection() {
               tracking-[-0.045em]
               text-[#F8FAFC]
               sm:text-4xl
-              lg:text-[46px]
+              lg:text-[56px]
             "
             >
               The technology{" "}
               <span className="bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4] bg-clip-text text-transparent">
-                landscape is shifting.
+                landscape is shifting
               </span>
             </h2>
 
@@ -151,7 +195,7 @@ function TechTrendsSection() {
               text-xs
               leading-5
               text-[#94A3B8]
-              sm:text-sm
+              sm:text-[20px]
               sm:leading-6
             "
           >
@@ -166,7 +210,7 @@ function TechTrendsSection() {
           <button
             type="button"
             onClick={() => navigate("/technology-trends")}
-            className="group relative z-20 mt-4 inline-flex cursor-pointer items-center gap-2 border-b border-white/20 pb-1.5 text-xs font-medium text-[#F8FAFC] transition-all duration-300 hover:border-[#06B6D4] hover:text-white"
+            className="group relative z-20 mt-8 inline-flex cursor-pointer items-center gap-2 border-b border-white/20 pb-1.5 text-[20px] font-medium text-[#F8FAFC] transition-all duration-300 hover:border-[#06B6D4] hover:text-white"
           >
             <span>Explore technology trends</span>
 
@@ -264,10 +308,10 @@ function TechTrendsSection() {
                       <span
                         className="
                           font-mono
-                          text-[9px]
+                          text-[12px]
                           font-medium
                           tracking-[0.12em]
-                          text-[#64748B]
+                          text-[#92aacd]
                           transition-colors
                           duration-300
                           group-hover:text-[#A855F7]
@@ -300,14 +344,14 @@ function TechTrendsSection() {
                         px-2
                         py-1
                         font-mono
-                        text-[7px]
+                        text-[10px]
                         font-semibold
                         uppercase
                         tracking-[0.12em]
-                        text-[#64748B]
+                        text-[#8fa8cb]
                         transition-all
                         duration-300
-                        group-hover:border-[#8B5CF6]/30
+                        group-hover:border-[#8B5CF6]/80
                         group-hover:text-[#A855F7]
                       "
                     >
@@ -430,11 +474,11 @@ function TechTrendsSection() {
             </div>
 
             <div>
-              <p className="font-mono text-[8px] uppercase tracking-[0.15em] text-[#475569]">
+              <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-[#829cc1]">
                 Signal
               </p>
 
-              <p className="mt-0.5 text-[11px] font-medium text-[#CBD5E1]">
+              <p className="mt-0.5 text-[13px] font-medium text-[#CBD5E1]">
                 Emerging Technologies
               </p>
             </div>
@@ -463,11 +507,11 @@ function TechTrendsSection() {
             </div>
 
             <div>
-              <p className="font-mono text-[8px] uppercase tracking-[0.15em] text-[#475569]">
+              <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-[#8aa5cc]">
                 Outlook
               </p>
 
-              <p className="mt-0.5 text-[11px] font-medium text-[#CBD5E1]">
+              <p className="mt-0.5 text-[13px] font-medium text-[#CBD5E1]">
                 2026 Technology Shift
               </p>
             </div>
@@ -490,11 +534,11 @@ function TechTrendsSection() {
             "
           >
             <div>
-              <p className="font-mono text-[8px] uppercase tracking-[0.15em] text-[#475569]">
+              <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-[#8ca6ca]">
                 Intelligence
               </p>
 
-              <p className="mt-0.5 text-[11px] font-medium text-[#CBD5E1]">
+              <p className="mt-0.5 text-[13px] font-medium text-[#CBD5E1]">
                 Tracking Technology
               </p>
             </div>
@@ -502,7 +546,7 @@ function TechTrendsSection() {
             <div className="flex items-center gap-1.5">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#06B6D4] shadow-[0_0_10px_rgba(6,182,212,0.8)]" />
 
-              <span className="font-mono text-[8px] uppercase tracking-[0.15em] text-[#06B6D4]">
+              <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-[#06B6D4]">
                 Active
               </span>
             </div>

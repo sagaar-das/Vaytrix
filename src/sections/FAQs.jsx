@@ -97,16 +97,23 @@ export default function FAQs() {
             {/* TECHNICAL LABEL */}
             <div className="inline-flex w-fit items-center gap-3 rounded-full border border-[#8B5CF6]/25 bg-[#8B5CF6]/[0.07] px-4 py-2 backdrop-blur-md">
 
-              <span className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-[#8B5CF6] to-[#06B6D4] shadow-[0_0_12px_rgba(139,92,246,0.8)]" />
+              <span className="font-mono text-[16px] font-medium tracking-[0.25em] text-[#7689a3]">
+                08
+              </span>
 
-              <span className="font-mono text-[9px] font-semibold uppercase tracking-[0.22em] text-[#A78BFA] sm:text-[10px]">
+              <span className="h-px w-10 bg-gradient-to-r from-[#8B5CF6] to-[#06B6D4]" />
+
+              <span className="font-mono text-[16px] uppercase tracking-[0.22em] text-[#A78BFA]">
+
                 Support / FAQ
               </span>
+
+              <span className="h-px w-10 bg-gradient-to-r from-[#06B6D4] to-[#8B5CF6]" />
 
             </div>
 
             {/* HEADING */}
-            <h2 className="mt-6 max-w-xl text-3xl font-semibold leading-[1.08] tracking-[-0.04em] text-[#F8FAFC] sm:text-4xl md:text-5xl lg:text-[52px]">
+            <h2 className="mt-6 max-w-xl text-3xl font-semibold leading-[1.08] tracking-[-0.04em] text-[#F8FAFC] sm:text-4xl md:text-5xl lg:text-[65px]">
 
               Everything You
               <br />
@@ -117,7 +124,7 @@ export default function FAQs() {
             </h2>
 
             {/* DESCRIPTION */}
-            <p className="mt-6 max-w-md text-sm leading-7 text-[#94A3B8] sm:text-base">
+            <p className="mt-6 max-w-md text-sm leading-7 text-[#94A3B8] sm:text-[16px]">
               Get clear information about our services, support, training,
               pricing, and the process before you begin your journey with us.
             </p>
@@ -126,7 +133,7 @@ export default function FAQs() {
             <div className="mt-8 grid max-w-md grid-cols-2 gap-3">
 
               <div className="rounded-xl border border-white/[0.07] bg-white/[0.025] p-4 backdrop-blur-md">
-                <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-[#64748B]">
+                <p className="font-mono text-[12px] uppercase tracking-[0.18em] text-[#8da2c0]">
                   Coverage
                 </p>
 
@@ -134,13 +141,13 @@ export default function FAQs() {
                   07
                 </p>
 
-                <p className="mt-1 text-[11px] text-[#64748B]">
+                <p className="mt-1 text-[13px] text-[#869bb8]">
                   Common questions
                 </p>
               </div>
 
               <div className="rounded-xl border border-white/[0.07] bg-white/[0.025] p-4 backdrop-blur-md">
-                <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-[#64748B]">
+                <p className="font-mono text-[12px] uppercase tracking-[0.18em] text-[#8da2c0]">
                   Support
                 </p>
 
@@ -148,7 +155,7 @@ export default function FAQs() {
                   24/7
                 </p>
 
-                <p className="mt-1 text-[11px] text-[#64748B]">
+                <p className="mt-1 text-[13px] text-[#869bb8]">
                   Guidance available
                 </p>
               </div>
@@ -160,7 +167,7 @@ export default function FAQs() {
 
               <span className="h-px w-12 bg-gradient-to-r from-[#8B5CF6] to-transparent" />
 
-              <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#475569]">
+              <span className="font-mono text-[12px] uppercase tracking-[0.2em] text-[#8098bb]">
                 Information Center
               </span>
 
@@ -177,11 +184,11 @@ export default function FAQs() {
             <div className="mb-6 flex items-end justify-between">
 
               <div>
-                <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#64748B]">
+                <p className="font-mono text-[12px] uppercase tracking-[0.2em] text-[#97afd0]">
                   Frequently Asked
                 </p>
 
-                <p className="mt-1 text-sm font-medium text-[#CBD5E1]">
+                <p className="mt-1 text-[15px] font-medium text-[#CBD5E1]">
                   Questions & Answers
                 </p>
               </div>
@@ -189,7 +196,7 @@ export default function FAQs() {
               <div className="hidden items-center gap-2 sm:flex">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#06B6D4] shadow-[0_0_8px_rgba(6,182,212,0.8)]" />
 
-                <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-[#64748B]">
+                <span className="font-mono text-[15px] uppercase tracking-[0.16em] text-[#9cb3d4]">
                   Online
                 </span>
               </div>
@@ -215,10 +222,9 @@ export default function FAQs() {
                       backdrop-blur-xl
                       transition-all
                       duration-300
-                      ${
-                        isOpen
-                          ? "border-[#8B5CF6]/40 bg-[rgba(13,13,22,0.88)] shadow-[0_18px_45px_rgba(139,92,246,0.10)]"
-                          : "border-white/[0.07] bg-[rgba(10,10,15,0.70)] hover:border-[#8B5CF6]/30 hover:bg-[rgba(13,13,22,0.82)]"
+                      ${isOpen
+                        ? "border-[#8B5CF6]/40 bg-[rgba(13,13,22,0.88)] shadow-[0_18px_45px_rgba(139,92,246,0.10)]"
+                        : "border-white/[0.07] bg-[rgba(10,10,15,0.70)] hover:border-[#8B5CF6]/30 hover:bg-[rgba(13,13,22,0.82)]"
                       }
                     `}
                   >
@@ -237,10 +243,9 @@ export default function FAQs() {
                         to-[#06B6D4]
                         transition-all
                         duration-300
-                        ${
-                          isOpen
-                            ? "opacity-100"
-                            : "opacity-0 group-hover:opacity-100"
+                        ${isOpen
+                          ? "opacity-100"
+                          : "opacity-0 group-hover:opacity-100"
                         }
                       `}
                     />
@@ -260,10 +265,9 @@ export default function FAQs() {
                         to-transparent
                         transition-opacity
                         duration-300
-                        ${
-                          isOpen
-                            ? "opacity-60"
-                            : "opacity-0 group-hover:opacity-40"
+                        ${isOpen
+                          ? "opacity-60"
+                          : "opacity-0 group-hover:opacity-40"
                         }
                       `}
                     />
@@ -283,16 +287,15 @@ export default function FAQs() {
                           w-7
                           shrink-0
                           font-mono
-                          text-[9px]
+                          text-[12px]
                           font-semibold
                           tracking-[0.15em]
                           transition-colors
                           duration-300
                           sm:block
-                          ${
-                            isOpen
-                              ? "text-[#A78BFA]"
-                              : "text-[#475569]"
+                          ${isOpen
+                            ? "text-[#A78BFA]"
+                            : "text-[#819bbe]"
                           }
                         `}
                       >
@@ -309,10 +312,9 @@ export default function FAQs() {
                           transition-colors
                           duration-300
                           sm:text-[15px]
-                          ${
-                            isOpen
-                              ? "text-[#F8FAFC]"
-                              : "text-[#CBD5E1] group-hover:text-[#F8FAFC]"
+                          ${isOpen
+                            ? "text-[#F8FAFC]"
+                            : "text-[#CBD5E1] group-hover:text-[#F8FAFC]"
                           }
                         `}
                       >
@@ -332,10 +334,9 @@ export default function FAQs() {
                           border
                           transition-all
                           duration-300
-                          ${
-                            isOpen
-                              ? "border-[#8B5CF6]/40 bg-[#8B5CF6]/10 text-[#A78BFA]"
-                              : "border-white/[0.08] bg-white/[0.025] text-[#64748B] group-hover:border-[#8B5CF6]/30 group-hover:text-[#A78BFA]"
+                          ${isOpen
+                            ? "border-[#8B5CF6]/40 bg-[#8B5CF6]/10 text-[#A78BFA]"
+                            : "border-white/[0.08] bg-white/[0.025] text-[#64748B] group-hover:border-[#8B5CF6]/30 group-hover:text-[#A78BFA]"
                           }
                         `}
                       >
@@ -355,10 +356,9 @@ export default function FAQs() {
                         transition-all
                         duration-300
                         ease-in-out
-                        ${
-                          isOpen
-                            ? "grid-rows-[1fr] opacity-100"
-                            : "grid-rows-[0fr] opacity-0"
+                        ${isOpen
+                          ? "grid-rows-[1fr] opacity-100"
+                          : "grid-rows-[0fr] opacity-0"
                         }
                       `}
                     >
@@ -387,40 +387,6 @@ export default function FAQs() {
               })}
 
             </div>
-
-          </div>
-
-        </div>
-
-        {/* =========================================================
-            BOTTOM CTA / STATUS
-        ========================================================== */}
-        <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
-
-          <div className="flex items-center gap-3">
-
-            <span className="h-px w-8 bg-gradient-to-r from-transparent to-[#8B5CF6]/50" />
-
-            <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#475569]">
-              Need More Assistance?
-            </span>
-
-            <span className="h-px w-8 bg-gradient-to-l from-transparent to-[#06B6D4]/50" />
-
-          </div>
-
-          <div className="flex items-center gap-2 rounded-full border border-white/[0.07] bg-white/[0.025] px-3 py-1.5">
-
-            <span className="h-1.5 w-1.5 rounded-full bg-[#06B6D4] shadow-[0_0_8px_rgba(6,182,212,0.8)]" />
-
-            <span className="font-mono text-[9px] uppercase tracking-[0.15em] text-[#64748B]">
-              Support Available
-            </span>
-
-            <ArrowUpRight
-              size={12}
-              className="text-[#8B5CF6]"
-            />
 
           </div>
 
