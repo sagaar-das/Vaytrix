@@ -13,6 +13,7 @@ export const sendContactEmail = async (formData) => {
       email: formData.email,
       phone: formData.phone,
       location: formData.location,
+      message: formData.message,
     },
     emailPublicKey
   );

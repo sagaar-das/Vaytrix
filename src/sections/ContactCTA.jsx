@@ -28,6 +28,7 @@ function ContactCTA() {
     email: "",
     location: "",
     phone: "",
+    message: "",
   });
 
   const [accepted, setAccepted] = useState(false);
@@ -50,13 +51,15 @@ function ContactCTA() {
       email: form.email.trim(),
       location: form.location.trim(),
       phone: form.phone || "",
+      message: form.message.trim(),
     };
 
     if (
       !trimmedForm.name ||
       !trimmedForm.email ||
       !trimmedForm.phone ||
-      !trimmedForm.location
+      !trimmedForm.location ||
+      !trimmedForm.message
     ) {
       setSuccess("");
       setError("Please fill in all fields before submitting.");
@@ -89,6 +92,7 @@ function ContactCTA() {
           email: "",
           location: "",
           phone: "",
+          message: "",
         });
 
         setAccepted(false);
@@ -274,7 +278,7 @@ function ContactCTA() {
                     </p>
 
                     <p className="mt-1 break-all text-sm text-[#F8FAFC]">
-                      info@vaytrix-itservice.com
+                      info@vaytrixtechit.com
                     </p>
                   </div>
 

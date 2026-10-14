@@ -8,90 +8,97 @@ import {
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
-import manoj from "../assets/testimonials/Biswaranjan.jpg";
-import rahul from "../assets/testimonials/rahul.jpg";
-import emily from "../assets/testimonials/emily.jpeg";
+
+import q from "../assets/testimonials/1.jpg";
+import w from "../assets/testimonials/2.jpg";
+import e from "../assets/testimonials/3.jpg";
+import r from "../assets/testimonials/4.jpg";
+import t from "../assets/testimonials/5.jpg";
+import y from "../assets/testimonials/6.jpg";
+import u from "../assets/testimonials/7.jpg";
+import i from "../assets/testimonials/8.jpg";
+import o from "../assets/testimonials/9.jpg";
 
 const reviews = [
   {
     review:
       "Vaytrix gave my job search a completely new direction. The interview preparation and career guidance helped me move from limited opportunities to multiple interview calls.",
-    name: "Biswaranjan Kar",
+    name: "Aarav Sharma",
     designation: "Software Engineer",
     company: "Oracle",
-    image: manoj,
+    image: q,
     date: "Sep 18, 2026",
   },
   {
     review:
       "The team helped me understand the US job market and improve every part of my career profile. Their guidance from resume preparation to interview practice was extremely useful.",
-    name: "Rahul Sharma",
+    name: "Karthik Nair",
     designation: "Data Analyst",
     company: "Meta",
-    image: rahul,
+    image: w,
     date: "Sep 12, 2026",
   },
   {
     review:
       "What stood out for me was the personal attention. The team understood my career goals and provided practical guidance instead of simply giving generic templates.",
-    name: "Emily Rodriguez",
+    name: "Ananya Roy",
     designation: "Product Manager",
     company: "Amazon",
-    image: emily,
+    image: e,
     date: "Sep 05, 2026",
   },
   {
     review:
       "The overall experience was structured and professional. From resume improvement to interview preparation, every step was focused on helping me present my skills better.",
-    name: "Arjun Mehta",
+    name: "Vivaan Verma",
     designation: "Business Analyst",
-    company: "Technology Sector",
-    image: manoj,
+    company: "Goldman Sachs",
+    image: r,
     date: "Aug 29, 2026",
   },
   {
     review:
       "I appreciated the practical approach and continuous guidance. The sessions helped me become more confident while preparing for technical and behavioral interviews.",
-    name: "Neha Patel",
+    name: "Emma Watson",
     designation: "Software Developer",
-    company: "Technology Sector",
-    image: rahul,
+    company: "Stripe",
+    image: t,
     date: "Aug 24, 2026",
   },
   {
     review:
       "The career support was clear, personalized, and easy to follow. I received useful suggestions that helped me improve my professional profile and interview approach.",
-    name: "Daniel Thomas",
+    name: "Pranav Iyer",
     designation: "Data Engineer",
-    company: "Technology Sector",
-    image: emily,
+    company: "Brooks",
+    image: y,
     date: "Aug 20, 2026",
   },
   {
     review:
       "The team provided strong guidance throughout the process. Their feedback helped me understand where I needed improvement and how to communicate my experience effectively.",
-    name: "Priya Nair",
+    name: "Sophia Miller",
     designation: "Project Manager",
-    company: "Technology Sector",
-    image: manoj,
+    company: "Microsoft",
+    image: u,
     date: "Aug 16, 2026",
   },
   {
     review:
       "I found the mentorship sessions very valuable. The guidance was practical, focused on my goals, and helped me approach the job search with much more clarity.",
-    name: "Michael Anderson",
+    name: "Rohan Kapoor",
     designation: "Product Analyst",
-    company: "Technology Sector",
-    image: rahul,
+    company: "Deloitte",
+    image: i,
     date: "Aug 11, 2026",
   },
   {
     review:
       "The combination of career guidance, resume support, and interview preparation made the experience very useful. The team was responsive and professional throughout.",
-    name: "Sneha Rao",
+    name: "Kabir Malhotra",
     designation: "Technology Consultant",
-    company: "Technology Sector",
-    image: emily,
+    company: "PayPal",
+    image: o,
     date: "Aug 06, 2026",
   },
 ];
