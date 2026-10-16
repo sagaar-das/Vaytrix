@@ -129,7 +129,7 @@ function ItWhyChooseUs() {
             </h2>
 
             {/* DESCRIPTION */}
-            <p className="mt-5 max-w-2xl text-sm leading-7 text-[#94A3B8] sm:text-[18px] sm:leading-8">
+            <p className=" text-justify mt-5 max-w-2xl text-sm leading-7 text-[#94A3B8] sm:text-[18px] sm:leading-8">
               We combine personalized guidance, industry expertise, hiring
               connections, and continued support to create a more structured
               path from professional preparation to long-term career growth.

@@ -237,7 +237,7 @@ function ContactCTA() {
 
               </h2>
 
-              <p className="mt-7 max-w-lg text-sm leading-7 text-[#94A3B8] sm:text-[15px]">
+              <p className="text-justify mt-7 max-w-lg text-sm leading-7 text-[#94A3B8] sm:text-[15px]">
 
                 Have a question, project requirement, or future challenge?
                 Connect with the Vaytrix team and let's explore how technology

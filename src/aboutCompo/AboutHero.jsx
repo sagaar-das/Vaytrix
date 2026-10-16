@@ -123,7 +123,7 @@ function AboutHero() {
                 duration: 0.7,
                 delay: 0.3,
               }}
-              className="mt-7 max-w-2xl text-sm leading-7 text-[#94A3B8] sm:text-base sm:leading-8"
+              className="text-justify mt-7 max-w-2xl text-sm leading-7 text-[#94A3B8] sm:text-base sm:leading-8"
             >
               At Vaytrix, we believe every aspiration deserves a clear
               direction. We connect ambition with opportunity by helping

@@ -1,7 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import heroRightImage from "../assets/hero right.png";
+
+import h from "../assets/hero right.webp";
+
 
 const Hero = () => {
   return (
@@ -249,6 +251,7 @@ lg:py-8
                 delay: 0.25,
               }}
               className="
+                text-justify
                 mt-5
                 max-w-[590px]
                 text-[15px]
@@ -614,7 +617,7 @@ lg:py-8
   ================================================== */}
 
             <motion.img
-              src={heroRightImage}
+              src={h}
               alt="Vaytrix digital technology solutions"
               initial={{
                 opacity: 0,

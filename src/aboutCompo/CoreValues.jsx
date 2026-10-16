@@ -150,7 +150,7 @@ function CoreValues() {
             />
 
             <span className="font-mono text-[12px] uppercase tracking-[0.25em] text-[#9dadc4]">
-              Values & Purpose / 06
+              Values & Purpose
             </span>
           </motion.div>
 

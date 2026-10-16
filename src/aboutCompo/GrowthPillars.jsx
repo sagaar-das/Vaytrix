@@ -162,7 +162,7 @@ function GrowthPillars() {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <p className="text-xs leading-6 text-[#94A3B8] sm:text-[15px]">
+            <p className=" text-justify text-xs leading-6 text-[#94A3B8] sm:text-[15px]">
               At Vaytrix, growth is about creating the right environment for
               people and organizations to discover potential, develop
               capabilities, and move toward meaningful opportunities.

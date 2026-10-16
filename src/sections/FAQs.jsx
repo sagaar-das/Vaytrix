@@ -124,7 +124,7 @@ export default function FAQs() {
             </h2>
 
             {/* DESCRIPTION */}
-            <p className="mt-6 max-w-md text-sm leading-7 text-[#94A3B8] sm:text-[16px]">
+            <p className="text-justify mt-6 max-w-md text-sm leading-7 text-[#94A3B8] sm:text-[16px]">
               Get clear information about our services, support, training,
               pricing, and the process before you begin your journey with us.
             </p>

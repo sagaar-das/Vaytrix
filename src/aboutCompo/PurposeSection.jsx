@@ -8,6 +8,8 @@ import {
   Target,
 } from "lucide-react";
 
+import img from "../assets/aboutus.webp";
+
 const PurposeSection = () => {
   return (
     <section
@@ -53,7 +55,7 @@ const PurposeSection = () => {
             <span className="h-px w-7 bg-gradient-to-r from-[#8B5CF6] to-[#06B6D4]" />
 
             <span className="font-mono text-[12px] uppercase tracking-[0.25em] text-white/50">
-              Purpose / 07
+              Purpose
             </span>
           </div>
 
@@ -87,9 +89,9 @@ const PurposeSection = () => {
               {/* Image */}
 
               <img
-                src="/AboutUsImg/MAN-1.jpg"
+                src={img}
                 alt="Vaytrix purpose and people"
-                className="absolute inset-0 h-full w-full object-cover opacity-70 grayscale-[15%]"
+                className="absolute inset-0 h-full w-full "
               />
 
               {/* Overlays */}
@@ -104,10 +106,10 @@ const PurposeSection = () => {
 
               {/* Top Label */}
 
-              <div className="absolute left-6 top-6 flex items-center gap-2">
+              <div className="absolute left-6 top-4 flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#06B6D4] shadow-[0_0_8px_rgba(6,182,212,0.8)]" />
 
-                <span className="font-mono text-[12px] uppercase tracking-[0.22em] text-white/60">
+                <span className="font-mono text-[12px] uppercase tracking-[0.22em] text-white/80">
                   VAYTRIX / PURPOSE
                 </span>
               </div>
@@ -123,14 +125,12 @@ const PurposeSection = () => {
                     />
                   </div>
 
-                  <span className="font-mono text-[12px] uppercase tracking-[0.22em] text-white/40">
-                    PEOPLE FIRST
+                  <span className="font-bold text-[12px] uppercase tracking-[0.22em] text-white/60">
+                    Connecting potential with meaningful opportunity
                   </span>
                 </div>
 
-                <h3 className="text-lg font-medium leading-snug text-white sm:text-xl">
-                  Connecting potential with meaningful opportunity
-                </h3>
+               
               </div>
 
               {/* Corner Markers */}
