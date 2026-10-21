@@ -1,7 +1,9 @@
 
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
-// import emailjs from "@emailjs/browser";
+import { supabase } from "../utils/supabase";
+import emailjs from "@emailjs/browser";
+
 import {
   ArrowRight,
   Upload,
@@ -13,8 +15,19 @@ import {
   LoaderCircle,
 } from "lucide-react";
 
+// =====================================================
+// CONFIGURATION
+// IMPORTANT: This must exactly match your Supabase bucket
+// name. Change it if your actual bucket has another name.
+// =====================================================
+const RESUME_BUCKET = "vaytrix-resumes";
+
 const MAX_FILE_SIZE = 5 * 1024 * 1024;
 const ALLOWED_EXTENSIONS = ["pdf", "doc", "docx"];
+const SIGNED_URL_EXPIRY = 60 * 60 * 24 * 7; // 7 days
+
+const inputClass =
+  "w-full rounded-lg border border-white/10 bg-[#08080D] py-3 pl-10 pr-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-[#8B5CF6]/60 sm:text-base";
 
 export default function CtaCareers() {
   const formRef = useRef(null);
@@ -22,10 +35,17 @@ export default function CtaCareers() {
 
   const [selectedFile, setSelectedFile] = useState(null);
   const [isSending, setIsSending] = useState(false);
-  const [status, setStatus] = useState({ type: "", message: "" });
+  const [status, setStatus] = useState({
+    type: "",
+    message: "",
+  });
 
+  // =====================================================
+  // FILE VALIDATION
+  // =====================================================
   const handleFileChange = (event) => {
     const file = event.target.files?.[0];
+
     setStatus({ type: "", message: "" });
 
     if (!file) {
@@ -33,11 +53,12 @@ export default function CtaCareers() {
       return;
     }
 
-    const extension = file.name.split(".").pop().toLowerCase();
+    const extension = file.name.split(".").pop()?.toLowerCase();
 
     if (!ALLOWED_EXTENSIONS.includes(extension)) {
       setSelectedFile(null);
       event.target.value = "";
+
       setStatus({
         type: "error",
         message: "Upload a PDF, DOC, or DOCX file.",
@@ -45,9 +66,21 @@ export default function CtaCareers() {
       return;
     }
 
+    if (file.size === 0) {
+      setSelectedFile(null);
+      event.target.value = "";
+
+      setStatus({
+        type: "error",
+        message: "The selected resume file is empty.",
+      });
+      return;
+    }
+
     if (file.size > MAX_FILE_SIZE) {
       setSelectedFile(null);
       event.target.value = "";
+
       setStatus({
         type: "error",
         message: "Resume must be 5 MB or smaller.",
@@ -58,58 +91,209 @@ export default function CtaCareers() {
     setSelectedFile(file);
   };
 
+  // =====================================================
+  // FORM SUBMISSION
+  // =====================================================
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     if (isSending) return;
 
+    setStatus({ type: "", message: "" });
+
+    if (!formRef.current) return;
+
     if (!selectedFile) {
-      setStatus({ type: "error", message: "Please upload your resume." });
+      setStatus({
+        type: "error",
+        message: "Please upload your resume.",
+      });
       return;
     }
 
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_CAREERS_TEMPLATE_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
     if (!serviceId || !templateId || !publicKey) {
       setStatus({
         type: "error",
-        message: "EmailJS has not been configured yet.",
+        message:
+          "EmailJS configuration is incomplete. Please check your .env file.",
+      });
+      return;
+    }
+
+    if (
+      !import.meta.env.VITE_SUPABASE_URL ||
+      !import.meta.env.VITE_SUPABASE_ANON_KEY
+    ) {
+      setStatus({
+        type: "error",
+        message:
+          "Supabase configuration is missing. Please check your .env file and Supabase client.",
       });
       return;
     }
 
     setIsSending(true);
-    setStatus({ type: "", message: "" });
+
+    let uploadedPath = null;
 
     try {
-      await emailjs.sendForm(serviceId, templateId, formRef.current, {
-        publicKey,
-      });
+      const formData = new FormData(formRef.current);
 
+      const candidateName = String(
+        formData.get("user_name") || ""
+      ).trim();
+
+      const candidateEmail = String(
+        formData.get("user_email") || ""
+      ).trim();
+
+      const candidatePhone = String(
+        formData.get("user_phone") || ""
+      ).trim();
+
+      if (!candidateName || !candidateEmail || !candidatePhone) {
+        throw new Error("Please complete all required fields.");
+      }
+
+      // Create a unique filename to avoid overwriting other resumes.
+      const originalFilename = selectedFile.name;
+      const safeFilename = originalFilename.replace(
+        /[^a-zA-Z0-9._-]/g,
+        "_"
+      );
+
+      const uniqueId =
+        typeof crypto !== "undefined" &&
+        typeof crypto.randomUUID === "function"
+          ? crypto.randomUUID()
+          : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+
+      const filePath = `${uniqueId}-${safeFilename}`;
+
+// -------------------------------------------------
+      // STEP 1: UPLOAD RESUME TO SUPABASE STORAGE
+      // -------------------------------------------------
+      const { data: uploadData, error: uploadError } =
+        await supabase.storage
+          .from(RESUME_BUCKET)
+          .upload(filePath, selectedFile, {
+            contentType:
+              selectedFile.type || "application/octet-stream",
+            upsert: false,
+          });
+
+      if (uploadError) {
+        if (
+          uploadError.message?.toLowerCase().includes("bucket not found")
+        ) {
+          throw new Error(
+            `Supabase bucket "${RESUME_BUCKET}" was not found. Check the bucket name in your Supabase dashboard and update RESUME_BUCKET in CtaCareers.jsx.`
+          );
+        }
+
+        if (
+          uploadError.message?.toLowerCase().includes("row-level security") ||
+          uploadError.message?.toLowerCase().includes("permission")
+        ) {
+          throw new Error(
+            "Supabase denied the upload. Check your Storage bucket policies and upload permissions."
+          );
+        }
+
+        throw uploadError;
+      }
+
+      console.log("Uploaded successfully:", filePath);
+
+      // -------------------------------------------------
+      // STEP 2: GENERATE A TEMPORARY DOWNLOAD LINK
+      // Using the exact 'filePath' variable we just uploaded
+      // -------------------------------------------------
+      const { data: signedData, error: signedError } =
+        await supabase.storage
+          .from(RESUME_BUCKET) // Use the constant here
+          .createSignedUrl(filePath, SIGNED_URL_EXPIRY, {
+            download: originalFilename,
+          });
+
+      if (signedError) {
+        console.error("Signed URL error:", {
+          message: signedError.message,
+          name: signedError.name,
+          filePath,
+          bucket: RESUME_BUCKET,
+        });
+
+        throw new Error(
+          `Resume uploaded, but the download link could not be generated: ${signedError.message}`
+        );
+      }
+
+      if (!signedData?.signedUrl) {
+        throw new Error(
+          "Resume uploaded, but Supabase did not return a download link."
+        );
+      }
+
+      const resumeUrl = signedData.signedUrl;
+
+
+      // -------------------------------------------------
+      // STEP 3: SEND APPLICATION EMAIL USING EMAILJS
+      // These names must match your EmailJS template.
+      // -------------------------------------------------
+      const templateParams = {
+        candidate_name: candidateName,
+        candidate_email: candidateEmail,
+        candidate_phone: candidatePhone,
+        resume_url: signedData.signedUrl,
+        resume_filename: originalFilename,
+      };
+
+      await emailjs.send(
+        serviceId,
+        templateId,
+        templateParams,
+        { publicKey }
+      );
+
+      // -------------------------------------------------
+      // STEP 4: RESET FORM AFTER SUCCESS
+      // -------------------------------------------------
       formRef.current.reset();
+
       setSelectedFile(null);
-      if (fileInputRef.current) fileInputRef.current.value = "";
+
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
 
       setStatus({
         type: "success",
-        message: "Application submitted successfully. Thank you!",
+        message:
+          "Application submitted successfully! Thank you for applying to Vaytrix.",
       });
     } catch (error) {
-      console.error("EmailJS submission failed:", error);
+      console.error("Careers application submission failed:", error);
+
       setStatus({
         type: "error",
-        message: "Could not submit your application. Please try again.",
+        message:
+          error?.message ||
+          "Unable to submit your application. Please try again.",
       });
     } finally {
       setIsSending(false);
     }
   };
 
-  const inputClass =
-    "w-full rounded-lg border border-white/10 bg-[#08080D] py-3 pl-10 pr-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-[#8B5CF6]/60 sm:text-base";
-
+  // =====================================================
+  // UI
+  // =====================================================
   return (
     <section
       id="career-application"
@@ -131,12 +315,12 @@ export default function CtaCareers() {
             <div className="absolute -right-16 bottom-0 h-48 w-48 rounded-full bg-[#06B6D4]/10 blur-[90px]" />
           </div>
 
-          {/* Full-width content */}
           <div className="relative grid grid-cols-1 gap-7 p-4 sm:p-6 md:p-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-10 lg:p-9 xl:gap-14 xl:p-10">
-            {/* Left: heading and CTA content */}
+            {/* Left: heading */}
             <div className="flex flex-col justify-center">
               <span className="inline-flex w-fit items-center gap-2 rounded-full border border-[#8B5CF6]/25 bg-[#8B5CF6]/10 px-3 py-1.5">
                 <Sparkles size={14} className="text-[#C4B5FD]" />
+
                 <span className="font-mono text-xs font-semibold uppercase tracking-[0.14em] text-[#C4B5FD]">
                   Your Next Opportunity
                 </span>
@@ -150,8 +334,9 @@ export default function CtaCareers() {
               </h2>
 
               <p className="mt-3 max-w-xl text-sm leading-7 text-slate-400 sm:text-base">
-                Ready for your next career move? Share your details and resume
-                with us to explore opportunities that match your skills.
+                Ready for your next career move? Share your details and
+                resume with us to explore opportunities that match your
+                skills.
               </p>
 
               <div className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
@@ -171,12 +356,13 @@ export default function CtaCareers() {
               </div>
             </div>
 
-            {/* Right: compact form */}
+            {/* Right: application form */}
             <div className="min-w-0 border-t border-white/10 pt-6 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0 xl:pl-10">
               <div className="mb-5">
                 <h3 className="text-xl font-semibold text-white sm:text-2xl">
                   Apply Now
                 </h3>
+
                 <p className="mt-1 text-sm text-slate-400">
                   Enter your details and attach your resume.
                 </p>
@@ -187,7 +373,7 @@ export default function CtaCareers() {
                 onSubmit={handleSubmit}
                 className="grid grid-cols-1 gap-x-4 gap-y-4 sm:grid-cols-2"
               >
-                {/* Name */}
+                {/* Full name */}
                 <div>
                   <label
                     htmlFor="career-name"
@@ -195,11 +381,13 @@ export default function CtaCareers() {
                   >
                     Full Name *
                   </label>
+
                   <div className="relative">
                     <User
                       size={17}
                       className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500"
                     />
+
                     <input
                       id="career-name"
                       type="text"
@@ -221,11 +409,13 @@ export default function CtaCareers() {
                   >
                     Email Address *
                   </label>
+
                   <div className="relative">
                     <Mail
                       size={17}
                       className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500"
                     />
+
                     <input
                       id="career-email"
                       type="email"
@@ -247,11 +437,13 @@ export default function CtaCareers() {
                   >
                     Phone Number *
                   </label>
+
                   <div className="relative">
                     <Phone
                       size={17}
                       className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500"
                     />
+
                     <input
                       id="career-phone"
                       type="tel"
@@ -268,7 +460,7 @@ export default function CtaCareers() {
                   </div>
                 </div>
 
-                {/* Resume */}
+                {/* Resume upload */}
                 <div>
                   <label
                     htmlFor="career-resume"
@@ -276,6 +468,7 @@ export default function CtaCareers() {
                   >
                     Resume *
                   </label>
+
                   <input
                     ref={fileInputRef}
                     id="career-resume"
@@ -292,20 +485,30 @@ export default function CtaCareers() {
                     className="flex min-h-[46px] cursor-pointer items-center gap-2 rounded-lg border border-dashed border-white/20 bg-[#08080D] px-3 py-2.5 transition hover:border-[#8B5CF6]/60"
                   >
                     {selectedFile ? (
-                      <FileText size={18} className="shrink-0 text-[#67E8F9]" />
+                      <FileText
+                        size={18}
+                        className="shrink-0 text-[#67E8F9]"
+                      />
                     ) : (
-                      <Upload size={18} className="shrink-0 text-[#A78BFA]" />
+                      <Upload
+                        size={18}
+                        className="shrink-0 text-[#A78BFA]"
+                      />
                     )}
+
                     <span className="min-w-0 flex-1 truncate text-sm text-slate-300">
-                      {selectedFile ? selectedFile.name : "Choose resume"}
+                      {selectedFile
+                        ? selectedFile.name
+                        : "Choose resume"}
                     </span>
                   </label>
+
                   <p className="mt-1 text-xs text-slate-500">
                     PDF / DOC / DOCX · Max 5 MB
                   </p>
                 </div>
 
-                {/* Submission feedback */}
+                {/* Status message */}
                 {status.message && (
                   <div
                     role="status"
@@ -320,7 +523,7 @@ export default function CtaCareers() {
                   </div>
                 )}
 
-                {/* Submit */}
+                {/* Submit button */}
                 <div className="sm:col-span-2">
                   <button
                     type="submit"
@@ -329,7 +532,10 @@ export default function CtaCareers() {
                   >
                     {isSending ? (
                       <>
-                        <LoaderCircle size={18} className="animate-spin" />
+                        <LoaderCircle
+                          size={18}
+                          className="animate-spin"
+                        />
                         Submitting Application...
                       </>
                     ) : (
@@ -351,3 +557,4 @@ export default function CtaCareers() {
     </section>
   );
 }
+
