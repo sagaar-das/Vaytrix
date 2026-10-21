@@ -32,7 +32,7 @@ const About = lazy(() => import("./pages/About"));
 const TermsConditions = lazy(() => import("./pages/TermsConditions"));
 const TechnologyTrends = lazy(() => import("./pages/TechnologyTrends"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
-const WhatsAppButton = lazy(() => import("./components/WhatsAppButton"));
+const FloatingContactButtons = lazy(() => import("./components/FloatingContactButtons"));
 
 
 // Scroll to Top on Route Change
@@ -99,6 +99,7 @@ function AnimatedRoutes() {
     <>
       <ScrollToTop />
 
+
       <Suspense fallback={<PageLoader />}>
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -126,13 +127,14 @@ function AnimatedRoutes() {
 function App() {
   return (
     <HelmetProvider>
+      
 
       <BrowserRouter>
 
         <AnimatedRoutes />
 
         <Suspense fallback={null}>
-          <WhatsAppButton />
+          <FloatingContactButtons />
         </Suspense>
 
       </BrowserRouter>

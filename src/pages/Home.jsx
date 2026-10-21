@@ -9,6 +9,7 @@ import { Helmet } from "react-helmet-async";
 import WhyUs from "../sections/WhyUs";
 import FAQs from "../sections/FAQs";
 import Reviews from "../sections/Reviews";
+import SecurityAlert from "../components/SecurityAlert";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -88,6 +89,8 @@ function Home() {
       </Helmet>
 
       <Hero />
+
+      <SecurityAlert />
 
       <ServicesSection />
 
