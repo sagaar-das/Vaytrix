@@ -280,15 +280,15 @@ function ClientsPreview() {
                     justify-center
                     rounded-2xl
                     border
-                    border-white/[0.07]
-                    bg-[rgba(255,255,255,0.72)]
+                    border-[#8B5CF6]/40
+                    bg-[rgba(13,13,22,0.9)]
                     px-6
                     backdrop-blur-xl
                     transition-all
                     duration-300
-                    hover:border-[#8B5CF6]/40
-                    hover:bg-[rgba(13,13,22,0.9)]
-                    hover:shadow-[0_15px_40px_rgba(139,92,246,0.12)]
+                    hover:border-white/[0.07]
+                    hover:bg-[rgba(255,255,255,0.72)]
+                    shadow-[0_15px_10px_rgba(139,92,246,0.12)]
                     sm:h-28
                     sm:w-48
                   "
@@ -327,15 +327,15 @@ function ClientsPreview() {
                     justify-center
                     rounded-2xl
                     border
-                    border-white/[0.07]
-                    bg-[rgba(255,255,255,0.72)]
+                    hover:border-white/[0.07]
+                   hover:bg-[rgba(255,255,255,0.72)]
                     px-6
                     backdrop-blur-xl
                     transition-all
                     duration-300
-                    hover:border-[#8B5CF6]/40
-                    hover:bg-[rgba(13,13,22,0.9)]
-                    hover:shadow-[0_15px_40px_rgba(139,92,246,0.12)]
+                    border-[#8B5CF6]/40
+                    bg-[rgba(13,13,22,0.9)]
+                    shadow-[0_15px_40px_rgba(139,92,246,0.12)]
                     sm:h-28
                     sm:w-48
                   "

@@ -11,7 +11,7 @@ import {
   Facebook,
   Instagram,
   Linkedin,
-
+  Handshake,
   Mail,
   MapPin,
   Phone,
@@ -19,6 +19,71 @@ import {
   Sparkles,
 } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+
+
+function TrustHandshakeBanner() {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="group relative mb-8 w-full overflow-hidden rounded-2xl border border-[#8B5CF6]/25 bg-[#0A0A0F]"
+    >
+      <div className="absolute inset-0 bg-gradient-to-r from-[#8B5CF6]/15 via-[#0A0A0F] to-[#06B6D4]/15" />
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.12]"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(139,92,246,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.5) 1px, transparent 1px)",
+          backgroundSize: "24px 24px",
+        }}
+      />
+      <div className="absolute -left-10 top-0 h-32 w-32 rounded-full bg-violet-500/20 blur-3xl" />
+      <div className="absolute -right-10 bottom-0 h-32 w-32 rounded-full bg-cyan-500/20 blur-3xl" />
+
+      <div className="relative flex min-h-[125px] items-center justify-between gap-3 px-4 py-4 sm:min-h-[145px] sm:px-7 sm:py-5">
+        <div className="relative z-10 min-w-0 flex-1">
+          <div className="mb-2 flex items-center gap-2">
+            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(6,182,212,0.8)]" />
+            <span className="font-mono text-[9px] uppercase tracking-[0.12em] text-[#A78BFA] sm:text-[10px] sm:tracking-[0.22em]">
+              Built on Trust · Driven by Partnership
+            </span>
+          </div>
+          <h3 className="text-base font-semibold leading-snug text-white sm:text-xl">
+            Strong connections
+            <br />
+            <span className="bg-gradient-to-r from-[#A78BFA] via-[#60A5FA] to-[#67E8F9] bg-clip-text text-transparent">
+              Meaningful outcomes
+            </span>
+          </h3>
+          <p className="mt-2 max-w-sm text-[10px] leading-relaxed text-[#94A3B8] sm:text-[13px]">
+            Every great partnership starts with trust, understanding, and a shared vision.
+          </p>
+        </div>
+
+        <div className="relative flex h-[82px] w-[82px] shrink-0 items-center justify-center sm:h-[105px] sm:w-[125px]">
+          <motion.div
+            className="absolute inset-1 rounded-full border border-dashed border-violet-400/30"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
+          />
+          <div className="absolute inset-3 rounded-full bg-violet-500/15 blur-xl transition-colors duration-500 group-hover:bg-cyan-500/20" />
+          <motion.div
+            animate={{ y: [0, -3, 0] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            className="relative z-10 flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-[#11111B]/95 shadow-[0_0_25px_rgba(139,92,246,0.22)] sm:h-[72px] sm:w-[72px]"
+          >
+            <Handshake size={34} strokeWidth={1.5} className="text-[#C4B5FD] transition-colors duration-300 group-hover:text-[#67E8F9] sm:h-10 sm:w-10" />
+          </motion.div>
+          <span className="absolute right-0 top-2 h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_12px_rgba(6,182,212,0.9)]" />
+          <span className="absolute bottom-1 left-1 h-2 w-2 rounded-full bg-violet-400 shadow-[0_0_12px_rgba(139,92,246,0.9)]" />
+        </div>
+      </div>
+      <div className="relative h-px w-full bg-gradient-to-r from-transparent via-[#8B5CF6]/70 to-[#06B6D4]/70" />
+    </motion.div>
+  );
+}
 
 function ContactCTA() {
   const navigate = useNavigate();
@@ -191,6 +256,8 @@ function ContactCTA() {
         {/* =======================================================
             MAIN ASYMMETRIC LAYOUT
         ======================================================== */}
+
+        <TrustHandshakeBanner />
 
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
 

@@ -125,27 +125,13 @@ function AboutHero() {
               }}
               className="text-justify mt-7 max-w-2xl text-sm leading-7 text-[#94A3B8] sm:text-base sm:leading-8"
             >
-              At Vaytrix, we believe every aspiration deserves a clear
-              direction. We connect ambition with opportunity by helping
-              individuals build the skills, confidence, and professional
-              readiness needed to move forward.
+              At Vaytrix, we believe every aspiration deserves a clear direction.
+               We connect ambition with opportunity by helping individuals build the skills,
+                confidence, and professional readiness needed to move forward.
+                 Our goal is to empower every individual to unlock their potential 
+                 and achieve lasting success.
             </motion.p>
 
-            {/* SECOND DESCRIPTION */}
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.7,
-                delay: 0.4,
-              }}
-              className="mt-4 max-w-xl text-sm leading-7 text-[#64748B]"
-            >
-              Through structured career development, practical guidance, and
-              a forward-thinking approach, we help transform professional
-              aspirations into meaningful opportunities.
-            </motion.p>
 
             {/* CTA
 

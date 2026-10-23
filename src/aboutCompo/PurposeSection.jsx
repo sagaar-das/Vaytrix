@@ -67,9 +67,7 @@ const PurposeSection = () => {
           </h2>
 
           <p className="mt-3 max-w-2xl text-xs leading-6 text-white/50 sm:text-[16px]">
-            We believe meaningful growth begins with people. At Vaytrix, our
-            purpose is to connect talent, opportunity, and technology in ways
-            that create lasting impact.
+            At Vaytrix, we connect people, opportunities, and technology to drive growth.
           </p>
         </motion.div>
 
@@ -175,24 +173,20 @@ const PurposeSection = () => {
 
             <div className="space-y-3 text-xs leading-6 text-white/50 sm:text-[15px]">
               <p>
-                At <span className="text-white">Vaytrix</span>, we believe an
-                organization’s success starts with the people behind it—their
+                At Vaytrix, we believe an
+                organization’s success starts with the people behind it their
                 skills, ambitions, ideas, and potential.
               </p>
 
               <p>
                 Our purpose is to connect exceptional technology talent with
-                forward-thinking organizations, helping businesses find the
+                forward thinking organizations, helping businesses find the
                 right people while professionals move closer to the careers
                 they aspire to build.
               </p>
 
               <p>
-                By bringing together{" "}
-                <span className="text-white">
-                  people, technology, and opportunity
-                </span>
-                , we create an ecosystem where innovation grows, careers
+                By bringing together people, technology, and opportunity, we create an ecosystem where innovation grows, careers
                 progress, and businesses move forward.
               </p>
             </div>

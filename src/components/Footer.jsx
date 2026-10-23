@@ -1,3 +1,13 @@
+
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import {
+  FileText,
+  ExternalLink,
+  X,
+} from "lucide-react";
+
+
 import {
   Mail,
   Phone,
@@ -15,6 +25,7 @@ import ev from "../assets/E-Verify_logo.webp";
 
 function Footer() {
   const navigate = useNavigate();
+  const [isPdfOpen, setIsPdfOpen] = useState(false);
 
   const services = [
     {
@@ -45,6 +56,10 @@ function Footer() {
 
   const company = [
     {
+      name: "Home",
+      path: "/",
+    },
+    {
       name: "For Employers",
       path: "/for-employers",
     },
@@ -60,10 +75,7 @@ function Footer() {
       name: "Technology Trends",
       path: "/technology-trends",
     },
-    {
-      name: "Clients",
-      path: "/clients",
-    },
+    
     {
       name: "Contact Us",
       path: "/contact",
@@ -271,22 +283,156 @@ function Footer() {
 
             </div>
 
-            {/* E-VERIFY */}
-            <div className="mt-7">
+            
+{/* ================= E-VERIFY PDF PREVIEW ================= */}
 
-              <p className="mb-3 text-[12px] uppercase tracking-[0.15em] text-white/55">
-                Verified Partner
-              </p>
+<div className="mt-7">
+  <p className="mb-3 text-[12px] uppercase tracking-[0.15em] text-white/55">
+    Verified Partner
+  </p>
 
-              <div className="inline-flex rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 backdrop-blur-md">
-                <img
-                  src={ev}
-                  alt="E-Verify"
-                  className="h-8 w-auto object-contain opacity-80"
-                />
+  <div
+    className="group relative inline-block"
+    onMouseEnter={() => setIsPdfOpen(true)}
+    onMouseLeave={() => setIsPdfOpen(false)}
+  >
+    {/* E-Verify Badge */}
+    <button
+      type="button"
+      onClick={() => setIsPdfOpen((prev) => !prev)}
+      aria-expanded={isPdfOpen}
+      aria-label="Preview E-Verify document"
+      className="
+        relative flex items-center justify-center
+        overflow-hidden rounded-xl
+        border border-white/10 bg-white/[0.03]
+        px-4 py-3 backdrop-blur-md
+        transition-all duration-300
+        hover:border-violet-400/40
+        hover:bg-violet-500/[0.08]
+        hover:shadow-[0_0_25px_rgba(139,92,246,0.12)]
+      "
+    >
+      <img
+        src={ev}
+        alt="E-Verify"
+        className="
+          h-8 w-auto object-contain opacity-80
+          transition-all duration-300
+          group-hover:opacity-100
+        "
+      />
+
+      <ExternalLink
+        size={13}
+        className="
+          ml-3 text-slate-500
+          transition-colors duration-300
+          group-hover:text-cyan-300
+        "
+      />
+    </button>
+
+    {/* Floating PDF Preview */}
+    <AnimatePresence>
+      {isPdfOpen && (
+        <motion.div
+          initial={{ opacity: 0, y: 10, scale: 0.97 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: 8, scale: 0.97 }}
+          transition={{ duration: 0.2 }}
+          onMouseEnter={() => setIsPdfOpen(true)}
+          className="
+            absolute bottom-full left-0 z-50 mb-3
+            w-[min(340px,85vw)]
+            overflow-hidden rounded-2xl
+            border border-violet-400/25
+            bg-[#090912]
+            shadow-[0_20px_70px_rgba(0,0,0,0.65)]
+          "
+        >
+          {/* Preview Header */}
+          <div className="
+            flex items-center justify-between
+            border-b border-white/[0.08]
+            bg-white/[0.025] px-4 py-3
+          ">
+            <div className="flex items-center gap-3">
+              <div className="
+                flex h-9 w-9 items-center justify-center
+                rounded-lg border border-violet-400/20
+                bg-violet-500/10 text-violet-300
+              ">
+                <FileText size={18} />
               </div>
 
+              <div>
+                <p className="text-sm font-semibold text-white">
+                  E-Verify Document
+                </p>
+                <p className="mt-0.5 text-[10px] text-slate-500">
+                  Official document preview
+                </p>
+              </div>
             </div>
+
+            <button
+              type="button"
+              onClick={() => setIsPdfOpen(false)}
+              aria-label="Close PDF preview"
+              className="
+                rounded-lg p-2 text-slate-400
+                transition hover:bg-white/10 hover:text-white
+              "
+            >
+              <X size={15} />
+            </button>
+          </div>
+
+          {/* PDF Viewer */}
+          <div className="h-[230px] bg-white">
+            <iframe
+              src="/documents/e-verify-license.pdf#toolbar=0&navpanes=0"
+              title="E-Verify document preview"
+              className="h-full w-full border-0"
+            />
+          </div>
+
+          {/* Preview Footer */}
+          <div className="
+            flex items-center justify-between gap-3
+            border-t border-white/[0.08] px-4 py-3
+          ">
+            <span className="text-[10px] text-slate-500">
+              PDF DOCUMENT
+            </span>
+
+            <a
+              href="/documents/e-verify-license.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsPdfOpen(false)}
+              className="
+                inline-flex items-center gap-2
+                rounded-lg border border-violet-400/20
+                bg-violet-500/10 px-3 py-2
+                text-xs font-medium text-violet-200
+                transition-all duration-300
+                hover:border-cyan-400/30
+                hover:bg-violet-500/20
+                hover:text-cyan-200
+              "
+            >
+              View PDF
+              <ExternalLink size={13} />
+            </a>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  </div>
+</div>
+
 
           </div>
 

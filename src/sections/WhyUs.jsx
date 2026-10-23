@@ -248,292 +248,240 @@ changing digital landscape.
 
 </motion.div>
 
-        {/* =======================================================
-            CAPABILITY GRID
-        ======================================================== */}
+        
+{/* =======================================================
+    ULTRA-FUTURISTIC CAPABILITY GRID
+======================================================== */}
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+<div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+  {data.map((item, index) => (
+    <motion.div
+      key={item.number}
+      initial={{ opacity: 0, y: 25 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{
+        duration: 0.5,
+        delay: index * 0.07,
+        ease: "easeOut",
+      }}
+      whileHover={{ y: -5 }}
+      whileTap={{ scale: 0.99 }}
+      className="
+        capability-card group relative isolate
+        min-h-[170px] overflow-hidden rounded-[20px]
+        border border-white/[0.09]
+        bg-[#070710] p-4
+        transition-all duration-500
+        hover:border-violet-400/40
+        hover:shadow-[0_12px_45px_rgba(99,102,241,0.14)]
+      "
+    >
+      {/* Ambient violet glow */}
+      <div
+        className="
+          pointer-events-none absolute -right-14 -top-14
+          h-36 w-36 rounded-full
+          bg-violet-600/[0.07] blur-[55px]
+          transition-all duration-700
+          group-hover:bg-violet-500/20
+          group-hover:scale-125
+        "
+      />
 
-          {data.map((item, index) => (
+      {/* Ambient cyan glow */}
+      <div
+        className="
+          pointer-events-none absolute -bottom-16 -left-12
+          h-32 w-32 rounded-full
+          bg-cyan-500/[0.035] blur-[55px]
+          transition-all duration-700
+          group-hover:bg-cyan-400/15
+        "
+      />
 
-            <motion.div
-              key={item.number}
-              initial={{
-                opacity: 0,
-                y: 35,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{
-                once: true,
-                amount: 0.15,
-              }}
-              transition={{
-                duration: 0.55,
-                delay: index * 0.07,
-                ease: "easeOut",
-              }}
-              whileHover={{
-                y: -6,
-              }}
-              whileTap={{
-                scale: 0.985,
-              }}
-              className="
-                group
-                relative
-                min-h-[220px]
-                overflow-hidden
-                rounded-[20px]
-                border
-                border-white/[0.08]
-                bg-[#0A0A0F]
-                p-3
-                transition-all
-                duration-500
-                hover:border-[#8B5CF6]/40
-                hover:bg-[#0D0D16]
-                hover:shadow-[0_25px_80px_rgba(139,92,246,0.12)]
-              "
-            >
+      {/* Technical background grid */}
+      <div
+        className="
+          pointer-events-none absolute inset-0 -z-10
+          opacity-[0.12]
+          [background-image:linear-gradient(rgba(148,163,184,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.12)_1px,transparent_1px)]
+          [background-size:24px_24px]
+          [mask-image:linear-gradient(to_bottom,black,transparent_85%)]
+        "
+      />
 
-              {/* =================================================
-                  HOVER BACKGROUND
-              ================================================== */}
+      {/* Hover gradient overlay */}
+      <div
+        className="
+          pointer-events-none absolute inset-0
+          bg-gradient-to-br from-violet-500/[0.07]
+          via-transparent to-cyan-400/[0.04]
+          opacity-0 transition-opacity duration-500
+          group-hover:opacity-100
+        "
+      />
 
-              <div
-                className="
-                  pointer-events-none
-                  absolute
-                  inset-0
-                  bg-gradient-to-br
-                  from-[#8B5CF6]/[0.09]
-                  via-transparent
-                  to-[#06B6D4]/[0.05]
-                  opacity-0
-                  transition-opacity
-                  duration-500
-                  group-hover:opacity-100
-                "
-              />
+      {/* Header */}
+      <div className="relative z-10 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <span
+            className="
+              h-1.5 w-1.5 rounded-full bg-cyan-400
+              shadow-[0_0_9px_rgba(34,211,238,0.8)]
+            "
+          />
 
-              {/* =================================================
-                  LARGE NUMBER
-              ================================================== */}
+          <span
+            className="
+              font-mono text-[12px] uppercase
+              tracking-[0.2em] text-slate-400
+            "
+          >
+            {item.code}
+          </span>
 
-              <div
-                className="
-                  pointer-events-none
-                  absolute
-                  -right-2
-                  -top-5
-                  font-mono
-                  text-[70px]
-                  font-bold
-                  leading-none
-                  tracking-[-0.03em]
-                  text-white/[0.025]
-                  transition-all
-                  duration-500
-                  group-hover:text-[#8B5CF6]/[0.07]
-                "
-              >
-                {item.number}
-              </div>
-
-              {/* =================================================
-                  TOP LINE
-              ================================================== */}
-
-              <div className="relative z-10 flex items-center justify-between">
-
-                <span className=" text-[10px] uppercase tracking-[0.18em] text-[#8fa5c4]">
-                  {item.code}
-                </span>
-
-                <div
-                  className="
-                    flex
-                    h-8
-                    w-8
-                    items-center
-                    justify-center
-                    rounded-full
-                    border
-                    border-white/[0.08]
-                    bg-white/[0.025]
-                    text-[#64748B]
-                    transition-all
-                    duration-500
-                    group-hover:border-[#8B5CF6]/40
-                    group-hover:bg-[#8B5CF6]/10
-                    group-hover:text-[#C4B5FD]
-                  "
-                >
-                  <ArrowUpRight
-                    size={14}
-                    className="
-                      transition-transform
-                      duration-300
-                      group-hover:-translate-y-0.5
-                      group-hover:translate-x-0.5
-                    "
-                  />
-                </div>
-
-              </div>
-
-              {/* =================================================
-                  ICON
-              ================================================== */}
-
-              <div className="relative z-10 mt-2">
-
-                <div
-                  className="
-                    relative
-                    flex
-                    h-11
-                    w-11
-                    items-center
-                    justify-center
-                    overflow-hidden
-                    rounded-2xl
-                    border
-                    border-[#8B5CF6]/20
-                    bg-gradient-to-br
-                    from-[#8B5CF6]/10
-                    to-[#3B82F6]/[0.03]
-                    text-[#A78BFA]
-                    transition-all
-                    duration-500
-                    group-hover:scale-105
-                    group-hover:border-[#8B5CF6]/50
-                    group-hover:bg-gradient-to-br
-                    group-hover:from-[#8B5CF6]
-                    group-hover:to-[#3B82F6]
-                    group-hover:text-white
-                    group-hover:shadow-[0_0_35px_rgba(139,92,246,0.25)]
-                  "
-                >
-
-                  <div
-                    className="
-                      pointer-events-none
-                      absolute
-                      inset-0
-                      bg-gradient-to-br
-                      from-white/[0.12]
-                      via-transparent
-                      to-transparent
-                    "
-                  />
-
-                  <span className="relative z-10">
-                    {item.ui}
-                  </span>
-
-                </div>
-
-              </div>
-
-              {/* =================================================
-                  TITLE
-              ================================================== */}
-
-              <h3
-                className="
-                  relative
-                  z-10
-                  mt-3
-                  max-w-[270px]
-                  text-[20px]
-                  font-semibold
-                  leading-5
-                  tracking-[-0.02em]
-                  text-[#F8FAFC]
-                  transition-all
-                  duration-300
-                  group-hover:bg-gradient-to-r
-                  group-hover:from-[#F8FAFC]
-                  group-hover:to-[#67E8F9]
-                  group-hover:bg-clip-text
-                  group-hover:text-transparent
-                "
-              >
-                {item.title}
-              </h3>
-
-              {/* =================================================
-                  DESCRIPTION
-              ================================================== */}
-
-              <p
-                className="
-                  relative
-                  z-10
-                  mt-1.5
-                  max-w-[300px]
-                  text-[11px]
-                  leading-4
-                  text-[#64748B]
-                  transition-colors
-                  duration-300
-                  group-hover:text-[#94A3B8]
-                  sm:text-[14px]
-                "
-              >
-                {item.desc}
-              </p>
-
-              {/* =================================================
-                  BOTTOM PROGRESS LINE
-              ================================================== */}
-
-              <div className="absolute bottom-0 left-0 right-0">
-
-                <div
-                  className="
-                    h-px
-                    w-0
-                    bg-gradient-to-r
-                    from-[#8B5CF6]
-                    via-[#3B82F6]
-                    to-[#06B6D4]
-                    transition-all
-                    duration-700
-                    group-hover:w-full
-                  "
-                />
-
-              </div>
-
-              {/* Corner glow */}
-
-              <div
-                className="
-                  pointer-events-none
-                  absolute
-                  -bottom-16
-                  -right-16
-                  h-32
-                  w-32
-                  rounded-full
-                  bg-[#06B6D4]/0
-                  blur-[60px]
-                  transition-all
-                  duration-700
-                  group-hover:bg-[#06B6D4]/10
-                "
-              />
-
-            </motion.div>
-
-          ))}
-
+          
         </div>
+
+        {/* Decorative number */}
+        <span
+          className="
+            pointer-events-none hidden select-none
+            font-mono text-[34px] font-bold leading-none
+            tracking-[-0.08em] text-white/25
+            transition-colors duration-500
+            group-hover:text-violet-300/[0.12]
+            sm:block
+          "
+        >
+          {item.number}
+        </span>
+
+        
+      </div>
+
+      {/* Icon and title in the same row */}
+      <div className="relative z-10 mt-4 flex items-center gap-3">
+        {/* Icon */}
+        <div
+          className="
+            relative flex h-10 w-10 shrink-0 items-center
+            justify-center overflow-hidden rounded-xl
+            border border-violet-400/25
+            bg-gradient-to-br from-violet-500/15 to-blue-500/[0.04]
+            text-violet-300
+            transition-all duration-500
+            group-hover:border-cyan-300/50
+            group-hover:bg-gradient-to-br
+            group-hover:from-violet-500/25
+            group-hover:to-cyan-400/15
+            group-hover:text-cyan-200
+            group-hover:shadow-[0_0_22px_rgba(139,92,246,0.2)]
+          "
+        >
+          <div
+            className="
+              pointer-events-none absolute inset-0
+              bg-gradient-to-br from-white/[0.10] to-transparent
+            "
+          />
+
+          <span className="relative z-10">
+            {item.ui}
+          </span>
+        </div>
+
+        {/* Title */}
+        <h3
+          className="
+            min-w-0 flex-1
+            text-[16px] font-semibold leading-snug
+            tracking-[-0.025em] text-slate-100
+            transition-all duration-300
+            group-hover:text-white
+            sm:text-[17px]
+          "
+        >
+          {item.title}
+        </h3>
+      </div>
+
+      {/* Description */}
+      <p
+        className="
+          relative z-10 mt-3 max-w-[340px]
+          text-[12px] leading-[1.65] text-slate-400
+          transition-colors duration-300
+          group-hover:text-slate-300
+          sm:text-[13px]
+        "
+      >
+        {item.desc}
+      </p>
+
+      {/* Bottom technical footer */}
+      <div
+        className="
+          relative z-10 mt-3 flex items-center justify-between
+          border-t border-white/[0.06] pt-2
+        "
+      >
+        <span
+          className="
+            font-mono text-[10px] uppercase
+            tracking-[0.18em] text-slate-400
+            transition-colors duration-300
+            group-hover:text-cyan-300/70
+          "
+        >
+          Capability_{String(index + 1).padStart(2, "0")}
+        </span>
+
+        <ArrowUpRight
+          size={14}
+          className="
+            text-slate-500 transition-all duration-300
+            group-hover:-translate-y-0.5
+            group-hover:translate-x-0.5
+            group-hover:text-cyan-300
+          "
+        />
+      </div>
+
+      {/* Neon bottom line */}
+      <div
+        className="
+          pointer-events-none absolute bottom-0 left-0
+          h-[2px] w-0
+          bg-gradient-to-r from-violet-500 via-blue-400 to-cyan-300
+          transition-all duration-500 ease-out
+          group-hover:w-full
+        "
+      />
+
+      {/* Futuristic corner accents */}
+      <div
+        className="
+          pointer-events-none absolute left-0 top-0
+          h-4 w-4 border-l border-t border-transparent
+          transition-colors duration-300
+          group-hover:border-violet-400/70
+        "
+      />
+
+      <div
+        className="
+          pointer-events-none absolute bottom-0 right-0
+          h-4 w-4 border-b border-r border-transparent
+          transition-colors duration-300
+          group-hover:border-cyan-400/70
+        "
+      />
+    </motion.div>
+  ))}
+</div>
+
 
         {/* =======================================================
             BOTTOM MESSAGE

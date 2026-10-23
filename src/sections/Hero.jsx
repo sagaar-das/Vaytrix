@@ -251,7 +251,7 @@ lg:py-8
                 delay: 0.25,
               }}
               className="
-                text-justify
+                
                 mt-5
                 max-w-[590px]
                 text-[15px]
@@ -261,9 +261,7 @@ lg:py-8
                 sm:leading-8
               "
             >
-              We create innovative digital solutions that help clients
-              simplify complexity, accelerate growth, and build experiences
-              that truly make a difference.
+              We empower our clients with innovative technology, seamless digital experiences, and scalable solutions that enhance efficiency, accelerate growth, and create lasting value.
             </motion.p>
 
 
@@ -401,111 +399,102 @@ lg:py-8
             </motion.div>
 
 
-            {/* =================================================
-                STATS
-            ================================================== */}
+            
+{/* =================================================
+    STATS
+================================================== */}
 
-            <motion.div
-              initial={{
-                opacity: 0,
-              }}
-              animate={{
-                opacity: 1,
-              }}
-              transition={{
-                duration: 0.7,
-                delay: 0.5,
-              }}
-              className="
-                mt-12
-                grid
-                max-w-[570px]
-                grid-cols-3
-                border-t
-                border-white/[0.08]
-                pt-7
-              "
-            >
+<motion.div
+  initial={{ opacity: 0, y: 12 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{
+    duration: 0.7,
+    delay: 0.5,
+  }}
+  className="
+    mt-10
+    grid
+    max-w-[680px]
+    grid-cols-2
+    gap-y-6
+    border-t
+    border-white/[0.08]
+    pt-6
+    sm:grid-cols-4
+    sm:gap-y-0
+    sm:pt-7
+  "
+>
+  {/* Stat 1 */}
+  <div className="min-w-0">
+    <p className="
+      bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4]
+      bg-clip-text text-2xl font-bold text-transparent
+      sm:text-3xl
+    ">
+      150+
+    </p>
 
-              {/* Stat 1 */}
+    <p className="mt-1 text-[11px] text-[#64748B] sm:text-xs">
+      Business Partners
+    </p>
+  </div>
 
-              <div>
+  {/* Stat 2 */}
+  <div className="
+    min-w-0 border-l border-white/[0.08] pl-4
+    sm:pl-5
+  ">
+    <p className="
+      bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4]
+      bg-clip-text text-2xl font-bold text-transparent
+      sm:text-3xl
+    ">
+      300+
+    </p>
 
-                <p
-                  className="
-                    bg-gradient-to-r
-                    from-[#F8FAFC]
-                    to-[#94A3B8]
-                    bg-clip-text
-                    text-2xl
-                    font-bold
-                    text-transparent
-                    sm:text-3xl
-                  "
-                >
-                  150+
-                </p>
+    <p className="mt-1 text-[11px] text-[#64748B] sm:text-xs">
+      Placements
+    </p>
+  </div>
 
-                <p className="mt-1 text-[11px] text-[#64748B] sm:text-xs">
-                  Business Partners
-                </p>
+  {/* Stat 3 */}
+  <div className="
+    min-w-0 sm:border-l sm:border-white/[0.08]
+    sm:pl-5
+  ">
+    <p className="
+      bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4]
+      bg-clip-text text-2xl font-bold text-transparent
+      sm:text-3xl
+    ">
+      95%
+    </p>
 
-              </div>
+    <p className="mt-1 text-[11px] text-[#64748B] sm:text-xs">
+      Client Satisfaction
+    </p>
+  </div>
 
+  {/* Stat 4 */}
+  <div className="
+    min-w-0 border-l border-white/[0.08] pl-4
+    sm:pl-5
+  ">
+    <p className="
+      bg-gradient-to-r from-[#8B5CF6] via-[#3B82F6] to-[#06B6D4]
+      bg-clip-text text-2xl font-bold text-transparent
+      sm:text-3xl
+    ">
+      750+
+    </p>
 
-              {/* Stat 2 */}
+    <p className="mt-1 text-[11px] text-[#64748B] sm:text-xs">
+      Recruiters
+    </p>
+  </div>
+</motion.div>
 
-              <div className="border-l border-white/[0.08] pl-5 sm:pl-8">
-
-                <p
-                  className="
-                    bg-gradient-to-r
-                    from-[#F8FAFC]
-                    to-[#94A3B8]
-                    bg-clip-text
-                    text-2xl
-                    font-bold
-                    text-transparent
-                    sm:text-3xl
-                  "
-                >
-                  300+
-                </p>
-
-                <p className="mt-1 text-[11px] text-[#64748B] sm:text-xs">
-                  Placements
-                </p>
-
-              </div>
-
-
-              {/* Stat 3 */}
-
-              <div className="border-l border-white/[0.08] pl-5 sm:pl-8">
-
-                <p
-                  className="
-                    bg-gradient-to-r
-                    from-[#8B5CF6]
-                    via-[#3B82F6]
-                    to-[#06B6D4]
-                    bg-clip-text
-                    text-2xl
-                    font-bold
-                    text-transparent
-                    sm:text-3xl
-                  "
-                >
-                  95%
-                </p>
-
-                <p className="mt-1 text-[11px] text-[#64748B] sm:text-xs">
-                  Client Satisfaction
-                </p>
-
-              </div>
-
-            </motion.div>
 
           </div>
 
@@ -613,8 +602,8 @@ lg:py-8
             />
 
             {/* =================================================
-      LARGE HERO PNG
-  ================================================== */}
+                 LARGE HERO PNG
+              ================================================== */}
 
             <motion.img
               src={h}
