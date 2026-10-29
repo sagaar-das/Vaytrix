@@ -7,11 +7,12 @@ import {
 
 function FloatingContactButtons() {
     const phoneNumber = "+16148024217";
+    const whatsappNumber = "+1 614 812 0792";
    
 
     const message = "Hi, I need help regarding your services";
 
-    const whatsappLink = `https://wa.me/${phoneNumber.replace(/\D/g, "")}?text=${encodeURIComponent(message)}`;
+    const whatsappLink = `https://wa.me/${whatsappNumber.replace(/\D/g, "")}?text=${encodeURIComponent(message)}`;
 
    
 
